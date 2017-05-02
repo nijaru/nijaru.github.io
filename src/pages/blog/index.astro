@@ -1,0 +1,87 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ReflectionText from "../../components/ReflectionText";
+import BlogPostPreview from "../../components/BlogPostPreview";
+import { getCollection } from "astro:content";
+
+// Get all blog posts from the collection
+const blogEntries = await getCollection("blog", ({ data }) => {
+    // Filter out draft posts in production
+    return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Format and prepare post data
+const posts = blogEntries
+    .map((post) => {
+        // Format the date for display
+        const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+
+        return {
+            url: `/blog/${post.slug}`,
+            title: post.data.title,
+            pubDate: post.data.pubDate,
+            formattedDate: formattedDate,
+            excerpt: post.data.description,
+            tags: post.data.tags,
+        };
+    })
+    // Sort posts by date (newest first)
+    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+---
+
+<Layout title="Blog - Nick Russo">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-4xl font-bold mb-2 text-center">
+            <span class="text-accent-purple">
+                <ReflectionText client:load>My</ReflectionText>
+            </span>
+            <span class="text-white">
+                <ReflectionText client:load>Blog</ReflectionText>
+            </span>
+        </h1>
+
+        <p class="text-center text-gray-400 mb-12">
+            Thoughts on software development, programming languages, and more
+        </p>
+
+        <div class="space-y-8">
+            {posts.map((post) => <BlogPostPreview post={post} />)}
+
+            {
+                posts.length === 0 && (
+                    <div class="text-center py-12 text-gray-500">
+                        <p>No posts found. Check back soon!</p>
+                    </div>
+                )
+            }
+        </div>
+
+        <div class="text-center mt-12">
+            <a
+                href="/"
+                class="inline-flex items-center text-accent-blue hover:text-accent-purple"
+            >
+                Back to Home
+                <svg
+                    class="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</Layout>

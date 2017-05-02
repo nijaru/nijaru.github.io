@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TechSkills from "../components/TechSkills";
+import SocialLinks from "../components/SocialLinks";
+import ReflectionText from "../components/ReflectionText";
+import SectionHeading from "../components/SectionHeading";
+import TextGlow from "../components/TextGlow";
+---
+
+<Layout title="About - Nick Russo">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">
+            <span class="text-accent-purple">
+                <ReflectionText client:visible>About</ReflectionText>
+            </span>
+            <span class="text-white">
+                <ReflectionText client:visible>Me</ReflectionText>
+            </span>
+        </h1>
+
+        <div class="card-container mb-8">
+            <div class="space-y-8">
+                <div>
+                    <SectionHeading client:visible withBorder={false}>Areas of Interest</SectionHeading>
+                    <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
+                        <li>Backend Development & API Design</li>
+                        <li>Distributed Systems & Networking</li>
+                        <li>Databases & Data Engineering</li>
+                        <li>Artificial Intelligence & Machine Learning</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <SectionHeading client:visible withBorder={false}>What I'm Up To</SectionHeading>
+                    <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
+                        <li>Building a backend-as-a-service platform to simplify server-side infrastructure</li>
+                        <li>Exploring audio processing technologies combined with artificial intelligence</li>
+                        <li>Learning new programming languages, with a current focus on Mojo</li>
+                        <li>Researching recent papers on databases and storage systems</li>
+                        <li>Working on music production and audio engineering projects</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <SectionHeading client:visible withBorder={false}>Technical Background</SectionHeading>
+                    <TechSkills client:visible />
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote section (separate from main content) -->
+        <div class="card-container mb-8">
+            <blockquote
+                class="italic text-gray-300 border-l-4 border-lime-500 pl-4 py-2"
+            >
+                "There are only two hard things in Computer Science: cache invalidation,
+                naming things, and off-by-one errors."
+            </blockquote>
+        </div>
+
+        <div class="text-center mt-12">
+            <a
+                href="/"
+                class="inline-flex items-center text-accent-blue hover:text-accent-purple"
+            >
+                Back to Home
+                <svg
+                    class="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</Layout>
