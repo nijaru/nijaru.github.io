@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/nijaru
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nijaru.github.io
+  * I am nijaru (https://keybase.io/nijaru) on keybase.
+  * I have a public key ASAsLx53X2cDQ44_ovK3G4w05lC13Z7T5iAk9WZxFSDqmgo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01202c2f1e775f6703438e3fa2f2b71b8c34e650b5dd9ed3e62024f566711520ea9a0a",
+            "host": "keybase.io",
+            "kid": "01202c2f1e775f6703438e3fa2f2b71b8c34e650b5dd9ed3e62024f566711520ea9a0a",
+            "uid": "96462062424a75cb5caf8778723aab19",
+            "username": "nijaru"
+        },
+        "service": {
+            "hostname": "nijaru.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.22"
+    },
+    "ctime": 1493844242,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1493844196,
+        "hash": "a0ecb41c0ae52d2438f68519a2c6d4ae44a4bea37c512d954e670be7a29f8d4ca2a4cf6bab4efebd84f623fcfecd08ee15b4768f966bfce6694537d2796792ff",
+        "seqno": 1051941
+    },
+    "prev": "3045423bf817d31a202cc07a8186d3f4b36fdbe256a95fae279d8d51b30b8b88",
+    "seqno": 14,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgLC8ed19nA0OOP6LytxuMNOZQtd2e0+YgJPVmcRUg6poKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMmMyZjFlNzc1ZjY3MDM0MzhlM2ZhMmYyYjcxYjhjMzRlNjUwYjVkZDllZDNlNjIwMjRmNTY2NzExNTIwZWE5YTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMmMyZjFlNzc1ZjY3MDM0MzhlM2ZhMmYyYjcxYjhjMzRlNjUwYjVkZDllZDNlNjIwMjRmNTY2NzExNTIwZWE5YTBhIiwidWlkIjoiOTY0NjIwNjI0MjRhNzVjYjVjYWY4Nzc4NzIzYWFiMTkiLCJ1c2VybmFtZSI6Im5pamFydSJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibmlqYXJ1LmdpdGh1Yi5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjIyIn0sImN0aW1lIjoxNDkzODQ0MjQyLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0OTM4NDQxOTYsImhhc2giOiJhMGVjYjQxYzBhZTUyZDI0MzhmNjg1MTlhMmM2ZDRhZTQ0YTRiZWEzN2M1MTJkOTU0ZTY3MGJlN2EyOWY4ZDRjYTJhNGNmNmJhYjRlZmViZDg0ZjYyM2ZjZmVjZDA4ZWUxNWI0NzY4Zjk2NmJmY2U2Njk0NTM3ZDI3OTY3OTJmZiIsInNlcW5vIjoxMDUxOTQxfSwicHJldiI6IjMwNDU0MjNiZjgxN2QzMWEyMDJjYzA3YTgxODZkM2Y0YjM2ZmRiZTI1NmE5NWZhZTI3OWQ4ZDUxYjMwYjhiODgiLCJzZXFubyI6MTQsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA+Kqn0SwL5fGO55PmshWiKAqCDD2z3K4Ffv7ifsjL6LKf+n0U0dpYFqt6jCvYOxkz8miQ1zrbaQ/RRD8NrTZJCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJHhm+4uacFqbjv6gBSHekwWhQVmHM54n2j2HGwcV8GKo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nijaru
+
+==================================================================
