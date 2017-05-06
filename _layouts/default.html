@@ -13,7 +13,7 @@
 			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
 		</main>
 
-		{% if page.url != '/index.html' or page.url == '/' %}
+		{% if page.url == '/index.html' or page.url == '/' %}
 			<div class="page-navigation">
 				<a class="about" href="{{site.baseurl}}/about" title="about">About</a>
 			</div>
