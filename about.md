@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I am a software developer from California who likes web development, APIs, and infrastructure. I mainly use Go, Python, and Javascript to solve problems, along with a little Ruby, C++, and Haskell.
+I am a software developer from California who likes web development, APIs, and infrastructure. I mainly use Go, Python, Ruby, and Javascript to solve problems, along with a little C++, and Haskell.
 
 My current projects include building apps with Go and Javascript, writing an interpreter, and contributing to open source projects. Outside of code, I like music production, photography, and hiking.
 
