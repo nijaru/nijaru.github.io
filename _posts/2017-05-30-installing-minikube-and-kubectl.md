@@ -1,6 +1,6 @@
 ---
 title: Installing minikube and kubectl
-updated: 2017-05-30 16:42
+updated: 2017-05-31 13:28
 categories: kubernetes containers docker rkt coreos google-cloud minikube kubectl
 ---
 
@@ -8,10 +8,12 @@ categories: kubernetes containers docker rkt coreos google-cloud minikube kubect
 Information detailing this post and those following it can be found at my previous [blog post]({{page.previous.url}}).
 
 # Setup
-To get started, you'll need to install tools for working with Kubernetes, Google Cloud, and a couple others for everything to work properly.
+To get started, you'll need to install tools for working with Kubernetes, Google Cloud, and a couple others for everything in these guides to work properly.
 
 ## 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-kubectl is a CLI for running commands against Kubernetes clusters. Run the following commands for your platform to install it.
+You can use the Kubernetes command-line tool, kubectl, to deploy and manage applications on Kubernetes. Using kubectl, you can inspect cluster resources; create, delete, and update components; and look at your new cluster and bring up example apps.
+
+Run the following commands for your platform to install it.
 
 ### Linux/amd64
 ```
@@ -24,7 +26,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 ```
 
 ## 2. [gcloud](https://cloud.google.com/sdk/gcloud/)
-This is the CLI for interacting with Google Cloud. This is not necessary if you plan on using another cloud service or just want to run kubernetes locally, but will be used in further posts.
+This is the CLI for interacting with Google Cloud. This is not necessary if you plan on using another cloud service or just want to run kubernetes locally, but it will be used in further posts.
 ```bash
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL # restart shell
@@ -32,6 +34,8 @@ exec -l $SHELL # restart shell
 
 ## 3. [minikube](https://github.com/kubernetes/minikube)
 Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+
+Run the following commands for your platform to install it.
 
 ### Linux/amd64
 ```
@@ -44,8 +48,9 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.19.0/minik
 ```
 
 ### Configure minikube to use a specific release:
+This may change, but this is the current version I am using.
 ```
-minikube config set kubernetes-version 1.6.3
+minikube config set kubernetes-version 1.6.3.
 ```
 
 ### To verify minikube availability:
@@ -73,7 +78,7 @@ sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-dri
 ```
 
 ### rkt-powered minikube (optional)
-To start minikube with [rkt](github.com/rkt/rkt) enabled, run:
+To start minikube with [rkt](https://github.com/rkt/rkt) enabled, run:
 ```
 minikube start --network-plugin=cni --container-runtime=rkt
 ```
