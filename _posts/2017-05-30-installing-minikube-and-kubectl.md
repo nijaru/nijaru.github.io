@@ -10,7 +10,7 @@ Information detailing this post and those following it can be found at my previo
 # Setup
 To get started, you'll need to install tools for working with Kubernetes, Google Cloud, and a couple others for everything to work properly.
 
-## [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+## 1. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 kubectl is a CLI for running commands against Kubernetes clusters. Run the following commands for your platform to install it.
 
 ### Linux/amd64
@@ -23,14 +23,14 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 ```
 
-## [gcloud](https://cloud.google.com/sdk/gcloud/)
-This is the CLI for interacting with Google Cloud.
+## 2. [gcloud](https://cloud.google.com/sdk/gcloud/)
+This is the CLI for interacting with Google Cloud. This is not necessary if you plan on using another cloud service or just want to run kubernetes locally, but will be used in further posts.
 ```bash
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL # restart shell
 ```
 
-## [minikube](https://github.com/kubernetes/minikube)
+## 3. [minikube](https://github.com/kubernetes/minikube)
 Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
 
 ### Linux/amd64
@@ -65,21 +65,21 @@ You can use the --vm-driver flag to select a specific virt provider
 minikube start --vm-driver=virtualbox
 ```
 
-You can use a variety of virtualization drivers such as virtualbox, but I will be using xhyve. It can be installed and setup properly on MacOS with the following commands:
+You can use a variety of virtualization drivers such as virtualbox, but I will be using [xhyve](https://github.com/mist64/xhyve). It can be installed and setup properly on MacOS with the following commands:
 ```
 brew install docker-machine-driver-xhyve
 sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 ```
 
-## rkt-powered minikube (optional)
-To start minikube with rkt enabled, run:
+### rkt-powered minikube (optional)
+To start minikube with [rkt](github.com/rkt/rkt) enabled, run:
 ```
 minikube start --network-plugin=cni --container-runtime=rkt
 ```
 
-## [Docker](https://www.docker.com/community-edition)
-There are multiple ways to install docker's tools including the package found at the link above or with your OS's package manager.
+## 4. [Docker](https://www.docker.com/community-edition)
+There are multiple ways to install docker's tools including the package found at the link above or with your OS's package manager. For example:
 ```
 brew install docker
 ```
