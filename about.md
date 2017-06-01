@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-I am a software developer from California who likes web development, APIs, and infrastructure. I mainly use Go, Python, Ruby, and Javascript to solve problems along with a little C++ and Haskell.
+I am a software developer from California who likes web development and distributed systems. I mainly use Go to solve problems along with a little Javascript, Python, Ruby, C++, and Haskell.
 
-My current projects include building apps with Go and Javascript, writing an interpreter, and contributing to open source projects. Outside of code, I like music production, photography, and hiking.
+My current projects include building web apps with Go and Javascript, working with kubernetes, and contributing to open source projects. Outside of code, I like music production, photography, and hiking.
 
 {:.center}
 Find me at: [GitHub](https://github.com/nijaru) / [Twitter](https://twitter.com/nijaruuu) / [LinkedIn](https://www.linkedin.com/in/nick-russo/)
