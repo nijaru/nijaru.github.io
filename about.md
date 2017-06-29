@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I am a software developer from California who likes web development, containers, and distributed systems. I mainly use Go along with Javascript, Python, Ruby, C++, and Haskell.
+I am a software developer from California who likes web development, containers, and distributed systems. I mainly use Go along with Javascript, Python, Ruby, and a little C++, Elm, and Haskell.
 
 My current projects include building web apps with Go and Javascript, working with Kubernetes, and contributing to open source projects. Outside of code, I like music production, photography, and hiking.
 
