@@ -1,11 +1,5 @@
 title: nijaru
 url: "https://nijaru.com"
-enforce_ssl: nijaru.com
 description: Nick Russo's personal website and blog.
 permalink: /posts/:title
 redirects: yes
-
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-redirect-from
