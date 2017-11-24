@@ -1,6 +1,6 @@
 ---
 layout: post
-title: about
+title: About
 ---
 
 I am a software developer from California who likes web development, linux,
