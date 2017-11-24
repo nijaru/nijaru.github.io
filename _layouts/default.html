@@ -1,27 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		{% include head.html %}
-	</head>
-
-	<body>
-
-		{% include header.html %}
-
-		<main>
-			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
-		</main>
-
-		{% if page.url == '/index.html' or page.url == '/' %}
-			<div class="page-navigation">
-				<a class="about" href="{{site.baseurl}}/about" title="about">About</a>
-			</div>
-		{% endif %}
-
-
-		{% include footer.html %}
-
-	</body>
-
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
+  <body>
+    <section id="posts">
+      {{ content }}
+      <a href="{{ "/" | relative_url}}">
+      </a>
+    </section>
+  </body>
+  <script src="{{ "/assets/ga.js" | relative_url }}"></script>
+  <script src="{{ "/assets/main.js" | relative_url }}"></script>
 </html>

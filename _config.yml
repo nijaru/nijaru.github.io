@@ -1,51 +1,19 @@
-# Site Info
-title:              "Nick"
-description:        "Personal Site"
-# google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
-google_analytics:   UA-98641242-1
+title: nijaru
+baseurl: ""
+url: ""
+# enforce_ssl: nijaru.com
+description: Nick Russo's personal website and blog.
 
-# Author Info
-author_name:        "Nick Russo" # Your name here
-author_email:       nicholasjamesrusso@gmail.com # Your email here
-# author_gravatar:    b3ce87bffb738f956a98e6738a2b665a # Your Gravatar md5 hash here for logo
-twitter_username:   nijaruuu # Your Twitter username here
-github_username:    nijaru # Your GitHub username here
+permalink: /posts/:title
+redirects: yes
 
-# Site Settings
-baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /thoughts/:title # Post permalink
-timezone:           America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-mathjax:            false  # enables support for mathjax - set to false to disable
+markdown: kramdown
+highlighter: rouge
 
-# Site Build
-highlighter:        rouge
-markdown:           kramdown
-kramdown:
-    input:          GFM
-sass:
-    style:          :compressed
-
-# Other Params
-# include:            [ "robots.txt" ]
-exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
 gems:
+  - jekyll-feed
   - jekyll-sitemap
-
-
-
-defaults:
-  -
-    scope:
-      path:         ""
-    values:
-      layout:       "null"
-  -
-    scope:
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      type:         "posts"
-    values:
-      layout:       "post"
+  - jekyll-redirect-from
+exclude:
+  - Gemfile
+  - Gemfile.lock

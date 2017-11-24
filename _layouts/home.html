@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<h1>
+  nijaru
+</h1>
+<h3>About</h3>
+<p>I am a software developer from California who likes web development, linux, containers, and distributed systems. I use Go
+and Python to get things done™. I also know Javascript, Ruby, and a little C++.</p>
+<p>More <span class="read-more-link-container"><a href="{{ "/about.html" | relative_url }}">about me</a></span></p>
+<h3>Contact</h3>
+<ul>
+  <li>Email me at <a href="mailto:nijaruuu@gmail.com">nijaruuu@gmail.com</a></li>
+  <li>Message me securely via
+    <a href="https://keybase.io/nijaru">Keybase</a>
+  </li>
+  <li>Find me on: <a href="https://github.com/nijaru">GitHub</a> / <a href="https://twitter.com/nijaruuu">Twitter</a> / <a href="https://www.linkedin.com/in/nick-russo/">LinkedIn</a></li>
+</ul>
+<div class="div-with-margin">
+  <a class="no-underline" href="{{ "/feed.xml" | relative_url }}">
+      {% include rss_icon.svg %}
+  </a>
+  <h3 class="inline no-margin">Writing</h3>
+</div>
+<table>
+  <tbody>
+    {% for post in site.posts %}
+      <tr>
+        <td><time class="small" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y/%m/%d" }}</time></td>
+        <td><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
