@@ -576,8 +576,9 @@ td {
     }
 
     .center-media {
-        left: -25px;
-        width: calc(100% + 50px);
+        width: 100%;
+        /*left: -25px;
+        width: calc(100% + 50px);*/
     }
 }
 
