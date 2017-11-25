@@ -12,9 +12,9 @@ and hackintosh along with Debian and Ubuntu at home and on servers. I also have
 some experience with Fedora, Container linux, and Alpine linux.
 
 My current projects include building web apps with Go and Javascript, working
-with Kubernetes, building an interpreter, and contributing to open source
-projects. I am interested in building a kernel, a proxy server, and a simple
-key-value store.
+with linux, and contributing to open source projects. I am interested in writing
+an interpreter, building a kernel, working on security and crypto projects, and
+working with Alpine linux.
 
 Outside of code, I like music production, photography, and hiking.
 
