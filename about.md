@@ -3,8 +3,8 @@ layout: post
 title: About
 ---
 
-I am a software developer from California who likes web development,
-containers, linux, and distributed systems. I use Go and Python to get things done™. I
+I am a software developer from California interested in web development, linux,
+containers, and security. I use Go and Python to get things done™. I
 also know Javascript, Ruby, and a little C++.
 
 I am interested in Rust, Elixir,
