@@ -4,68 +4,48 @@ https://keybase.io/nijaru
 
 I hereby claim:
 
-  * I am an admin of https://nijaru.github.io
+  * I am an admin of https://nijaru.com
   * I am nijaru (https://keybase.io/nijaru) on keybase.
-  * I have a public key with fingerprint F239 C4F3 4CC0 2172 442D  D6DB B52B 1717 4B30 43CE
+  * I have a public key ASBboz-xR5oFvPmJ3yPacqtJO6czXYFaHrCaEKd57n_XfAo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "01200314523e0e0d1d64fecc44d9cf839d7144590f9bb12a5419a1adaf00b97f14aa0a",
-      "fingerprint": "f239c4f34cc02172442dd6dbb52b17174b3043ce",
+      "eldest_kid": "0101530650dfe469010a04ba8aba802a639d54c46643823e72d5ece3b99d1587aa4c0a",
       "host": "keybase.io",
-      "key_id": "b52b17174b3043ce",
-      "kid": "0101fafde6a5e17c715a01d856b47a587d46acd02e6db0cd1369086a44f86665b4d20a",
+      "kid": "01205ba33fb1479a05bcf989df23da72ab493ba7335d815a1eb09a10a779ee7fd77c0a",
       "uid": "96462062424a75cb5caf8778723aab19",
       "username": "nijaru"
     },
+    "merkle_root": {
+      "ctime": 1511975473,
+      "hash": "fa78c06d5398fc4496f1d54bd3656fe0c3904f6fcd74756340158d74f62c94871cc0c311b7ef3bd3bf1d8b6e242b9275a60851c4e35576db89465cd48ebbd949",
+      "hash_meta": "be7965e708a75381a842921b8f55c4f255463957d17a2f59b16d7d9d0d0e6282",
+      "seqno": 1762550
+    },
     "service": {
-      "hostname": "nijaru.github.io",
+      "hostname": "nijaru.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1507025975,
-  "expire_in": 157680000,
-  "prev": "27573df8f47d7310e3d450589abed4f9502659cdfaf1c225a83041725def21ed",
-  "seqno": 62,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.36"
+  },
+  "ctime": 1511975481,
+  "expire_in": 504576000,
+  "prev": "03439038672547565657ed9ab8d4767582954c12f6db470106beb8a33557bdbf",
+  "seqno": 78,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.74
-Comment: https://keybase.io/crypto
-
-yMN5AnicbVJrUFVVFIYLyiNRlBjSSOQwwYSk+5yzz+s6jqBikBKYzYAMcD3n7H3g
-8LiXe++5PAMMNRnJB9VgKiCmOD4ybVCwBBWsLB43R0GiJipqlDEQpUgyJzuX8kcz
-7T979lrf+ta3vr0+9fNw83U/tzgoaC1Y5XTv7tjvcNt4A3GlhGRBxYSxlMjB0xfO
-RdiumXJURBgJQFIA0CRkKBoDDBCJWKhgWYYQCbLC0wLiSAgZASiCJJGUyEBSEEkR
-iQoAksApJBRFIBJRhKKaM7Et36aaNZ1WoWhBhgoNZRlQJEdBSCHEIkliKInkSA5K
-NIC0jPXCLIvdVaGLk0Q7XqJa9Jj+ME3L+x/8E92AVEQFYVZkMMnJHMmIgEQ8w0qQ
-ExmeQ5AVZQQorHcFMiJpVgA8K0Ko8CzLMhJE1LRuxzSdwEKWAiwFKShyjCwxsqjw
-HMdzFC2KEim4gHZsM4t5WEeb1WzR5iDKogg9VqDqsnRbXXP8J78kU9WyHNI/E+Xb
-LJpFtuTq2SxNy7cbXdVacb4LXogl079EJkk1I91JvaIA2+yqxUwYSR0pa6qLmWQA
-ByhG4JgoAhflqzZsUl0IhmN5oB9XH1ygU1Icw9FI4RXIIY4mAaYRZADDC6KEEVQE
-BlAsI8hIt5CUKYoRed1f/Z8YhBWKxIhwjWY1WwgjS+k6xUyd065mmkXNYcNEWWdH
-mqebu6/bzBkG14q5+fr4P1k8+7i/2yc5PzxKG6r7MiW4a0R7xdxy/dzA+4OOhRnV
-ZROdrcbYHVd7Pj+6/cXhkF1hCTUf9VpmDb6+of0rj6gp6bOVBQOZdFdDW+GuLddT
-Szr68/adnY2Ck5yxKU+7x4fu3NpqaOGr8pzbTOWVPsueDartW8oPrbzlk1b7xob4
-Xun0MctTIdEJKxq//iu6tszL6j22gBpyEg+2BK5/+GDKej/yUnlfvMEeUTH6aOEY
-p5yf0xiePGv+4fOHThkGD0bFb2qV8+7kNY54RibX3auv3BMJuycXXPxzuXtg0ZD/
-BHfQd/Xmldbm/LCR0fTv+P1MxYX5xc3Je0KTd/ht/yWuYqit40b78RGv30reetw0
-b1tlakD43t9TzSnLspOKTnevubxXOTn2asek/Tn18dm5pxxvf5hdfrd7+U10penN
-hg+8KkKGv+m/9W5FQkRYbvhGyff59oAAbeuvPZ37br83mqqOkx9PRSQ4DX0rFmWE
-Tjgbrg3nzGhO7ByPnllErSFu+pwJxDF37l6ss9L9L9wvP/HFpuDJZP7Cz86TXQea
-MtUjVSOjh3Z/W7C75FpVdepscMBzuOBqXJthdfq9h9/XnKlJvF1tfedlqv61K6VH
-utbVH/XRjp+I88uYDPvRY1X2S94DkZcSC3vm2NcvjrFsTioKmZcyfjmm5fDaY72t
-6yp/atbY3NiuuUHp9X9EqDu9n1na1vk3yL+/fw==
-=LLkY
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgW6M/sUeaBbz5id8j2nKrSTunM12BWh6wmhCnee5/13wKp3BheWxvYWTFA0F7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNTMwNjUwZGZlNDY5MDEwYTA0YmE4YWJhODAyYTYzOWQ1NGM0NjY0MzgyM2U3MmQ1ZWNlM2I5OWQxNTg3YWE0YzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNWJhMzNmYjE0NzlhMDViY2Y5ODlkZjIzZGE3MmFiNDkzYmE3MzM1ZDgxNWExZWIwOWExMGE3NzllZTdmZDc3YzBhIiwidWlkIjoiOTY0NjIwNjI0MjRhNzVjYjVjYWY4Nzc4NzIzYWFiMTkiLCJ1c2VybmFtZSI6Im5pamFydSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUxMTk3NTQ3MywiaGFzaCI6ImZhNzhjMDZkNTM5OGZjNDQ5NmYxZDU0YmQzNjU2ZmUwYzM5MDRmNmZjZDc0NzU2MzQwMTU4ZDc0ZjYyYzk0ODcxY2MwYzMxMWI3ZWYzYmQzYmYxZDhiNmUyNDJiOTI3NWE2MDg1MWM0ZTM1NTc2ZGI4OTQ2NWNkNDhlYmJkOTQ5IiwiaGFzaF9tZXRhIjoiYmU3OTY1ZTcwOGE3NTM4MWE4NDI5MjFiOGY1NWM0ZjI1NTQ2Mzk1N2QxN2EyZjU5YjE2ZDdkOWQwZDBlNjI4MiIsInNlcW5vIjoxNzYyNTUwfSwic2VydmljZSI6eyJob3N0bmFtZSI6Im5pamFydS5jb20iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zNiJ9LCJjdGltZSI6MTUxMTk3NTQ4MSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIwMzQzOTAzODY3MjU0NzU2NTY1N2VkOWFiOGQ0NzY3NTgyOTU0YzEyZjZkYjQ3MDEwNmJlYjhhMzM1NTdiZGJmIiwic2Vxbm8iOjc4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQG3q2dC71zDT4Ncmd35hcTHfOVcont3rdchJ6063ieiC4Fa+z7Acq3j3AgyxBgZ+W2opxQz9zkVfRBQ29mHh2gWoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCBKvdpkgivfKc5EgRhgp7tixw48B09cG4pVeRqetMy2N6N0YWfNAgKndmVyc2lvbgE=
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
