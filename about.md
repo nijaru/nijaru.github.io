@@ -7,7 +7,7 @@ I am a software developer from California interested in web development, Linux, 
 
 I am interested in Rust, Elixir, Elm, and Haskell. I use MacOS on my laptop and hackintosh along with Debian and Ubuntu at home and on servers. I also have some experience with Fedora, Container Linux, and Alpine Linux.
 
-My current projects include building a websocket chat app with go, working with Linux, and contributing to open source projects. I have been learning Kubernetes and working on security and crypto projects as well.
+My current projects include building a websocket chat app with go, working with Linux, and contributing to open source projects. I have been learning Kubernetes and working on security projects as well.
 
 Outside of code, I like music production, photography, and hiking.
 
