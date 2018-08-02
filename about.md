@@ -3,7 +3,7 @@ layout: post
 title: About
 ---
 
-I am a software developer from California interested in web development, Linux, containers, security, and networking. I use Go and Python to get things done™. I know Ruby, Javascript, and C++ as well.
+I am a software developer from California interested in web development, containers, security, and networking. I use Go and Python to get things done™. I know Ruby, Javascript, and C++ as well.
 
 I am also learning Rust and Clojure. I use MacOS on my laptop and hackintosh along with Debian and Ubuntu at home and on servers. I have some experience with Fedora, Container Linux, Alpine Linux, and VyOS.
 
