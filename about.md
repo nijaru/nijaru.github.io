@@ -3,11 +3,11 @@ layout: post
 title: About
 ---
 
-I am a software developer from California interested in web development, containers, security, and networking. I use Go and Python to get things done™. I know Ruby, Javascript, and C++ as well.
+I am a software developer from California interested in web development, containers, networking, and security. I have used Go, Python, Ruby, Javascript, C, and C++. I am also learning Rust and Clojure.
 
-I am also learning Rust and Clojure. I use MacOS on my laptop and hackintosh along with Debian and Ubuntu at home and on servers. I have some experience with Fedora, Container Linux, Alpine Linux, and VyOS.
+I use MacOS on a hackintosh along with Debian and Solus. I use Linux for development and typically use Ubuntu on servers. I have some experience with Fedora, Container Linux, Alpine Linux, and VyOS as well. My current projects include using Go for web and networking, learning Rust, and diving into Linux internals.
 
-My current projects include using go for networking, working with Linux, and contributing to open source. I have been learning about Kubernetes and security as well.
+(I currently use vim, but I am slowly repenting from my ways and learning emacs) ;)
 
 Outside of code, I like music production, photography, and hiking.
 
