@@ -5,17 +5,13 @@ layout: default
   nijaru
 </h1>
 <h3>About</h3>
-<p>
-  I am a software developer from California interested in linux, networking, security, and distributed systems. I have used Go, C, C++, Python, Ruby, and Javascript. I am learning Rust and have an interest in Haskell, Racket, and Clojure.
-</p>
-<p>More <span class="read-more-link-container"><a href="{{ "/about.html" | relative_url }}">about me</a></span></p>
+<p>I am a software developer from California interested in linux, networking, security, and distributed systems. I use Go, C, C++, Python, Ruby, and Javascript. I am currently learning Rust.</p>
+<p>I primarily use Fedora, MacOS, and Windows. I also have experience with Ubuntu, Debian, CentOS, Rocky, Kali, Gentoo, CoreOS, Alpine, and EdgeOS.</p>
+<p>Outside of code, I like audio engineering, music production, mixing & mastering, and camping.</p>
 <h3>Contact</h3>
 <ul>
   <li>Email me at
     <a href="mailto:nijaru0x@gmail.com">nijaru0x@gmail.com</a>
-  </li>
-  <li>Message me securely via
-    <a href="https://keybase.io/nijaru">Keybase</a>
   </li>
   <li>Find me on:
     <a href="https://github.com/nijaru">GitHub</a> /
@@ -23,23 +19,3 @@ layout: default
     <a href="https://www.linkedin.com/in/nick-russo/">LinkedIn</a>
   </li>
 </ul>
-<div class="div-with-margin">
-  <a class="no-underline" href="{{ " /feed.xml " | relative_url }}">
-    {% include rss_icon.svg %}
-  </a>
-  <h3 class="inline no-margin">Writing</h3>
-</div>
-<table>
-  <tbody>
-    {% for post in site.posts %}
-    <tr>
-      <td>
-        <time class="small" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y/%m/%d" }}</time>
-      </td>
-      <td>
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
