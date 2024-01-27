@@ -1,20 +1,19 @@
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98641242-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || []
-function gtag() {
-    dataLayer.push(arguments)
-}
-gtag('js', new Date())
 
-gtag('config', 'UA-98641242-1')
-</script>
-  <style>
-    {% include main.css %}
-  </style>
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&amp;subset=latin-ext" rel="stylesheet">
-  <title>{{ page.title | escape }}</title>
+  <title>
+    {%- if page.title -%}
+      {{ page.title }}
+    {%- else -%}
+      {{ site.title }}
+    {%- endif -%}
+  </title>
+
+  {%-seo title=false-%}
+  {%-feed_meta-%}
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
 </head>
