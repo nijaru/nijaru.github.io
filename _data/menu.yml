@@ -2,21 +2,25 @@
 # https://github.com/riggraz/no-style-please#customize-the-menu
 
 entries:
+    - title: About
+      url: about
+
     - title: Links
       entries:
-          - title: "<a href='https://github.com/nijaru'>GitHub</a>"
-            url: https://github.com/riggraz/no-style-please
+          - title: GitHub
+            url: https://github.com/nijaru
+          - title: Twitter
+            url: https://twitter.com/nijaru0x
+          - title: LinkedIn
+            url: https://www.linkedin.com/in/nick-russo/
 
     - title: Posts
       post_list:
           limit: 5
           # category: example2
           show_more: true
-          show_more_text: See archive...
-          show_more_url: archive.html
+          show_more_text: More...
+          show_more_url: posts.html
 
-    - title: About
-      url: about
-
-    # - title: rss
-    #   url: feed.xml
+    - title: rss
+      url: feed.xml

@@ -8,3 +8,7 @@ gem "no-style-please"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
+
+gem "csv"
+gem "bigdecimal"
+gem "base64"
