@@ -12,9 +12,9 @@ theme: PaperMod
 
 # googleAnalytics: UA-123-45
 
-# minify:
-#   disableXML: true
-#   minifyOutput: true
+minify:
+  disableXML: true
+  minifyOutput: true
 
 params:
   # env: production # to enable google analytics, opengraph, twitter-cards and schema.
