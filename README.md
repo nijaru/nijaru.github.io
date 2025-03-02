@@ -40,6 +40,22 @@ npm run dev
 npm run build
 ```
 
+### GitHub Repository Data
+
+This site displays pinned GitHub repositories using a secure GitHub Action workflow:
+
+1. A GitHub Action fetches pinned repos via GraphQL API using a dedicated token
+2. The data is stored in a static JSON file at `public/data/pinned-repos.json`
+3. The SolidJS component reads from this file instead of making API calls
+
+#### Setting up the GitHub Token
+
+To enable the pinned repository feature:
+
+1. Create a GitHub Personal Access Token with the `read:user` and `repo` scopes
+2. Add the token to your repository secrets with the name `PINNED_FETCH_TOKEN`
+3. The GitHub Action will run automatically on pushes to main and once daily
+
 ## Bio Page
 
 Contains information about:

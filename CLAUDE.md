@@ -5,6 +5,7 @@
 - [Solid.js](https://www.solidjs.com/) - Reactive JavaScript UI library
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - Node.js (>=18.0.0) or Bun (>=1.0.0) required
+- GitHub Actions - For automated workflows (pinned repos fetching)
 
 ## Build Commands
 - Install dependencies: `npm install`
@@ -20,6 +21,8 @@
   - `styles/` - CSS styles
 - `public/` - Static assets served at root
 - `static/` - Static assets like favicons and site manifest
+- `scripts/` - Backend scripts (GitHub pinned repos fetcher)
+- `.github/workflows/` - GitHub Action configurations
 - `dist/` - Build output (generated)
 
 ## Key Configuration Files
@@ -46,3 +49,11 @@
 - Personal website/blog for Nick Russo
 - Space-themed design with interactive components
 - Content focuses on software engineering and technical topics
+
+## GitHub Integration
+- GitHub pinned repositories are fetched via a scheduled GitHub Action
+- Uses GitHub GraphQL API with a token (PINNED_FETCH_TOKEN)
+- Data is pre-generated and stored in both:
+  - `/public/data/pinned-repos.json` (for production)
+  - `/static/data/pinned-repos.json` (for development)
+- GithubRepos component fetches from these static files instead of direct API calls

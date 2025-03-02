@@ -4,20 +4,21 @@ export default function GithubRepos({ username, limit }) {
   const [isLoading, setIsLoading] = createSignal(true);
   const [errorMessage, setErrorMessage] = createSignal(null);
   
-  // Fetch pinned repositories from GitHub API
+  // Fetch pinned repositories from static JSON file
   const [repos] = createResource(async () => {
     try {
       setIsLoading(true);
-      // Fetch all repositories from GitHub API
-      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+      // Determine the correct path based on base URL
+      const basePath = import.meta.env.BASE_URL || '/';
+      const jsonPath = `${basePath.endsWith('/') ? basePath.slice(0, -1) : basePath}/data/pinned-repos.json`;
+      
+      // Fetch pre-generated JSON file with pinned repositories
+      const response = await fetch(jsonPath);
       if (!response.ok) {
         throw new Error('Failed to fetch repositories');
       }
       
       let data = await response.json();
-      
-      // Sort by stars (descending) - using stars as a proxy for pinned repos
-      data.sort((a, b) => b.stargazers_count - a.stargazers_count);
       
       // Limit the number of repos based on the limit prop
       if (limit && limit > 0) {
