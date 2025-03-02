@@ -54,10 +54,21 @@ To enable the pinned repository feature:
 
 1. Create a GitHub Personal Access Token with the `read:user` and `repo` scopes
 2. Add the token to your repository secrets with the name `PINNED_FETCH_TOKEN` 
-3. Make sure directories exist: `mkdir -p public/data static/data`
-4. The GitHub Action will run automatically on pushes to main and once daily
-5. For testing without a token: `node scripts/test-fetch.js`
-6. For testing with a token: `GITHUB_TOKEN=your_token node scripts/fetch-pinned-repos.js`
+3. The workflow will automatically fetch repos before each deploy and once daily
+
+#### Local Development
+
+For testing and local development:
+
+1. Create directories if needed: `mkdir -p public/data static/data`
+2. For mock data (without API call): `node scripts/test-fetch.js`
+3. For real data (with your token): `GITHUB_TOKEN=your_token node scripts/fetch-pinned-repos.js`
+
+#### Workflow Integration
+
+- The deploy workflow will fetch pinned repos before building the site
+- The fetch-pinned-repos workflow runs daily to keep data fresh
+- Both workflows commit changes directly to the repository
 
 ## Bio Page
 
