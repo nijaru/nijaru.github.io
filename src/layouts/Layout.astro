@@ -1,0 +1,111 @@
+---
+import NavBar from '../components/NavBar';
+import StarField from '../components/StarField';
+import SocialLinks from '../components/SocialLinks';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Nick Russo - Software Engineer" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-space-900 text-white min-h-screen">
+    <StarField client:load />
+    <NavBar client:load />
+    
+    <main class="pt-20 pb-16 min-h-screen">
+      <slot />
+    </main>
+    
+    <footer class="border-t border-space-700 py-6 text-center text-gray-400 text-sm">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center mb-4">
+          <SocialLinks client:visible />
+        </div>
+        <p>&copy; {new Date().getFullYear()} Nick Russo. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes shine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  .shine-text {
+    position: relative;
+  }
+  
+  .shine-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.2) 50%, 
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shine 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+      'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #121224;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a35;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #232342;
+  }
+</style>

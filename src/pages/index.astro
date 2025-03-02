@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks';
+import ReflectionText from '../components/ReflectionText';
+import TextGlow from '../components/TextGlow';
+---
+
+<Layout title="Nick Russo - Software Developer">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">
+        <span class="text-accent-purple">
+          <TextGlow client:load enhanced={true}>
+            <ReflectionText client:load>Nick</ReflectionText>
+          </TextGlow>
+        </span>
+        <span class="text-white">
+          <TextGlow client:load enhanced={true}>
+            <ReflectionText client:load>Russo</ReflectionText>
+          </TextGlow>
+        </span>
+      </h1>
+      
+      <h2 class="text-2xl md:text-3xl font-semibold mb-8 tracking-wide">
+        <TextGlow client:load>
+          <span class="text-lime-400">Software Developer</span>
+        </TextGlow>
+      </h2>
+      
+      <div class="bg-space-800/60 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-space-700 max-w-2xl mx-auto shadow-xl mb-8">
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+          I'm a developer specializing in backend systems from the San Francisco Bay Area, focused on creating efficient and reliable software solutions.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          My work spans distributed systems, APIs, database design, and AI, with experience in Python, Go, and other languages. Currently exploring Solid.js, Rust and Mojo.
+        </p>
+      </div>
+      
+      <div class="flex justify-center md:justify-center space-x-4">
+        <a 
+          href="/bio" 
+          class="px-6 py-3 bg-lime-500 hover:bg-lime-400 text-space-900 font-bold rounded-full transition-all duration-300 transform hover:scale-105"
+        >
+          About Me
+        </a>
+        <a 
+          href="/projects" 
+          class="px-6 py-3 bg-space-700 hover:bg-space-600 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105"
+        >
+          Projects
+        </a>
+      </div>
+      
+      <div class="mt-12 flex justify-center">
+        <SocialLinks client:visible />
+      </div>
+    </div>
+  </div>
+</Layout>
