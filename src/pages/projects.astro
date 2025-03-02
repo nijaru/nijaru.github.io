@@ -15,83 +15,56 @@ import GithubRepos from "../components/GithubRepos";
             </span>
         </h1>
 
-        <div class="mb-12">
-            <div
-                class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-8"
-            >
-                <h2 class="text-2xl font-semibold text-lime-400 mb-4">
-                    Current Projects
-                </h2>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div
-                        class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group"
-                    >
-                        <h3
-                            class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
-                        >
-                            Backend-as-a-Service Platform
-                        </h3>
-                        <p class="text-gray-300 mb-4">
-                            I'm currently building a platform to simplify backend
-                            development, offering APIs, databases, and serverless
-                            functions with a focus on developer experience.
-                        </p>
-                        <div class="flex space-x-3 text-sm mb-2">
-                            <span
-                                class="px-2 py-1 bg-space-700 rounded text-accent-blue"
-                                >Go</span
-                            >
-                            <span class="px-2 py-1 bg-space-700 rounded text-blue-400"
-                                >Cloud</span
-                            >
-                            <span class="px-2 py-1 bg-space-700 rounded text-purple-400"
-                                >PostgreSQL</span
-                            >
-                        </div>
-                        <p class="text-gray-400 italic">In development</p>
+        <!-- Current Projects Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
+                <span class="text-lime-400">Current Projects</span>
+            </h2>
+            
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group relative">
+                    <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">
+                        Backend-as-a-Service Platform
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        I'm currently building a platform to simplify backend
+                        development, offering APIs, databases, and serverless
+                        functions with a focus on developer experience.
+                    </p>
+                    <div class="flex space-x-3 text-sm mb-2">
+                        <span class="px-2 py-1 bg-space-500 rounded text-accent-blue">Go</span>
+                        <span class="px-2 py-1 bg-space-500 rounded text-blue-400">Cloud</span>
+                        <span class="px-2 py-1 bg-space-500 rounded text-purple-400">PostgreSQL</span>
                     </div>
+                    <p class="text-gray-400 italic">In development</p>
+                </div>
 
-                    <div
-                        class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group"
-                    >
-                        <h3
-                            class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
-                        >
-                            LLM Application Framework
-                        </h3>
-                        <p class="text-gray-300 mb-4">
-                            Developing tools and frameworks for building applications on
-                            top of large language models, with a focus on reliability,
-                            cost optimization, and production-ready features.
-                        </p>
-                        <div class="flex space-x-3 text-sm mb-2">
-                            <span
-                                class="px-2 py-1 bg-space-700 rounded text-accent-blue"
-                                >Python</span
-                            >
-                            <span class="px-2 py-1 bg-space-700 rounded text-yellow-400"
-                                >AI</span
-                            >
-                            <span class="px-2 py-1 bg-space-700 rounded text-green-400"
-                                >LLMs</span
-                            >
-                        </div>
-                        <p class="text-gray-400 italic">Coming soon</p>
+                <div class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group relative">
+                    <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">
+                        LLM Application Framework
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Developing tools and frameworks for building applications on
+                        top of large language models, with a focus on reliability,
+                        cost optimization, and production-ready features.
+                    </p>
+                    <div class="flex space-x-3 text-sm mb-2">
+                        <span class="px-2 py-1 bg-space-500 rounded text-accent-blue">Python</span>
+                        <span class="px-2 py-1 bg-space-500 rounded text-yellow-400">AI</span>
+                        <span class="px-2 py-1 bg-space-500 rounded text-green-400">LLMs</span>
                     </div>
+                    <p class="text-gray-400 italic">Coming soon</p>
                 </div>
             </div>
+        </section>
 
-            <div
-                class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mt-8"
-            >
-                <h2 class="text-2xl font-semibold text-lime-400 mb-4">
-                    Pinned Repositories
-                </h2>
-
-                <GithubRepos client:load username="nijaru" limit={6} />
-            </div>
-        </div>
+        <!-- Pinned Repositories Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
+                <span class="text-lime-400">Pinned Repositories</span>
+            </h2>
+            <GithubRepos client:load username="nijaru" limit={6} />
+        </section>
 
         <div class="text-center">
             <a

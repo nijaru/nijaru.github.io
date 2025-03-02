@@ -4,10 +4,11 @@ import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
 import BlogPostPreview from "../components/BlogPostPreview";
 import GithubRepos from "../components/GithubRepos";
+import ArrowLink from "../components/ArrowLink";
 
-// Get recent blog posts - simplified approach with proper typing
-// Since we only have one blog post, we'll use a direct approach to avoid TypeScript errors
-const recentPosts = [
+// Get all blog posts and sort by date (newest first)
+// This will make the home page always show the latest post
+const allPosts = [
     {
         url: "/blog/welcome-to-my-new-site",
         title: "Rebuilding My Personal Site with Solid.js and Astro",
@@ -17,7 +18,14 @@ const recentPosts = [
             "My experience rebuilding my personal website using Solid.js and Astro with a space theme.",
         tags: ["Solid.js", "Astro", "Web Dev"],
     },
+    // When you add more posts, they'll automatically be included and sorted here
 ];
+
+// Sort posts by date (newest first)
+allPosts.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+
+// Get the most recent post (or undefined if no posts)
+const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 ---
 
 <Layout title="Nick Russo - Software Developer">
@@ -49,7 +57,7 @@ const recentPosts = [
                 <span class="text-lime-400">About Me</span>
             </h2>
             <div
-                class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-4"
+                class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-4"
             >
                 <p class="text-gray-300 mb-4">
                     I'm a software developer specializing in backend systems and
@@ -66,25 +74,13 @@ const recentPosts = [
                 </p>
             </div>
             <div class="mt-4 text-right">
-                <a
-                    href="/about"
-                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                <ArrowLink 
+                    href="/about" 
+                    client:load 
+                    ariaLabel="Navigate to about page"
                 >
                     Learn more about me
-                    <svg
-                        class="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
+                </ArrowLink>
             </div>
         </section>
 
@@ -93,27 +89,23 @@ const recentPosts = [
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">Recent Post</span>
             </h2>
-            {recentPosts.map((post) => <BlogPostPreview post={post} />)}
+            
+            {mostRecentPost ? (
+                <BlogPostPreview post={mostRecentPost} />
+            ) : (
+                <div class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 text-center py-6">
+                    <p class="text-gray-300">No blog posts available yet. Check back soon!</p>
+                </div>
+            )}
+            
             <div class="mt-4 text-right">
-                <a
-                    href="/blog"
-                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                <ArrowLink 
+                    href="/blog" 
+                    client:load 
+                    ariaLabel="Navigate to blog page"
                 >
                     View all posts
-                    <svg
-                        class="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
+                </ArrowLink>
             </div>
         </section>
 
@@ -124,25 +116,13 @@ const recentPosts = [
             </h2>
             <GithubRepos client:load username="nijaru" limit={2} />
             <div class="mt-4 text-right">
-                <a
-                    href="/projects"
-                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                <ArrowLink 
+                    href="/projects" 
+                    client:load
+                    ariaLabel="Navigate to projects page"
                 >
                     View all projects
-                    <svg
-                        class="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
+                </ArrowLink>
             </div>
         </section>
     </div>

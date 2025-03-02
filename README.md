@@ -6,6 +6,12 @@ My personal website built with Astro and Solid.js, featuring a space-themed desi
 
 - `src/` - Source code
   - `components/` - Solid.js components
+    - `ArrowLink.jsx` - Reusable arrow link component
+    - `BlogPostPreview.jsx` - Blog post card component
+    - `GithubRepos.jsx` - GitHub repositories display
+    - `NavBar.jsx` - Navigation bar with mobile menu
+    - `TextGlow.jsx` - Text with glow animation effect
+    - And more...
   - `layouts/` - Page layouts
   - `pages/` - Site pages
 - `public/` - Static assets
@@ -17,7 +23,9 @@ My personal website built with Astro and Solid.js, featuring a space-themed desi
 - Responsive layout with Tailwind CSS
 - Blog section
 - Project showcase
-- Accessible design
+- Enhanced accessibility with ARIA attributes
+- Keyboard navigation support
+- Proper component cleanup for SPA navigation
 
 ## Design Elements
 
@@ -84,6 +92,8 @@ Contains information about:
 - Add more interactive components
 - Create dedicated project pages
 - Implement dark/light mode toggle
+- Continue improving accessibility features
+- Add e2e testing with Playwright
 
 ## License
 
