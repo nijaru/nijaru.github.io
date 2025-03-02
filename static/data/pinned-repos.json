@@ -1,29 +1,38 @@
 [
   {
-    "name": "project-one",
-    "description": "A cool project with interesting features",
-    "html_url": "https://github.com/nijaru/project-one",
-    "homepage": "https://project-one.example.com",
-    "language": "JavaScript",
-    "stargazers_count": 12,
-    "forks_count": 3
-  },
-  {
-    "name": "awesome-tool",
-    "description": "Command line utility for productivity",
-    "html_url": "https://github.com/nijaru/awesome-tool",
+    "name": "yt-text",
+    "description": "Download YouTube audio and convert it to text using yt-dlp and OpenAI Whisper",
+    "html_url": "https://github.com/nijaru/yt-text",
     "homepage": null,
-    "language": "Rust",
-    "stargazers_count": 45,
-    "forks_count": 8
+    "language": "Go",
+    "stargazers_count": 0,
+    "forks_count": 1
   },
   {
-    "name": "data-visualizer",
-    "description": "Interactive visualization library",
-    "html_url": "https://github.com/nijaru/data-visualizer",
-    "homepage": "https://docs.example.com/visualizer",
-    "language": "TypeScript",
-    "stargazers_count": 27,
-    "forks_count": 5
+    "name": "nijaru.github.io",
+    "description": "personal website",
+    "html_url": "https://github.com/nijaru/nijaru.github.io",
+    "homepage": "https://nijaru.com",
+    "language": "Astro",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  {
+    "name": "cs-resources",
+    "description": "Resources for Computer Science & Interview Prep",
+    "html_url": "https://github.com/nijaru/cs-resources",
+    "homepage": "",
+    "language": null,
+    "stargazers_count": 19,
+    "forks_count": 4
+  },
+  {
+    "name": "dotfiles",
+    "description": "My dotfiles",
+    "html_url": "https://github.com/nijaru/dotfiles",
+    "homepage": "",
+    "language": "Shell",
+    "stargazers_count": 0,
+    "forks_count": 0
   }
 ]
