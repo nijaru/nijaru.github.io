@@ -3,18 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
 import BlogPostPreview from "../components/BlogPostPreview";
+import GithubRepos from "../components/GithubRepos";
 
 // Get recent blog posts - simplified approach with proper typing
 // Since we only have one blog post, we'll use a direct approach to avoid TypeScript errors
 const recentPosts = [
-  {
-    url: '/blog/welcome-to-my-new-site',
-    title: 'Rebuilding My Personal Site with Solid.js and Astro',
-    pubDate: new Date('2025-03-01'),
-    formattedDate: 'March 1, 2025',
-    excerpt: 'My experience rebuilding my personal website using Solid.js and Astro with a space theme.',
-    tags: ['Solid.js', 'Astro', 'Web Dev']
-  }
+    {
+        url: "/blog/welcome-to-my-new-site",
+        title: "Rebuilding My Personal Site with Solid.js and Astro",
+        pubDate: new Date("2024-03-01"),
+        formattedDate: "March 1, 2024",
+        excerpt:
+            "My experience rebuilding my personal website using Solid.js and Astro with a space theme.",
+        tags: ["Solid.js", "Astro", "Web Dev"],
+    },
 ];
 ---
 
@@ -39,39 +41,6 @@ const recentPosts = [
                     <span class="text-lime-400">Software Developer</span>
                 </TextGlow>
             </h2>
-
-            <div
-                class="bg-space-800/60 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-space-700 max-w-2xl mx-auto shadow-xl mb-8"
-            >
-                <p class="text-lg text-gray-300 leading-relaxed mb-4">
-                    I'm a developer specializing in backend systems from the San
-                    Francisco Bay Area, focused on creating efficient and reliable
-                    software solutions.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    My work spans APIs, distributed systems, database design, and AI,
-                    with experience in Python, Go, and other languages. Currently
-                    exploring Solid.js, Mojo, and applications of AI. Starting a new pre
-                    seed post failed startup every day in <span
-                        class="text-lime-300 font-medium">Flounder mode™.</span
-                    >
-                </p>
-            </div>
-
-            <div class="flex justify-center space-x-4">
-                <a
-                    href="/about"
-                    class="px-6 py-3 bg-lime-500 hover:bg-lime-400 text-space-900 font-bold rounded-full transition-all duration-300 transform hover:scale-105"
-                >
-                    About Me
-                </a>
-                <a
-                    href="/blog"
-                    class="px-6 py-3 bg-lime-500 hover:bg-lime-400 text-space-900 font-bold rounded-full transition-all duration-300 transform hover:scale-105"
-                >
-                    Blog
-                </a>
-            </div>
         </div>
 
         <!-- About Me Section -->
@@ -79,38 +48,70 @@ const recentPosts = [
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">About Me</span>
             </h2>
-            <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-4">
+            <div
+                class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-4"
+            >
                 <p class="text-gray-300 mb-4">
-                    I'm a software developer specializing in backend systems and distributed applications.
-                    With experience in Python, Go, and various cloud technologies, I build reliable and 
-                    efficient solutions for complex problems.
+                    I'm a software developer specializing in backend systems and
+                    distributed applications. With experience in Python, Go, and various
+                    cloud technologies, I build reliable and efficient solutions for
+                    complex problems.
                 </p>
                 <p class="text-gray-300">
-                    Currently exploring AI applications, database innovations, and modern frontend frameworks 
-                    like Solid.js and Astro.
+                    Currently exploring AI applications, database innovations, and
+                    modern frontend frameworks like Solid.js and Astro. Starting a new
+                    pre seed post failed startup every day in <span
+                        class="text-lime-300 font-medium">Flounder mode™.</span
+                    >
                 </p>
             </div>
             <div class="mt-4 text-right">
-                <a href="/about" class="text-accent-blue hover:text-accent-purple inline-flex items-center">
+                <a
+                    href="/about"
+                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                >
                     Learn more about me
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    <svg
+                        class="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
             </div>
         </section>
-        
+
         <!-- Recent Blog Post -->
         <section class="mb-12">
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">Recent Post</span>
             </h2>
-            {recentPosts.map(post => <BlogPostPreview post={post} />)}
+            {recentPosts.map((post) => <BlogPostPreview post={post} />)}
             <div class="mt-4 text-right">
-                <a href="/blog" class="text-accent-blue hover:text-accent-purple inline-flex items-center">
+                <a
+                    href="/blog"
+                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                >
                     View all posts
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    <svg
+                        class="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
             </div>
@@ -121,60 +122,25 @@ const recentPosts = [
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">Pinned Projects</span>
             </h2>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Pinned Repo 1 -->
-                <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group">
-                  <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">yt-text</h3>
-                  <p class="text-gray-300 mb-4">A tool for transcribing YouTube audio content, making videos more accessible and searchable.</p>
-                  <div class="flex space-x-3 text-sm mb-4">
-                    <span class="px-2 py-1 bg-space-700 rounded text-accent-blue">Python</span>
-                    <span class="px-2 py-1 bg-space-700 rounded text-yellow-400">
-                      <span class="mr-1">★</span>
-                      38
-                    </span>
-                  </div>
-                  <a 
-                    href="https://github.com/nijaru/yt-text" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center text-accent-blue hover:text-accent-purple"
-                  >
-                    View on GitHub
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                  </a>
-                </div>
-                
-                <!-- Pinned Repo 2 -->
-                <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group">
-                  <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">dotfiles</h3>
-                  <p class="text-gray-300 mb-4">My personal configuration files for development environment setup with Neovim, tmux, and shell utilities.</p>
-                  <div class="flex space-x-3 text-sm mb-4">
-                    <span class="px-2 py-1 bg-space-700 rounded text-accent-blue">Shell</span>
-                    <span class="px-2 py-1 bg-space-700 rounded text-yellow-400">
-                      <span class="mr-1">★</span>
-                      12
-                    </span>
-                  </div>
-                  <a 
-                    href="https://github.com/nijaru/dotfiles" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center text-accent-blue hover:text-accent-purple"
-                  >
-                    View on GitHub
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                  </a>
-                </div>
-            </div>
+            <GithubRepos client:visible username="nijaru" limit={2} pinned={true} />
             <div class="mt-4 text-right">
-                <a href="/projects" class="text-accent-blue hover:text-accent-purple inline-flex items-center">
+                <a
+                    href="/projects"
+                    class="text-accent-blue hover:text-accent-purple inline-flex items-center"
+                >
                     View all projects
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    <svg
+                        class="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
             </div>

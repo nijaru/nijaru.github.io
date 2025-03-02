@@ -4,54 +4,7 @@ export default function GithubRepos({ username, limit, pinned = false }) {
   // Fetch repositories from GitHub API
   const [repos] = createResource(async () => {
     try {
-      // Try different APIs for pinned repositories, with fallbacks
-      if (pinned) {
-        // First attempt - use a public API that returns pinned repos
-        try {
-          const response = await fetch(`https://gh-pinned-repos-api.vercel.app/api/user/${username}`);
-          if (response.ok) {
-            const pinnedData = await response.json();
-            if (pinnedData && pinnedData.length > 0) {
-              // Apply limit if requested
-              const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
-              return limitedData.map(repo => ({
-                name: repo.repo,
-                description: repo.description,
-                html_url: repo.link,
-                language: repo.language,
-                stargazers_count: repo.stars,
-                owner: { login: username }
-              }));
-            }
-          }
-        } catch (error) {
-          console.error('Error fetching pinned repos from primary API:', error);
-        }
-
-        // Second attempt - alternative API
-        try {
-          const response = await fetch(`https://gh-pinned-repos.egoist.dev/?username=${username}`);
-          if (response.ok) {
-            const pinnedData = await response.json();
-            if (pinnedData && pinnedData.length > 0) {
-              // Apply limit if requested
-              const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
-              return limitedData.map(repo => ({
-                name: repo.repo,
-                description: repo.description,
-                html_url: `https://github.com/${repo.owner}/${repo.repo}`,
-                language: repo.language,
-                stargazers_count: repo.stars,
-                owner: { login: repo.owner }
-              }));
-            }
-          }
-        } catch (error) {
-          console.error('Error fetching pinned repos from secondary API:', error);
-        }
-      }
-      
-      // Regular repository fetch as final fallback
+      // Always start by fetching all repositories from GitHub API
       const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
       if (!response.ok) throw new Error('Failed to fetch repositories');
       
@@ -60,7 +13,61 @@ export default function GithubRepos({ username, limit, pinned = false }) {
       // Sort by stars (descending)
       data.sort((a, b) => b.stargazers_count - a.stargazers_count);
       
-      // Limit the number of repos
+      // If pinned is not requested, just return limited number of repos
+      if (!pinned) {
+        if (limit && limit > 0) {
+          data = data.slice(0, limit);
+        }
+        return data;
+      }
+      
+      // For pinned repos, try APIs first
+      try {
+        // First attempt - use a public API that returns pinned repos
+        const pinnedResponse = await fetch(`https://gh-pinned-repos-api.vercel.app/api/user/${username}`);
+        if (pinnedResponse.ok) {
+          const pinnedData = await pinnedResponse.json();
+          if (pinnedData && pinnedData.length > 0) {
+            // Apply limit if requested
+            const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
+            return limitedData.map(repo => ({
+              name: repo.repo,
+              description: repo.description,
+              html_url: repo.link,
+              language: repo.language,
+              stargazers_count: repo.stars,
+              owner: { login: username }
+            }));
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching pinned repos from primary API:', error);
+      }
+
+      try {
+        // Second attempt - alternative API
+        const pinnedResponse = await fetch(`https://gh-pinned-repos.egoist.dev/?username=${username}`);
+        if (pinnedResponse.ok) {
+          const pinnedData = await pinnedResponse.json();
+          if (pinnedData && pinnedData.length > 0) {
+            // Apply limit if requested
+            const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
+            return limitedData.map(repo => ({
+              name: repo.repo,
+              description: repo.description,
+              html_url: `https://github.com/${repo.owner}/${repo.repo}`,
+              language: repo.language,
+              stargazers_count: repo.stars,
+              owner: { login: repo.owner }
+            }));
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching pinned repos from secondary API:', error);
+      }
+      
+      // If we couldn't get pinned repos from APIs, fall back to using top starred repos
+      // This ensures we always show something
       if (limit && limit > 0) {
         data = data.slice(0, limit);
       }
@@ -72,11 +79,24 @@ export default function GithubRepos({ username, limit, pinned = false }) {
     }
   });
 
+  // Determine grid column count based on potential number of repos
+  const getGridClass = (repoCount) => {
+    // For homepage (max 2)
+    if (limit === 2) return "grid gap-4 md:grid-cols-2";
+    
+    // For projects page with variable number of repos (max 6)
+    if (repoCount <= 2) return "grid gap-4 md:grid-cols-2";
+    if (repoCount <= 6) return "grid gap-4 md:grid-cols-2 lg:grid-cols-3";
+    
+    // Default
+    return "grid gap-4 md:grid-cols-2 lg:grid-cols-3";
+  };
+
   return (
     <div class="w-full">
       <Show when={!repos.loading} fallback={<div class="text-center py-4">Loading repositories...</div>}>
         <Show when={repos()?.length > 0} fallback={<div class="text-center py-4">No repositories found</div>}>
-          <div class="grid gap-4 md:grid-cols-2">
+          <div class={getGridClass(repos().length)}>
             <For each={repos()}>
               {(repo) => (
                 <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group">
