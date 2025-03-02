@@ -51,14 +51,18 @@ export default function GithubRepos({ username, limit }) {
     
     // For projects page with variable number of repos (max 6)
     if (repoCount <= 2) return "grid gap-4 md:grid-cols-2";
-    if (repoCount <= 6) return "grid gap-4 md:grid-cols-2 lg:grid-cols-3";
+    if (repoCount === 3) return "grid gap-6 md:grid-cols-3 [&>*]:md:mx-auto [&>*]:md:max-w-md lg:grid-cols-3";
+    if (repoCount === 4) return "grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2";
+    if (repoCount === 5) return "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3";
+    if (repoCount === 6) return "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3";
     
     // Default
-    return "grid gap-4 md:grid-cols-2 lg:grid-cols-3";
+    return "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3";
   };
 
   return (
     <div class="w-full">
+      <div class="text-sm text-center text-gray-400 mb-4">These repositories are automatically fetched by a scheduled GitHub Action</div>
       <Show when={!isLoading()} fallback={<div class="text-center py-4">Loading repositories...</div>}>
         <Show when={errorMessage()} fallback={null}>
           <div class="text-center py-4 text-red-400">{errorMessage()}</div>
