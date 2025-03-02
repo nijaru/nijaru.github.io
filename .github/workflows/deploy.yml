@@ -11,16 +11,19 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Full git history for better versioning
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,17 +41,14 @@ jobs:
       - name: Copy CNAME file
         run: cp CNAME dist/ || echo "No CNAME file found"
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist
           path: dist
-          retention-days: 5
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean: true
-          commit-message: "Deploy website [skip ci]"
+        id: deployment
+        uses: actions/deploy-pages@v4
