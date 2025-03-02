@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import TechSkills from "../components/TechSkills";
 import SocialLinks from "../components/SocialLinks";
 import ReflectionText from "../components/ReflectionText";
+import SectionHeading from "../components/SectionHeading";
+import TextGlowSpan from "../components/TextGlowSpan";
 ---
 
 <Layout title="About - Nick Russo">
@@ -19,16 +21,12 @@ import ReflectionText from "../components/ReflectionText";
         <div class="card-container mb-8">
             <div class="space-y-8">
                 <div>
-                    <h2 class="text-xl font-semibold text-lime-400 mb-4 text-left">
-                        Technical Background
-                    </h2>
+                    <SectionHeading client:load withBorder={false}>Technical Background</SectionHeading>
                     <TechSkills client:visible />
                 </div>
 
                 <div>
-                    <h2 class="text-xl font-semibold text-lime-400 mb-4 text-left">
-                        Areas of Interest
-                    </h2>
+                    <SectionHeading client:load withBorder={false}>Areas of Interest</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
                         <li>Backend Development & API Design</li>
                         <li>Distributed Systems & Networking</li>
@@ -38,9 +36,7 @@ import ReflectionText from "../components/ReflectionText";
                 </div>
 
                 <div>
-                    <h2 class="text-xl font-semibold text-lime-400 mb-4 text-left">
-                        What I'm Up To
-                    </h2>
+                    <SectionHeading client:load withBorder={false}>What I'm Up To</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
                         <li>
                             Exploring new programming languages, with a current focus on

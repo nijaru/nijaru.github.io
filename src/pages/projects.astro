@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import GithubRepos from "../components/GithubRepos";
+import SectionHeading from "../components/SectionHeading";
+import TextGlowSpan from "../components/TextGlowSpan";
 ---
 
 <Layout title="Projects - Nick Russo">
@@ -17,9 +19,7 @@ import GithubRepos from "../components/GithubRepos";
 
         <!-- Current Projects Section -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">Current Projects</span>
-            </h2>
+            <SectionHeading client:load>Current Projects</SectionHeading>
             
             <div class="grid gap-4 md:grid-cols-2">
                 <div class="card-container hover:border-lime-500 group relative">
@@ -60,9 +60,7 @@ import GithubRepos from "../components/GithubRepos";
 
         <!-- Pinned Repositories Section -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">Pinned Repositories</span>
-            </h2>
+            <SectionHeading client:load>Pinned Repositories</SectionHeading>
             <GithubRepos client:load username="nijaru" limit={6} />
         </section>
 

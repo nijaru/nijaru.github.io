@@ -1,0 +1,31 @@
+---
+import TextGlowSpan from "./TextGlowSpan";
+
+interface Props {
+  level?: 2 | 3 | 4 | 5 | 6;
+  as?: string;
+}
+
+const { level = 2, as } = Astro.props;
+const HeadingTag = as || `h${level}`;
+---
+
+<HeadingTag class={`heading-level-${level}`}>
+  <TextGlowSpan client:load>
+    <slot />
+  </TextGlowSpan>
+</HeadingTag>
+
+<style>
+  .heading-level-2 {
+    @apply text-2xl font-semibold mt-6 mb-4;
+  }
+  
+  .heading-level-3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+  
+  .heading-level-4 {
+    @apply text-lg font-semibold mt-5 mb-2;
+  }
+</style>

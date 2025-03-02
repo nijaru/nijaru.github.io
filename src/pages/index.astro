@@ -5,41 +5,36 @@ import TextGlow from "../components/TextGlow";
 import BlogPostPreview from "../components/BlogPostPreview";
 import GithubRepos from "../components/GithubRepos";
 import ArrowLink from "../components/ArrowLink";
+import SectionHeading from "../components/SectionHeading";
+import { getCollection } from 'astro:content';
 
-// Get all blog posts
-const blogEntries = await Astro.glob('./blog/*.astro');
+// Get all blog posts from the collection
+const blogEntries = await getCollection('blog', ({ data }) => {
+  // Filter out draft posts in production
+  return import.meta.env.PROD ? !data.draft : true;
+});
 
-// Extract post data from each blog post file, excluding the index file
+// Format and prepare post data
 const allPosts = blogEntries
-  .filter(post => post.url && !post.url.includes('index'))
   .map(post => {
-    // Direct import approach for variables declared in the .astro file
-    const sourcePath = post.file;
-    const url = post.url || '';
+    // Format the date for display
+    const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
     
-    // For the demonstration, we'll hardcode the post data since we know there's
-    // only one blog post currently. In a more dynamic scenario, we'd parse the content.
-    // As the site grows, using a proper content collection with frontmatter would be ideal.
-    
-    /* 
-     * TODO: Future improvements:
-     * 1. Convert blog posts to use Astro Content Collections with proper frontmatter
-     *    instead of variable declarations: https://docs.astro.build/en/guides/content-collections/
-     * 2. Use getCollection() API to fetch posts instead of Astro.glob()
-     * 3. Implement proper pagination as blog posts grow
-     */
     return {
-      url,
-      title: "Rebuilding My Personal Site with Claude Code, Solid.js, and Astro",
-      pubDate: new Date("2024-03-01T12:00:00"),
-      formattedDate: "March 1, 2024",
-      excerpt: "My experience using Claude Code to rebuild my personal website with Solid.js and Astro featuring a space theme.",
-      tags: ["Claude Code", "AI", "Solid.js", "Astro", "Web Dev", "Frontend"]
+      url: `/blog/${post.slug}`,
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      formattedDate: formattedDate,
+      excerpt: post.data.description,
+      tags: post.data.tags
     };
-  });
-
-// Sort posts by date (newest first)
-allPosts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+  })
+  // Sort posts by date (newest first)
+  .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
 // Get the most recent post (or undefined if no posts)
 const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
@@ -70,9 +65,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- About Me Section -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">About Me</span>
-            </h2>
+            <SectionHeading client:load>About Me</SectionHeading>
             <div class="card-container mb-4">
                 <p class="text-gray-300 mb-4">
                     I'm a software developer specializing in backend systems and
@@ -97,9 +90,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- Recent Blog Post -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">Recent Post</span>
-            </h2>
+            <SectionHeading client:load>Recent Post</SectionHeading>
 
             {
                 mostRecentPost ? (
@@ -122,9 +113,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- Featured GitHub Repos -->
         <section>
-            <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">Pinned Repositories</span>
-            </h2>
+            <SectionHeading client:load>Pinned Repositories</SectionHeading>
             <GithubRepos client:load username="nijaru" limit={2} />
             <div class="mt-4 text-right">
                 <ArrowLink
