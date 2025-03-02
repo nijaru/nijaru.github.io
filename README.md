@@ -53,8 +53,11 @@ This site displays pinned GitHub repositories using a secure GitHub Action workf
 To enable the pinned repository feature:
 
 1. Create a GitHub Personal Access Token with the `read:user` and `repo` scopes
-2. Add the token to your repository secrets with the name `PINNED_FETCH_TOKEN`
-3. The GitHub Action will run automatically on pushes to main and once daily
+2. Add the token to your repository secrets with the name `PINNED_FETCH_TOKEN` 
+3. Make sure directories exist: `mkdir -p public/data static/data`
+4. The GitHub Action will run automatically on pushes to main and once daily
+5. For testing without a token: `node scripts/test-fetch.js`
+6. For testing with a token: `GITHUB_TOKEN=your_token node scripts/fetch-pinned-repos.js`
 
 ## Bio Page
 

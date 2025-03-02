@@ -1,20 +1,29 @@
 [
   {
-    "name": "sample-repo-1",
-    "description": "This is a placeholder until the GitHub Action runs",
-    "html_url": "https://github.com/nijaru/sample-repo-1",
-    "homepage": null,
+    "name": "project-one",
+    "description": "A cool project with interesting features",
+    "html_url": "https://github.com/nijaru/project-one",
+    "homepage": "https://project-one.example.com",
     "language": "JavaScript",
-    "stargazers_count": 5,
-    "forks_count": 2
+    "stargazers_count": 12,
+    "forks_count": 3
   },
   {
-    "name": "sample-repo-2",
-    "description": "Another placeholder repository",
-    "html_url": "https://github.com/nijaru/sample-repo-2",
+    "name": "awesome-tool",
+    "description": "Command line utility for productivity",
+    "html_url": "https://github.com/nijaru/awesome-tool",
     "homepage": null,
+    "language": "Rust",
+    "stargazers_count": 45,
+    "forks_count": 8
+  },
+  {
+    "name": "data-visualizer",
+    "description": "Interactive visualization library",
+    "html_url": "https://github.com/nijaru/data-visualizer",
+    "homepage": "https://docs.example.com/visualizer",
     "language": "TypeScript",
-    "stargazers_count": 3,
-    "forks_count": 0
+    "stargazers_count": 27,
+    "forks_count": 5
   }
 ]
