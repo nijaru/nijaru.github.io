@@ -11,12 +11,12 @@ import ArrowLink from "../components/ArrowLink";
 const allPosts = [
     {
         url: "/blog/welcome-to-my-new-site",
-        title: "Rebuilding My Personal Site with Solid.js and Astro",
+        title: "Rebuilding My Personal Site with Claude Code, Solid.js, and Astro",
         pubDate: new Date("2024-03-01"),
         formattedDate: "March 1, 2024",
         excerpt:
-            "My experience rebuilding my personal website using Solid.js and Astro with a space theme.",
-        tags: ["Solid.js", "Astro", "Web Dev"],
+            "My experience using Claude Code to rebuild my personal website with Solid.js and Astro featuring a space theme.",
+        tags: ["Claude Code", "AI", "Solid.js", "Astro", "Web Dev"],
     },
     // When you add more posts, they'll automatically be included and sorted here
 ];
@@ -56,9 +56,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">About Me</span>
             </h2>
-            <div
-                class="card-container mb-4"
-            >
+            <div class="card-container mb-4">
                 <p class="text-gray-300 mb-4">
                     I'm a software developer specializing in backend systems and
                     distributed applications. With experience in Python, Go, and various
@@ -74,11 +72,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
                 </p>
             </div>
             <div class="mt-4 text-right">
-                <ArrowLink 
-                    href="/about" 
-                    client:load 
-                    ariaLabel="Navigate to about page"
-                >
+                <ArrowLink href="/about" client:load ariaLabel="Navigate to about page">
                     Learn more about me
                 </ArrowLink>
             </div>
@@ -89,21 +83,21 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
                 <span class="text-lime-400">Recent Post</span>
             </h2>
-            
-            {mostRecentPost ? (
-                <BlogPostPreview post={mostRecentPost} />
-            ) : (
-                <div class="card-container text-center py-6">
-                    <p class="text-gray-300">No blog posts available yet. Check back soon!</p>
-                </div>
-            )}
-            
+
+            {
+                mostRecentPost ? (
+                    <BlogPostPreview post={mostRecentPost} />
+                ) : (
+                    <div class="card-container text-center py-6">
+                        <p class="text-gray-300">
+                            No blog posts available yet. Check back soon!
+                        </p>
+                    </div>
+                )
+            }
+
             <div class="mt-4 text-right">
-                <ArrowLink 
-                    href="/blog" 
-                    client:load 
-                    ariaLabel="Navigate to blog page"
-                >
+                <ArrowLink href="/blog" client:load ariaLabel="Navigate to blog page">
                     View all posts
                 </ArrowLink>
             </div>
@@ -116,8 +110,8 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
             </h2>
             <GithubRepos client:load username="nijaru" limit={2} />
             <div class="mt-4 text-right">
-                <ArrowLink 
-                    href="/projects" 
+                <ArrowLink
+                    href="/projects"
                     client:load
                     ariaLabel="Navigate to projects page"
                 >

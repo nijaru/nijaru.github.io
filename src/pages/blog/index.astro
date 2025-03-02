@@ -1,45 +1,48 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ReflectionText from '../../components/ReflectionText';
-import BlogPostPreview from '../../components/BlogPostPreview';
+import Layout from "../../layouts/Layout.astro";
+import ReflectionText from "../../components/ReflectionText";
+import BlogPostPreview from "../../components/BlogPostPreview";
 
 // Get all blog posts - simplified approach with proper typing
 // Since we only have one blog post, we'll use a direct approach to avoid TypeScript errors
 const posts = [
-  {
-    url: '/blog/welcome-to-my-new-site',
-    title: 'Rebuilding My Personal Site with Solid.js and Astro',
-    pubDate: new Date('2024-03-01'),
-    formattedDate: 'March 1, 2024',
-    excerpt: 'My experience rebuilding my personal website using Solid.js and Astro with a space theme.',
-    tags: ['Solid.js', 'Astro', 'Web Dev']
-  }
+    {
+        url: "/blog/welcome-to-my-new-site",
+        title: "Rebuilding My Personal Site with Claude Code, Solid.js, and Astro",
+        pubDate: new Date("2024-03-01"),
+        formattedDate: "March 1, 2024",
+        excerpt:
+            "My experience using Claude Code to rebuild my personal website with Solid.js and Astro featuring a space theme.",
+        tags: ["Claude Code", "AI", "Solid.js", "Astro", "Web Dev"],
+    },
 ];
 ---
 
 <Layout title="Blog - Nick Russo">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="text-4xl font-bold mb-2 text-center">
-      <span class="text-accent-purple">
-        <ReflectionText client:load>My</ReflectionText>
-      </span>
-      <span class="text-white">
-        <ReflectionText client:load>Blog</ReflectionText>
-      </span>
-    </h1>
-    
-    <p class="text-center text-gray-400 mb-12">Thoughts on software development, programming languages, and more</p>
-    
-    <div class="space-y-8">
-      {posts.map((post) => (
-        <BlogPostPreview post={post} />
-      ))}
-      
-      {posts.length === 0 && (
-        <div class="text-center py-12 text-gray-500">
-          <p>No posts found. Check back soon!</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-4xl font-bold mb-2 text-center">
+            <span class="text-accent-purple">
+                <ReflectionText client:load>My</ReflectionText>
+            </span>
+            <span class="text-white">
+                <ReflectionText client:load>Blog</ReflectionText>
+            </span>
+        </h1>
+
+        <p class="text-center text-gray-400 mb-12">
+            Thoughts on software development, programming languages, and more
+        </p>
+
+        <div class="space-y-8">
+            {posts.map((post) => <BlogPostPreview post={post} />)}
+
+            {
+                posts.length === 0 && (
+                    <div class="text-center py-12 text-gray-500">
+                        <p>No posts found. Check back soon!</p>
+                    </div>
+                )
+            }
         </div>
-      )}
     </div>
-  </div>
 </Layout>
