@@ -1,106 +1,190 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ReflectionText from '../../components/ReflectionText';
-import TextGlow from '../../components/TextGlow';
+import Layout from "../../layouts/Layout.astro";
+import ReflectionText from "../../components/ReflectionText";
+import TextGlow from "../../components/TextGlow";
 ---
 
 <Layout title="Rebuilding My Personal Site with Solid.js and Astro - Nick Russo">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <article class="prose prose-invert prose-lg max-w-none">
-      <h1 class="text-4xl font-bold mb-2">
-        <ReflectionText client:load>
-          <span class="text-lime-400">Rebuilding My Personal Site with Solid.js and Astro</span>
-        </ReflectionText>
-      </h1>
-      
-      <time datetime="2025-03-01" class="text-sm text-gray-400 mb-8 block">March 1, 2025</time>
-      
-      <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-8">
-        <p class="text-gray-200 leading-relaxed">
-          I've been wanting to rewrite my website and start learning a new frontend framework, and with the recent release of Claude Code, I thought it'd be the perfect opportunity. The result is a complete rebuild using Solid.js and Astro with a space theme.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-8 mb-4">
-          <TextGlow client:load>
-            <span class="text-lime-400">Why the Change?</span>
-          </TextGlow>
-        </h2>
-        <p class="text-gray-200 leading-relaxed">
-          My previous site was built with Hugo, which served me well for quite some time. Hugo is great for static sites, and I had no real complaints about it. I've been keeping tabs on newer frameworks, though, and this rebuild gave me the perfect excuse to finally get my hands dirty with them.
-        </p>
-        <p class="text-gray-200 leading-relaxed mt-4">
-          For the design, I went with a space theme - dark background with lime green accents. I thought it would look cool and wanted to see if Claude could implement it. This was a good test case for the AI pair programming tool while giving my site a fresh look. Let me break down the tech stack I used.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-8 mb-4">
-          <TextGlow client:load>
-            <span class="text-lime-400">Technical Implementation</span>
-          </TextGlow>
-        </h2>
-        <p class="text-gray-200 leading-relaxed">
-          I built the new site with this combination of tools:
-        </p>
-        <ul class="list-disc list-inside text-gray-200 space-y-2 my-4 ml-4">
-          <li><span class="text-accent-blue">Solid.js</span> for reactive components and interactions</li>
-          <li><span class="text-accent-purple">Astro</span> for static site generation and performance</li>
-          <li><span class="text-lime-400">Tailwind CSS</span> for styling</li>
-        </ul>
-        <p class="text-gray-200 leading-relaxed">
-          This setup gives me the speed and responsiveness I wanted, plus it's been fun to work with. Solid.js handles the interactive elements with its reactive system, while Astro takes care of generating optimized static pages. I'm still getting up to speed with Solid.js, but I'm already finding it more intuitive than React for my needs.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-8 mb-4">
-          <TextGlow client:load>
-            <span class="text-lime-400">Working with Claude Code</span>
-          </TextGlow>
-        </h2>
-        <p class="text-gray-200 leading-relaxed">
-          What made this rebuild interesting was using Claude Code as an AI pair programmer. It helped me iterate much more quickly than I might have otherwise. I was surprised by how well it understood what I was trying to accomplish, especially with the visual elements of the space theme.
-        </p>
-        <p class="text-gray-200 leading-relaxed mt-4">
-          In the past, I've used LLMs mainly to look up documentation and help design the architecture of my apps, but rarely for writing actual code. Claude Code flips this pattern - I can describe what I want built, and it handles the implementation details. It's a different workflow that's proven surprisingly effective for certain tasks.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-8 mb-4">
-          <TextGlow client:load>
-            <span class="text-lime-400">What I'm Up To</span>
-          </TextGlow>
-        </h2>
-        <p class="text-gray-200 leading-relaxed">
-          These days I'm busy coding on new projects and researching ways to apply AI to development workflows. I'm not in founder mode right now - I'm in what I call "flounder mode." It's when you bounce between different project ideas, trying things out to see what sticks. You explore concepts without committing fully to any single path. It's a productive kind of chaos that often leads to unexpected insights.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-8 mb-4">
-          <TextGlow client:load>
-            <span class="text-lime-400">What's Next?</span>
-          </TextGlow>
-        </h2>
-        <p class="text-gray-200 leading-relaxed">
-          I plan to use this blog to share thoughts on:
-        </p>
-        <ul class="list-disc list-inside text-gray-200 space-y-2 my-4 ml-4">
-          <li>Backend development insights</li>
-          <li>Computer science topics, distributed systems, and databases</li>
-          <li>Learning new programming languages like Mojo, Rust, and Zig</li>
-          <li>Updates on projects like yt-text and others</li>
-        </ul>
-        
-        <p class="text-gray-200 leading-relaxed mt-8">
-          Thanks for stopping by. If you want to connect, you can find me on GitHub, X, Bluesky, or LinkedIn.
-        </p>
-        <p class="text-gray-200 leading-relaxed mt-4">
-          And yes, of course I wrote this post with AI - I just served as the editor. Seems fitting for a post about working with Claude Code, doesn't it?
-        </p>
-      </div>
-      
-      <div class="flex justify-between mt-12">
-        <a href="/blog" class="px-4 py-2 bg-space-700 hover:bg-space-600 text-white rounded-md transition-all duration-300 inline-flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-          </svg>
-          Back to Blog
-        </a>
-      </div>
-    </article>
-  </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <article class="prose prose-invert prose-lg max-w-none">
+            <h1 class="text-4xl font-bold mb-2">
+                <ReflectionText client:load>
+                    <span class="text-lime-400"
+                        >Rebuilding My Personal Site with Solid.js and Astro</span
+                    >
+                </ReflectionText>
+            </h1>
+
+            <time datetime="2025-03-01" class="text-sm text-gray-400 mb-8 block"
+                >March 1, 2025</time
+            >
+            <div
+                class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-8"
+            >
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    I've been wanting to rewrite my website and start learning a new
+                    frontend framework, and with the recent release of Claude Code, I
+                    thought it'd be the perfect opportunity. The result is a complete
+                    rebuild using Solid.js and Astro with a space theme.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-6 mb-4">
+                    <TextGlow client:load>
+                        <span class="text-lime-400">Why the Change?</span>
+                    </TextGlow>
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    My previous site was built with Hugo, which served me well for quite
+                    some time. Hugo is great for static sites, and I had no real
+                    complaints about it. I've been keeping tabs on newer frameworks,
+                    though, and this rebuild gave me the perfect excuse to finally get
+                    my hands dirty with them.
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    For the design, I went with a space theme - dark background with
+                    lime green accents. I thought it would look cool and wanted to see
+                    if Claude could implement it. This was a good test case for the AI
+                    pair programming tool while giving my site a fresh look. Let me
+                    break down the tech stack I used.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-6 mb-4">
+                    <TextGlow client:load>
+                        <span class="text-lime-400">Technical Implementation</span>
+                    </TextGlow>
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-3">
+                    I built the new site with this combination of tools:
+                </p>
+                <ul class="list-disc list-inside text-gray-200 space-y-2 mb-4 ml-4">
+                    <li>
+                        <span class="text-accent-blue">Solid.js</span> for reactive components
+                        and interactions
+                    </li>
+                    <li>
+                        <span class="text-accent-purple">Astro</span> for static site generation
+                        and performance
+                    </li>
+                    <li><span class="text-lime-400">Tailwind CSS</span> for styling</li>
+                </ul>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    This setup gives me the speed and responsiveness I wanted, plus it's
+                    been fun to work with. Solid.js handles the interactive elements
+                    with its reactive system, while Astro takes care of generating
+                    optimized static pages. I'm still getting up to speed with Solid.js,
+                    but I'm already finding it more intuitive than React for my needs.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-6 mb-4">
+                    <TextGlow client:load>
+                        <span class="text-lime-400">Working with Claude Code</span>
+                    </TextGlow>
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    What made this rebuild interesting was using Claude Code as an AI
+                    pair programmer. It helped me iterate much more quickly than I might
+                    have otherwise. I was surprised by how well it understood what I was
+                    trying to accomplish, especially with the visual elements of the
+                    space theme.
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    In the past, I've used LLMs mainly to look up documentation and help
+                    design the architecture of my apps, but rarely for writing actual
+                    code. Claude Code flips this pattern - I can describe what I want
+                    built, and it handles the implementation details. It's a different
+                    workflow that's proven surprisingly effective for certain tasks.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-6 mb-4">
+                    <TextGlow client:load>
+                        <span class="text-lime-400">What I'm Up To</span>
+                    </TextGlow>
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    These days I'm busy coding on new projects and researching ways to
+                    apply AI to development workflows. I'm not in founder mode right now
+                    - I'm in <em class="text-lime-300 font-medium">"flounder mode."</em>
+                    It's a productive chaos that often leads to unexpected insights.
+                </p>
+
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    Sometimes it helps me create connections between ideas I never would
+                    have seen otherwise. Every abandoned project teaches me something,
+                    even if that something is just <span class="italic text-gray-100"
+                        >"maybe I should think twice before trying to rewrite Redis in
+                        Go at 2 AM on a Tuesday."</span
+                    >
+                </p>
+
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    I pivot so often my LinkedIn profile has <strong
+                        class="text-lime-300">motion sickness</strong
+                    >. One day I'm building a distributed database, the next I'm
+                    convinced I need to create yet another JavaScript framework. My
+                    version control history is a metaphor for my dating life - <span
+                        class="bg-lime-500/10 px-1"
+                        >hundreds of commits but afraid of the final merge</span
+                    >. I tell myself <em class="text-gray-100"
+                        >"this is totally normal product exploration"</em
+                    > while my git log reads like a crime scene investigation.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-6 mb-4">
+                    <TextGlow client:load>
+                        <span class="text-lime-400">What's Next?</span>
+                    </TextGlow>
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-3">
+                    I plan to use this blog to share thoughts on:
+                </p>
+                <ul class="list-disc list-inside text-gray-200 space-y-2 mb-6 ml-4">
+                    <li>Backend development insights</li>
+                    <li>Computer science topics, distributed systems, and databases</li>
+                    <li>Learning new programming languages like Mojo, Rust, and Zig</li>
+                    <li>Updates on projects like yt-text and others</li>
+                </ul>
+
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    Thanks for stopping by. If you want to connect, you can find me on
+                    GitHub, X, Bluesky, or LinkedIn.
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                    And yes, of course I wrote this post with AI - I just served as the
+                    editor. Seems fitting for a post about working with Claude Code,
+                    doesn't it?
+                </p>
+                <p
+                    class="text-gray-200 leading-relaxed mb-4 bg-lime-500/20 border-l-4 border-lime-400 pl-4 py-2"
+                >
+                    I'm currently looking for new engineering opportunities! If you're
+                    hiring someone who loves building backends, dealing with databases,
+                    applying AI, and has strong Python or Go skills, I'd love to chat!
+                </p>
+                <p class="text-gray-200 leading-relaxed">
+                    (I did end up just editing parts of this myself since I still can't
+                    convince the AI to not write like an AI.)
+                </p>
+            </div>
+
+            <div class="flex justify-between mt-12">
+                <a
+                    href="/blog"
+                    class="px-4 py-2 bg-space-700 hover:bg-space-600 text-white rounded-md transition-all duration-300 inline-flex items-center"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-2"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    Back to Blog
+                </a>
+            </div>
+        </article>
+    </div>
 </Layout>
