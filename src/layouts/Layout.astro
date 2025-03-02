@@ -34,10 +34,8 @@ const pathname = Astro.url.pathname;
             class="text-center text-gray-400 text-sm border-t border-space-700 py-5"
         >
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-center mb-3">
-                    <SocialLinks client:visible />
-                </div>
-                <p>
+                <SocialLinks client:visible />
+                <p class="mt-2">
                     &copy; {new Date().getFullYear()} Nick Russo. All rights reserved.
                 </p>
             </div>

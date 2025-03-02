@@ -36,7 +36,7 @@ export default function SocialLinks() {
 	const [hoveredIndex, setHoveredIndex] = createSignal(-1);
 
 	return (
-		<div class="flex gap-4 mt-6">
+		<div class="flex gap-4 justify-center">
 			{links.map((link, index) => (
 				<a
 					key={link.name}
