@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = "Nick Russo - Software Engineer" } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ const { title, description = "Nick Russo - Software Engineer" } = Astro.props;
   </head>
   <body class="bg-space-900 text-white min-h-screen">
     <StarField client:load />
-    <NavBar client:load />
+    <NavBar client:load pathname={pathname} />
     
     <main class="pt-20 pb-16 min-h-screen">
       <slot />

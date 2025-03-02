@@ -1,9 +1,39 @@
-import { createSignal, Show } from 'solid-js';
+import { createSignal, Show, createEffect } from 'solid-js';
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [isMenuOpen, setIsMenuOpen] = createSignal(false);
+  // Initialize with server-side props.pathname if available
+  const [currentPath, setCurrentPath] = createSignal(props.pathname || '');
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen());
+  
+  // Update currentPath on the client side to handle navigation after initial load
+  createEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(window.location.pathname);
+      
+      // Optional: Add event listener to update path on navigation
+      const handleNavigation = () => {
+        setCurrentPath(window.location.pathname);
+      };
+      
+      window.addEventListener('popstate', handleNavigation);
+      return () => window.removeEventListener('popstate', handleNavigation);
+    }
+  });
+  
+  // Function to check if the current path matches a given route
+  const isActive = (path) => {
+    const pathname = currentPath();
+    
+    // Special case for blog - consider active for any path under /blog/
+    if (path === '/blog' && (pathname === '/blog' || pathname.startsWith('/blog/'))) {
+      return true;
+    }
+    
+    // Direct path match
+    return pathname === path;
+  };
   
   return (
     <nav class="fixed top-0 left-0 right-0 z-50 bg-space-800/80 backdrop-blur-sm border-b border-space-700">
@@ -17,10 +47,10 @@ export default function NavBar() {
           </div>
           
           <div class="hidden md:flex items-center space-x-4">
-            <a href="/" class="px-3 py-2 text-lime-400 font-medium hover:text-lime-300 transition-colors">Home</a>
-            <a href="/bio" class="px-3 py-2 text-gray-300 hover:text-white transition-colors">Bio</a>
-            <a href="/blog" class="px-3 py-2 text-gray-300 hover:text-white transition-colors">Blog</a>
-            <a href="/projects" class="px-3 py-2 text-gray-300 hover:text-white transition-colors">Projects</a>
+            <a href="/" class={`px-3 py-2 font-medium transition-colors ${isActive('/') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Home</a>
+            <a href="/bio" class={`px-3 py-2 font-medium transition-colors ${isActive('/bio') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Bio</a>
+            <a href="/blog" class={`px-3 py-2 font-medium transition-colors ${isActive('/blog') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Blog</a>
+            <a href="/projects" class={`px-3 py-2 font-medium transition-colors ${isActive('/projects') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Projects</a>
           </div>
           
           <div class="md:hidden flex items-center">
@@ -41,10 +71,10 @@ export default function NavBar() {
       <Show when={isMenuOpen()}>
         <div class="md:hidden bg-space-800 border-b border-space-700">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" class="block px-3 py-2 text-lime-400 font-medium">Home</a>
-            <a href="/bio" class="block px-3 py-2 text-gray-300 hover:text-white">Bio</a>
-            <a href="/blog" class="block px-3 py-2 text-gray-300 hover:text-white">Blog</a>
-            <a href="/projects" class="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
+            <a href="/" class={`block px-3 py-2 font-medium ${isActive('/') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Home</a>
+            <a href="/bio" class={`block px-3 py-2 font-medium ${isActive('/bio') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Bio</a>
+            <a href="/blog" class={`block px-3 py-2 font-medium ${isActive('/blog') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Blog</a>
+            <a href="/projects" class={`block px-3 py-2 font-medium ${isActive('/projects') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Projects</a>
           </div>
         </div>
       </Show>
