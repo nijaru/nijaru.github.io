@@ -1,19 +1,20 @@
 ---
-import TextGlowSpan from "./TextGlowSpan";
+import TextGlow from "./TextGlow";
 
 interface Props {
   level?: 2 | 3 | 4 | 5 | 6;
   as?: string;
+  color?: string;
 }
 
-const { level = 2, as } = Astro.props;
+const { level = 2, as, color = "lime-400" } = Astro.props;
 const HeadingTag = as || `h${level}`;
 ---
 
 <HeadingTag class={`heading-level-${level}`}>
-  <TextGlowSpan client:load>
+  <TextGlow client:load mode="gradient" color={color}>
     <slot />
-  </TextGlowSpan>
+  </TextGlow>
 </HeadingTag>
 
 <style>

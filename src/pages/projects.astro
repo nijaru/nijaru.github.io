@@ -3,23 +3,23 @@ import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import GithubRepos from "../components/GithubRepos";
 import SectionHeading from "../components/SectionHeading";
-import TextGlowSpan from "../components/TextGlowSpan";
+import TextGlow from "../components/TextGlow";
 ---
 
 <Layout title="Projects - Nick Russo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 class="text-4xl font-bold mb-8 text-center">
             <span class="text-accent-purple">
-                <ReflectionText client:load>My</ReflectionText>
+                <ReflectionText client:visible>My</ReflectionText>
             </span>
             <span class="text-white">
-                <ReflectionText client:load>Projects</ReflectionText>
+                <ReflectionText client:visible>Projects</ReflectionText>
             </span>
         </h1>
 
         <!-- Current Projects Section -->
         <section class="mb-12">
-            <SectionHeading client:load>Current Projects</SectionHeading>
+            <SectionHeading client:visible>Current Projects</SectionHeading>
             
             <div class="grid gap-4 md:grid-cols-2">
                 <div class="card-container hover:border-lime-500 group relative">
@@ -60,8 +60,8 @@ import TextGlowSpan from "../components/TextGlowSpan";
 
         <!-- Pinned Repositories Section -->
         <section class="mb-12">
-            <SectionHeading client:load>Pinned Repositories</SectionHeading>
-            <GithubRepos client:load username="nijaru" limit={6} />
+            <SectionHeading client:visible>Pinned Repositories</SectionHeading>
+            <GithubRepos client:visible username="nijaru" limit={6} />
         </section>
 
         <div class="text-center">

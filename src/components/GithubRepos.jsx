@@ -1,5 +1,11 @@
 import { createResource, For, Show, createSignal, onMount, onCleanup } from 'solid-js';
 
+/**
+ * Displays GitHub repositories from a pre-generated JSON file
+ * @param {Object} props - Component props
+ * @param {string} [props.username] - GitHub username (not used in current implementation)
+ * @param {number} [props.limit] - Limit number of repositories to display
+ */
 export default function GithubRepos({ username, limit }) {
   const [isLoading, setIsLoading] = createSignal(true);
   const [errorMessage, setErrorMessage] = createSignal(null);
@@ -16,14 +22,18 @@ export default function GithubRepos({ username, limit }) {
       // Fetch pre-generated JSON file with pinned repositories
       const response = await fetch(jsonPath);
       if (!response.ok) {
-        throw new Error('Failed to fetch repositories');
+        throw new Error(`Failed to fetch repositories: ${response.status}`);
       }
       
       let data = await response.json();
       
       // Limit the number of repos based on the limit prop
-      if (limit && limit > 0) {
+      if (limit && limit > 0 && Array.isArray(data)) {
         data = data.slice(0, limit);
+      }
+      
+      if (!Array.isArray(data)) {
+        throw new Error('Invalid repository data format');
       }
       
       setIsLoading(false);
@@ -41,8 +51,9 @@ export default function GithubRepos({ username, limit }) {
     loadingTimeout = setTimeout(() => {
       if (isLoading()) {
         setIsLoading(false);
+        console.debug('GitHub repos loading timed out - forcing completion');
       }
-    }, 5000);
+    }, 3000); // Reduced timeout for better UX
   });
 
   // Clean up timeout when component unmounts
@@ -52,39 +63,31 @@ export default function GithubRepos({ username, limit }) {
     }
   });
 
-  // Grid class mapping for different repo counts
-  const gridClassMap = {
-    // Homepage layout (max 2)
-    homepage: "grid gap-4 md:grid-cols-2",
-    // Projects page layouts
-    1: "grid gap-4 md:grid-cols-1",
-    2: "grid gap-4 md:grid-cols-2",
-    3: "grid gap-6 md:grid-cols-3 [&>*]:md:mx-auto [&>*]:md:max-w-md lg:grid-cols-3",
-    4: "grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2",
-    5: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3",
-    6: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3",
-    // Default
-    default: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
-  };
-
-  // Determine grid column count based on potential number of repos
+  // Grid classes simplified for different layout scenarios
   const getGridClass = (repoCount) => {
-    // For homepage (max 2)
-    if (limit === 2) return gridClassMap.homepage;
+    // For homepage layout (max 2)
+    if (limit === 2) return "grid gap-4 md:grid-cols-2";
     
-    // For projects page with variable number of repos (max 6)
-    return gridClassMap[repoCount] || gridClassMap.default;
+    // For projects page with variable number of repos
+    if (repoCount <= 1) {
+      return "grid gap-6 md:grid-cols-1";
+    } else if (repoCount <= 4) {
+      return "grid gap-6 md:grid-cols-2";
+    } else {
+      // For 5 or more repos, use 3 columns layout
+      return "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
+    }
   };
 
   return (
     <div class="w-full">
-      <div class="text-sm text-center text-gray-400 mb-4">These repositories are automatically fetched by a scheduled GitHub Action</div>
+      <div class="text-sm text-center text-gray-400 mb-4">Pinned GitHub repositories</div>
       <Show when={!isLoading()} fallback={<div class="text-center py-4">Loading repositories...</div>}>
         <Show when={errorMessage()} fallback={null}>
           <div class="text-center py-4 text-red-400">{errorMessage()}</div>
         </Show>
         
-        <Show when={repos()?.length > 0} fallback={<div class="text-center py-4">No repositories found. Showing popular repositories instead.</div>}>
+        <Show when={repos()?.length > 0} fallback={<div class="text-center py-4">No repositories found.</div>}>
           <div class={getGridClass(repos()?.length || 0)}>
             <For each={repos() || []}>
               {(repo) => (

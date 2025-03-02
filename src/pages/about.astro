@@ -4,29 +4,29 @@ import TechSkills from "../components/TechSkills";
 import SocialLinks from "../components/SocialLinks";
 import ReflectionText from "../components/ReflectionText";
 import SectionHeading from "../components/SectionHeading";
-import TextGlowSpan from "../components/TextGlowSpan";
+import TextGlow from "../components/TextGlow";
 ---
 
 <Layout title="About - Nick Russo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 class="text-4xl font-bold mb-8 text-center">
             <span class="text-accent-purple">
-                <ReflectionText client:load>About</ReflectionText>
+                <ReflectionText client:visible>About</ReflectionText>
             </span>
             <span class="text-white">
-                <ReflectionText client:load>Me</ReflectionText>
+                <ReflectionText client:visible>Me</ReflectionText>
             </span>
         </h1>
 
         <div class="card-container mb-8">
             <div class="space-y-8">
                 <div>
-                    <SectionHeading client:load withBorder={false}>Technical Background</SectionHeading>
+                    <SectionHeading client:visible withBorder={false}>Technical Background</SectionHeading>
                     <TechSkills client:visible />
                 </div>
 
                 <div>
-                    <SectionHeading client:load withBorder={false}>Areas of Interest</SectionHeading>
+                    <SectionHeading client:visible withBorder={false}>Areas of Interest</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
                         <li>Backend Development & API Design</li>
                         <li>Distributed Systems & Networking</li>
@@ -36,7 +36,7 @@ import TextGlowSpan from "../components/TextGlowSpan";
                 </div>
 
                 <div>
-                    <SectionHeading client:load withBorder={false}>What I'm Up To</SectionHeading>
+                    <SectionHeading client:visible withBorder={false}>What I'm Up To</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
                         <li>
                             Exploring new programming languages, with a current focus on

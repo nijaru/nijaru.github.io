@@ -24,8 +24,8 @@ const pathname = Astro.url.pathname;
         <slot name="head" />
     </head>
     <body class="bg-space-900 text-white min-h-screen">
-        <StarField client:load />
-        <NavBar client:load pathname={pathname} />
+        <StarField client:idle />
+        <NavBar client:visible pathname={pathname} />
 
         <main class="pt-20 pb-12 min-h-screen">
             <slot />

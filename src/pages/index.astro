@@ -45,19 +45,19 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
         <div class="text-center mb-12">
             <h1 class="text-5xl md:text-6xl font-bold mb-4">
                 <span class="text-accent-purple">
-                    <TextGlow client:load enhanced={true}>
-                        <ReflectionText client:load>Nick</ReflectionText>
+                    <TextGlow client:visible enhanced={true}>
+                        <ReflectionText client:visible>Nick</ReflectionText>
                     </TextGlow>
                 </span>
                 <span class="text-white">
-                    <TextGlow client:load enhanced={true}>
-                        <ReflectionText client:load>Russo</ReflectionText>
+                    <TextGlow client:visible enhanced={true}>
+                        <ReflectionText client:visible>Russo</ReflectionText>
                     </TextGlow>
                 </span>
             </h1>
 
             <h2 class="text-2xl md:text-3xl font-semibold mb-8 tracking-wide">
-                <TextGlow client:load>
+                <TextGlow client:visible>
                     <span class="text-lime-400">Software Developer</span>
                 </TextGlow>
             </h2>
@@ -65,7 +65,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- About Me Section -->
         <section class="mb-12">
-            <SectionHeading client:load>About Me</SectionHeading>
+            <SectionHeading client:visible>About Me</SectionHeading>
             <div class="card-container mb-4">
                 <p class="text-gray-300 mb-4">
                     I'm a software developer specializing in backend systems and
@@ -82,7 +82,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
                 </p>
             </div>
             <div class="mt-4 text-right">
-                <ArrowLink href="/about" client:load ariaLabel="Navigate to about page">
+                <ArrowLink href="/about" client:visible ariaLabel="Navigate to about page">
                     Learn more about me
                 </ArrowLink>
             </div>
@@ -90,7 +90,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- Recent Blog Post -->
         <section class="mb-12">
-            <SectionHeading client:load>Recent Post</SectionHeading>
+            <SectionHeading client:visible>Recent Post</SectionHeading>
 
             {
                 mostRecentPost ? (
@@ -105,7 +105,7 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
             }
 
             <div class="mt-4 text-right">
-                <ArrowLink href="/blog" client:load ariaLabel="Navigate to blog page">
+                <ArrowLink href="/blog" client:visible ariaLabel="Navigate to blog page">
                     View all posts
                 </ArrowLink>
             </div>
@@ -113,12 +113,12 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 
         <!-- Featured GitHub Repos -->
         <section>
-            <SectionHeading client:load>Pinned Repositories</SectionHeading>
-            <GithubRepos client:load username="nijaru" limit={2} />
+            <SectionHeading client:visible>Pinned Repositories</SectionHeading>
+            <GithubRepos client:visible username="nijaru" limit={2} />
             <div class="mt-4 text-right">
                 <ArrowLink
                     href="/projects"
-                    client:load
+                    client:visible
                     ariaLabel="Navigate to projects page"
                 >
                     View all projects

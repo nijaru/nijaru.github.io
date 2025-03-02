@@ -1,5 +1,5 @@
 // @ts-check
-import TextGlowSpan from "./TextGlowSpan";
+import TextGlow from "./TextGlow";
 
 /**
  * Section heading component with border-bottom and glow effect
@@ -27,9 +27,9 @@ export default function SectionHeading(props) {
       className={`text-2xl font-bold mb-6 ${borderClass} ${className}`}
       {...otherProps}
     >
-      <TextGlowSpan>
+      <TextGlow mode="gradient">
         {content}
-      </TextGlowSpan>
+      </TextGlow>
     </h2>
   );
 }
