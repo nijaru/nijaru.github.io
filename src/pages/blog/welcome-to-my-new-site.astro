@@ -4,12 +4,12 @@ import ReflectionText from '../../components/ReflectionText';
 import TextGlow from '../../components/TextGlow';
 ---
 
-<Layout title="Welcome to My New Site - Nick Russo">
+<Layout title="Rebuilding My Personal Site with Solid.js and Astro - Nick Russo">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <article class="prose prose-invert prose-lg max-w-none">
       <h1 class="text-4xl font-bold mb-2">
         <ReflectionText client:load>
-          <span class="text-lime-400">Welcome to My New Site</span>
+          <span class="text-lime-400">Rebuilding My Personal Site with Solid.js and Astro</span>
         </ReflectionText>
       </h1>
       
@@ -17,7 +17,7 @@ import TextGlow from '../../components/TextGlow';
       
       <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 mb-8">
         <p class="text-gray-200 leading-relaxed">
-          So I finally did it. After sitting on this idea for months, I've completely rebuilt my personal site using Solid.js and Astro. The space theme has been living in my head for a while now, and I'm glad I finally brought it to life.
+          I've been wanting to rewrite my website and start learning a new frontend framework, and with the recent release of Claude Code, I thought it'd be the perfect opportunity. The result is a complete rebuild using Solid.js and Astro with a space theme.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-4">
@@ -26,13 +26,10 @@ import TextGlow from '../../components/TextGlow';
           </TextGlow>
         </h2>
         <p class="text-gray-200 leading-relaxed">
-          My previous site was built with Hugo, which served me well for quite some time. Hugo is great for static sites, and I had no real complaints about it. But I've been wanting to try something new, and this seemed like the perfect opportunity to experiment with some different technologies.
+          My previous site was built with Hugo, which served me well for quite some time. Hugo is great for static sites, and I had no real complaints about it. I've been keeping tabs on newer frameworks, though, and this rebuild gave me the perfect excuse to finally get my hands dirty with them.
         </p>
         <p class="text-gray-200 leading-relaxed mt-4">
-          The space theme with its dark background and lime green accents feels more like me. It better represents both my technical interests and personal aesthetic. Plus, I just really like how it looks.
-        </p>
-        <p class="text-gray-200 leading-relaxed mt-4">
-          What made this rebuild particularly interesting was that I did most of it with Claude Code. Having an AI pair programmer helped me work through challenges and iterate more quickly than I might have otherwise. It was a good learning experience to see how AI tools can fit into my workflow.
+          For the design, I went with a space theme - dark background with lime green accents. I thought it would look cool and wanted to see if Claude could implement it. This was a good test case for the AI pair programming tool while giving my site a fresh look. Let me break down the tech stack I used.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-4">
@@ -41,7 +38,7 @@ import TextGlow from '../../components/TextGlow';
           </TextGlow>
         </h2>
         <p class="text-gray-200 leading-relaxed">
-          The site is built with a few key technologies:
+          I built the new site with this combination of tools:
         </p>
         <ul class="list-disc list-inside text-gray-200 space-y-2 my-4 ml-4">
           <li><span class="text-accent-blue">Solid.js</span> for reactive components and interactions</li>
@@ -49,7 +46,19 @@ import TextGlow from '../../components/TextGlow';
           <li><span class="text-lime-400">Tailwind CSS</span> for styling</li>
         </ul>
         <p class="text-gray-200 leading-relaxed">
-          This tech stack makes for a fast, responsive site that's also enjoyable to develop. The animations and interactive elements are powered by Solid.js's reactive system, while Astro handles the static generation for optimal performance. I'm still learning Solid.js, but so far I'm enjoying working with it more than React.
+          This setup gives me the speed and responsiveness I wanted, plus it's been fun to work with. Solid.js handles the interactive elements with its reactive system, while Astro takes care of generating optimized static pages. I'm still getting up to speed with Solid.js, but I'm already finding it more intuitive than React for my needs.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-4">
+          <TextGlow client:load>
+            <span class="text-lime-400">Working with Claude Code</span>
+          </TextGlow>
+        </h2>
+        <p class="text-gray-200 leading-relaxed">
+          What made this rebuild interesting was using Claude Code as an AI pair programmer. It helped me iterate much more quickly than I might have otherwise. I was surprised by how well it understood what I was trying to accomplish, especially with the visual elements of the space theme.
+        </p>
+        <p class="text-gray-200 leading-relaxed mt-4">
+          In the past, I've used LLMs mainly to look up documentation and help design the architecture of my apps, but rarely for writing actual code. Claude Code flips this pattern - I can describe what I want built, and it handles the implementation details. It's a different workflow that's proven surprisingly effective for certain tasks.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-4">
@@ -58,7 +67,7 @@ import TextGlow from '../../components/TextGlow';
           </TextGlow>
         </h2>
         <p class="text-gray-200 leading-relaxed">
-          These days I'm spending most of my time working on my backend-as-a-service platform. It's coming along nicely, though I regularly find myself in what I call "flounder mode" - that state where you know what you want to build but you're not entirely sure how to approach it, so you try a bunch of different things until something clicks. It's frustrating and productive at the same time, if that makes any sense.
+          These days I'm busy coding on new projects and researching ways to apply AI to development workflows. I'm not in founder mode right now - I'm in what I call "flounder mode." It's when you bounce between different project ideas, trying things out to see what sticks. You explore concepts without committing fully to any single path. It's a productive kind of chaos that often leads to unexpected insights.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-4">
@@ -67,17 +76,20 @@ import TextGlow from '../../components/TextGlow';
           </TextGlow>
         </h2>
         <p class="text-gray-200 leading-relaxed">
-          I plan to use this blog to share thoughts on software development, programming languages I'm exploring, and projects I'm working on. Future posts will likely cover:
+          I plan to use this blog to share thoughts on:
         </p>
         <ul class="list-disc list-inside text-gray-200 space-y-2 my-4 ml-4">
           <li>Backend development insights</li>
-          <li>Distributed systems concepts</li>
-          <li>My adventures learning Mojo, Rust, and Zig</li>
+          <li>Computer science topics, distributed systems, and databases</li>
+          <li>Learning new programming languages like Mojo, Rust, and Zig</li>
           <li>Updates on projects like yt-text and others</li>
         </ul>
         
         <p class="text-gray-200 leading-relaxed mt-8">
           Thanks for stopping by. If you want to connect, you can find me on GitHub, X, Bluesky, or LinkedIn.
+        </p>
+        <p class="text-gray-200 leading-relaxed mt-4">
+          And yes, of course I wrote this post with AI - I just served as the editor. Seems fitting for a post about working with Claude Code, doesn't it?
         </p>
       </div>
       
