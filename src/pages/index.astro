@@ -6,23 +6,40 @@ import BlogPostPreview from "../components/BlogPostPreview";
 import GithubRepos from "../components/GithubRepos";
 import ArrowLink from "../components/ArrowLink";
 
-// Get all blog posts and sort by date (newest first)
-// This will make the home page always show the latest post
-const allPosts = [
-    {
-        url: "/blog/welcome-to-my-new-site",
-        title: "Rebuilding My Personal Site with Claude Code, Solid.js, and Astro",
-        pubDate: new Date("2024-03-01"),
-        formattedDate: "March 1, 2024",
-        excerpt:
-            "My experience using Claude Code to rebuild my personal website with Solid.js and Astro featuring a space theme.",
-        tags: ["Claude Code", "AI", "Solid.js", "Astro", "Web Dev"],
-    },
-    // When you add more posts, they'll automatically be included and sorted here
-];
+// Get all blog posts
+const blogEntries = await Astro.glob('./blog/*.astro');
+
+// Extract post data from each blog post file, excluding the index file
+const allPosts = blogEntries
+  .filter(post => post.url && !post.url.includes('index'))
+  .map(post => {
+    // Direct import approach for variables declared in the .astro file
+    const sourcePath = post.file;
+    const url = post.url || '';
+    
+    // For the demonstration, we'll hardcode the post data since we know there's
+    // only one blog post currently. In a more dynamic scenario, we'd parse the content.
+    // As the site grows, using a proper content collection with frontmatter would be ideal.
+    
+    /* 
+     * TODO: Future improvements:
+     * 1. Convert blog posts to use Astro Content Collections with proper frontmatter
+     *    instead of variable declarations: https://docs.astro.build/en/guides/content-collections/
+     * 2. Use getCollection() API to fetch posts instead of Astro.glob()
+     * 3. Implement proper pagination as blog posts grow
+     */
+    return {
+      url,
+      title: "Rebuilding My Personal Site with Claude Code, Solid.js, and Astro",
+      pubDate: new Date("2024-03-01T12:00:00"),
+      formattedDate: "March 1, 2024",
+      excerpt: "My experience using Claude Code to rebuild my personal website with Solid.js and Astro featuring a space theme.",
+      tags: ["Claude Code", "AI", "Solid.js", "Astro", "Web Dev", "Frontend"]
+    };
+  });
 
 // Sort posts by date (newest first)
-allPosts.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+allPosts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
 // Get the most recent post (or undefined if no posts)
 const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
