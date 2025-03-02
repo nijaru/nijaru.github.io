@@ -27,7 +27,7 @@ export default function BlogPostPreview(props) {
         <span class="sr-only">Read blog post: {post.title}</span>
       </a>
       
-      <div class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 group-hover:border-lime-500 transition-all duration-300 relative">
+      <div class="card-container group-hover:border-lime-500 relative">
         <h2 class="text-2xl font-semibold mb-2 text-lime-400 group-hover:text-lime-300">
           {post.title}
         </h2>

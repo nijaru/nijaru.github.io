@@ -99,7 +99,7 @@ export default function GithubRepos({ username, limit }) {
                     <span class="sr-only">View {repo.name} on GitHub</span>
                   </a>
                   
-                  <div class="bg-space-600/90 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 group-hover:border-lime-500 relative h-full flex flex-col">
+                  <div class="card-container group-hover:border-lime-500 relative h-full flex flex-col">
                     <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">{repo.name}</h3>
                     <p class="text-gray-300 mb-4">{repo.description || "No description available"}</p>
                     

@@ -7,6 +7,7 @@ export default {
         // Dark background colors for space theme
         space: {
           900: '#0a0a0f', // Almost black
+          850: '#0e0e19', // Darker deep space
           800: '#121224', // Deep space
           700: '#1a1a35', // Dark purple-blue
           600: '#232342', // Midnight

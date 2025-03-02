@@ -48,7 +48,7 @@ export default function TechSkills() {
     <div class="space-y-6">
       <For each={categories}>
         {(category) => (
-          <div class="bg-space-800 rounded-lg p-4 border border-space-700">
+          <div class="mb-6">
             <h3 class="text-lg font-medium text-lime-400 mb-3 text-left">
               {category.label}
             </h3>
@@ -57,7 +57,7 @@ export default function TechSkills() {
               <For each={category.skills}>
                 {(skill, index) => (
                   <div 
-                    class="px-3 py-2 bg-space-700 rounded-md flex items-center animate-float" 
+                    class="skill-card flex items-center animate-float" 
                     style={{ 'animation-delay': `${(index() * 0.2) % 2}s` }}
                   >
                     <span class={`font-medium ${skill.color}`}>{skill.name}</span>

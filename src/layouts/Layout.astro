@@ -48,6 +48,26 @@ const pathname = Astro.url.pathname;
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
+    
+    :root {
+        --card-bg-color: rgb(26, 26, 53); /* space-700 */
+        --card-bg-opacity: 0.9;
+        --card-border-color: rgb(35, 35, 66); /* space-600 */
+    }
+    
+    .card-container {
+        @apply backdrop-blur-sm p-6 rounded-lg border transition-all duration-300;
+        background-color: var(--card-bg-color);
+        background-opacity: var(--card-bg-opacity);
+        border-color: var(--card-border-color);
+    }
+    
+    .skill-card {
+        @apply backdrop-blur-sm px-4 py-2.5 rounded-md border shadow-md transition-all duration-300 hover:border-lime-500 hover:shadow-lg;
+        background-color: rgb(35, 35, 66); /* space-600 - darker than container */
+        background-opacity: var(--card-bg-opacity);
+        border-color: rgb(43, 43, 74); /* slightly lighter than background */
+    }
 
     @keyframes twinkle {
         0%,
