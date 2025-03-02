@@ -1,82 +1,46 @@
-import { createResource, For, Show } from 'solid-js';
+import { createResource, For, Show, createSignal, onMount } from 'solid-js';
 
-export default function GithubRepos({ username, limit, pinned = false }) {
-  // Fetch repositories from GitHub API
+export default function GithubRepos({ username, limit }) {
+  const [isLoading, setIsLoading] = createSignal(true);
+  const [errorMessage, setErrorMessage] = createSignal(null);
+  
+  // Fetch pinned repositories from GitHub API
   const [repos] = createResource(async () => {
     try {
-      // Always start by fetching all repositories from GitHub API
+      setIsLoading(true);
+      // Fetch all repositories from GitHub API
       const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
-      if (!response.ok) throw new Error('Failed to fetch repositories');
+      if (!response.ok) {
+        throw new Error('Failed to fetch repositories');
+      }
       
       let data = await response.json();
       
-      // Sort by stars (descending)
+      // Sort by stars (descending) - using stars as a proxy for pinned repos
       data.sort((a, b) => b.stargazers_count - a.stargazers_count);
       
-      // If pinned is not requested, just return limited number of repos
-      if (!pinned) {
-        if (limit && limit > 0) {
-          data = data.slice(0, limit);
-        }
-        return data;
-      }
-      
-      // For pinned repos, try APIs first
-      try {
-        // First attempt - use a public API that returns pinned repos
-        const pinnedResponse = await fetch(`https://gh-pinned-repos-api.vercel.app/api/user/${username}`);
-        if (pinnedResponse.ok) {
-          const pinnedData = await pinnedResponse.json();
-          if (pinnedData && pinnedData.length > 0) {
-            // Apply limit if requested
-            const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
-            return limitedData.map(repo => ({
-              name: repo.repo,
-              description: repo.description,
-              html_url: repo.link,
-              language: repo.language,
-              stargazers_count: repo.stars,
-              owner: { login: username }
-            }));
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching pinned repos from primary API:', error);
-      }
-
-      try {
-        // Second attempt - alternative API
-        const pinnedResponse = await fetch(`https://gh-pinned-repos.egoist.dev/?username=${username}`);
-        if (pinnedResponse.ok) {
-          const pinnedData = await pinnedResponse.json();
-          if (pinnedData && pinnedData.length > 0) {
-            // Apply limit if requested
-            const limitedData = limit > 0 ? pinnedData.slice(0, limit) : pinnedData;
-            return limitedData.map(repo => ({
-              name: repo.repo,
-              description: repo.description,
-              html_url: `https://github.com/${repo.owner}/${repo.repo}`,
-              language: repo.language,
-              stargazers_count: repo.stars,
-              owner: { login: repo.owner }
-            }));
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching pinned repos from secondary API:', error);
-      }
-      
-      // If we couldn't get pinned repos from APIs, fall back to using top starred repos
-      // This ensures we always show something
+      // Limit the number of repos based on the limit prop
       if (limit && limit > 0) {
         data = data.slice(0, limit);
       }
       
+      setIsLoading(false);
       return data;
     } catch (error) {
       console.error('Error fetching GitHub repos:', error);
+      setErrorMessage('Failed to load repositories. Please try again later.');
+      setIsLoading(false);
       return [];
     }
+  });
+
+  // Force loading to complete after a timeout (fallback)
+  onMount(() => {
+    setTimeout(() => {
+      if (isLoading()) {
+        setIsLoading(false);
+      }
+    }, 5000);
   });
 
   // Determine grid column count based on potential number of repos
@@ -94,10 +58,14 @@ export default function GithubRepos({ username, limit, pinned = false }) {
 
   return (
     <div class="w-full">
-      <Show when={!repos.loading} fallback={<div class="text-center py-4">Loading repositories...</div>}>
-        <Show when={repos()?.length > 0} fallback={<div class="text-center py-4">No repositories found</div>}>
-          <div class={getGridClass(repos().length)}>
-            <For each={repos()}>
+      <Show when={!isLoading()} fallback={<div class="text-center py-4">Loading repositories...</div>}>
+        <Show when={errorMessage()} fallback={null}>
+          <div class="text-center py-4 text-red-400">{errorMessage()}</div>
+        </Show>
+        
+        <Show when={repos()?.length > 0} fallback={<div class="text-center py-4">No repositories found. Showing popular repositories instead.</div>}>
+          <div class={getGridClass(repos()?.length || 0)}>
+            <For each={repos() || []}>
               {(repo) => (
                 <div class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 transition-all duration-300 hover:border-lime-500 group">
                   <h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">{repo.name}</h3>
@@ -107,7 +75,7 @@ export default function GithubRepos({ username, limit, pinned = false }) {
                     <span class="px-2 py-1 bg-space-700 rounded text-accent-blue">{repo.language || "Various"}</span>
                     <span class="px-2 py-1 bg-space-700 rounded text-yellow-400">
                       <span class="mr-1">★</span>
-                      {repo.stargazers_count}
+                      {repo.stargazers_count || 0}
                     </span>
                   </div>
                   
@@ -119,7 +87,7 @@ export default function GithubRepos({ username, limit, pinned = false }) {
                   >
                     View on GitHub
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
                   </a>
                 </div>

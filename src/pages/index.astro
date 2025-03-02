@@ -120,9 +120,9 @@ const recentPosts = [
         <!-- Featured GitHub Repos -->
         <section>
             <h2 class="text-2xl font-bold mb-6 border-b border-space-700 pb-2">
-                <span class="text-lime-400">Pinned Projects</span>
+                <span class="text-lime-400">Featured Projects</span>
             </h2>
-            <GithubRepos client:visible username="nijaru" limit={2} pinned={true} />
+            <GithubRepos client:load username="nijaru" limit={2} />
             <div class="mt-4 text-right">
                 <a
                     href="/projects"
