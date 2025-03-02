@@ -1,6 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ReflectionText from '../../components/ReflectionText';
+import ReadingTime from '../../components/ReadingTime';
+import BlogPostPreview from '../../components/BlogPostPreview';
+
+// Get all blog posts - simplified approach with proper typing
+// Since we only have one blog post, we'll use a direct approach to avoid TypeScript errors
+const posts = [
+  {
+    url: '/blog/welcome-to-my-new-site',
+    title: 'Rebuilding My Personal Site with Solid.js and Astro',
+    pubDate: new Date('2025-03-01'),
+    formattedDate: 'March 1, 2025',
+    excerpt: 'My experience rebuilding my personal website using Solid.js and Astro with a space theme.',
+    tags: ['Solid.js', 'Astro', 'Web Dev']
+  }
+];
 ---
 
 <Layout title="Blog - Nick Russo">
@@ -16,23 +31,16 @@ import ReflectionText from '../../components/ReflectionText';
     
     <p class="text-center text-gray-400 mb-12">Thoughts on software development, programming languages, and more</p>
     
-    <div class="space-y-12">
-      <article class="bg-space-800/60 backdrop-blur-sm p-6 rounded-lg border border-space-700 hover:border-lime-500 transition-all duration-300">
-        <a href="/blog/welcome-to-my-new-site">
-          <h2 class="text-2xl font-semibold text-lime-400 mb-2">Welcome to My New Site!</h2>
-          <time datetime="2025-03-01" class="text-sm text-gray-400 mb-4 block">March 1, 2025</time>
-          <p class="text-gray-300 mb-4">
-            I'm excited to unveil my new website built with Solid.js and Astro. This space-themed site represents my latest exploration into modern web development.
-          </p>
-          <div class="flex gap-2">
-            <span class="px-2 py-1 bg-space-700 rounded text-xs text-accent-blue">Solid.js</span>
-            <span class="px-2 py-1 bg-space-700 rounded text-xs text-accent-purple">Astro</span>
-            <span class="px-2 py-1 bg-space-700 rounded text-xs text-lime-400">Web Dev</span>
-          </div>
-        </a>
-      </article>
+    <div class="space-y-8">
+      {posts.map((post) => (
+        <BlogPostPreview post={post} />
+      ))}
       
-      <!-- More blog posts can be added here -->
+      {posts.length === 0 && (
+        <div class="text-center py-12 text-gray-500">
+          <p>No posts found. Check back soon!</p>
+        </div>
+      )}
     </div>
   </div>
 </Layout>

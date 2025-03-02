@@ -48,7 +48,7 @@ export default function NavBar(props) {
           
           <div class="hidden md:flex items-center space-x-4">
             <a href="/" class={`px-3 py-2 font-medium transition-colors ${isActive('/') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Home</a>
-            <a href="/bio" class={`px-3 py-2 font-medium transition-colors ${isActive('/bio') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Bio</a>
+            <a href="/about" class={`px-3 py-2 font-medium transition-colors ${isActive('/about') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>About</a>
             <a href="/blog" class={`px-3 py-2 font-medium transition-colors ${isActive('/blog') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Blog</a>
             <a href="/projects" class={`px-3 py-2 font-medium transition-colors ${isActive('/projects') ? 'text-lime-400 hover:text-lime-300' : 'text-white hover:text-lime-300'}`}>Projects</a>
           </div>
@@ -72,7 +72,7 @@ export default function NavBar(props) {
         <div class="md:hidden bg-space-800 border-b border-space-700">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" class={`block px-3 py-2 font-medium ${isActive('/') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Home</a>
-            <a href="/bio" class={`block px-3 py-2 font-medium ${isActive('/bio') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Bio</a>
+            <a href="/about" class={`block px-3 py-2 font-medium ${isActive('/about') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>About</a>
             <a href="/blog" class={`block px-3 py-2 font-medium ${isActive('/blog') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Blog</a>
             <a href="/projects" class={`block px-3 py-2 font-medium ${isActive('/projects') ? 'text-lime-400' : 'text-white hover:text-lime-300'}`}>Projects</a>
           </div>
