@@ -1,7 +1,7 @@
 ---
 title: "Thoughts on AI-Assisted Development"
 pubDate: 2024-03-02T10:00:00
-description: "Reflections on the benefits and tradeoffs of AI-assisted development and coding."
+description: "Reflections on the benefits and trade-offs of AI-assisted development and coding."
 author: "Nick Russo"
 tags: ["AI", "Development", "Productivity", "Learning"]
 image:
