@@ -58,4 +58,6 @@ And yes, of course I wrote this post with AI - I just served as the editor. Seem
 I'm currently looking for new engineering opportunities! If you're hiring someone who loves building backends, dealing with databases, applying AI, and has strong Python or Go skills, I'd love to chat!
 </p>
 
-(I did end up just editing parts of this myself since I still can't convince the AI to not write like an AI.)
+I did end up just editing parts of this myself since I still can't convince the AI to not write like an AI.
+
+Letting AI completely take the reins is useful for trivial tasks. For everything else, you lose so much gained knowledge. The tradeoff for increased velocity is significant, though worthwhile in some cases. It is quite impressive how far you can get with just enough domain knowledge to steer it in the right direction.
