@@ -12,47 +12,39 @@
 - Development server: `npm run dev` or `npm start`
 - Build site: `npm run build` (outputs to dist/ directory)
 - Preview build: `npm run preview`
+- Run specific script: `node scripts/script-name.js`
 
-## Project Structure
-- `src/` - Source code
-  - `components/` - Solid.js UI components
-  - `layouts/` - Page layouts (Astro)
-  - `pages/` - Content pages (Astro)
-  - `styles/` - CSS styles
-- `public/` - Static assets served at root
-- `static/` - Static assets like favicons and site manifest
-- `scripts/` - Backend scripts (GitHub pinned repos fetcher)
-- `.github/workflows/` - GitHub Action configurations
-- `dist/` - Build output (generated)
-
-## Key Configuration Files
-- `astro.config.mjs` - Astro configuration with Solid.js and Tailwind integrations
-- `tailwind.config.mjs` - Tailwind CSS customizations for space theme
-- `package.json` - Dependencies and scripts
-
-## Code Style
-- JavaScript/JSX: Use ES modules, Solid.js reactive patterns
-- CSS: Use Tailwind utility classes
-- Astro: Follow Astro component structure
-- File naming: Use PascalCase for components, kebab-case for pages
-- Commit messages: Use present tense, concise descriptions
+## Code Style Guidelines
+- **JavaScript/JSX**:
+  - Use ES modules for imports/exports
+  - Follow Solid.js reactive patterns with signals and resources
+  - Document components with JSDoc comments including @param descriptions
+  - Use const for variables that don't change, let otherwise
+  - Use async/await for asynchronous operations
+  - Handle errors with try/catch blocks and provide meaningful error messages
+- **CSS**: Use Tailwind utility classes, prefer composition over custom classes
+- **Component Structure**:
+  - Name files: PascalCase for components (NavBar.jsx), kebab-case for pages (about.astro)
+  - Prefer functional components with explicit props destructuring
+  - Group related state declarations at the top of components
+  - Use cleanup handlers to prevent memory leaks (onCleanup, onMount)
+- **Formatting**:
+  - Use consistent indentation (2 spaces)
+  - Place component props on new lines when they exceed 3 properties
+  - Use semicolons at the end of statements
+- **Commit messages**: Use present tense, concise descriptions
 
 ## Theme Guidelines
 - Color palette: 
   - Dark space backgrounds (space-800, space-900)
   - Lime green highlights (lime-400, lime-500)
-  - Light blue/purple accents
+  - Light blue/purple accents (accent-blue, accent-purple)
 - Animation classes available for star field effects
-- Responsive design using Tailwind breakpoints
-
-## Project Context
-- Personal website/blog for Nick Russo
-- Space-themed design with interactive components
-- Content focuses on software engineering and technical topics
+- Responsive design using Tailwind breakpoints (md:, lg:)
 
 ## GitHub Integration
 - GitHub pinned repositories are fetched via a scheduled GitHub Action
-- Uses GitHub GraphQL API with a token (PINNED_FETCH_TOKEN)
+- Uses GitHub GraphQL API with a token (GITHUB_TOKEN)
 - Data is pre-generated and stored in both:
   - `/public/data/pinned-repos.json` (for production)
   - `/static/data/pinned-repos.json` (for development)
