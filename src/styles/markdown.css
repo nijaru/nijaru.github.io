@@ -10,7 +10,7 @@
 }
 
 .blog-content h2 {
-  @apply text-2xl font-semibold mt-6 mb-4 text-lime-400;
+  @apply text-2xl font-semibold mt-2 mb-4 text-lime-400;
   text-shadow: 0 0 8px rgba(163, 230, 53, 0.4);
 }
 

@@ -8,7 +8,6 @@ image:
   url: "https://nijaru.github.io/images/space-theme.png"
   alt: "Space themed website design"
 ---
-
 I've been wanting to rewrite my website and start learning a new frontend framework, and with the recent release of Claude Code, I thought it'd be the perfect opportunity. The result is a complete rebuild using Solid.js and Astro with a space theme.
 
 ## Why the Change?

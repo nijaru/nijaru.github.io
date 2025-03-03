@@ -8,7 +8,6 @@ image:
   url: "https://nijaru.github.io/images/ai-development.png"
   alt: "AI-assisted development concept"
 ---
-
 ## Thoughts on AI-Assisted Development
 
 After working with Claude Code and other AI coding assistants, I've been reflecting on the impact these tools have on the development process and learning.
