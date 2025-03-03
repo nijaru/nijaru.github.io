@@ -8,6 +8,7 @@ image:
   url: "https://nijaru.github.io/images/space-theme.png"
   alt: "Space themed website design"
 ---
+
 I've been wanting to rewrite my website and start learning a new frontend framework, and with the recent release of Claude Code, I thought it'd be the perfect opportunity. The result is a complete rebuild using Solid.js and Astro with a space theme.
 
 ## Why the Change?
@@ -53,6 +54,6 @@ Thanks for stopping by. If you want to connect, you can find me on GitHub, X, Bl
 
 And yes, of course I wrote this post with AI - I just served as the editor. Seems fitting for a post about working with Claude Code, doesn't it?
 
-<p class="bg-lime-500/20 border-l-4 border-lime-400 pl-4 py-2">
-I'm currently looking for new engineering opportunities! If you're hiring someone who loves building backends, dealing with databases, applying AI, and has strong Python or Go skills, I'd love to chat!
+<p class="bg-lime-500/20 border-l-4 border-lime-400 pl-4 pr-4 py-4 rounded-r my-6">
+I'm currently looking for new engineering opportunities! If you're hiring someone who enjoys building backends, dealing with databases, applying AI, and has strong Python or Go skills, please reach out.
 </p>
