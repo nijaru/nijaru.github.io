@@ -23,16 +23,27 @@ export default function NavBar(props) {
   });
   
   // Function to check if the current path matches a given route
+  // Use a simple cache to prevent recalculating on each render
+  const activeCache = {};
   const isActive = (path) => {
     const pathname = currentPath();
+    const cacheKey = `${path}-${pathname}`;
     
-    // Special case for blog - consider active for any path under /blog/
-    if (path === '/blog' && (pathname === '/blog' || pathname.startsWith('/blog/'))) {
-      return true;
+    if (activeCache[cacheKey] !== undefined) {
+      return activeCache[cacheKey];
     }
     
-    // Direct path match
-    return pathname === path;
+    let result;
+    // Special case for blog - consider active for any path under /blog/
+    if (path === '/blog' && (pathname === '/blog' || pathname.startsWith('/blog/'))) {
+      result = true;
+    } else {
+      // Direct path match
+      result = pathname === path;
+    }
+    
+    activeCache[cacheKey] = result;
+    return result;
   };
   
   return (

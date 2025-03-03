@@ -1,48 +1,61 @@
 import { For } from 'solid-js';
 
+// Move static data outside component to prevent recreation on each render
+const categories = [
+  {
+    id: 'primary',
+    label: 'Primary Languages',
+    skills: [
+      { name: 'Python', color: 'text-blue-400' },
+      { name: 'Go', color: 'text-accent-blue' }
+    ]
+  },
+  {
+    id: 'experience',
+    label: 'Experience With',
+    skills: [
+      { name: 'C', color: 'text-gray-400' },
+      { name: 'C++', color: 'text-blue-500' },
+      { name: 'Ruby', color: 'text-red-500' },
+      { name: 'JavaScript', color: 'text-yellow-400' }
+    ]
+  },
+  {
+    id: 'learning',
+    label: 'Learning',
+    skills: [
+      { name: 'Rust', color: 'text-orange-500' },
+      { name: 'Mojo 🔥', color: 'text-yellow-500' },
+      { name: 'Zig', color: 'text-yellow-600' },
+      { name: 'Solid.js', color: 'text-accent-blue' }
+    ]
+  },
+  {
+    id: 'tools',
+    label: 'Tools & Tech',
+    skills: [
+      { name: 'Linux', color: 'text-yellow-500' },
+      { name: 'Git', color: 'text-red-500' },
+      { name: 'Docker', color: 'text-blue-500' },
+      { name: 'SQLite', color: 'text-blue-400' },
+      { name: 'PostgreSQL', color: 'text-blue-600' },
+      { name: 'Redis', color: 'text-red-500' }
+    ]
+  }
+];
+
+// Pre-calculate animation delays to avoid calculations during render
+const getAnimationDelays = () => {
+  const delays = {};
+  categories.forEach(category => {
+    delays[category.id] = category.skills.map((_, index) => `${(index * 0.2) % 2}s`);
+  });
+  return delays;
+};
+
+const animationDelays = getAnimationDelays();
+
 export default function TechSkills() {
-  const categories = [
-    {
-      id: 'primary',
-      label: 'Primary Languages',
-      skills: [
-        { name: 'Python', color: 'text-blue-400' },
-        { name: 'Go', color: 'text-accent-blue' }
-      ]
-    },
-    {
-      id: 'experience',
-      label: 'Experience With',
-      skills: [
-        { name: 'C', color: 'text-gray-400' },
-        { name: 'C++', color: 'text-blue-500' },
-        { name: 'Ruby', color: 'text-red-500' },
-        { name: 'JavaScript', color: 'text-yellow-400' }
-      ]
-    },
-    {
-      id: 'learning',
-      label: 'Learning',
-      skills: [
-        { name: 'Rust', color: 'text-orange-500' },
-        { name: 'Mojo 🔥', color: 'text-yellow-500' },
-        { name: 'Zig', color: 'text-yellow-600' },
-        { name: 'Solid.js', color: 'text-accent-blue' }
-      ]
-    },
-    {
-      id: 'tools',
-      label: 'Tools & Tech',
-      skills: [
-        { name: 'Linux', color: 'text-yellow-500' },
-        { name: 'Git', color: 'text-red-500' },
-        { name: 'Docker', color: 'text-blue-500' },
-        { name: 'SQLite', color: 'text-blue-400' },
-        { name: 'PostgreSQL', color: 'text-blue-600' },
-        { name: 'Redis', color: 'text-red-500' }
-      ]
-    }
-  ];
   
   return (
     <div class="space-y-6">
@@ -58,7 +71,7 @@ export default function TechSkills() {
                 {(skill, index) => (
                   <div 
                     class="skill-card flex items-center animate-float" 
-                    style={{ 'animation-delay': `${(index() * 0.2) % 2}s` }}
+                    style={{ 'animation-delay': animationDelays[category.id][index()] }}
                   >
                     <span class={`font-medium ${skill.color}`}>{skill.name}</span>
                   </div>

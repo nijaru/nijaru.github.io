@@ -62,8 +62,9 @@ const options = {
   headers: {
     'Content-Type': 'application/json',
     'User-Agent': 'Node.js',
-    'Authorization': `Bearer ${process.env.GITHUB_TOKEN || 'ADD_TOKEN_HERE'}`
-  }
+    'Authorization': `Bearer ${process.env.GITHUB_TOKEN || ''}`
+  },
+  timeout: 10000 // Add 10 second timeout
 };
 
 // Make the GraphQL request

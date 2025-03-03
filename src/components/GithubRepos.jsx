@@ -70,20 +70,33 @@ export default function GithubRepos({ username, limit }) {
 		}
 	});
 
-	// Grid classes simplified for different layout scenarios
+	// Grid classes memoized to prevent recalculation
+	// This is a simple memoization since the function only depends on limit and repoCount
+	const gridClassCache = {};
 	const getGridClass = (repoCount) => {
+		const cacheKey = `${limit || 0}-${repoCount}`;
+		
+		if (gridClassCache[cacheKey]) {
+			return gridClassCache[cacheKey];
+		}
+		
+		let result;
 		// For homepage layout (max 2)
-		if (limit === 2) return "grid gap-4 md:grid-cols-2";
-
+		if (limit === 2) {
+			result = "grid gap-4 md:grid-cols-2";
+		}
 		// For projects page with variable number of repos
-		if (repoCount <= 1) {
-			return "grid gap-6 md:grid-cols-1";
+		else if (repoCount <= 1) {
+			result = "grid gap-6 md:grid-cols-1";
 		} else if (repoCount <= 4) {
-			return "grid gap-6 md:grid-cols-2";
+			result = "grid gap-6 md:grid-cols-2";
 		} else {
 			// For 5 or more repos, use 3 columns layout
-			return "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
+			result = "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
 		}
+		
+		gridClassCache[cacheKey] = result;
+		return result;
 	};
 
 	return (

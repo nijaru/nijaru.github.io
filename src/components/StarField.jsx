@@ -36,6 +36,8 @@ export default function StarField() {
     
     // Animation function
     let frame = 0;
+    let animationFrameId;
+    
     const animate = () => {
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -70,11 +72,11 @@ export default function StarField() {
       frame = (frame + 1) % 150; // Reset counter every 150 frames (moderate cycle)
       
       // Request next frame
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
     
     // Start animation
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
     
     // Handle window resize (debounced)
     let resizeTimeout;
@@ -88,9 +90,10 @@ export default function StarField() {
     
     window.addEventListener('resize', handleResize);
     
-    // Cleanup
+    // Cleanup - cancel animation frame and remove resize listener
     return () => {
       window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
     };
   });
 
