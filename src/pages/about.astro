@@ -21,11 +21,6 @@ import TextGlow from "../components/TextGlow";
         <div class="card-container mb-8">
             <div class="space-y-8">
                 <div>
-                    <SectionHeading client:visible withBorder={false}>Technical Background</SectionHeading>
-                    <TechSkills client:visible />
-                </div>
-
-                <div>
                     <SectionHeading client:visible withBorder={false}>Areas of Interest</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
                         <li>Backend Development & API Design</li>
@@ -38,28 +33,17 @@ import TextGlow from "../components/TextGlow";
                 <div>
                     <SectionHeading client:visible withBorder={false}>What I'm Up To</SectionHeading>
                     <ul class="list-disc list-outside ml-6 text-gray-300 space-y-2">
-                        <li>
-                            Exploring new programming languages, with a current focus on
-                            Mojo
-                        </li>
-                        <li>Developing a backend-as-a-service platform</li>
-                        <li>
-                            Researching recent papers and building my own database
-                            systems
-                        </li>
-                        <li>Leveraging LLMs to build applications on top of LLMs</li>
-                        <li>
-                            Building new tools with AI such as <a
-                                href="https://github.com/nijaru/yt-text"
-                                target="_blank"
-                                class="text-accent-blue hover:text-accent-purple underline"
-                                >yt-text</a
-                            >, a tool for transcribing YouTube audio
-                        </li>
-                        <li>
-                            Working on music production and audio engineering projects
-                        </li>
+                        <li>Building a backend-as-a-service platform to simplify server-side infrastructure</li>
+                        <li>Exploring audio processing technologies combined with artificial intelligence</li>
+                        <li>Learning new programming languages, with a current focus on Mojo</li>
+                        <li>Researching recent papers on databases and storage systems</li>
+                        <li>Working on music production and audio engineering projects</li>
                     </ul>
+                </div>
+                
+                <div>
+                    <SectionHeading client:visible withBorder={false}>Technical Background</SectionHeading>
+                    <TechSkills client:visible />
                 </div>
             </div>
         </div>
