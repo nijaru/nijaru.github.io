@@ -6,6 +6,7 @@ import BlogPostPreview from "../components/BlogPostPreview";
 import GithubRepos from "../components/GithubRepos";
 import ArrowLink from "../components/ArrowLink";
 import SectionHeading from "../components/SectionHeading";
+import SocialLinks from "../components/SocialLinks";
 import { getCollection } from 'astro:content';
 
 // Get all blog posts from the collection
@@ -56,11 +57,15 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
                 </span>
             </h1>
 
-            <h2 class="text-2xl md:text-3xl font-semibold mb-8 tracking-wide">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 tracking-wide">
                 <TextGlow client:visible>
                     <span class="text-lime-400">Software Developer</span>
                 </TextGlow>
             </h2>
+            
+            <div class="mt-2 mb-6">
+                <SocialLinks client:visible />
+            </div>
         </div>
 
         <!-- About Me Section -->
