@@ -33,9 +33,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PINNED_FETCH_TOKEN }}
 
       - name: Commit and push changes
+        id: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/data/pinned-repos.json static/data/pinned-repos.json
-          git diff --staged --quiet || git commit -m "Update pinned repositories data" 
+          git diff --staged --quiet && echo "changes_detected=false" >> $GITHUB_OUTPUT || (git commit -m "Update pinned repositories data" && echo "changes_detected=true" >> $GITHUB_OUTPUT)
           git push
+
+      - name: Trigger deployment
+        if: steps.commit.outputs.changes_detected == 'true'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-website
