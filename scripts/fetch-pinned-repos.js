@@ -61,11 +61,44 @@ const options = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'User-Agent': 'Node.js',
+    'User-Agent': 'nijaru-github-io',
     'Authorization': `Bearer ${process.env.GITHUB_TOKEN || ''}`
   },
-  timeout: 10000 // Add 10 second timeout
+  timeout: 15000 // Increase to 15 second timeout
 };
+
+// Function to generate fallback data if API call fails
+function generateFallbackData() {
+  try {
+    console.log('Attempting to use test-fetch.js to generate mock data');
+    
+    // Create a minimal fallback dataset
+    const fallbackData = [
+      {
+        name: "repository-placeholder",
+        description: "Repository data could not be fetched",
+        html_url: "https://github.com/nijaru",
+        homepage: null,
+        language: null,
+        stargazers_count: 0,
+        forks_count: 0
+      }
+    ];
+    
+    const jsonData = JSON.stringify(fallbackData, null, 2);
+    fs.writeFileSync(publicOutputPath, jsonData);
+    fs.writeFileSync(staticOutputPath, jsonData);
+    console.log('Created fallback repository data');
+  } catch (error) {
+    console.error('Failed to generate fallback data:', error);
+    process.exit(1);
+  }
+}
+
+// Verify GitHub token exists
+if (!process.env.GITHUB_TOKEN) {
+  console.warn('Warning: GITHUB_TOKEN not set. API call will likely fail.');
+}
 
 // Make the GraphQL request
 const req = https.request(options, (res) => {
@@ -79,7 +112,18 @@ const req = https.request(options, (res) => {
     if (res.statusCode !== 200) {
       console.error(`Error: Received status code ${res.statusCode}`);
       console.error(data);
-      process.exit(1);
+      
+      // Fall back to existing data if available
+      if (fs.existsSync(publicOutputPath)) {
+        console.warn('Using existing pinned repositories data as fallback');
+        process.exit(0);
+      } else {
+        // Generate mock data as last resort
+        console.warn('Generating mock data as fallback');
+        generateMockData();
+        process.exit(0);
+      }
+      return;
     }
 
     try {
@@ -87,7 +131,23 @@ const req = https.request(options, (res) => {
       
       if (response.errors) {
         console.error('GraphQL Error:', response.errors);
-        process.exit(1);
+        
+        // Fall back to existing data if available
+        if (fs.existsSync(publicOutputPath)) {
+          console.warn('Using existing pinned repositories data as fallback');
+          process.exit(0);
+        } else {
+          // Generate mock data as last resort
+          console.warn('Generating mock data as fallback');
+          generateMockData();
+          process.exit(0);
+        }
+        return;
+      }
+
+      // Check if data structure is as expected
+      if (!response.data?.user?.pinnedItems?.nodes) {
+        throw new Error('Unexpected API response structure');
       }
 
       // Extract and format repository data
@@ -108,15 +168,66 @@ const req = https.request(options, (res) => {
       console.log(`Successfully wrote ${repos.length} pinned repositories to both public and static directories`);
     } catch (error) {
       console.error('Error processing response:', error);
-      process.exit(1);
+      
+      // Fall back to existing data if available
+      if (fs.existsSync(publicOutputPath)) {
+        console.warn('Using existing pinned repositories data as fallback');
+        process.exit(0);
+      } else {
+        // Generate mock data as last resort
+        console.warn('Generating mock data as fallback');
+        generateMockData();
+      }
     }
   });
 });
 
 req.on('error', (error) => {
   console.error('Request error:', error);
-  process.exit(1);
+  
+  // Fall back to existing data if available
+  if (fs.existsSync(publicOutputPath)) {
+    console.warn('Using existing pinned repositories data as fallback');
+    process.exit(0);
+  } else {
+    // Generate mock data as last resort
+    console.warn('Generating mock data as fallback');
+    generateMockData();
+  }
 });
+
+// Function to generate mock data if all else fails
+function generateMockData() {
+  try {
+    // Import mock data generation logic
+    import('./test-fetch.js')
+      .then(() => console.log('Successfully generated mock data'))
+      .catch(err => {
+        console.error('Error importing mock data generator:', err);
+        
+        // Last resort fallback - create minimal mock data inline
+        const fallbackData = [
+          {
+            name: "repository-placeholder",
+            description: "Repository data could not be fetched",
+            html_url: "https://github.com/nijaru",
+            homepage: null,
+            language: null,
+            stargazers_count: 0,
+            forks_count: 0
+          }
+        ];
+        
+        const jsonData = JSON.stringify(fallbackData, null, 2);
+        fs.writeFileSync(publicOutputPath, jsonData);
+        fs.writeFileSync(staticOutputPath, jsonData);
+        console.log('Created emergency fallback repository data');
+      });
+  } catch (error) {
+    console.error('Failed to generate mock data:', error);
+    process.exit(1);
+  }
+}
 
 // Send the GraphQL query
 req.write(JSON.stringify({ query }));
