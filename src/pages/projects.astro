@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
-import GithubRepos from "../components/GithubRepos";
+import GithubRepos from "../components/GithubRepos.tsx";
+import ErrorBoundary from "../components/ErrorBoundary.tsx";
 import SectionHeading from "../components/SectionHeading";
 import TextGlow from "../components/TextGlow";
 ---
@@ -192,7 +193,9 @@ import TextGlow from "../components/TextGlow";
         <!-- Pinned Repositories Section -->
         <section class="mb-12">
             <SectionHeading client:visible>Pinned Repositories</SectionHeading>
-            <GithubRepos client:visible username="nijaru" limit={6} />
+            <ErrorBoundary client:idle>
+                <GithubRepos client:idle username="nijaru" limit={6} />
+            </ErrorBoundary>
         </section>
 
         <div class="text-center">

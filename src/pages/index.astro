@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
 import BlogPostPreview from "../components/BlogPostPreview";
-import GithubRepos from "../components/GithubRepos";
+import GithubRepos from "../components/GithubRepos.tsx";
+import ErrorBoundary from "../components/ErrorBoundary.tsx";
 import ArrowLink from "../components/ArrowLink";
 import SectionHeading from "../components/SectionHeading";
 import SocialLinks from "../components/SocialLinks";
@@ -131,7 +132,9 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
         <!-- Featured GitHub Repos -->
         <section>
             <SectionHeading client:visible>Pinned Repositories</SectionHeading>
-            <GithubRepos client:visible username="nijaru" limit={2} />
+            <ErrorBoundary client:idle>
+                <GithubRepos client:idle username="nijaru" limit={2} />
+            </ErrorBoundary>
             <div class="mt-4 text-right">
                 <ArrowLink
                     href="/projects"

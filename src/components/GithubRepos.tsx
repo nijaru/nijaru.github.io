@@ -7,22 +7,34 @@ import {
 	onMount,
 } from "solid-js";
 
+interface Repository {
+	name: string;
+	description: string | null;
+	html_url: string;
+	homepage: string | null;
+	language: string | null;
+	stargazers_count: number;
+	forks_count: number;
+}
+
+interface GithubReposProps {
+	username?: string; // Not used in current implementation but kept for API compatibility
+	limit?: number;
+}
+
 /**
  * Displays GitHub repositories from a pre-generated JSON file
- * @param {Object} props - Component props
- * @param {string} [props.username] - GitHub username (not used in current implementation)
- * @param {number} [props.limit] - Limit number of repositories to display
  */
-export default function GithubRepos({ username, limit }) {
+export default function GithubRepos({ username, limit }: GithubReposProps) {
 	const [isLoading, setIsLoading] = createSignal(true);
-	const [errorMessage, setErrorMessage] = createSignal(null);
-	let loadingTimeout;
+	const [errorMessage, setErrorMessage] = createSignal<string | null>(null);
+	let loadingTimeout: number | undefined;
 
 	// Fetch pinned repositories from static JSON file
-	const [repos] = createResource(async () => {
+	const [repos] = createResource<Repository[]>(async () => {
 		try {
 			setIsLoading(true);
-			let data;
+			let data: Repository[];
 			
 			if (typeof window !== 'undefined') {
 				// Client-side: use fetch with relative path
@@ -32,7 +44,7 @@ export default function GithubRepos({ username, limit }) {
 				if (!response.ok) {
 					throw new Error(`Failed to fetch repositories: ${response.status}`);
 				}
-				data = await response.json();
+				data = await response.json() as Repository[];
 			} else {
 				// Server-side: read file directly
 				const { readFileSync } = await import('fs');
@@ -42,7 +54,7 @@ export default function GithubRepos({ username, limit }) {
 				const __dirname = dirname(__filename);
 				const filePath = join(__dirname, '../../public/data/pinned-repos.json');
 				const fileContent = readFileSync(filePath, 'utf-8');
-				data = JSON.parse(fileContent);
+				data = JSON.parse(fileContent) as Repository[];
 			}
 
 			// Limit the number of repos based on the limit prop
@@ -66,7 +78,7 @@ export default function GithubRepos({ username, limit }) {
 
 	// Force loading to complete after a timeout (fallback)
 	onMount(() => {
-		loadingTimeout = setTimeout(() => {
+		loadingTimeout = window.setTimeout(() => {
 			if (isLoading()) {
 				setIsLoading(false);
 				console.debug("GitHub repos loading timed out - forcing completion");
@@ -83,15 +95,15 @@ export default function GithubRepos({ username, limit }) {
 
 	// Grid classes memoized to prevent recalculation
 	// This is a simple memoization since the function only depends on limit and repoCount
-	const gridClassCache = {};
-	const getGridClass = (repoCount) => {
+	const gridClassCache: Record<string, string> = {};
+	const getGridClass = (repoCount: number): string => {
 		const cacheKey = `${limit || 0}-${repoCount}`;
 		
 		if (gridClassCache[cacheKey]) {
 			return gridClassCache[cacheKey];
 		}
 		
-		let result;
+		let result: string;
 		// For homepage layout (max 2)
 		if (limit === 2) {
 			result = "grid gap-4 md:grid-cols-2";
@@ -129,7 +141,7 @@ export default function GithubRepos({ username, limit }) {
 				>
 					<div class={getGridClass(repos()?.length || 0)}>
 						<For each={repos() || []}>
-							{(repo) => (
+							{(repo: Repository) => (
 								<div class="relative group h-full">
 									<a
 										href={repo.html_url}
