@@ -56,6 +56,8 @@ scripts/            # Build and utility scripts
 
 ## Recent Updates
 - **Security**: Updated Astro to v5.10.2, resolved all vulnerabilities
-- **Fonts**: Implemented Atkinson Hyperlegible for accessibility
-- **Content**: Refreshed about/projects pages with current work
-- **Links**: Added GitHub repository links to project cards
+- **Performance**: Font preloading, TypeScript conversion, error boundaries, bundle optimization
+- **Fonts**: Implemented Atkinson Hyperlegible with improved font sizes for readability
+- **Content**: Refreshed about/projects pages with current work, improved blog post content
+- **Features**: Added RSS feed, robots.txt, web manifest, sitemap generation
+- **SEO**: Comprehensive meta tags, Open Graph, Twitter Card support
