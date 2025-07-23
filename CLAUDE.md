@@ -1,51 +1,61 @@
-# CLAUDE.md - Agent Guidelines for nijaru.github.io
+# CLAUDE.md - Personal Website Guidelines
 
 ## Technology Stack
-- [Astro](https://astro.build/) - Web framework for content-focused websites
-- [Solid.js](https://www.solidjs.com/) - Reactive JavaScript UI library
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- Node.js (>=18.0.0) or Bun (>=1.0.0) required
-- GitHub Actions - For automated workflows (pinned repos fetching)
+- **Astro v5.10.2** - Static site generation with component islands
+- **Solid.js** - Reactive UI components with signals/resources  
+- **Tailwind CSS** - Utility-first styling with custom space/accent colors
+- **Atkinson Hyperlegible fonts** - Accessible typography (Next + Mono variants)
+- **Node.js >=18** - Runtime requirement
 
-## Build Commands
-- Install dependencies: `npm install`
-- Development server: `npm run dev` or `npm start`
-- Build site: `npm run build` (outputs to dist/ directory)
-- Preview build: `npm run preview`
-- Run specific script: `node scripts/script-name.js`
+## Build & Development
+```bash
+npm install          # Install dependencies
+npm run dev          # Development server (localhost:4321)
+npm run build        # Production build → dist/
+npm run preview      # Preview production build
+```
 
-## Code Style Guidelines
-- **JavaScript/JSX**:
-  - Use ES modules for imports/exports
-  - Follow Solid.js reactive patterns with signals and resources
-  - Document components with JSDoc comments including @param descriptions
-  - Use const for variables that don't change, let otherwise
-  - Use async/await for asynchronous operations
-  - Handle errors with try/catch blocks and provide meaningful error messages
-- **CSS**: Use Tailwind utility classes, prefer composition over custom classes
-- **Component Structure**:
-  - Name files: PascalCase for components (NavBar.jsx), kebab-case for pages (about.astro)
-  - Prefer functional components with explicit props destructuring
-  - Group related state declarations at the top of components
-  - Use cleanup handlers to prevent memory leaks (onCleanup, onMount)
-- **Formatting**:
-  - Use consistent indentation (2 spaces)
-  - Place component props on new lines when they exceed 3 properties
-  - Use semicolons at the end of statements
-- **Commit messages**: Use present tense, concise descriptions
+## Architecture Decisions
+- **Static generation**: All pages pre-rendered for performance
+- **Component islands**: Solid.js components hydrated on demand with `client:` directives
+- **Font loading**: Atkinson Hyperlegible Next (body) + Mono (code) via Google Fonts
+- **GitHub integration**: Pinned repos fetched via Actions → static JSON files
+- **SSR compatibility**: GitHub repos component handles server/client rendering differences
 
-## Theme Guidelines
-- Color palette: 
-  - Dark space backgrounds (space-800, space-900)
-  - Lime green highlights (lime-400, lime-500)
-  - Light blue/purple accents (accent-blue, accent-purple)
-- Animation classes available for star field effects
-- Responsive design using Tailwind breakpoints (md:, lg:)
+## Code Patterns
+- **Components**: PascalCase files (NavBar.jsx), functional with explicit props
+- **Pages**: kebab-case Astro files (about.astro) 
+- **Styling**: Tailwind utilities, custom CSS variables for theme colors
+- **State**: Solid signals for reactive data, resources for async loading
+- **Error handling**: try/catch blocks with fallback UI states
 
-## GitHub Integration
-- GitHub pinned repositories are fetched via a scheduled GitHub Action
-- Uses GitHub GraphQL API with a token (GITHUB_TOKEN)
-- Data is pre-generated and stored in both:
-  - `/public/data/pinned-repos.json` (for production)
-  - `/static/data/pinned-repos.json` (for development)
-- GithubRepos component fetches from these static files instead of direct API calls
+## Theme System
+- **Colors**: Dark space backgrounds, lime-400/500 highlights, accent-blue/purple
+- **Typography**: Atkinson Hyperlegible Next (accessible), Mono for code blocks
+- **Layout**: Responsive grid, card-containers with hover effects
+- **Animation**: Star field background, text glow effects, smooth transitions
+
+## GitHub Automation
+- **Workflow**: `.github/workflows/fetch-pinned-repos.yml` runs every 6 hours
+- **Script**: `scripts/fetch-pinned-repos.js` fetches via GraphQL API
+- **Data**: Stored in `public/data/pinned-repos.json` for production
+- **Token**: Uses `PINNED_FETCH_TOKEN` secret for API access
+
+## File Structure
+```
+src/
+├── components/     # Solid.js UI components
+├── content/        # Markdown blog posts
+├── layouts/        # Astro layout templates  
+├── pages/          # Astro page routes
+└── styles/         # Global CSS and markdown styles
+public/
+└── data/           # Static JSON data files
+scripts/            # Build and utility scripts
+```
+
+## Recent Updates
+- **Security**: Updated Astro to v5.10.2, resolved all vulnerabilities
+- **Fonts**: Implemented Atkinson Hyperlegible for accessibility
+- **Content**: Refreshed about/projects pages with current work
+- **Links**: Added GitHub repository links to project cards
