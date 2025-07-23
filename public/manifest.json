@@ -1,0 +1,20 @@
+{
+  "name": "Nick Russo - Software Engineer",
+  "short_name": "Nick Russo",
+  "description": "Personal website and blog of Nick Russo, a software engineer exploring AI, systems programming, and new technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#84cc16",
+  "categories": ["portfolio", "blog", "developer"],
+  "lang": "en",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ]
+}

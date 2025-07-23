@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://nijaru.com/sitemap-index.xml
+
+# Block common bot paths
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /admin/
