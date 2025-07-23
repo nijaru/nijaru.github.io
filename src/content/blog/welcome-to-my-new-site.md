@@ -9,51 +9,55 @@ image:
   alt: "Space themed website design"
 ---
 
-I've been wanting to rewrite my website and start learning a new frontend framework, and with the recent release of Claude Code, I thought it'd be the perfect opportunity. The result is a complete rebuild using Solid.js and Astro with a space theme.
+I've been wanting to rebuild my personal site for a while, and with the recent release of Claude Code, it seemed like the perfect opportunity to experiment with both new frontend frameworks and AI-assisted development. The result is a complete rewrite using Solid.js and Astro with a space-themed design.
 
-## Why the Change?
+## Why Rebuild?
 
-My previous site was built with Hugo, which served me well for quite some time. Hugo is great for static sites, and I had no real complaints about it. I've been keeping tabs on newer frameworks, though, and this rebuild gave me the perfect excuse to finally get my hands dirty with them.
+My previous site was built with Hugo, which served me well for static content generation. But I'd been curious about newer frameworks like Solid.js and wanted hands-on experience with them. Hugo is excellent for what it does, but I was looking for something that offered more flexibility for interactive components while maintaining the performance benefits of static generation.
 
-For the design, I went with a space theme - dark background with lime green accents. I thought it would look cool and wanted to see if Claude could implement it. This was a good test case for the AI pair programming tool while giving my site a fresh look. Let me break down the tech stack I used.
+The space theme came from wanting something visually distinct - dark backgrounds with lime green accents felt like a good fit for a developer's site. It also presented interesting implementation challenges around creating dynamic visual elements like the animated star field background.
 
-## Technical Implementation
+## Technical Stack
 
-I built the new site with this combination of tools:
+The new site combines three main technologies:
 
-- <span class="text-accent-blue">Solid.js</span> for reactive components and interactions
-- <span class="text-accent-purple">Astro</span> for static site generation and performance
-- <span class="text-lime-400">Tailwind CSS</span> for styling
+- **Solid.js** for reactive components and client-side interactions
+- **Astro** for static site generation with component islands architecture  
+- **Tailwind CSS** for utility-first styling
 
-This setup gives me the speed and responsiveness I wanted, plus it's been fun to work with. Solid.js handles the interactive elements with its reactive system, while Astro takes care of generating optimized static pages. I'm still getting up to speed with Solid.js, but I'm already finding it more intuitive than React for my needs.
+This stack gives me the best of both worlds: static generation for performance and SEO, with selective hydration for interactive elements. Solid.js particularly appealed to me because of its fine-grained reactivity system and smaller bundle sizes compared to React.
 
-## Working with Claude Code
+## Development Process with Claude Code
 
-What made this rebuild interesting was using Claude Code as an AI pair programmer. It helped me iterate much more quickly than I might have otherwise. I was surprised by how well it understood what I was trying to accomplish, especially with the visual elements of the space theme.
+Working with Claude Code changed my usual development workflow significantly. Instead of writing components from scratch, I could describe the functionality I wanted and iterate on the implementation. This was especially helpful for the visual components - the star field animation, the reflection text effects, and the responsive navigation.
 
-In the past, I've used LLMs mainly to look up documentation and help design the architecture of my apps, but rarely for writing actual code. Claude Code flips this pattern - I can describe what I want built, and it handles the implementation details. It's a different workflow that's proven surprisingly effective for certain tasks.
+The AI tool excelled at translating design concepts into working code. For example, I described wanting "twinkling stars with different animation speeds" and it generated CSS animations with staggered timing that created the exact effect I had in mind.
 
-## What I'm Up To
+What surprised me most was how well it handled the component architecture. It properly structured Solid.js components with correct signal usage and lifecycle management, even for more complex interactions like the GitHub repository fetching.
 
-These days I'm busy coding on new projects and researching ways to apply AI to development workflows. I'm not in founder mode right now - I'm in <span class="text-lime-300 font-medium">Flounder mode™.</span> It's a productive chaos that often leads to unexpected insights.
+## Technical Highlights
 
-Sometimes it helps me create connections between ideas I never would have seen otherwise. Every abandoned project teaches me something, even if that something is just <span class="italic text-gray-100">"maybe I should think twice before trying to rewrite Redis in Go at 2 AM on a Tuesday."</span>
+A few interesting implementation details worth mentioning:
 
-I pivot so often my LinkedIn profile has <strong class="text-lime-300">motion sickness</strong>. One day I'm building a distributed database, the next I'm convinced I need to create yet another JavaScript framework. My version control history is a metaphor for my dating life - <span class="bg-lime-500/10 px-1">hundreds of commits but afraid of the final merge</span>. I tell myself <em class="text-gray-100">"this is totally normal product exploration"</em> while my git log reads like a crime scene investigation.
+**Component Islands**: Astro's islands architecture means I can selectively hydrate components. The star field only hydrates on `client:idle`, while the navigation hydrates on `client:visible` for faster perceived performance.
 
-## What's Next?
+**GitHub Integration**: The site automatically fetches and displays my pinned repositories using GitHub's GraphQL API, with proper error handling and loading states built into the Solid components.
 
-I plan to use this blog to share thoughts on:
+**Accessibility**: Used Atkinson Hyperlegible fonts throughout for better readability, and ensured proper focus management and semantic HTML structure.
 
-- Backend development insights
-- Computer science topics, distributed systems, and databases
-- Learning new programming languages like Mojo, Rust, and Zig
-- Updates on projects like yt-text and others
+**Performance**: Static generation means fast initial loads, with selective JavaScript for interactive elements. The entire site builds to optimized static files that can be served from a CDN.
 
-Thanks for stopping by. If you want to connect, you can find me on GitHub, X, or Bluesky.
+## Current Projects
 
-And yes, of course I wrote this post with AI - I just served as the editor. Seems fitting for a post about working with Claude Code, doesn't it?
+I'm actively working on several interesting projects:
 
-<p class="bg-lime-500/20 border-l-4 border-lime-400 pl-4 pr-4 py-4 rounded-r my-6">
-I'm currently looking for new engineering opportunities! If you're hiring someone who enjoys building backends, dealing with databases, applying AI, and has strong Python or Go skills, please reach out.
-</p>
+- A vector database implementation in Mojo for high-performance similarity search
+- A TUI-based coding agent in Rust with improved workflow automation  
+- Local LLM infrastructure using Ollama and Open WebUI
+- Experimenting with OpenAI Whisper on Modular's MAX Graph for audio processing
+
+## Looking Forward
+
+This blog will focus on backend development, distributed systems, databases, and AI applications in software engineering. I'm particularly interested in exploring how newer languages like Mojo, Rust, and Zig can solve performance-critical problems in data infrastructure.
+
+Thanks for reading. You can find me on [GitHub](https://github.com/nijaru), [X](https://x.com/nijaru), or [Bluesky](https://bsky.app/profile/nijaru.bsky.social) if you'd like to connect.
