@@ -9,8 +9,6 @@ image:
   alt: "AI-assisted development concept"
 ---
 
-## Thoughts on AI-Assisted Development
-
 I wanted to write a follow-up to my previous post. I assume it was readily apparent throughout that it was AI-generated. After spending some time using Claude Code and other AI coding tools, I've been reflecting on how they impact both my development workflow and the learning process.
 
 I used *Claude 3.7 Sonnet Thinking* to write the blog post itself. It certainly did a *job*. It covered everything about my site upgrade, working with Claude Code, and a bit about me. I'm sure I could've worked it into something better with more prompting. I was able to coax it into generating some jokes that were almost funny. It wasn't bad, but there is something about AI-generated prose that doesn't sound quite right. The tone just feels a little off. I did end up editing parts of my previous post since I couldn't convince the AI not to write like an AI.
