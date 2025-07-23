@@ -21,6 +21,12 @@ const pathname = Astro.url.pathname;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description} />
         <title>{title}</title>
+        
+        <!-- Atkinson Hyperlegible fonts for better accessibility -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet">
+        
         <slot name="head" />
     </head>
     <body class="bg-space-900 text-white min-h-screen">
@@ -126,6 +132,7 @@ const pathname = Astro.url.pathname;
 
     body {
         font-family:
+            "Atkinson Hyperlegible Next",
             "Inter",
             system-ui,
             -apple-system,
@@ -135,6 +142,21 @@ const pathname = Astro.url.pathname;
             "Helvetica Neue",
             Arial,
             sans-serif;
+    }
+
+    /* Monospace font for code elements */
+    code, pre, .font-mono {
+        font-family:
+            "Atkinson Hyperlegible Mono",
+            "SF Mono",
+            Monaco,
+            "Inconsolata",
+            "Roboto Mono",
+            "Source Code Pro",
+            Consolas,
+            "Liberation Mono",
+            Menlo,
+            monospace;
     }
 
     /* Custom scrollbar */

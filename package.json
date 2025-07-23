@@ -11,8 +11,8 @@
     "check-deps": "node scripts/check-deps.js"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^3.0.2",
-    "@astrojs/tailwind": "^5.0.3",
+    "@astrojs/solid-js": "^5.1.0",
+    "@astrojs/tailwind": "^6.0.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",

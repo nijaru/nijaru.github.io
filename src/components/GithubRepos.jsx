@@ -22,17 +22,28 @@ export default function GithubRepos({ username, limit }) {
 	const [repos] = createResource(async () => {
 		try {
 			setIsLoading(true);
-			// Determine the correct path based on base URL
-			const basePath = import.meta.env.BASE_URL || "/";
-			const jsonPath = `${basePath.endsWith("/") ? basePath.slice(0, -1) : basePath}/data/pinned-repos.json`;
-
-			// Fetch pre-generated JSON file with pinned repositories
-			const response = await fetch(jsonPath);
-			if (!response.ok) {
-				throw new Error(`Failed to fetch repositories: ${response.status}`);
+			let data;
+			
+			if (typeof window !== 'undefined') {
+				// Client-side: use fetch with relative path
+				const basePath = import.meta.env.BASE_URL || "/";
+				const jsonPath = `${basePath.endsWith("/") ? basePath.slice(0, -1) : basePath}/data/pinned-repos.json`;
+				const response = await fetch(jsonPath);
+				if (!response.ok) {
+					throw new Error(`Failed to fetch repositories: ${response.status}`);
+				}
+				data = await response.json();
+			} else {
+				// Server-side: read file directly
+				const { readFileSync } = await import('fs');
+				const { fileURLToPath } = await import('url');
+				const { dirname, join } = await import('path');
+				const __filename = fileURLToPath(import.meta.url);
+				const __dirname = dirname(__filename);
+				const filePath = join(__dirname, '../../public/data/pinned-repos.json');
+				const fileContent = readFileSync(filePath, 'utf-8');
+				data = JSON.parse(fileContent);
 			}
-
-			let data = await response.json();
 
 			// Limit the number of repos based on the limit prop
 			if (limit && limit > 0 && Array.isArray(data)) {
