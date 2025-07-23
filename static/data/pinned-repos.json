@@ -1,14 +1,5 @@
 [
   {
-    "name": "yt-text",
-    "description": "Download YouTube audio and convert it to text using yt-dlp and OpenAI Whisper",
-    "html_url": "https://github.com/nijaru/yt-text",
-    "homepage": null,
-    "language": "Go",
-    "stargazers_count": 1,
-    "forks_count": 1
-  },
-  {
     "name": "dotfiles",
     "description": "My dotfiles",
     "html_url": "https://github.com/nijaru/dotfiles",
@@ -23,6 +14,24 @@
     "html_url": "https://github.com/nijaru/nijaru.github.io",
     "homepage": "https://nijaru.com",
     "language": "JavaScript",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  {
+    "name": "max-whisper",
+    "description": null,
+    "html_url": "https://github.com/nijaru/max-whisper",
+    "homepage": null,
+    "language": "Python",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  {
+    "name": "swiss-mojo",
+    "description": "A Swiss Table in Mojo",
+    "html_url": "https://github.com/nijaru/swiss-mojo",
+    "homepage": null,
+    "language": "Mojo",
     "stargazers_count": 0,
     "forks_count": 0
   }

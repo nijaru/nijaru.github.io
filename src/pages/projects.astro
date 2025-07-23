@@ -26,21 +26,46 @@ import TextGlow from "../components/TextGlow";
                     <h3
                         class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
                     >
-                        Backend-as-a-Service Platform
+                        Vector Database in <TextGlow client:visible>Mojo</TextGlow>
                     </h3>
                     <p class="text-gray-300 mb-4">
-                        Building a database platform to simplify backend development by
-                        handling auth, APIs, databases, and compute functions.
+                        Building a high-performance vector database from scratch in Mojo for 
+                        similarity search and embedding operations. Focused on efficient 
+                        indexing algorithms and memory management.
                     </p>
                     <div class="flex space-x-3 text-sm mb-2">
-                        <span class="px-2 py-1 bg-space-500 rounded text-accent-blue"
-                            >Go</span
+                        <span class="px-2 py-1 bg-space-500 rounded text-orange-400"
+                            >Mojo</span
                         >
                         <span class="px-2 py-1 bg-space-500 rounded text-blue-400"
-                            >Cloud</span
+                            >Vector Search</span
                         >
                         <span class="px-2 py-1 bg-space-500 rounded text-purple-400"
-                            >PostgreSQL</span
+                            >SIMD</span
+                        >
+                    </div>
+                    <p class="text-gray-400 italic">In progress</p>
+                </div>
+
+                <div class="card-container hover:border-lime-500 group relative">
+                    <h3
+                        class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
+                    >
+                        TUI Coding Agent in <TextGlow client:visible>Rust</TextGlow>
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Yet another terminal-based coding assistant with improved workflow 
+                        automation, better context management, and seamless editor integration.
+                    </p>
+                    <div class="flex space-x-3 text-sm mb-2">
+                        <span class="px-2 py-1 bg-space-500 rounded text-orange-400"
+                            >Rust</span
+                        >
+                        <span class="px-2 py-1 bg-space-500 rounded text-blue-400"
+                            >TUI</span
+                        >
+                        <span class="px-2 py-1 bg-space-500 rounded text-purple-400"
+                            >AI/LLM</span
                         >
                     </div>
                     <p class="text-gray-400 italic">In development</p>
@@ -50,25 +75,50 @@ import TextGlow from "../components/TextGlow";
                     <h3
                         class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
                     >
-                        Vector Database from Scratch
+                        Local LLM Infrastructure
                     </h3>
                     <p class="text-gray-300 mb-4">
-                        Researching database systems and building a proof-of-concept
-                        vector database from scratch in Mojo, exploring efficient
-                        indexing and querying of high-dimensional embeddings.
+                        Running local language models with <TextGlow client:visible>Ollama</TextGlow> 
+                        and Open WebUI, accessible remotely via Tailscale for secure, 
+                        self-hosted AI services.
                     </p>
                     <div class="flex space-x-3 text-sm mb-2">
-                        <span class="px-2 py-1 bg-space-500 rounded text-orange-400"
-                            >Mojo</span
+                        <span class="px-2 py-1 bg-space-500 rounded text-green-400"
+                            >Ollama</span
                         >
                         <span class="px-2 py-1 bg-space-500 rounded text-blue-400"
-                            >Databases</span
+                            >Tailscale</span
                         >
                         <span class="px-2 py-1 bg-space-500 rounded text-purple-400"
-                            >Vector Search</span
+                            >Self-hosted</span
                         >
                     </div>
-                    <p class="text-gray-400 italic">In progress</p>
+                    <p class="text-gray-400 italic">Active deployment</p>
+                </div>
+
+                <div class="card-container hover:border-lime-500 group relative">
+                    <h3
+                        class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300"
+                    >
+                        <TextGlow client:visible>Whisper</TextGlow> on MAX Graph
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Experimenting with OpenAI Whisper implementation using Modular's 
+                        MAX Graph during their hack weekend. Exploring performance 
+                        optimizations for audio processing.
+                    </p>
+                    <div class="flex space-x-3 text-sm mb-2">
+                        <span class="px-2 py-1 bg-space-500 rounded text-red-400"
+                            >MAX Graph</span
+                        >
+                        <span class="px-2 py-1 bg-space-500 rounded text-blue-400"
+                            >Audio ML</span
+                        >
+                        <span class="px-2 py-1 bg-space-500 rounded text-purple-400"
+                            >Whisper</span
+                        >
+                    </div>
+                    <p class="text-gray-400 italic">Experiment</p>
                 </div>
             </div>
         </section>
