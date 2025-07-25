@@ -26,7 +26,7 @@ const categories = [
     skills: [
       { name: 'Rust', color: 'text-orange-500' },
       { name: 'Mojo 🔥', color: 'text-yellow-500' },
-      { name: 'Zig', color: 'text-yellow-600' },
+      { name: 'Gleam', color: 'text-purple-400' },
       { name: 'Solid.js', color: 'text-accent-blue' }
     ]
   },
