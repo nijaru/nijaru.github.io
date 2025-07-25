@@ -58,7 +58,7 @@ I plan to use this blog to share thoughts on:
 
 - Backend development insights
 - Computer science topics, distributed systems, and databases
-- Learning new programming languages like Mojo, Rust, Zig, and Gleam
+- Learning new programming languages like Mojo, Rust, and Gleam
 - Updates on projects and technical experiments
 
 Thanks for stopping by. If you want to connect, you can find me on [GitHub](https://github.com/nijaru), [X](https://x.com/nijaru), or [Bluesky](https://bsky.app/profile/nijaru.bsky.social).
