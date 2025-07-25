@@ -12,6 +12,20 @@ export default defineConfig({
     solidJs(),
     sitemap(),
   ],
+  vite: {
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+    },
+    ssr: {
+      noExternal: ['solid-js'],
+    },
+  },
   publicDir: 'static',
   markdown: {
     rehypePlugins: [rehypeH2TextGlow],
