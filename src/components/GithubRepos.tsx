@@ -161,7 +161,7 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 											{repo.description || "No description available"}
 										</p>
 
-										<div class="flex space-x-3 text-sm mb-4">
+										<div class="flex space-x-3 text-responsive-sm mb-4">
 											<span class="px-2 py-1 bg-space-500 rounded text-accent-blue">
 												{repo.language || "Various"}
 											</span>
