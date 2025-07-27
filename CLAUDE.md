@@ -31,8 +31,8 @@ npm run preview      # Preview production build
 - **Error handling**: try/catch blocks with fallback UI states, ErrorBoundary components
 
 ## Theme System
-- **Colors**: Dark space backgrounds, lime-400/500 highlights, accent-blue/purple
-- **Typography**: Atkinson Hyperlegible Next (accessible), Mono for code blocks
+- **Colors**: Dark space backgrounds, indigo primary highlights, accent-blue/purple
+- **Typography**: Geist font (modern), JetBrains Mono for code blocks
 - **Layout**: Responsive grid, card-containers with hover effects
 - **Animation**: Star field background, text glow effects, smooth transitions
 

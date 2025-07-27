@@ -22,16 +22,14 @@ const pathname = Astro.url.pathname;
         <meta name="description" content={description} />
         <title>{title}</title>
         
-        <!-- Atkinson Hyperlegible fonts for better accessibility -->
+        <!-- Geist and JetBrains Mono fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
-        <!-- Preload critical font weights for faster rendering -->
-        <link rel="preload" href="https://fonts.gstatic.com/s/atkinsonhyperlegiblenext/v1/6xKcdSJYQ1NQTE1DfPrBBKEUvzd6n-GmjBrR0nGJJ9HJbDfR7Po.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="https://fonts.gstatic.com/s/atkinsonhyperlegiblemono/v1/9Btg3DJHTQRyMxFJbYAGRnuC2ZKXPEqOsOlHj8A3.woff2" as="font" type="font/woff2" crossorigin>
-        
-        <!-- Load only needed font weights to reduce size -->
-        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&family=Atkinson+Hyperlegible+Mono:wght@400&display=swap" rel="stylesheet">
+        <!-- Load Geist for body text and JetBrains Mono for code -->
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <!-- Load Geist from Vercel CDN for better performance -->
+        <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist/style.css" rel="stylesheet">
         
         <slot name="head" />
     </head>
@@ -75,7 +73,7 @@ const pathname = Astro.url.pathname;
     }
 
     .skill-card {
-        @apply backdrop-blur-sm px-4 py-2.5 rounded-md border shadow-md transition-all duration-300 hover:border-lime-500 hover:shadow-lg;
+        @apply backdrop-blur-sm px-4 py-2.5 rounded-md border shadow-md transition-all duration-300 hover:border-primary-500 hover:shadow-lg;
         background-color: rgb(35, 35, 66); /* space-600 - darker than container */
         opacity: var(--card-bg-opacity);
         border-color: rgb(43, 43, 74); /* slightly lighter than background */
@@ -138,8 +136,7 @@ const pathname = Astro.url.pathname;
 
     body {
         font-family:
-            "Atkinson Hyperlegible Next",
-            "Inter",
+            "Geist",
             system-ui,
             -apple-system,
             BlinkMacSystemFont,
@@ -153,7 +150,7 @@ const pathname = Astro.url.pathname;
     /* Monospace font for code elements */
     code, pre, .font-mono {
         font-family:
-            "Atkinson Hyperlegible Mono",
+            "JetBrains Mono",
             "SF Mono",
             Monaco,
             "Inconsolata",

@@ -153,8 +153,8 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 										<span class="sr-only">View {repo.name} on GitHub</span>
 									</a>
 
-									<div class="card-container group-hover:border-lime-500 relative h-full flex flex-col">
-										<h3 class="text-xl font-semibold text-lime-400 mb-2 group-hover:text-lime-300">
+									<div class="card-container group-hover:border-primary-500 relative h-full flex flex-col">
+										<h3 class="text-xl font-semibold text-primary-400 mb-2 group-hover:text-primary-500">
 											{repo.name}
 										</h3>
 										<p class="text-gray-300 mb-4">
@@ -162,10 +162,10 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 										</p>
 
 										<div class="flex space-x-3 text-responsive-sm mb-4">
-											<span class="px-2 py-1 bg-space-500 rounded text-accent-blue">
+											<span class="text-accent-blue">
 												{repo.language || "Various"}
 											</span>
-											<span class="px-2 py-1 bg-space-500 rounded text-yellow-400">
+											<span class="text-yellow-400">
 												<span class="mr-1">★</span>
 												{repo.stargazers_count || 0}
 											</span>

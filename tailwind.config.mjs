@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Atkinson Hyperlegible Next', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        'mono': ['Atkinson Hyperlegible Mono', 'ui-monospace', 'monospace'],
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       fontSize: {
         'responsive-sm': 'clamp(0.875rem, 0.8rem + 0.375vw, 1rem)',     // 14px -> 16px
@@ -14,24 +14,25 @@ export default {
         'responsive-xl': 'clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)',     // 20px -> 24px
       },
       colors: {
-        // Dark background colors for space theme
+        // Professional dark theme
         space: {
-          900: '#0a0a0f', // Almost black
-          850: '#0e0e19', // Darker deep space
-          800: '#121224', // Deep space
-          700: '#1a1a35', // Dark purple-blue
-          600: '#232342', // Midnight
+          900: '#0a0a0a', // True black
+          850: '#111111', // Near black  
+          800: '#1a1a1a', // Dark gray
+          700: '#262626', // Medium dark gray
+          600: '#404040', // Lighter gray
+          500: '#525252', // Mid gray for borders/tags
         },
-        // Lime green highlights
-        lime: {
-          400: '#a3e635',
-          500: '#84cc16',
+        // Professional color palette
+        primary: {
+          400: '#818cf8', // Light indigo
+          500: '#6366f1', // Indigo
+          600: '#4f46e5', // Dark indigo
         },
-        // Light blue/purple accents
         accent: {
-          blue: '#93c5fd',   // Light blue
-          indigo: '#a5b4fc', // Light indigo
-          purple: '#c4b5fd', // Light purple
+          blue: '#06b6d4',   // Cyan
+          indigo: '#6366f1', // Indigo
+          purple: '#8b5cf6', // Purple
         }
       },
       animation: {

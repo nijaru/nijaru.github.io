@@ -10,8 +10,8 @@
 }
 
 .blog-content h2 {
-    @apply font-semibold mb-4 text-lime-400;
-    text-shadow: 0 0 8px rgba(163, 230, 53, 0.4);
+    @apply font-semibold mb-4 text-primary-500;
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
     font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
 }
 
@@ -32,16 +32,16 @@
     /* Add a slight shine effect */
     background: linear-gradient(
         90deg,
-        rgba(163, 230, 53, 1) 0%,
+        rgba(99, 102, 241, 1) 0%,
         rgba(226, 232, 240, 1) 50%,
-        rgba(163, 230, 53, 1) 100%
+        rgba(99, 102, 241, 1) 100%
     );
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 4s linear infinite;
-    text-shadow: 0 0 8px rgba(163, 230, 53, 0.4);
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
 }
 
 /* Create the animated underline effect */
@@ -54,9 +54,9 @@
     height: 2px;
     background: linear-gradient(
         90deg,
-        rgba(163, 230, 53, 0.2) 0%,
-        rgba(163, 230, 53, 0.8) 50%,
-        rgba(163, 230, 53, 0.2) 100%
+        rgba(99, 102, 241, 0.2) 0%,
+        rgba(99, 102, 241, 0.8) 50%,
+        rgba(99, 102, 241, 0.2) 100%
     );
     background-size: 200% 100%;
     animation: shine 4s ease-in-out infinite;
@@ -105,7 +105,7 @@
 
 /* Blockquotes */
 .blog-content blockquote {
-    @apply border-l-4 border-lime-400 text-gray-200 italic bg-lime-500/10;
+    @apply border-l-4 border-primary-500 text-gray-200 italic bg-primary-500/10;
     padding: 0.75rem 1rem 0.75rem 1.25rem;
     margin: 1.5rem 0;
     line-height: 1.6;

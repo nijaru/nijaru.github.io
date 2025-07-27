@@ -6,7 +6,7 @@ import { createSignal, onMount, onCleanup, splitProps } from 'solid-js';
  * @param {boolean} [props.enhanced=false] - Whether to use enhanced glow effect (for pulse mode)
  * @param {string} [props.class] - Additional CSS classes
  * @param {string} [props.mode='pulse'] - Glow effect mode: 'pulse', 'gradient', or 'static'
- * @param {string} [props.color='lime-400'] - Text color theme for gradient mode (lime-400, blue, purple)
+ * @param {string} [props.color='primary'] - Text color theme for gradient mode (primary, blue, purple)
  * @param {any} props.children - Text content
  */
 export default function TextGlow(props) {
@@ -15,7 +15,7 @@ export default function TextGlow(props) {
   
   const isEnhanced = () => local.enhanced || false;
   const mode = () => local.mode || 'pulse';
-  const color = () => local.color || 'lime-400';
+  const color = () => local.color || 'primary';
   
   let timer;
   let fadeTimer;
@@ -62,23 +62,23 @@ export default function TextGlow(props) {
     // Determine gradient colors based on the color prop
     let startColor, midColor, endColor, textShadow;
     
-    // Default lime theme
-    startColor = "rgba(163, 230, 53, 1)"; // lime-400
+    // Default primary indigo theme
+    startColor = "rgba(99, 102, 241, 1)"; // primary-500 (indigo)
     midColor = "rgba(226, 232, 240, 1)"; // white/gray-200
-    endColor = "rgba(163, 230, 53, 1)"; // lime-400
-    textShadow = "0 0 8px rgba(163, 230, 53, 0.4)";
+    endColor = "rgba(99, 102, 241, 1)"; // primary-500 (indigo)
+    textShadow = "0 0 8px rgba(99, 102, 241, 0.4)";
     
     // Alternative color themes
     if (color().includes('purple')) {
-      startColor = "rgba(192, 132, 252, 1)"; // purple-400
+      startColor = "rgba(139, 92, 246, 1)"; // accent-purple
       midColor = "rgba(226, 232, 240, 1)";
-      endColor = "rgba(192, 132, 252, 1)";
-      textShadow = "0 0 8px rgba(192, 132, 252, 0.4)";
+      endColor = "rgba(139, 92, 246, 1)";
+      textShadow = "0 0 8px rgba(139, 92, 246, 0.4)";
     } else if (color().includes('blue')) {
-      startColor = "rgba(96, 165, 250, 1)"; // blue-400
+      startColor = "rgba(6, 182, 212, 1)"; // accent-blue (cyan)
       midColor = "rgba(226, 232, 240, 1)";
-      endColor = "rgba(96, 165, 250, 1)";
-      textShadow = "0 0 8px rgba(96, 165, 250, 0.4)";
+      endColor = "rgba(6, 182, 212, 1)";
+      textShadow = "0 0 8px rgba(6, 182, 212, 0.4)";
     }
     
     return {

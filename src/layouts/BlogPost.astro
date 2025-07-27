@@ -52,7 +52,7 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
         <article class="prose prose-invert prose-lg max-w-none">
             <h1 class="text-4xl font-bold mb-2">
                 <ReflectionText client:load>
-                    <span class="text-lime-400">{title}</span>
+                    <span class="text-primary-400">{title}</span>
                 </ReflectionText>
             </h1>
 
@@ -65,7 +65,7 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
             <div class="flex flex-wrap gap-2 mb-8">
                 {
                     tags.map((tag) => (
-                        <span class="px-2 py-1 bg-space-500 rounded text-responsive-sm text-accent-blue">
+                        <span class="text-responsive-sm text-accent-blue">
                             {tag}
                         </span>
                     ))

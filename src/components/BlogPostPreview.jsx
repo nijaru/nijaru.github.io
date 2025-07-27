@@ -27,8 +27,8 @@ export default function BlogPostPreview(props) {
         <span class="sr-only">Read blog post: {post.title}</span>
       </a>
       
-      <div class="card-container group-hover:border-lime-500 relative">
-        <h2 class="text-2xl font-semibold mb-2 text-lime-400 group-hover:text-lime-300">
+      <div class="card-container group-hover:border-primary-500 relative">
+        <h2 class="text-2xl font-semibold mb-2 text-primary-400 group-hover:text-primary-500">
           {post.title}
         </h2>
         
@@ -42,7 +42,7 @@ export default function BlogPostPreview(props) {
         
         <div class="flex flex-wrap gap-2 mb-4">
           {post.tags && post.tags.map((tag, index) => (
-            <span key={tag + '-' + index} class="px-2 py-1 bg-space-500 rounded text-responsive-sm text-accent-blue">
+            <span key={tag + '-' + index} class="text-responsive-sm text-accent-blue">
               {tag}
             </span>
           ))}
