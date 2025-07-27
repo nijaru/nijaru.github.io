@@ -25,9 +25,10 @@ npm run preview      # Preview production build
 ## Code Patterns
 - **Components**: PascalCase files (NavBar.jsx), functional with explicit props
 - **Pages**: kebab-case Astro files (about.astro) 
-- **Styling**: Tailwind utilities, custom CSS variables for theme colors
+- **Styling**: Tailwind utilities with responsive font sizing, custom CSS variables for theme colors
+- **Typography**: CSS clamp() for responsive scaling (16px→18px body, 18px→20px nav)
 - **State**: Solid signals for reactive data, resources for async loading
-- **Error handling**: try/catch blocks with fallback UI states
+- **Error handling**: try/catch blocks with fallback UI states, ErrorBoundary components
 
 ## Theme System
 - **Colors**: Dark space backgrounds, lime-400/500 highlights, accent-blue/purple
@@ -56,8 +57,11 @@ scripts/            # Build and utility scripts
 
 ## Recent Updates
 - **Security**: Updated Astro to v5.10.2, resolved all vulnerabilities
-- **Performance**: Font preloading, TypeScript conversion, error boundaries, bundle optimization
-- **Fonts**: Implemented Atkinson Hyperlegible with improved font sizes for readability
-- **Content**: Refreshed about/projects pages with current work, improved blog post content
-- **Features**: Added RSS feed, robots.txt, web manifest, sitemap generation
+- **Typography**: Implemented responsive font sizing using CSS clamp() across all content areas
+- **Performance**: Font preloading, terser minification, error boundaries, bundle optimization
+- **TypeScript**: Converted critical components (GithubRepos, ErrorBoundary) for better maintainability
+- **Accessibility**: Atkinson Hyperlegible fonts with responsive scaling for optimal readability
+- **Content**: Refreshed about/projects pages, improved blog posts, added Gleam to tech interests
+- **Features**: RSS feed, robots.txt, web manifest, sitemap generation, cache headers
 - **SEO**: Comprehensive meta tags, Open Graph, Twitter Card support
+- **Infrastructure**: Added Vercel/Netlify configurations for enhanced hosting performance

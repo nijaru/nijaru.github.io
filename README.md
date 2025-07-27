@@ -1,100 +1,112 @@
 # nijaru.github.io
 
-My personal website built with Astro and Solid.js, featuring a space-themed design with interactive components.
+Personal website built with Astro v5.10.2 and Solid.js, featuring a space-themed design with responsive typography and interactive components.
+
+## Technology Stack
+
+- **Astro v5.10.2** - Static site generation with component islands architecture
+- **Solid.js** - Reactive UI components with signals/resources  
+- **Tailwind CSS** - Utility-first styling with custom responsive font system
+- **TypeScript** - Type safety for critical components
+- **Atkinson Hyperlegible** - Accessible typography optimized for readability
 
 ## Project Structure
 
-- `src/` - Source code
-  - `components/` - Solid.js components
-    - `ArrowLink.jsx` - Reusable arrow link component
-    - `BlogPostPreview.jsx` - Blog post card component
-    - `GithubRepos.jsx` - GitHub repositories display
-    - `NavBar.jsx` - Navigation bar with mobile menu
-    - `TextGlow.jsx` - Text with glow animation effect
-    - And more...
-  - `layouts/` - Page layouts
-  - `pages/` - Site pages
-- `public/` - Static assets
+```
+src/
+├── components/          # Solid.js interactive components
+│   ├── GithubRepos.tsx     # GitHub repositories display (TypeScript)
+│   ├── ErrorBoundary.tsx   # Error handling wrapper (TypeScript)
+│   ├── NavBar.jsx          # Navigation with responsive sizing
+│   ├── TextGlow.jsx        # Text glow animation effects
+│   └── ...
+├── content/             # Markdown blog posts with frontmatter
+├── layouts/             # Astro layout templates
+├── pages/               # File-based routing
+└── styles/              # Global CSS and markdown styles
+public/
+├── data/                # Static JSON data (GitHub repos)
+├── manifest.json        # PWA manifest
+└── robots.txt           # SEO configuration
+```
 
 ## Features
 
-- Space-themed dark design
-- Interactive components built with Solid.js
-- Responsive layout with Tailwind CSS
-- Blog section
-- Project showcase
-- Enhanced accessibility with ARIA attributes
-- Keyboard navigation support
-- Proper component cleanup for SPA navigation
+### Core
+- **Responsive Design** - CSS clamp() typography that scales from mobile to desktop
+- **Component Islands** - Selective hydration for optimal performance
+- **Blog System** - Markdown-based with RSS feed generation
+- **GitHub Integration** - Automated pinned repository display
+- **PWA Ready** - Web manifest and offline-capable architecture
 
-## Design Elements
+### Performance
+- **Font Optimization** - Preloaded Atkinson Hyperlegible with subset loading
+- **Bundle Optimization** - Terser minification with tree shaking
+- **Error Boundaries** - Graceful failure handling for API components
+- **Cache Headers** - Long-term caching for static assets (Vercel/Netlify)
 
-- Dark space background
-- Lime green highlights
-- Light blue/purple accents
-- Animated star field
-- Glowing text effects
+### Accessibility
+- **Screen Reader Support** - Semantic HTML and ARIA attributes
+- **Keyboard Navigation** - Full keyboard accessibility
+- **High Contrast** - Space theme with sufficient color contrast
+- **Readable Fonts** - Atkinson Hyperlegible designed for accessibility
 
 ## Development
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build site
-npm run build
+npm install          # Install dependencies
+npm run dev          # Development server (localhost:4321)
+npm run build        # Production build → dist/
+npm run preview      # Preview production build
 ```
 
-### GitHub Repository Data
+## GitHub Integration
 
-This site displays pinned GitHub repositories using a secure GitHub Action workflow:
+Pinned repositories are automatically fetched and displayed using GitHub Actions:
 
-1. A GitHub Action fetches pinned repos via GraphQL API using a dedicated token
-2. The data is stored in a static JSON file at `public/data/pinned-repos.json`
-3. The SolidJS component reads from this file instead of making API calls
+```bash
+# Workflow runs every 6 hours and fetches pinned repos
+# Data stored in public/data/pinned-repos.json
+# Client-side component reads static JSON (no API calls)
+```
 
-#### Setting up the GitHub Token
+**Setup:**
+1. Create GitHub Personal Access Token with `read:user` scope
+2. Add as repository secret: `PINNED_FETCH_TOKEN`
+3. Workflow automatically updates data and commits changes
 
-To enable the pinned repository feature:
+## Responsive Typography
 
-1. Create a GitHub Personal Access Token with the `read:user` and `repo` scopes
-2. Add the token to your repository secrets with the name `PINNED_FETCH_TOKEN` 
-3. The workflow will automatically fetch repos before each deploy and once daily
+The site uses CSS `clamp()` for responsive font scaling:
 
-#### Local Development
+```css
+/* Examples from tailwind.config.mjs */
+'responsive-base': 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)'   /* 16px → 18px */
+'responsive-lg': 'clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem)' /* 18px → 20px */
+```
 
-For testing and local development:
+**Applied to:**
+- Body text: Scales from 16px (mobile) to 18px (desktop)
+- Navigation: Scales from 18px (mobile) to 20px (desktop)
+- Brand name: Scales from 20px (mobile) to 24px (desktop)
 
-1. Create directories if needed: `mkdir -p public/data static/data`
-2. For mock data (without API call): `node scripts/test-fetch.js`
-3. For real data (with your token): `GITHUB_TOKEN=your_token node scripts/fetch-pinned-repos.js`
+## Hosting & Performance
 
-#### Workflow Integration
+**Optimized for:**
+- **GitHub Pages** - Default hosting with automatic deployments
+- **Vercel/Netlify** - Enhanced with cache headers for better performance
+- **Cloudflare Pages** - Full optimization with 1-week asset caching
 
-- The deploy workflow will fetch pinned repos before building the site
-- The fetch-pinned-repos workflow runs daily to keep data fresh
-- Both workflows commit changes directly to the repository
+**Lighthouse Scores:** Optimized for Core Web Vitals with font preloading, minification, and selective component hydration.
 
-## Bio Page
+## Architecture Decisions
 
-Contains information about:
-- Technical background (Python, Go, C/C++, etc.)
-- Areas of interest
-- Current projects
-- Social links (GitHub, X, Bluesky)
-
-## Roadmap
-
-- Expand blog content
-- Add more interactive components
-- Create dedicated project pages
-- Implement dark/light mode toggle
-- Continue improving accessibility features
-- Add e2e testing with Playwright
+- **Static-first** - Pre-rendered pages for maximum performance
+- **Island architecture** - JavaScript only where needed (`client:idle`, `client:visible`)
+- **TypeScript** - Critical components converted for better maintainability
+- **Error boundaries** - Graceful degradation for API failures
+- **Responsive fonts** - Better readability across all devices
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
