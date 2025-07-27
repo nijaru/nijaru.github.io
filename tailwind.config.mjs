@@ -7,6 +7,12 @@ export default {
         'sans': ['Atkinson Hyperlegible Next', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'mono': ['Atkinson Hyperlegible Mono', 'ui-monospace', 'monospace'],
       },
+      fontSize: {
+        'responsive-sm': 'clamp(0.875rem, 0.8rem + 0.375vw, 1rem)',     // 14px -> 16px
+        'responsive-base': 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)',   // 16px -> 18px  
+        'responsive-lg': 'clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem)', // 18px -> 20px
+        'responsive-xl': 'clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)',     // 20px -> 24px
+      },
       colors: {
         // Dark background colors for space theme
         space: {
