@@ -10,7 +10,7 @@ export default {
       fontSize: {
         'xs': ['0.8125rem', { lineHeight: '1.5' }],     // 13px
         'sm': ['0.9375rem', { lineHeight: '1.5' }],     // 15px  
-        'base': ['1.0625rem', { lineHeight: '1.6' }],   // 17px (increased from 16px)
+        'base': ['1.125rem', { lineHeight: '1.6' }],    // 18px (increased for readability)
         'lg': ['1.1875rem', { lineHeight: '1.6' }],     // 19px
         'xl': ['1.3125rem', { lineHeight: '1.6' }],     // 21px
         '2xl': ['1.5625rem', { lineHeight: '1.5' }],    // 25px
