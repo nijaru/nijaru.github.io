@@ -7,18 +7,6 @@ export default {
         'sans': ['Atkinson Hyperlegible Next', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'mono': ['Atkinson Hyperlegible Mono', 'ui-monospace', 'monospace'],
       },
-      fontSize: {
-        'xs': ['0.8125rem', { lineHeight: '1.5' }],     // 13px
-        'sm': ['0.9375rem', { lineHeight: '1.5' }],     // 15px  
-        'base': ['1.0625rem', { lineHeight: '1.6' }],   // 17px (increased from 16px)
-        'lg': ['1.1875rem', { lineHeight: '1.6' }],     // 19px
-        'xl': ['1.3125rem', { lineHeight: '1.6' }],     // 21px
-        '2xl': ['1.5625rem', { lineHeight: '1.5' }],    // 25px
-        '3xl': ['1.9375rem', { lineHeight: '1.4' }],    // 31px
-        '4xl': ['2.4375rem', { lineHeight: '1.3' }],    // 39px
-        '5xl': ['3.0625rem', { lineHeight: '1.2' }],    // 49px
-        '6xl': ['3.8125rem', { lineHeight: '1.1' }],    // 61px
-      },
       colors: {
         // Dark background colors for space theme
         space: {
