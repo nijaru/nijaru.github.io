@@ -42,7 +42,7 @@ export default function BlogPostPreview(props) {
         
         <div class="flex flex-wrap gap-2 mb-4">
           {post.tags && post.tags.map((tag, index) => (
-            <span key={tag + '-' + index} class="px-2 py-1 bg-space-500 rounded text-xs text-accent-blue">
+            <span key={tag + '-' + index} class="px-2 py-1 bg-space-500 rounded text-responsive-sm text-accent-blue">
               {tag}
             </span>
           ))}
