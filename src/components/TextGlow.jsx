@@ -63,14 +63,14 @@ export default function TextGlow(props) {
     let startColor, midColor, endColor, textShadow;
     
     // Default primary indigo theme
-    startColor = "rgba(99, 102, 241, 1)"; // primary-500 (indigo)
+    startColor = "rgba(99, 102, 241, 1)"; // blue-500 (indigo)
     midColor = "rgba(226, 232, 240, 1)"; // white/gray-200
-    endColor = "rgba(99, 102, 241, 1)"; // primary-500 (indigo)
+    endColor = "rgba(99, 102, 241, 1)"; // blue-500 (indigo)
     textShadow = "0 0 8px rgba(99, 102, 241, 0.4)";
     
     // Alternative color themes
     if (color().includes('purple')) {
-      startColor = "rgba(139, 92, 246, 1)"; // accent-purple
+      startColor = "rgba(139, 92, 246, 1)"; // accent-blue
       midColor = "rgba(226, 232, 240, 1)";
       endColor = "rgba(139, 92, 246, 1)";
       textShadow = "0 0 8px rgba(139, 92, 246, 0.4)";

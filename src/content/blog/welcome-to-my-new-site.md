@@ -37,11 +37,11 @@ In the past, I've used LLMs mainly to look up documentation and help design the 
 
 ## What I'm Up To
 
-These days I'm busy coding on new projects and researching ways to apply AI to development workflows. I'm not in founder mode right now - I'm in <span class="text-primary-300 font-medium">Flounder mode™.</span> It's a productive chaos that often leads to unexpected insights.
+These days I'm busy coding on new projects and researching ways to apply AI to development workflows. I'm focused on <span class="text-blue-300 font-medium">systematic exploration</span> of emerging technologies and their practical applications.
 
-Sometimes it helps me create connections between ideas I never would have seen otherwise. Every abandoned project teaches me something, even if that something is just <span class="italic text-gray-100">"maybe I should think twice before trying to rewrite Redis in Go at 2 AM on a Tuesday."</span>
+This approach helps me create connections between ideas and identify promising directions for deeper investigation. Each project builds on lessons learned from previous work, contributing to a growing understanding of how different technologies can solve real problems.
 
-I pivot so often my LinkedIn profile has <strong class="text-primary-300">motion sickness</strong>. One day I'm building a distributed database, the next I'm convinced I need to create yet another JavaScript framework. My version control history is a metaphor for my dating life - <span class="bg-primary-500/10 px-1">hundreds of commits but afraid of the final merge</span>. I tell myself <em class="text-gray-100">"this is totally normal product exploration"</em> while my git log reads like a crime scene investigation.
+My current focus spans several areas: building high-performance systems in modern languages like Mojo and Rust, exploring AI integration patterns, and developing tools that improve developer productivity. I believe in <span class="bg-blue-500/10 px-1">shipping working prototypes</span> to validate concepts before committing to larger implementations.
 
 ## Current Projects
 

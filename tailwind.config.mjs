@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'sans': ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       fontSize: {
@@ -14,25 +14,29 @@ export default {
         'responsive-xl': 'clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)',     // 20px -> 24px
       },
       colors: {
-        // Professional dark theme
-        space: {
-          900: '#0a0a0a', // True black
-          850: '#111111', // Near black  
-          800: '#1a1a1a', // Dark gray
-          700: '#262626', // Medium dark gray
-          600: '#404040', // Lighter gray
-          500: '#525252', // Mid gray for borders/tags
+        // True Apple dark theme - deeper blacks
+        dark: {
+          950: '#000000', // Pure black background
+          900: '#0a0a0a', // Near black containers
+          800: '#1a1a1a', // Dark cards
+          700: '#2a2a2a', // Medium dark
+          600: '#3a3a3a', // Borders
+          500: '#4a4a4a', // Subtle elements
+          400: '#6a6a6a', // Medium gray
+          300: '#8a8a8a', // Light gray
+          200: '#aaaaaa', // Lighter gray
+          100: '#cccccc', // Very light gray
         },
-        // Professional color palette
-        primary: {
-          400: '#818cf8', // Light indigo
-          500: '#6366f1', // Indigo
-          600: '#4f46e5', // Dark indigo
+        // Single blue accent - more Apple-like
+        blue: {
+          400: '#60a5fa', // Light blue
+          500: '#007aff', // Apple blue
+          600: '#0056cc', // Dark Apple blue
         },
+        // Minimal colors only
         accent: {
-          blue: '#06b6d4',   // Cyan
-          indigo: '#6366f1', // Indigo
-          purple: '#8b5cf6', // Purple
+          blue: '#007aff',   // Apple blue
+          gray: '#8e8e93',   // Apple secondary gray
         }
       },
       animation: {

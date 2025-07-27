@@ -62,7 +62,7 @@ export default function TechSkills() {
       <For each={categories}>
         {(category) => (
           <div class="mb-6">
-            <h3 class="text-lg font-medium text-primary-400 mb-3 text-left">
+            <h3 class="text-lg font-medium text-blue-400 mb-3 text-left">
               {category.label}
             </h3>
             

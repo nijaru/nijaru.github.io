@@ -98,7 +98,7 @@ export default function StarField() {
   });
 
   return (
-    <div class="fixed inset-0 overflow-hidden bg-space-900 -z-10">
+    <div class="fixed inset-0 overflow-hidden bg-dark-900 -z-10">
       <canvas 
         ref={canvasRef}
         class="absolute inset-0"

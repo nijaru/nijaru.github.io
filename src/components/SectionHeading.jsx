@@ -20,7 +20,7 @@ export default function SectionHeading(props) {
   } = props;
 
   const content = title || children;
-  const borderClass = withBorder ? "border-b border-space-700 pb-2" : "";
+  const borderClass = withBorder ? "border-b border-dark-700 pb-2" : "";
   
   return (
     <h2 

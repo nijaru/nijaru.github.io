@@ -43,106 +43,79 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 ---
 
 <Layout title="Nick Russo - Software Developer">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-12">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">
-                <span class="text-accent-purple">
-                    <TextGlow client:visible enhanced={true}>
-                        <ReflectionText client:visible>Nick</ReflectionText>
-                    </TextGlow>
-                </span>
-                <span class="text-white">
-                    <TextGlow client:visible enhanced={true}>
-                        <ReflectionText client:visible>Russo</ReflectionText>
-                    </TextGlow>
-                </span>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <header class="py-16 md:py-24">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">
+                <span class="text-accent-blue">Nick Russo</span>
             </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Software developer building systems and tools
+            </p>
+            <SocialLinks client:visible />
+        </header>
 
-            <h2 class="text-2xl md:text-3xl font-semibold mb-4 tracking-wide">
-                <TextGlow client:visible>
-                    <span class="text-primary-400">Software Developer</span>
-                </TextGlow>
-            </h2>
-            
-            <div class="mt-2 mb-6">
-                <SocialLinks client:visible />
+        <!-- Current Work -->
+        <section class="py-12 border-t border-white/10">
+            <h2 class="text-lg font-semibold text-white mb-6">What I'm working on</h2>
+            <div class="space-y-6 text-gray-300">
+                <p>
+                    I'm a software developer specializing in backend systems and distributed applications. 
+                    With experience in Python, Go, and various cloud technologies, I build reliable and 
+                    efficient solutions for complex problems.
+                </p>
+                <p>
+                    Currently exploring AI applications, database innovations, and modern frontend frameworks 
+                    like Solid.js and Astro. Passionate about building solutions that solve real-world problems.
+                </p>
             </div>
-        </div>
-
-        <!-- About Me Section -->
-        <section class="mb-12">
-            <SectionHeading client:visible>About Me</SectionHeading>
-            <div class="relative group">
+            <div class="mt-6">
                 <a 
                     href="/about" 
-                    class="absolute inset-0 z-10"
-                    aria-label="Learn more about me"
+                    class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
                 >
-                    <span class="sr-only">Learn more about me</span>
+                    More about me →
                 </a>
-                <div class="card-container mb-4 group-hover:border-primary-500 relative">
-                    <p class="text-gray-300 text-responsive-base mb-4">
-                        I'm a software developer specializing in backend systems and
-                        distributed applications. With experience in Python, Go, and various
-                        cloud technologies, I build reliable and efficient solutions for
-                        complex problems.
-                    </p>
-                    <p class="text-gray-300 text-responsive-base">
-                        Currently exploring AI applications, database innovations, and
-                        modern frontend frameworks like Solid.js and Astro. Starting a new
-                        pre seed post failed startup every day in <span
-                            class="text-accent-purple font-medium">Flounder mode™.</span
-                        >
-                    </p>
-                    <div class="relative z-20 pointer-events-none mt-4 text-right">
-                        <span class="inline-flex items-center text-accent-blue group-hover:text-accent-purple">
-                            Learn more about me
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </span>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Recent Writing -->
+        {mostRecentPost && (
+            <section class="py-12 border-t border-white/10">
+                <h2 class="text-lg font-semibold text-white mb-6">Recent writing</h2>
+                <div class="group">
+                    <a href={mostRecentPost.url} class="block">
+                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                            {mostRecentPost.title}
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-3">{mostRecentPost.formattedDate}</p>
+                        <p class="text-gray-300">{mostRecentPost.excerpt}</p>
+                    </a>
                 </div>
-            </div>
-        </section>
+                <div class="mt-6">
+                    <a 
+                        href="/blog" 
+                        class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
+                    >
+                        All posts →
+                    </a>
+                </div>
+            </section>
+        )}
 
-        <!-- Recent Blog Post -->
-        <section class="mb-12">
-            <SectionHeading client:visible>Recent Post</SectionHeading>
-
-            {
-                mostRecentPost ? (
-                    <BlogPostPreview post={mostRecentPost} />
-                ) : (
-                    <div class="card-container text-center py-6">
-                        <p class="text-gray-300 text-responsive-base">
-                            No blog posts available yet. Check back soon!
-                        </p>
-                    </div>
-                )
-            }
-
-            <div class="mt-4 text-right">
-                <ArrowLink href="/blog" client:visible ariaLabel="Navigate to blog page">
-                    View all posts
-                </ArrowLink>
-            </div>
-        </section>
-
-        <!-- Featured GitHub Repos -->
-        <section>
-            <SectionHeading client:visible>Pinned Repositories</SectionHeading>
+        <!-- Projects -->
+        <section class="py-12 border-t border-white/10">
+            <h2 class="text-lg font-semibold text-white mb-6">Featured projects</h2>
             <ErrorBoundary client:idle>
                 <GithubRepos client:idle username="nijaru" limit={2} />
             </ErrorBoundary>
-            <div class="mt-4 text-right">
-                <ArrowLink
-                    href="/projects"
-                    client:visible
-                    ariaLabel="Navigate to projects page"
+            <div class="mt-6">
+                <a 
+                    href="/projects" 
+                    class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
                 >
-                    View all projects
-                </ArrowLink>
+                    All projects →
+                </a>
             </div>
         </section>
     </div>

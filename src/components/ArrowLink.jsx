@@ -14,7 +14,7 @@ export default function ArrowLink(props) {
   return (
     <a
       href={local.href}
-      class={`inline-flex items-center text-accent-blue hover:text-accent-purple ${local.class || ''}`}
+      class={`inline-flex items-center text-accent-blue hover:text-accent-blue ${local.class || ''}`}
       aria-label={local.ariaLabel}
       {...others}
     >

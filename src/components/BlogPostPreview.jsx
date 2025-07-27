@@ -27,8 +27,8 @@ export default function BlogPostPreview(props) {
         <span class="sr-only">Read blog post: {post.title}</span>
       </a>
       
-      <div class="card-container group-hover:border-primary-500 relative">
-        <h2 class="text-2xl font-semibold mb-2 text-primary-400 group-hover:text-primary-500">
+      <div class="card-container card-interactive group relative">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-400 group-hover:text-blue-500">
           {post.title}
         </h2>
         
@@ -49,7 +49,7 @@ export default function BlogPostPreview(props) {
         </div>
         
         <div class="relative z-20 pointer-events-none">
-          <span class="inline-flex items-center text-accent-blue group-hover:text-accent-purple">
+          <span class="inline-flex items-center text-accent-blue group-hover:text-accent-blue">
             Read more
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>

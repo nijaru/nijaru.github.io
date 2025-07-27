@@ -8,77 +8,53 @@ import TextGlow from "../components/TextGlow";
 ---
 
 <Layout title="About - Nick Russo">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-4xl font-bold mb-8 text-center">
-            <span class="text-accent-purple">
-                <ReflectionText client:visible>About</ReflectionText>
-            </span>
-            <span class="text-white">
-                <ReflectionText client:visible>Me</ReflectionText>
-            </span>
-        </h1>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="py-16">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="text-accent-blue">About me</span>
+            </h1>
+        </header>
 
-        <div class="card-container mb-8">
-            <div class="space-y-8">
+        <section class="pb-12">
+            <div class="space-y-12">
                 <div>
-                    <SectionHeading client:visible withBorder={false}>Areas of Interest</SectionHeading>
-                    <ul class="list-disc list-outside ml-6 text-gray-300 text-responsive-base space-y-2">
-                        <li>Backend Development & API Design</li>
-                        <li>Distributed Systems & Networking</li>
-                        <li>Databases & Data Engineering</li>
-                        <li>Artificial Intelligence & Machine Learning</li>
-                    </ul>
+                    <h2 class="text-lg font-semibold text-white mb-6">What I work on</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>I focus on backend development, API design, and distributed systems. My work involves building reliable, scalable solutions using modern languages and frameworks.</p>
+                        <p>Currently exploring AI applications, database innovations, and high-performance computing with languages like Mojo and Rust.</p>
+                    </div>
                 </div>
 
                 <div>
-                    <SectionHeading client:visible withBorder={false}>Current Projects</SectionHeading>
-                    <ul class="list-disc list-outside ml-6 text-gray-300 text-responsive-base space-y-2">
-                        <li>Building a <TextGlow client:visible>vector database</TextGlow> in Mojo for high-performance similarity search</li>
-                        <li>Developing yet another <TextGlow client:visible>TUI coding agent</TextGlow> in Rust with improved workflow automation</li>
-                        <li>Running local LLMs with <TextGlow client:visible>Ollama</TextGlow> and Open WebUI, accessible remotely via Tailscale</li>
-                        <li>Created a <TextGlow client:visible>Swiss table implementation</TextGlow> in Mojo for efficient hash map operations</li>
-                        <li>Experimenting with <TextGlow client:visible>OpenAI Whisper</TextGlow> implementation using Modular's MAX Graph for audio processing</li>
-                    </ul>
+                    <h2 class="text-lg font-semibold text-white mb-6">Current projects</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p><strong class="text-white">Vector database in Mojo</strong> — Building a high-performance similarity search system from scratch, focusing on efficient indexing algorithms and memory management.</p>
+                        <p><strong class="text-white">TUI coding agent in Rust</strong> — Developing a terminal-based coding assistant with improved workflow automation and better context management.</p>
+                        <p><strong class="text-white">Local LLM infrastructure</strong> — Running local language models with Ollama and Open WebUI, accessible remotely via Tailscale for secure, self-hosted AI services.</p>
+                        <p><strong class="text-white">Audio processing research</strong> — Experimenting with OpenAI Whisper implementation using Modular's MAX Graph for performance optimizations.</p>
+                    </div>
                 </div>
                 
                 <div>
-                    <SectionHeading client:visible withBorder={false}>Technical Background</SectionHeading>
+                    <h2 class="text-lg font-semibold text-white mb-6">Technical skills</h2>
                     <TechSkills client:visible />
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Quote section (separate from main content) -->
-        <div class="card-container mb-8">
-            <blockquote
-                class="italic text-gray-300 border-l-4 border-primary-500 pl-4 py-2"
-            >
+        <section class="py-12 border-t border-white/10">
+            <blockquote class="italic text-gray-400 text-lg">
                 "There are only two hard things in Computer Science: cache invalidation,
                 naming things, and off-by-one errors."
             </blockquote>
-        </div>
+        </section>
 
-        <div class="text-center mt-12">
+        <div class="py-8">
             <a
                 href="/"
-                class="inline-flex items-center text-accent-blue hover:text-accent-purple"
+                class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
             >
-                Back to Home
-                <svg
-                    class="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    ></path>
-                </svg>
+                ← Back to home
             </a>
         </div>
     </div>

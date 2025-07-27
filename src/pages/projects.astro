@@ -1,174 +1,109 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ReflectionText from "../components/ReflectionText";
 import GithubRepos from "../components/GithubRepos.tsx";
 import ErrorBoundary from "../components/ErrorBoundary.tsx";
-import SectionHeading from "../components/SectionHeading";
-import TextGlow from "../components/TextGlow";
 ---
 
 <Layout title="Projects - Nick Russo">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-4xl font-bold mb-8 text-center">
-            <span class="text-accent-purple">
-                <ReflectionText client:visible>My</ReflectionText>
-            </span>
-            <span class="text-white">
-                <ReflectionText client:visible>Projects</ReflectionText>
-            </span>
-        </h1>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="py-16">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="text-accent-blue">Projects</span>
+            </h1>
+        </header>
 
-        <!-- Current Projects Section -->
-        <section class="mb-12">
-            <SectionHeading client:visible>Current Projects</SectionHeading>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="card-container hover:border-primary-500 group relative">
+        <!-- Current Projects -->
+        <section class="pb-12">
+            <h2 class="text-lg font-semibold text-white mb-8">Current projects</h2>
+            <div class="space-y-8">
+                <div class="group">
                     <a
                         href="https://github.com/omendb/omendb"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="absolute inset-0 z-10"
-                        aria-label="View OmenDB repository on GitHub"
+                        class="block"
                     >
-                        <span class="sr-only">View OmenDB on GitHub</span>
+                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                            Vector database in Mojo
+                        </h3>
+                        <p class="text-gray-300 mb-3">
+                            Building a high-performance vector database from scratch in Mojo for 
+                            similarity search and embedding operations. Focused on efficient 
+                            indexing algorithms and memory management.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                            <span>Mojo</span>
+                            <span>Vector Search</span>
+                            <span>SIMD</span>
+                        </div>
                     </a>
-                    <h3
-                        class="text-xl font-semibold text-primary-400 mb-2 group-hover:text-primary-500"
-                    >
-                        Vector Database in <TextGlow client:visible>Mojo</TextGlow>
-                    </h3>
-                    <p class="text-gray-300 text-responsive-base mb-4">
-                        Building a high-performance vector database from scratch in Mojo for 
-                        similarity search and embedding operations. Focused on efficient 
-                        indexing algorithms and memory management.
-                    </p>
-                    <div class="flex space-x-3 text-responsive-sm mb-2">
-                        <span class="text-orange-400">Mojo</span>
-                        <span class="text-blue-400">Vector Search</span>
-                        <span class="text-purple-400">SIMD</span>
-                    </div>
-                    <div class="relative z-20 pointer-events-none mt-auto">
-                        <span class="inline-flex items-center text-accent-blue group-hover:text-accent-purple">
-                            View on GitHub
-                            <svg
-                                class="w-4 h-4 ml-1"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                            >
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-                            </svg>
-                        </span>
-                    </div>
                 </div>
 
-                <div class="card-container hover:border-primary-500 group relative">
+                <div class="group">
                     <a
                         href="https://github.com/nijaru/aircher"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="absolute inset-0 z-10"
-                        aria-label="View Aircher repository on GitHub"
+                        class="block"
                     >
-                        <span class="sr-only">View Aircher on GitHub</span>
+                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                            TUI coding agent in Rust
+                        </h3>
+                        <p class="text-gray-300 mb-3">
+                            Yet another terminal-based coding assistant with improved workflow 
+                            automation, better context management, and seamless editor integration.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                            <span>Rust</span>
+                            <span>TUI</span>
+                            <span>AI/LLM</span>
+                        </div>
                     </a>
-                    <h3
-                        class="text-xl font-semibold text-primary-400 mb-2 group-hover:text-primary-500"
-                    >
-                        TUI Coding Agent in <TextGlow client:visible>Rust</TextGlow>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-medium text-white mb-2">
+                        Local LLM infrastructure
                     </h3>
-                    <p class="text-gray-300 text-responsive-base mb-4">
-                        Yet another terminal-based coding assistant with improved workflow 
-                        automation, better context management, and seamless editor integration.
+                    <p class="text-gray-300 mb-3">
+                        Running local language models with Ollama and Open WebUI, accessible 
+                        remotely via Tailscale for secure, self-hosted AI services.
                     </p>
-                    <div class="flex space-x-3 text-responsive-sm mb-2">
-                        <span class="text-orange-400">Rust</span>
-                        <span class="text-blue-400">TUI</span>
-                        <span class="text-purple-400">AI/LLM</span>
-                    </div>
-                    <div class="relative z-20 pointer-events-none mt-auto">
-                        <span class="inline-flex items-center text-accent-blue group-hover:text-accent-purple">
-                            View on GitHub
-                            <svg
-                                class="w-4 h-4 ml-1"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                            >
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-                            </svg>
-                        </span>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <span>Ollama</span>
+                        <span>Tailscale</span>
+                        <span>Self-hosted</span>
                     </div>
                 </div>
 
-                <div class="card-container hover:border-primary-500 group relative">
-                    <h3
-                        class="text-xl font-semibold text-primary-400 mb-2 group-hover:text-primary-500"
-                    >
-                        Local LLM Infrastructure
-                    </h3>
-                    <p class="text-gray-300 text-responsive-base mb-4">
-                        Running local language models with <TextGlow client:visible>Ollama</TextGlow> 
-                        and Open WebUI, accessible remotely via Tailscale for secure, 
-                        self-hosted AI services.
-                    </p>
-                    <div class="flex space-x-3 text-responsive-sm mb-2">
-                        <span class="text-green-400">Ollama</span>
-                        <span class="text-blue-400">Tailscale</span>
-                        <span class="text-purple-400">Self-hosted</span>
-                    </div>
-                    <p class="text-gray-400 italic">Active deployment</p>
-                </div>
-
-                <div class="card-container hover:border-primary-500 group relative">
+                <div class="group">
                     <a
                         href="https://github.com/nijaru/max-whisper"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="absolute inset-0 z-10"
-                        aria-label="View max-whisper repository on GitHub"
+                        class="block"
                     >
-                        <span class="sr-only">View max-whisper on GitHub</span>
+                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                            Whisper on MAX Graph
+                        </h3>
+                        <p class="text-gray-300 mb-3">
+                            Experimenting with OpenAI Whisper implementation using Modular's 
+                            MAX Graph during their hack weekend. Exploring performance 
+                            optimizations for audio processing.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                            <span>MAX Graph</span>
+                            <span>Audio ML</span>
+                            <span>Whisper</span>
+                        </div>
                     </a>
-                    <h3
-                        class="text-xl font-semibold text-primary-400 mb-2 group-hover:text-primary-500"
-                    >
-                        <TextGlow client:visible>Whisper</TextGlow> on MAX Graph
-                    </h3>
-                    <p class="text-gray-300 text-responsive-base mb-4">
-                        Experimenting with OpenAI Whisper implementation using Modular's 
-                        MAX Graph during their hack weekend. Exploring performance 
-                        optimizations for audio processing.
-                    </p>
-                    <div class="flex space-x-3 text-responsive-sm mb-2">
-                        <span class="text-red-400">MAX Graph</span>
-                        <span class="text-blue-400">Audio ML</span>
-                        <span class="text-purple-400">Whisper</span>
-                    </div>
-                    <div class="relative z-20 pointer-events-none mt-auto">
-                        <span class="inline-flex items-center text-accent-blue group-hover:text-accent-purple">
-                            View on GitHub
-                            <svg
-                                class="w-4 h-4 ml-1"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                            >
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-                            </svg>
-                        </span>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Pinned Repositories Section -->
-        <section class="mb-12">
-            <SectionHeading client:visible>Pinned Repositories</SectionHeading>
+        <section class="pb-12 border-t border-white/10 pt-12">
+            <h2 class="text-lg font-semibold text-white mb-8">Pinned repositories</h2>
             <ErrorBoundary client:idle>
                 <GithubRepos client:idle username="nijaru" limit={6} />
             </ErrorBoundary>
@@ -179,7 +114,7 @@ import TextGlow from "../components/TextGlow";
                 href="https://github.com/nijaru"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-6 py-3 bg-space-700 hover:bg-space-600 text-white font-bold rounded-full transition-all duration-300 inline-flex items-center"
+                class="px-6 py-3 bg-dark-700 hover:bg-dark-600 text-white font-bold rounded-full transition-all duration-300 inline-flex items-center"
             >
                 <svg
                     class="w-5 h-5 mr-2"
@@ -199,7 +134,7 @@ import TextGlow from "../components/TextGlow";
         <div class="text-center mt-8">
             <a
                 href="/"
-                class="inline-flex items-center text-accent-blue hover:text-accent-purple"
+                class="inline-flex items-center text-accent-blue hover:text-accent-blue"
             >
                 Back to Home
                 <svg

@@ -33,16 +33,16 @@ const pathname = Astro.url.pathname;
         
         <slot name="head" />
     </head>
-    <body class="bg-space-900 text-white min-h-screen">
+    <body class="bg-dark-950 text-white min-h-screen">
         <StarField client:idle />
         <NavBar client:visible pathname={pathname} />
 
-        <main class="pt-20 pb-12 min-h-screen">
+        <main class="pt-24 pb-16 min-h-screen">
             <slot />
         </main>
 
         <footer
-            class="text-center text-gray-400 text-sm border-t border-space-700 py-5"
+            class="text-center text-gray-400 text-sm border-t border-dark-800 py-8 mt-16"
         >
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SocialLinks client:visible />
@@ -60,23 +60,47 @@ const pathname = Astro.url.pathname;
     @tailwind utilities;
 
     :root {
-        --card-bg-color: rgb(26, 26, 53); /* space-700 */
-        /* --card-bg-opacity: 0.97; */
-        --card-border-color: rgb(35, 35, 66); /* space-600 */
+        --card-bg-color: rgb(10, 10, 10); /* dark-900 */
+        --card-border: rgba(255, 255, 255, 0.06);
+        --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+        --card-shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.5), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
     }
 
     .card-container {
-        @apply backdrop-blur-sm p-6 rounded-lg border transition-all duration-300;
+        @apply backdrop-blur-sm p-6 rounded-xl transition-all duration-300 border;
         background-color: var(--card-bg-color);
-        opacity: var(--card-bg-opacity);
-        border-color: var(--card-border-color);
+        border-color: var(--card-border);
+        box-shadow: var(--card-shadow);
+    }
+
+    /* Interactive cards only - for clickable content */
+    .card-interactive:hover {
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Content cards - subtle hover for reading areas */
+    .card-content:hover {
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Remove any accidental group hover effects on cards */
+    .group:hover .card-container:not(.card-interactive) {
+        transform: none;
     }
 
     .skill-card {
-        @apply backdrop-blur-sm px-4 py-2.5 rounded-md border shadow-md transition-all duration-300 hover:border-primary-500 hover:shadow-lg;
-        background-color: rgb(35, 35, 66); /* space-600 - darker than container */
-        opacity: var(--card-bg-opacity);
-        border-color: rgb(43, 43, 74); /* slightly lighter than background */
+        @apply backdrop-blur-sm px-4 py-2.5 rounded-lg transition-all duration-300 border;
+        background-color: rgb(26, 26, 26); /* dark-800 */
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-card:hover {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.08);
     }
 
     @keyframes twinkle {
@@ -168,15 +192,15 @@ const pathname = Astro.url.pathname;
     }
 
     ::-webkit-scrollbar-track {
-        background: #121224;
+        background: #000000; /* dark-950 */
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #1a1a35;
+        background: #1a1a1a; /* dark-800 */
         border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #232342;
+        background: #2a2a2a; /* dark-700 */
     }
 </style>
