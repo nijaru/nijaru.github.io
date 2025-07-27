@@ -124,9 +124,6 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 
 	return (
 		<div class="w-full">
-			<div class="text-sm text-center text-gray-400 mb-4">
-				Generated from GitHub Actions workflow
-			</div>
 			<Show
 				when={!isLoading()}
 				fallback={<div class="text-center py-4">Loading repositories...</div>}
@@ -139,7 +136,7 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 					when={repos()?.length > 0}
 					fallback={<div class="text-center py-4">No repositories found.</div>}
 				>
-					<div class="space-y-6">
+					<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 						<For each={repos() || []}>
 							{(repo: Repository) => (
 								<div class="group">
@@ -149,13 +146,13 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 										rel="noopener noreferrer"
 										class="block"
 									>
-										<h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+										<h3 class="text-lg font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
 											{repo.name}
 										</h3>
-										<p class="text-gray-300 mb-3">
+										<p class="text-gray-300 text-sm mb-3">
 											{repo.description || "No description available"}
 										</p>
-										<div class="flex items-center space-x-4 text-sm text-gray-400">
+										<div class="flex items-center space-x-4 text-xs text-gray-400">
 											{repo.language && (
 												<span>{repo.language}</span>
 											)}
@@ -165,6 +162,11 @@ export default function GithubRepos({ username, limit }: GithubReposProps) {
 								</div>
 							)}
 						</For>
+					</div>
+					
+					{/* Subtle attribution moved to bottom right */}
+					<div class="text-right mt-4">
+						<span class="text-xs text-gray-500">Updated via GitHub Actions</span>
 					</div>
 				</Show>
 			</Show>

@@ -33,6 +33,20 @@ export default {
           500: '#007aff', // Apple blue
           600: '#0056cc', // Dark Apple blue
         },
+        // Softer whites for reduced contrast
+        white: '#f8f8f8',     // Off-white instead of pure white
+        gray: {
+          50: '#f8f8f8',      // Off-white
+          100: '#e8e8e8',     // Very light gray
+          200: '#d0d0d0',     // Light gray
+          300: '#b8b8b8',     // Medium-light gray (main text)
+          400: '#a0a0a0',     // Medium gray (muted text)
+          500: '#888888',     // True medium gray
+          600: '#606060',     // Dark gray
+          700: '#404040',     // Very dark gray
+          800: '#202020',     // Near black
+          900: '#101010',     // Almost black
+        },
         // Minimal colors only
         accent: {
           blue: '#007aff',   // Apple blue

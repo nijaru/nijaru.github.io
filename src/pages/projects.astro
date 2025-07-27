@@ -103,7 +103,7 @@ import ErrorBoundary from "../components/ErrorBoundary.tsx";
 
         <!-- Pinned Repositories Section -->
         <section class="pb-12 border-t border-white/10 pt-12">
-            <h2 class="text-lg font-semibold text-white mb-8">Pinned repositories</h2>
+            <h2 class="text-lg font-semibold text-white mb-8">Featured repositories</h2>
             <ErrorBoundary client:idle>
                 <GithubRepos client:idle username="nijaru" limit={6} />
             </ErrorBoundary>

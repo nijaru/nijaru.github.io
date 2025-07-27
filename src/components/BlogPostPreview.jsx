@@ -18,45 +18,33 @@ export default function BlogPostPreview(props) {
   const { post } = props;
   
   return (
-    <article class="relative group">
+    <article class="group pb-8 border-b border-white/10 last:border-b-0 last:pb-0">
       <a 
         href={post.url} 
-        class="absolute inset-0 z-10"
-        aria-label={`Read blog post: ${post.title}`}
+        class="block"
       >
-        <span class="sr-only">Read blog post: {post.title}</span>
-      </a>
-      
-      <div class="card-container card-interactive group relative">
-        <h2 class="text-2xl font-semibold mb-2 text-blue-400 group-hover:text-blue-500">
+        <h2 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
           {post.title}
         </h2>
         
-        <div class="mb-3">
-          <time datetime={typeof post.pubDate === 'object' ? post.pubDate.toISOString() : post.pubDate} class="text-sm text-gray-400">
-            {post.formattedDate}
-          </time>
-        </div>
+        <time datetime={typeof post.pubDate === 'object' ? post.pubDate.toISOString() : post.pubDate} class="text-sm text-gray-400 mb-3 block">
+          {post.formattedDate}
+        </time>
         
         <p class="text-gray-300 mb-4">{post.excerpt}</p>
         
-        <div class="flex flex-wrap gap-2 mb-4">
+        <div class="flex flex-wrap gap-3 mb-4">
           {post.tags && post.tags.map((tag, index) => (
-            <span key={tag + '-' + index} class="text-responsive-sm text-accent-blue">
+            <span key={tag + '-' + index} class="text-sm text-gray-400">
               {tag}
             </span>
           ))}
         </div>
         
-        <div class="relative z-20 pointer-events-none">
-          <span class="inline-flex items-center text-accent-blue group-hover:text-accent-blue">
-            Read more
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </span>
+        <div class="text-accent-blue group-hover:text-blue-400 text-sm font-medium transition-colors">
+          Read more →
         </div>
-      </div>
+      </a>
     </article>
   );
 }

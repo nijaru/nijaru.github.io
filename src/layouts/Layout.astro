@@ -30,6 +30,8 @@ const pathname = Astro.url.pathname;
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
         <!-- Load Geist from Vercel CDN for better performance -->
         <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist/style.css" rel="stylesheet">
+        <!-- Devicons for programming language and tool icons -->
+        <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet">
         
         <slot name="head" />
     </head>
@@ -169,6 +171,7 @@ const pathname = Astro.url.pathname;
             "Helvetica Neue",
             Arial,
             sans-serif;
+        color: #f8f8f8; /* Default to off-white instead of pure white */
     }
 
     /* Monospace font for code elements */
