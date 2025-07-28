@@ -27,6 +27,6 @@ Still, it is quite impressive how far you can get with just enough domain knowle
 
 In case you couldn't tell, this post was 100% all-organic homegrown and handwritten.
 
-<p class="bg-primary-500/20 border-l-4 border-primary-400 pl-4 pr-4 py-4 rounded-r my-6">
+<p class="bg-blue-500/10 border-l-4 border-blue-500 pl-4 pr-4 py-4 rounded-r my-6 backdrop-blur-sm">
 I'm currently looking for new engineering opportunities! If you're hiring someone who enjoys building backends, dealing with databases, applying AI, and has strong Python or Go skills, please reach out.
 </p>

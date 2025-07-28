@@ -26,6 +26,7 @@ const categories = [
     skills: [
       { name: 'Rust', color: 'text-orange-500', icon: 'devicon-rust-plain' },
       { name: 'Mojo', color: 'text-yellow-500', icon: '🔥' }, // Using emoji for Mojo
+      { name: 'FastAPI', color: 'text-green-500', icon: 'devicon-fastapi-plain' },
       { name: 'Gleam', color: 'text-purple-400', icon: 'devicon-elixir-plain' }, // Using elixir as similar functional language
       { name: 'Solid.js', color: 'text-accent-blue', icon: 'devicon-javascript-plain' }
     ]
@@ -39,6 +40,7 @@ const categories = [
       { name: 'Docker', color: 'text-blue-500', icon: 'devicon-docker-plain' },
       { name: 'SQLite', color: 'text-blue-400', icon: 'devicon-sqlite-plain' },
       { name: 'PostgreSQL', color: 'text-blue-600', icon: 'devicon-postgresql-plain' },
+      { name: 'MySQL', color: 'text-blue-500', icon: 'devicon-mysql-plain' },
       { name: 'Redis', color: 'text-red-500', icon: 'devicon-redis-plain' }
     ]
   }

@@ -42,15 +42,10 @@ const pathname = Astro.url.pathname;
         <main class="pt-24 pb-16 min-h-screen">
             <slot />
         </main>
-
-        <footer
-            class="text-center text-gray-400 text-sm border-t border-dark-800 py-8 mt-16"
-        >
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <SocialLinks client:visible />
-                <p class="mt-2">
-                    &copy; {new Date().getFullYear()} Nick Russo. All rights reserved.
-                </p>
+        
+        <footer class="border-t border-white/10 py-8 text-center text-sm text-gray-400">
+            <div class="max-w-3xl mx-auto px-4">
+                <p>© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-accent-blue hover:text-blue-400">Astro</a></p>
             </div>
         </footer>
     </body>
@@ -69,10 +64,9 @@ const pathname = Astro.url.pathname;
     }
 
     .card-container {
-        @apply backdrop-blur-sm p-6 rounded-xl transition-all duration-300 border;
-        background-color: var(--card-bg-color);
-        border-color: var(--card-border);
-        box-shadow: var(--card-shadow);
+        @apply backdrop-blur-md p-6 rounded-xl transition-all duration-300;
+        background-color: rgba(10, 10, 10, 0.9);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     }
 
     /* Interactive cards only - for clickable content */
@@ -103,6 +97,24 @@ const pathname = Astro.url.pathname;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
         transform: translateY(-1px);
         border-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Content backdrop for better readability - soft fade */
+    .content-backdrop {
+        @apply backdrop-blur-sm p-6;
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 60%, transparent 90%);
+        margin: -1.5rem; /* Negative margin to extend fade beyond content */
+    }
+    
+    /* Alternative vertical fade for long content */
+    .content-fade {
+        @apply p-6;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(0,0,0,0.5) 10%, 
+            rgba(0,0,0,0.5) 90%, 
+            transparent 100%
+        );
     }
 
     @keyframes twinkle {

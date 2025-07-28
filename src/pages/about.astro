@@ -17,7 +17,7 @@ import TextGlow from "../components/TextGlow";
 
         <section class="pb-12">
             <div class="space-y-12">
-                <div>
+                <div class="content-backdrop">
                     <h2 class="text-lg font-semibold text-white mb-6">What I work on</h2>
                     <div class="space-y-4 text-gray-300">
                         <p>I focus on backend development, API design, and distributed systems. My work involves building reliable, scalable solutions using modern languages and frameworks.</p>
@@ -25,7 +25,7 @@ import TextGlow from "../components/TextGlow";
                     </div>
                 </div>
 
-                <div>
+                <div class="content-backdrop">
                     <h2 class="text-lg font-semibold text-white mb-6">Current projects</h2>
                     <div class="space-y-4 text-gray-300">
                         <p><strong class="text-white">Vector database in Mojo</strong> — Building a high-performance similarity search system from scratch, focusing on efficient indexing algorithms and memory management.</p>
@@ -35,18 +35,48 @@ import TextGlow from "../components/TextGlow";
                     </div>
                 </div>
                 
-                <div>
+                <div class="content-backdrop">
                     <h2 class="text-lg font-semibold text-white mb-6">Technical skills</h2>
                     <TechSkills client:visible />
+                </div>
+                
+                <div class="content-backdrop">
+                    <h2 class="text-lg font-semibold text-white mb-6">Tools & setup</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Development environment</h3>
+                            <p><strong class="text-white">Editor:</strong> Zed (primary), VS Code (for specific extensions)</p>
+                            <p><strong class="text-white">Terminal:</strong> Ghostty + Fish shell with Starship prompt</p>
+                            <p><strong class="text-white">AI tools:</strong> Claude Code, Ollama for local LLMs</p>
+                            <p><strong class="text-white">Version control:</strong> Git with Lazygit, experimenting with Jujutsu (jj)</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Productivity tools</h3>
+                            <p><strong class="text-white">Package management:</strong> mise for runtime versions, uv for Python</p>
+                            <p><strong class="text-white">Better CLI:</strong> ripgrep, fd, fzf, bat, eza, duf</p>
+                            <p><strong class="text-white">Performance:</strong> hyperfine for benchmarking, btop for monitoring</p>
+                            <p><strong class="text-white">Notes:</strong> Obsidian for knowledge management</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Infrastructure</h3>
+                            <p><strong class="text-white">Containers:</strong> OrbStack for Docker on macOS</p>
+                            <p><strong class="text-white">Networking:</strong> Tailscale for secure access, Mullvad VPN</p>
+                            <p><strong class="text-white">Cloud:</strong> Experience with Google Cloud, DigitalOcean</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="py-12 border-t border-white/10">
-            <blockquote class="italic text-gray-400 text-lg">
-                "There are only two hard things in Computer Science: cache invalidation,
-                naming things, and off-by-one errors."
-            </blockquote>
+            <div class="content-backdrop">
+                <blockquote class="italic text-gray-400 text-lg">
+                    "There are only two hard things in Computer Science: cache invalidation,
+                    naming things, and off-by-one errors."
+                </blockquote>
+            </div>
         </section>
 
         <div class="py-8">
