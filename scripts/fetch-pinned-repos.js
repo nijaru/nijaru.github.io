@@ -33,7 +33,6 @@ const query = `
             }
             stargazerCount
             forkCount
-            pushedAt
           }
         }
       }
@@ -159,8 +158,7 @@ const req = https.request(options, (res) => {
         homepage: repo.homepageUrl,
         language: repo.primaryLanguage ? repo.primaryLanguage.name : null,
         stargazers_count: repo.stargazerCount,
-        forks_count: repo.forkCount,
-        pushed_at: repo.pushedAt
+        forks_count: repo.forkCount
       }));
 
       // Write formatted data to files (both in public and static directories)
