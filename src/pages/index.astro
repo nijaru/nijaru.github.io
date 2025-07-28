@@ -17,6 +17,14 @@ const blogEntries = await getCollection('blog', ({ data }) => {
 });
 
 // Format and prepare post data
+// Calculate reading time
+function calculateReadingTime(text) {
+    const wordsPerMinute = 200;
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+}
+
 const allPosts = blogEntries
   .map(post => {
     // Format the date for display
@@ -26,13 +34,17 @@ const allPosts = blogEntries
       day: "numeric",
     });
     
+    // Calculate reading time
+    const readingTime = calculateReadingTime(post.body);
+    
     return {
       url: `/blog/${post.slug}`,
       title: post.data.title,
       pubDate: post.data.pubDate,
       formattedDate: formattedDate,
       excerpt: post.data.description,
-      tags: post.data.tags
+      tags: post.data.tags,
+      readingTime: readingTime
     };
   })
   // Sort posts by date (newest first)
@@ -42,7 +54,10 @@ const allPosts = blogEntries
 const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
 ---
 
-<Layout title="Nick Russo - Software Developer">
+<Layout 
+    title="Nick Russo - Software Developer" 
+    description="Software developer specializing in backend systems, distributed applications, and AI. Building with Python, Go, Rust, and modern web technologies."
+>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Hero Section -->
         <header class="py-16">
@@ -91,7 +106,9 @@ const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
                             <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
                                 {mostRecentPost.title}
                             </h3>
-                            <p class="text-gray-400 text-sm mb-3">{mostRecentPost.formattedDate}</p>
+                            <p class="text-gray-400 text-sm mb-3">
+                                {mostRecentPost.formattedDate} • {mostRecentPost.readingTime}
+                            </p>
                             <p class="text-gray-300">{mostRecentPost.excerpt}</p>
                         </a>
                     </div>

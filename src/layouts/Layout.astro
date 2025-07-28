@@ -2,6 +2,7 @@
 import NavBar from "../components/NavBar";
 import StarField from "../components/StarField";
 import SocialLinks from "../components/SocialLinks";
+import BackToTop from "../components/BackToTop";
 
 interface Props {
     title: string;
@@ -48,6 +49,8 @@ const pathname = Astro.url.pathname;
                 <p>© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-accent-blue hover:text-blue-400">Astro</a></p>
             </div>
         </footer>
+        
+        <BackToTop client:idle />
     </body>
 </html>
 

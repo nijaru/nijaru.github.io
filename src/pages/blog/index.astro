@@ -10,15 +10,27 @@ const blogEntries = await getCollection("blog", ({ data }) => {
     return import.meta.env.PROD ? !data.draft : true;
 });
 
+// Calculate reading time
+function calculateReadingTime(text) {
+    const wordsPerMinute = 200;
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+}
+
 // Format and prepare post data
-const posts = blogEntries
-    .map((post) => {
+const posts = await Promise.all(
+    blogEntries.map(async (post) => {
         // Format the date for display
         const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
         });
+
+        // Get the post body for reading time calculation
+        const { Content } = await post.render();
+        const readingTime = calculateReadingTime(post.body);
 
         return {
             url: `/blog/${post.slug}`,
@@ -27,13 +39,19 @@ const posts = blogEntries
             formattedDate: formattedDate,
             excerpt: post.data.description,
             tags: post.data.tags,
+            readingTime: readingTime,
         };
     })
-    // Sort posts by date (newest first)
-    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+);
+
+// Sort posts by date (newest first)
+posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 ---
 
-<Layout title="Blog - Nick Russo">
+<Layout 
+    title="Blog - Nick Russo" 
+    description="Thoughts on software development, AI-assisted programming, and technology. Read Nick Russo's insights on building modern software."
+>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 class="text-4xl font-bold mb-2 text-center">
             <span class="text-accent-blue">

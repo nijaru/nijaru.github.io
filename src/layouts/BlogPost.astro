@@ -18,6 +18,16 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
 });
+
+// Calculate reading time
+function calculateReadingTime(text) {
+    const wordsPerMinute = 200;
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+}
+
+const readingTime = calculateReadingTime(post.body);
 ---
 
 <Layout title={title + " - Nick Russo"} description={description}>
@@ -56,10 +66,12 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
                 </ReflectionText>
             </h1>
 
-            <div class="mb-4">
-                <time datetime={pubDate.toISOString()} class="text-sm text-gray-400 block">
+            <div class="mb-4 flex items-center gap-3 text-sm text-gray-400">
+                <time datetime={pubDate.toISOString()}>
                     {formattedDate}
                 </time>
+                <span>•</span>
+                <span>{readingTime}</span>
             </div>
 
             <div class="flex flex-wrap gap-2 mb-8">

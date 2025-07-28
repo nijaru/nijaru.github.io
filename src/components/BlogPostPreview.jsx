@@ -27,9 +27,17 @@ export default function BlogPostPreview(props) {
           {post.title}
         </h2>
         
-        <time datetime={typeof post.pubDate === 'object' ? post.pubDate.toISOString() : post.pubDate} class="text-sm text-gray-400 mb-3 block">
-          {post.formattedDate}
-        </time>
+        <div class="flex items-center gap-3 text-sm text-gray-400 mb-3">
+          <time datetime={typeof post.pubDate === 'object' ? post.pubDate.toISOString() : post.pubDate}>
+            {post.formattedDate}
+          </time>
+          {post.readingTime && (
+            <>
+              <span>•</span>
+              <span>{post.readingTime}</span>
+            </>
+          )}
+        </div>
         
         <p class="text-gray-300 mb-4">{post.excerpt}</p>
         
