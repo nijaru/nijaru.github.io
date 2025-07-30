@@ -29,46 +29,36 @@ import TextGlow from "../components/TextGlow";
                 </div>
 
                 <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Current projects</h2>
+                    <h2 class="text-lg font-semibold text-white mb-6">Tools & setup</h2>
                     <div class="space-y-4 text-gray-300">
-                        <p><strong class="text-white">Vector database in Mojo</strong> — Building a high-performance similarity search system from scratch, focusing on efficient indexing algorithms and memory management.</p>
-                        <p><strong class="text-white">TUI coding agent in Rust</strong> — Developing a terminal-based coding assistant with improved workflow automation and better context management.</p>
-                        <p><strong class="text-white">Local LLM infrastructure</strong> — Running local language models with Ollama and Open WebUI, accessible remotely via Tailscale for secure, self-hosted AI services.</p>
-                        <p><strong class="text-white">Audio processing research</strong> — Experimenting with OpenAI Whisper implementation using Modular's MAX Graph for performance optimizations.</p>
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Development environment</h3>
+                            <p><strong class="text-white">Editors:</strong> Zed (with AI features), Neovim, VS Code</p>
+                            <p><strong class="text-white">Terminal:</strong> Ghostty + Fish shell with Tide prompt</p>
+                            <p><strong class="text-white">AI tools:</strong> Claude Code, Ollama (self-hosted via Tailscale)</p>
+                            <p><strong class="text-white">Version control:</strong> Git, experimenting with Jujutsu (jj)</p>
+                            <p><strong class="text-white">Operating systems:</strong> macOS and Fedora, experience with Ubuntu/Debian/Gentoo/Alpine/CoreOS</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Developer tools</h3>
+                            <p><strong class="text-white">Package management:</strong> mise for runtime versions, uv for Python</p>
+                            <p><strong class="text-white">Better CLI:</strong> ripgrep, fd, fzf, bat, eza, btop</p>
+                            <p><strong class="text-white">Notes:</strong> Obsidian</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-md font-medium text-white mb-2">Infrastructure</h3>
+                            <p><strong class="text-white">Containers:</strong> Podman (Fedora), OrbStack (macOS)</p>
+                            <p><strong class="text-white">Networking:</strong> Tailscale, Mullvad VPN</p>
+                            <p><strong class="text-white">Cloud:</strong> AWS, Google Cloud, DigitalOcean, Cloudflare, various VPS providers</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="content-backdrop">
                     <h2 class="text-lg font-semibold text-white mb-6">Technical skills</h2>
                     <TechSkills client:visible />
-                </div>
-                
-                <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Tools & setup</h2>
-                    <div class="space-y-4 text-gray-300">
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Development environment</h3>
-                            <p><strong class="text-white">Editor:</strong> Zed (primary), VS Code (for specific extensions)</p>
-                            <p><strong class="text-white">Terminal:</strong> Ghostty + Fish shell with Starship prompt</p>
-                            <p><strong class="text-white">AI tools:</strong> Claude Code, Ollama for local LLMs</p>
-                            <p><strong class="text-white">Version control:</strong> Git with Lazygit, experimenting with Jujutsu (jj)</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Productivity tools</h3>
-                            <p><strong class="text-white">Package management:</strong> mise for runtime versions, uv for Python</p>
-                            <p><strong class="text-white">Better CLI:</strong> ripgrep, fd, fzf, bat, eza, duf</p>
-                            <p><strong class="text-white">Performance:</strong> hyperfine for benchmarking, btop for monitoring</p>
-                            <p><strong class="text-white">Notes:</strong> Obsidian for knowledge management</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Infrastructure</h3>
-                            <p><strong class="text-white">Containers:</strong> OrbStack for Docker on macOS</p>
-                            <p><strong class="text-white">Networking:</strong> Tailscale for secure access, Mullvad VPN</p>
-                            <p><strong class="text-white">Cloud:</strong> Experience with Google Cloud, DigitalOcean</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
