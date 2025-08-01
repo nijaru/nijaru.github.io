@@ -1,5 +1,3 @@
-import { createSignal } from "solid-js";
-
 export default function SocialLinks() {
 	const links = [
 		{
@@ -22,29 +20,24 @@ export default function SocialLinks() {
 		},
 	];
 
-	const [hoveredIndex, setHoveredIndex] = createSignal(-1);
-
 	return (
 		<div class="flex gap-4 justify-center">
-			{links.map((link, index) => (
+			{links.map((link) => (
 				<a
 					key={link.name}
 					href={link.url}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="relative group"
-					onMouseEnter={() => setHoveredIndex(index)}
-					onMouseLeave={() => setHoveredIndex(-1)}
 				>
 					<div class="relative z-10 p-3 rounded-full transition-all duration-300 bg-dark-700 hover:bg-dark-600 flex items-center justify-center">
 						<span class="sr-only">{link.name}</span>
 						{renderIcon(link.icon)}
 					</div>
-					{hoveredIndex() === index && (
-						<div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-dark-700 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
-							{link.displayName}
-						</div>
-					)}
+					{/* CSS-only tooltip */}
+					<div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-dark-700 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+						{link.displayName}
+					</div>
 				</a>
 			))}
 		</div>

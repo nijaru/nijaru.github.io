@@ -81,6 +81,7 @@ scripts/            # Build and utility scripts
 - **Zero-overhead rendering**: Pre-sorted arrays, single render loop, no runtime monitoring
 - **Battery optimization**: Pause animations when tab hidden via Visibility API
 - **Bundle efficiency**: StarField 3.07kB (1.31kB gzipped), 80% CPU reduction achieved
+- **Component optimization**: SocialLinks converted to CSS-only (16→14 modules), GitHub repos build-time loading
 - **Bundle targets**: <50kB total JS, <3kB per component (gzipped)
 - **Core Web Vitals**: LCP <2.5s, FID <100ms, CLS <0.1
 
@@ -94,5 +95,5 @@ scripts/            # Build and utility scripts
 - **SEO**: Comprehensive meta tags, Open Graph, Twitter Card support
 - **Infrastructure**: Added Vercel/Netlify configurations for enhanced hosting performance
 - **Design**: Complete UI/UX refactor (2024-2025) - professional design system, optimized spacing, unified messaging
-- **Performance**: GitHub repos instant loading, removed unused components, optimized bundle size
+- **Performance**: GitHub repos instant loading, removed unused components, optimized SocialLinks (CSS-only tooltips), reduced bundle size
 - **UX**: Fixed width issues, restored clickable areas, improved blog post layout, consistent terminology
