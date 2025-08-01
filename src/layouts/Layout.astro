@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import StarField from "../components/StarField";
 import SocialLinks from "../components/SocialLinks";
 import BackToTop from "../components/BackToTop";
+import '../styles/design-system.css';
 
 interface Props {
     title: string;
@@ -36,7 +37,7 @@ const pathname = Astro.url.pathname;
         
         <slot name="head" />
     </head>
-    <body class="bg-dark-950 text-white min-h-screen">
+    <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
         <StarField client:idle />
         <NavBar client:visible pathname={pathname} />
 
@@ -44,9 +45,9 @@ const pathname = Astro.url.pathname;
             <slot />
         </main>
         
-        <footer class="border-t border-white/10 py-8 text-center text-sm text-gray-400">
-            <div class="max-w-3xl mx-auto px-4">
-                <p>© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-accent-blue hover:text-blue-400">Astro</a></p>
+        <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
+            <div class="container container-md">
+                <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
             </div>
         </footer>
         
@@ -58,67 +59,6 @@ const pathname = Astro.url.pathname;
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
-
-    :root {
-        --card-bg-color: rgb(10, 10, 10); /* dark-900 */
-        --card-border: rgba(255, 255, 255, 0.06);
-        --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-        --card-shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.5), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
-    }
-
-    .card-container {
-        @apply backdrop-blur-md p-6 rounded-xl transition-all duration-300;
-        background-color: rgba(10, 10, 10, 0.9);
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Interactive cards only - for clickable content */
-    .card-interactive:hover {
-        box-shadow: var(--card-shadow-hover);
-        transform: translateY(-1px);
-        border-color: rgba(255, 255, 255, 0.12);
-    }
-
-    /* Content cards - subtle hover for reading areas */
-    .card-content:hover {
-        border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    /* Remove any accidental group hover effects on cards */
-    .group:hover .card-container:not(.card-interactive) {
-        transform: none;
-    }
-
-    .skill-card {
-        @apply backdrop-blur-sm px-4 py-2.5 rounded-lg transition-all duration-300 border;
-        background-color: rgb(26, 26, 26); /* dark-800 */
-        border-color: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    }
-
-    .skill-card:hover {
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
-        transform: translateY(-1px);
-        border-color: rgba(255, 255, 255, 0.08);
-    }
-    
-    /* Content backdrop for better readability - soft fade */
-    .content-backdrop {
-        @apply backdrop-blur-sm p-6;
-        background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 60%, transparent 90%);
-        margin: -1.5rem; /* Negative margin to extend fade beyond content */
-    }
-    
-    /* Alternative vertical fade for long content */
-    .content-fade {
-        @apply p-6;
-        background: linear-gradient(to bottom, 
-            transparent 0%, 
-            rgba(0,0,0,0.5) 10%, 
-            rgba(0,0,0,0.5) 90%, 
-            transparent 100%
-        );
-    }
 
     @keyframes twinkle {
         0%,

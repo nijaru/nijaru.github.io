@@ -32,6 +32,17 @@ export default defineConfig({
     shikiConfig: {
       theme: 'one-dark-pro',
       wrap: true,
+      transformers: [
+        {
+          name: 'add-copy-button',
+          pre(node) {
+            // Add data attributes for enhanced code blocks
+            node.properties = node.properties || {};
+            node.properties['data-language'] = this.options.lang || 'text';
+            node.properties['data-code'] = this.source;
+          }
+        }
+      ]
     },
   },
 });

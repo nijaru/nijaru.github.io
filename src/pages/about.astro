@@ -11,74 +11,175 @@ import TextGlow from "../components/TextGlow";
     title="About - Nick Russo" 
     description="Learn about Nick Russo's experience in software development, technical background, tools & setup, and programming skills."
 >
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header class="py-16">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">
-                <span class="text-accent-blue">About</span>
-            </h1>
-        </header>
-
-        <section class="pb-12">
-            <div class="space-y-12">
-                <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Background</h2>
-                    <div class="space-y-4 text-gray-300">
-                        <p>I focus on backend development, API design, and distributed systems. My work involves building reliable, scalable solutions using modern languages and frameworks.</p>
-                        <p>Currently exploring AI applications, database innovations, and high-performance computing with languages like Mojo and Rust.</p>
-                    </div>
-                </div>
-
-                <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Tools & setup</h2>
-                    <div class="space-y-4 text-gray-300">
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Development environment</h3>
-                            <p><strong class="text-white">Editors:</strong> Zed (with AI features), Neovim, VS Code</p>
-                            <p><strong class="text-white">Terminal:</strong> Ghostty + Fish shell with Tide prompt</p>
-                            <p><strong class="text-white">AI tools:</strong> Claude Code, Ollama (self-hosted via Tailscale)</p>
-                            <p><strong class="text-white">Version control:</strong> Git, experimenting with Jujutsu (jj)</p>
-                            <p><strong class="text-white">Operating systems:</strong> macOS and Fedora, experience with Ubuntu/Debian/Gentoo/Alpine/CoreOS</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Developer tools</h3>
-                            <p><strong class="text-white">Package management:</strong> mise for runtime versions, uv for Python</p>
-                            <p><strong class="text-white">Better CLI:</strong> ripgrep, fd, fzf, bat, eza, btop</p>
-                            <p><strong class="text-white">Notes:</strong> Obsidian</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-md font-medium text-white mb-2">Infrastructure</h3>
-                            <p><strong class="text-white">Containers:</strong> Podman (Fedora), OrbStack (macOS)</p>
-                            <p><strong class="text-white">Networking:</strong> Tailscale, Mullvad VPN</p>
-                            <p><strong class="text-white">Cloud:</strong> AWS, Google Cloud, DigitalOcean, Cloudflare, various VPS providers</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Technical skills</h2>
-                    <TechSkills client:visible />
-                </div>
+    <!-- Hero Section -->
+    <section class="section-lg">
+        <div class="container container-sm">
+            <div class="text-center">
+                <h1 class="heading-1">
+                    <span class="text-accent-blue">About</span>
+                </h1>
+                <p class="body-large text-text-secondary max-w-2xl mx-auto">
+                    Software developer passionate about building reliable, 
+                    scalable solutions for complex problems.
+                </p>
             </div>
-        </section>
-
-        <section class="py-12 border-t border-white/10">
-            <div class="content-backdrop">
-                <blockquote class="italic text-gray-400 text-lg">
-                    "There are only two hard things in Computer Science: cache invalidation,
-                    naming things, and off-by-one errors."
-                </blockquote>
-            </div>
-        </section>
-
-        <div class="py-8">
-            <a
-                href="/"
-                class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
-            >
-                ← Back to home
-            </a>
         </div>
-    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Background Section -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="space-y-12">
+                <div class="space-y-6">
+                    <h2 class="heading-2">Background</h2>
+                    <p class="body-large text-text-secondary leading-relaxed">
+                        I focus on backend development, distributed systems, and AI applications. 
+                        My work involves building scalable, reliable solutions using modern languages and frameworks.
+                    </p>
+                    <p class="body-normal text-text-secondary leading-relaxed">
+                        Currently exploring database innovations, high-performance computing with Mojo and Rust, 
+                        and developing AI-powered tools that solve real-world problems.
+                    </p>
+                    <p class="body-normal text-text-secondary leading-relaxed">
+                        Over 10 years of coding experience. Over 15 years exploring Linux systems. 
+                        Always finding new ways to break things with code. Currently fascinated by 
+                        the intersection of AI and developer tooling.
+                    </p>
+                </div>
+
+                <div class="border-t pt-8" style="border-color: var(--color-border-subtle);">
+                    <h3 class="heading-3 mb-6">Current Focus</h3>
+                    <div class="space-y-3">
+                        <div class="body-normal text-text-secondary">• AI-powered development tools</div>
+                        <div class="body-normal text-text-secondary">• Vector databases and similarity search</div>
+                        <div class="body-normal text-text-secondary">• High-performance computing with Mojo</div>
+                        <div class="body-normal text-text-secondary">• Modern web technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Technical Skills -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Technical Skills</h2>
+                <p class="body-normal text-text-secondary">
+                    Languages, frameworks, and technologies I work with
+                </p>
+            </div>
+            <TechSkills client:visible />
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Tools & Setup -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Tools & Setup</h2>
+                <p class="body-normal text-text-secondary">
+                    Development environment and tools that power my workflow
+                </p>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Development Environment -->
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <h3 class="heading-3 mb-6">Development Environment</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Editors</div>
+                            <div class="body-normal text-text-secondary">Zed (with AI features), Neovim, VS Code</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Terminal</div>
+                            <div class="body-normal text-text-secondary">Ghostty + Fish shell with Tide prompt</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">AI Tools</div>
+                            <div class="body-normal text-text-secondary">Claude Code, Ollama (self-hosted via Tailscale)</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Version Control</div>
+                            <div class="body-normal text-text-secondary">Git, experimenting with Jujutsu (jj)</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Operating Systems</div>
+                            <div class="body-normal text-text-secondary">macOS and Fedora, experience with Ubuntu/Debian/Gentoo/Alpine/CoreOS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer Tools -->
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <h3 class="heading-3 mb-6">Developer Tools</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Package Management</div>
+                            <div class="body-normal text-text-secondary">mise for runtime versions, uv for Python</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Better CLI</div>
+                            <div class="body-normal text-text-secondary">ripgrep, fd, fzf, bat, eza, btop</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Notes</div>
+                            <div class="body-normal text-text-secondary">Obsidian</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Containers</div>
+                            <div class="body-normal text-text-secondary">Podman (Fedora), OrbStack (macOS)</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Networking</div>
+                            <div class="body-normal text-text-secondary">Tailscale, Mullvad VPN</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-text-primary mb-2">Cloud</div>
+                            <div class="body-normal text-text-secondary">AWS, Google Cloud, DigitalOcean, Cloudflare</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Quote Section -->
+        <section class="section">
+            <div class="container container-sm">
+                <div class="text-center border-t border-b py-12" style="border-color: var(--color-border-subtle);">
+                    <blockquote class="text-lg italic text-text-secondary leading-relaxed mb-6">
+                        "There are only two hard things in Computer Science: cache invalidation,
+                        naming things, and off-by-one errors."
+                    </blockquote>
+                    <div class="body-small text-text-tertiary mb-8">
+                        — Phil Karlton (with Leon Bambrick's addition)
+                    </div>
+                    <div class="body-small text-text-tertiary italic">
+                        Coffee consumed: ∞ (and counting)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Navigation -->
+        <section class="section-sm">
+            <div class="container container-md">
+                <div class="text-center">
+                    <a href="/" class="btn btn-secondary link-arrow">
+                        Back to home
+                    </a>
+                </div>
+            </div>
+        </section>
 </Layout>

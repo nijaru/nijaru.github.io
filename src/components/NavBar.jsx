@@ -47,27 +47,27 @@ export default function NavBar(props) {
   };
   
   return (
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-800 border-b border-dark-700">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b" style="background-color: var(--glass-bg); border-color: var(--color-border-subtle);">
+      <div class="container">
         <div class="flex justify-between h-16">
           <div class="flex items-center">
-            <a href="/" class="text-responsive-xl font-bold text-white flex items-center">
-              <span class="text-blue-500">Nick</span>
-              <span class="text-white ml-1">Russo</span>
+            <a href="/" class="text-xl font-bold flex items-center text-text-primary">
+              <span class="text-accent-primary">Nick</span>
+              <span class="ml-1">Russo</span>
             </a>
           </div>
           
-          <div class="hidden md:flex items-center space-x-4">
-            <a href="/" class={`px-3 py-2 text-responsive-lg font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/') ? 'text-blue-500 hover:text-blue-400' : 'text-white hover:text-blue-400'}`}>Home</a>
-            <a href="/about" class={`px-3 py-2 text-responsive-lg font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/about') ? 'text-blue-500 hover:text-blue-400' : 'text-white hover:text-blue-400'}`}>About</a>
-            <a href="/blog" class={`px-3 py-2 text-responsive-lg font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/blog') ? 'text-blue-500 hover:text-blue-400' : 'text-white hover:text-blue-400'}`}>Blog</a>
-            <a href="/projects" class={`px-3 py-2 text-responsive-lg font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/projects') ? 'text-blue-500 hover:text-blue-400' : 'text-white hover:text-blue-400'}`}>Projects</a>
+          <div class="hidden md:flex items-center gap-2">
+            <a href="/" class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${isActive('/') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Home</a>
+            <a href="/about" class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${isActive('/about') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>About</a>
+            <a href="/blog" class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${isActive('/blog') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Blog</a>
+            <a href="/projects" class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${isActive('/projects') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Projects</a>
           </div>
           
           <div class="md:hidden flex items-center">
             <button 
               onClick={toggleMenu}
-              class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
               aria-expanded={isMenuOpen()}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen() ? "Close main menu" : "Open main menu"}
@@ -83,12 +83,12 @@ export default function NavBar(props) {
       
       {/* Mobile menu */}
       <Show when={isMenuOpen()}>
-        <div id="mobile-menu" class="md:hidden bg-dark-800 border-b border-dark-700" role="navigation" aria-label="Mobile navigation">
-          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" class={`block px-3 py-2 text-responsive-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/') ? 'text-blue-500' : 'text-white hover:text-blue-400'}`}>Home</a>
-            <a href="/about" class={`block px-3 py-2 text-responsive-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/about') ? 'text-blue-500' : 'text-white hover:text-blue-400'}`}>About</a>
-            <a href="/blog" class={`block px-3 py-2 text-responsive-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/blog') ? 'text-blue-500' : 'text-white hover:text-blue-400'}`}>Blog</a>
-            <a href="/projects" class={`block px-3 py-2 text-responsive-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive('/projects') ? 'text-blue-500' : 'text-white hover:text-blue-400'}`}>Projects</a>
+        <div id="mobile-menu" class="md:hidden border-t" style="background-color: var(--glass-bg); border-color: var(--color-border-subtle);" role="navigation" aria-label="Mobile navigation">
+          <div class="container py-4 space-y-2">
+            <a href="/" class={`block px-3 py-2 text-lg font-medium rounded-lg transition-colors ${isActive('/') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Home</a>
+            <a href="/about" class={`block px-3 py-2 text-lg font-medium rounded-lg transition-colors ${isActive('/about') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>About</a>
+            <a href="/blog" class={`block px-3 py-2 text-lg font-medium rounded-lg transition-colors ${isActive('/blog') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Blog</a>
+            <a href="/projects" class={`block px-3 py-2 text-lg font-medium rounded-lg transition-colors ${isActive('/projects') ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'}`}>Projects</a>
           </div>
         </div>
       </Show>

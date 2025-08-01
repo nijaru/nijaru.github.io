@@ -2,6 +2,7 @@
 import Layout from "./Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
+import CodeBlock from "../components/CodeBlock";
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
 
@@ -58,54 +59,51 @@ const readingTime = calculateReadingTime(post.body);
             })}
         />
     </Fragment>
-    <div class="max-w-prose mx-auto px-4 sm:px-6 py-8">
-        <article class="prose prose-invert prose-lg max-w-none">
-            <h1 class="text-4xl font-bold mb-2">
-                <ReflectionText client:load>
-                    <span class="text-blue-400">{title}</span>
-                </ReflectionText>
-            </h1>
+    <!-- Article Header -->
+    <section class="section">
+        <div class="container container-md">
+            <div class="text-center mb-12">
+                <h1 class="heading-1 mb-6">
+                    <span class="text-accent-blue">{title}</span>
+                </h1>
+                
+                <div class="flex items-center justify-center gap-4 mb-8 body-small text-text-tertiary">
+                    <time datetime={pubDate.toISOString()}>
+                        {formattedDate}
+                    </time>
+                    <span>•</span>
+                    <span>{readingTime}</span>
+                </div>
 
-            <div class="mb-4 flex items-center gap-3 text-sm text-gray-400">
-                <time datetime={pubDate.toISOString()}>
-                    {formattedDate}
-                </time>
-                <span>•</span>
-                <span>{readingTime}</span>
+                <div class="flex flex-wrap justify-center gap-2">
+                    {
+                        tags.map((tag) => (
+                            <span class="badge badge-primary">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
             </div>
 
-            <div class="flex flex-wrap gap-2 mb-8">
-                {
-                    tags.map((tag) => (
-                        <span class="text-responsive-sm text-accent-blue">
-                            {tag}
-                        </span>
-                    ))
-                }
+            <!-- Article Content -->
+            <div class="glass-card p-12">
+                <article class="blog-content prose prose-invert max-w-none">
+                    <slot />
+                    <CodeBlock client:load />
+                </article>
             </div>
-            <div class="card-container card-content mb-6 blog-content prose prose-invert">
-                <slot />
-            </div>
+        </div>
+    </section>
 
-            <div class="flex justify-between mt-12">
-                <a
-                    href="/blog"
-                    class="px-4 py-2 bg-dark-700 hover:bg-dark-600 text-white rounded-md transition-all duration-300 inline-flex items-center"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 mr-2"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
+    <!-- Navigation -->
+    <section class="section-sm">
+        <div class="container container-md">
+            <div class="text-center">
+                <a href="/blog" class="btn btn-secondary link-arrow">
                     Back to Blog
                 </a>
             </div>
-        </article>
-    </div>
+        </div>
+    </section>
 </Layout>

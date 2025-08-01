@@ -10,9 +10,13 @@
 }
 
 .blog-content h2 {
-    @apply font-semibold mb-4 text-blue-500;
-    text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+    @apply font-semibold mb-4 text-accent-blue;
     font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    transition: color 0.3s ease;
+}
+
+.blog-content h2:hover {
+    @apply text-blue-400;
 }
 
 .blog-content h3 {
@@ -25,42 +29,7 @@
     font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
 }
 
-/* Apply glow effect to h2 headings - matches TextGlowSpan component */
-.blog-content h2.glow-heading {
-    position: relative;
-    display: inline-block;
-    /* Add a slight shine effect */
-    background: linear-gradient(
-        90deg,
-        rgba(99, 102, 241, 1) 0%,
-        rgba(226, 232, 240, 1) 50%,
-        rgba(99, 102, 241, 1) 100%
-    );
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 4s linear infinite;
-    text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
-}
-
-/* Create the animated underline effect */
-.blog-content h2.glow-heading::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        rgba(99, 102, 241, 0.2) 0%,
-        rgba(99, 102, 241, 0.8) 50%,
-        rgba(99, 102, 241, 0.2) 100%
-    );
-    background-size: 200% 100%;
-    animation: shine 4s ease-in-out infinite;
-}
+/* Professional heading styling - removed glow effects for readability */
 
 /* Basic text styling */
 .blog-content p {
@@ -84,11 +53,80 @@
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
-/* Code blocks */
+/* Enhanced code blocks */
+.enhanced-code-block {
+    position: relative;
+    background: #1a1a1a; /* dark-800 */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.code-block-header {
+    background: #0a0a0a; /* dark-900 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #9ca3af; /* gray-400 */
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    color: #9ca3af; /* gray-400 */
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.copy-btn:hover {
+    background: #262626; /* dark-700 */
+    color: #4493f8; /* accent-blue */
+}
+
+/* Line numbers for enhanced code blocks */
+.enhanced-code-block code {
+    counter-reset: line;
+    display: block;
+}
+
+.enhanced-code-block .line {
+    display: block;
+    position: relative;
+    padding-left: 3.5rem;
+    min-height: 1.5rem;
+}
+
+.enhanced-code-block .line::before {
+    content: counter(line);
+    counter-increment: line;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    text-align: right;
+    color: #6b7280; /* gray-500 */
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    user-select: none;
+    padding-right: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fallback styles for regular code blocks */
 .blog-content pre {
     @apply rounded-md overflow-x-auto bg-dark-800;
     margin: 1.25rem 0;
     padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .blog-content code {

@@ -1,162 +1,214 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GithubRepos from "../components/GithubRepos.tsx";
-import ErrorBoundary from "../components/ErrorBoundary.tsx";
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+// Load GitHub repos directly at build time
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const reposPath = join(__dirname, '../../public/data/pinned-repos.json');
+const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
 ---
 
 <Layout 
     title="Projects - Nick Russo" 
     description="Explore Nick Russo's open source projects including vector databases in Mojo, TUI coding agents in Rust, and AI infrastructure experiments."
 >
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header class="py-16">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">
-                <span class="text-accent-blue">Projects</span>
-            </h1>
-        </header>
+    <!-- Hero Section -->
+    <section class="section-lg">
+        <div class="container container-md">
+            <div class="text-center">
+                <h1 class="heading-1">
+                    <span class="text-accent-blue">Projects</span>
+                </h1>
+                <p class="body-large text-text-secondary max-w-2xl mx-auto">
+                    Open source experiments and tools across AI, databases, and developer productivity
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Current Projects -->
-        <section class="pb-12">
-            <div class="content-backdrop">
-                <h2 class="text-lg font-semibold text-white mb-8">Current projects</h2>
-                <div class="space-y-8">
-                <div class="group">
+    <div class="divider"></div>
+
+    <!-- Current Projects -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Current Projects</h2>
+                <p class="body-normal text-text-secondary">
+                    Active development and experimentation
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://github.com/omendb/omendb"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="block"
+                        class="clickable-item"
                     >
-                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
-                            Vector database in Mojo
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            Vector Database in Mojo
                         </h3>
-                        <p class="text-gray-300 mb-3">
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
                             Building a high-performance vector database from scratch in Mojo for 
                             similarity search and embedding operations. Focused on efficient 
                             indexing algorithms and memory management.
                         </p>
-                        <div class="flex items-center space-x-4 text-sm text-gray-400">
-                            <span>Mojo</span>
-                            <span>Vector Search</span>
-                            <span>SIMD</span>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Mojo</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Vector Search</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">SIMD</span>
                         </div>
                     </a>
                 </div>
 
-                <div class="group">
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://github.com/nijaru/aircher"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="block"
+                        class="clickable-item"
                     >
-                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
-                            TUI coding agent in Rust
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            TUI Coding Agent in Rust
                         </h3>
-                        <p class="text-gray-300 mb-3">
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
                             Yet another terminal-based coding assistant with improved workflow 
                             automation, better context management, and seamless editor integration.
                         </p>
-                        <div class="flex items-center space-x-4 text-sm text-gray-400">
-                            <span>Rust</span>
-                            <span>TUI</span>
-                            <span>AI/LLM</span>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">TUI</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/LLM</span>
                         </div>
                     </a>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-medium text-white mb-2">
-                        Local LLM infrastructure
-                    </h3>
-                    <p class="text-gray-300 mb-3">
-                        Running local language models with Ollama and Open WebUI, accessible 
-                        remotely via Tailscale for secure, self-hosted AI services.
-                    </p>
-                    <div class="flex items-center space-x-4 text-sm text-gray-400">
-                        <span>Ollama</span>
-                        <span>Tailscale</span>
-                        <span>Self-hosted</span>
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            Local LLM Infrastructure
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Running local language models with Ollama and Open WebUI, accessible 
+                            remotely via Tailscale for secure, self-hosted AI services.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Ollama</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Tailscale</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Self-hosted</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="group">
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://github.com/nijaru/max-whisper"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="block"
+                        class="clickable-item"
                     >
-                        <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                        <h3 class="heading-3 mb-4 text-text-primary">
                             Whisper on MAX Graph
                         </h3>
-                        <p class="text-gray-300 mb-3">
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
                             Experimenting with OpenAI Whisper implementation using Modular's 
                             MAX Graph during their hack weekend. Exploring performance 
                             optimizations for audio processing.
                         </p>
-                        <div class="flex items-center space-x-4 text-sm text-gray-400">
-                            <span>MAX Graph</span>
-                            <span>Audio ML</span>
-                            <span>Whisper</span>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">MAX Graph</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Audio ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Whisper</span>
                         </div>
                     </a>
                 </div>
-                </div>
             </div>
-        </section>
-
-        <!-- Pinned Repositories Section -->
-        <section class="pb-12 border-t border-white/10 pt-12">
-            <h2 class="text-lg font-semibold text-white mb-8">Featured Repositories</h2>
-            <ErrorBoundary client:idle>
-                <GithubRepos client:idle username="nijaru" limit={6} />
-            </ErrorBoundary>
-        </section>
-
-        <div class="text-center">
-            <a
-                href="https://github.com/nijaru"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="px-6 py-3 bg-dark-700 hover:bg-dark-600 text-white font-bold rounded-full transition-all duration-300 inline-flex items-center"
-            >
-                <svg
-                    class="w-5 h-5 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                        clip-rule="evenodd"></path>
-                </svg>
-                View All Projects on GitHub
-            </a>
         </div>
+    </section>
 
-        <div class="text-center mt-8">
-            <a
-                href="/"
-                class="inline-flex items-center text-accent-blue hover:text-accent-blue"
-            >
-                Back to Home
-                <svg
-                    class="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
+    <div class="divider"></div>
+
+    <!-- Featured Repositories -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Featured Repositories</h2>
+                <p class="body-normal text-text-secondary">
+                    Pinned projects from GitHub
+                </p>
+            </div>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {githubRepos.map((repo) => (
+                    <div class="group">
+                        <a
+                            href={repo.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block"
+                        >
+                            <h3 class="text-lg font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                                {repo.name}
+                            </h3>
+                            <p class="text-gray-300 text-sm mb-3">
+                                {repo.description || "No description available"}
+                            </p>
+                            <div class="flex items-center space-x-4 text-xs text-gray-400">
+                                {repo.language && <span>{repo.language}</span>}
+                                <span>★ {repo.stargazers_count || 0}</span>
+                            </div>
+                        </a>
+                    </div>
+                ))}
+            </div>
+            
+            <div class="text-center mt-12">
+                <a
+                    href="https://github.com/nijaru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-            </a>
+                    <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd">
+                        </path>
+                    </svg>
+                    View All Projects on GitHub
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Navigation -->
+    <section class="section-sm">
+        <div class="container container-md">
+            <div class="text-center">
+                <a href="/" class="btn btn-secondary link-arrow">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
 </Layout>

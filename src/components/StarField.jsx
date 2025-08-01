@@ -1,40 +1,89 @@
-import { createSignal, onMount, For } from 'solid-js';
+import { createSignal, onMount } from 'solid-js';
 
 /**
- * Renders a starfield background with optimized performance
- * Uses canvas for performance with fewer DOM elements
+ * Refined starfield background with professional execution
+ * Respects user motion preferences and provides elegant depth layers
  */
 export default function StarField() {
   let canvasRef;
   const [dimensionsReady, setDimensionsReady] = createSignal(false);
   
   onMount(() => {
-    // Only create stars once window dimensions are available
     const canvas = canvasRef;
     const ctx = canvas.getContext('2d');
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // Set canvas dimensions to match viewport
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     setDimensionsReady(true);
     
-    // Calculate star count based on screen size with increased density
-    const maxStars = 1000; // Even more stars
-    const calculatedStars = Math.floor(window.innerWidth * window.innerHeight / 500); // Further increased density
-    const starCount = Math.min(calculatedStars, maxStars);
+    // One-time device capability detection for optimal quality level
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const isMobile = window.innerWidth < 768;
+    const isLowPower = navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
     
-    // Create stars data
-    const stars = Array.from({ length: starCount }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 1.7 + 0.3, // Keep min size at 0.3, but increase max to 2.0
-      opacity: Math.random() * 0.7 + 0.3, // Slightly more consistent brightness
-      speed: Math.random() * 0.05 + 0.01,
-      twinkleFactor: Math.random() * 0.012 + 0.005, // Faster twinkle than before but still gentle
-      twinkleDirection: Math.random() > 0.5 ? 1 : -1
-    }));
+    // Set static quality configuration - increased density and twinkling
+    const quality = (() => {
+      if (isMobile || isLowPower) {
+        return { maxStars: 400, densityDivider: 900, updateInterval: 6 };
+      } else if (devicePixelRatio > 1.5) {
+        return { maxStars: 700, densityDivider: 700, updateInterval: 4 };
+      } else {
+        return { maxStars: 900, densityDivider: 600, updateInterval: 3 };
+      }
+    })();
     
-    // Animation function
+    const calculatedStars = Math.floor(window.innerWidth * window.innerHeight / quality.densityDivider);
+    const starCount = Math.min(calculatedStars, quality.maxStars);
+    
+    // Create and pre-sort stars for efficient rendering
+    const allStars = Array.from({ length: starCount }, () => {
+      const layer = Math.random();
+      let size, baseOpacity, twinkleFactor;
+      
+      if (layer < 0.7) {
+        // Small background stars (70%)
+        size = Math.random() * 0.8 + 0.2;
+        baseOpacity = Math.random() * 0.2 + 0.1;
+        twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.01 + 0.005;
+      } else if (layer < 0.9) {
+        // Medium stars (20%)
+        size = Math.random() * 1.2 + 0.8;
+        baseOpacity = Math.random() * 0.3 + 0.2;
+        twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.015 + 0.008;
+      } else {
+        // Large prominent stars (10%)
+        size = Math.random() * 1.8 + 1.2;
+        baseOpacity = Math.random() * 0.4 + 0.3;
+        twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.02 + 0.01;
+      }
+      
+      const isAccentStar = layer > 0.95;
+      const hasGlow = size > 1.0;
+      
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size,
+        opacity: baseOpacity,
+        baseOpacity,
+        maxOpacity: Math.min(baseOpacity + 0.15, 0.4),
+        twinkleFactor,
+        twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+        isAccentStar,
+        hasGlow
+      };
+    });
+    
+    // Pre-sort stars by type for efficient batched rendering
+    const whiteStars = allStars.filter(star => !star.isAccentStar);
+    const blueStars = allStars.filter(star => star.isAccentStar);
+    const glowStars = allStars.filter(star => star.hasGlow);
+    
+    // Simple, efficient animation loop
     let frame = 0;
     let animationFrameId;
     
@@ -42,69 +91,129 @@ export default function StarField() {
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw each star
-      stars.forEach(star => {
-        // Only update twinkle every 2 frames - faster than before but still controlled
-        if (frame % 2 === 0) {
-          // Calculate twinkle effect with moderate intensity
+      // Update star opacity using static quality settings
+      if (frame % quality.updateInterval === 0 && !prefersReducedMotion) {
+        allStars.forEach(star => {
           star.opacity += star.twinkleFactor * star.twinkleDirection;
-          
-          // Slightly wider opacity range for more visible twinkling
-          if (star.opacity > 0.95 || star.opacity < 0.25) {
+          if (star.opacity > star.maxOpacity || star.opacity < star.baseOpacity * 0.5) {
             star.twinkleDirection *= -1;
           }
+        });
+      }
+      
+      // Efficient batched rendering using pre-sorted arrays
+      // Render glow effects first (behind main stars)
+      glowStars.forEach(star => {
+        if (star.opacity > 0.3) {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.size * 1.5, 0, Math.PI * 2);
+          ctx.fillStyle = star.isAccentStar 
+            ? `hsla(220, 70%, 88%, ${star.opacity * 0.1})`
+            : `rgba(248, 249, 250, ${star.opacity * 0.08})`;
+          ctx.fill();
         }
-        
-        // Draw star
+      });
+      
+      // Render white stars
+      whiteStars.forEach(star => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        
-        // Vary star colors slightly for more visual interest, but more subtle
-        // Only 5% of stars will have color now (reduced from 10%)
-        const hue = Math.random() > 0.95 ? Math.floor(Math.random() * 30) + 200 : 0; // Occasional blue stars
-        const colorValue = hue ? `hsl(${hue}, 60%, 85%, ${star.opacity})` : `rgba(255, 255, 255, ${star.opacity})`;
-        
-        ctx.fillStyle = colorValue;
+        ctx.fillStyle = `rgba(248, 249, 250, ${star.opacity})`;
         ctx.fill();
       });
       
-      // Increment frame counter
-      frame = (frame + 1) % 150; // Reset counter every 150 frames (moderate cycle)
+      // Render blue accent stars
+      blueStars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(220, 70%, 88%, ${star.opacity})`;
+        ctx.fill();
+      });
       
-      // Request next frame
-      animationFrameId = requestAnimationFrame(animate);
+      // Elegant 4-second cycle
+      frame = (frame + 1) % 240;
+      
+      if (!prefersReducedMotion) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
     };
     
-    // Start animation
-    animationFrameId = requestAnimationFrame(animate);
+    // Start animation (or render static if motion is reduced)
+    if (prefersReducedMotion) {
+      animate(); // Single render
+    } else {
+      animationFrameId = requestAnimationFrame(animate);
+    }
     
-    // Handle window resize (debounced)
+    // Efficient resize handler
     let resizeTimeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
+        const oldWidth = canvas.width;
+        const oldHeight = canvas.height;
+        
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-      }, 200);
+        
+        // Reposition all stars proportionally
+        if (oldWidth > 0 && oldHeight > 0) {
+          const widthRatio = canvas.width / oldWidth;
+          const heightRatio = canvas.height / oldHeight;
+          
+          allStars.forEach(star => {
+            star.x = Math.min(star.x * widthRatio, canvas.width - 1);
+            star.y = Math.min(star.y * heightRatio, canvas.height - 1);
+          });
+        }
+        
+        // Force immediate re-render
+        if (!prefersReducedMotion && animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = requestAnimationFrame(animate);
+        } else if (prefersReducedMotion) {
+          animate();
+        }
+      }, 150);
+    };
+    
+    // Pause animation when tab is not visible (battery optimization)
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      } else if (!prefersReducedMotion) {
+        if (!animationFrameId) {
+          animationFrameId = requestAnimationFrame(animate);
+        }
+      }
     };
     
     window.addEventListener('resize', handleResize);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     
-    // Cleanup - cancel animation frame and remove resize listener
+    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      clearTimeout(resizeTimeout);
     };
   });
 
   return (
-    <div class="fixed inset-0 overflow-hidden bg-dark-900 -z-10">
+    <div class="fixed inset-0 overflow-hidden -z-10" 
+         style={{ "background-color": "#08090a" }}>
       <canvas 
         ref={canvasRef}
         class="absolute inset-0"
         style={{ 
           "opacity": dimensionsReady() ? 1 : 0,
-          "transition": "opacity 0.5s ease-in"
+          "transition": "opacity 0.8s ease-out"
         }}
       />
     </div>

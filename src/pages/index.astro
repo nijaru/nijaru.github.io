@@ -3,8 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
 import BlogPostPreview from "../components/BlogPostPreview";
-import GithubRepos from "../components/GithubRepos.tsx";
-import ErrorBoundary from "../components/ErrorBoundary.tsx";
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import ArrowLink from "../components/ArrowLink";
 import SectionHeading from "../components/SectionHeading";
 import SocialLinks from "../components/SocialLinks";
@@ -52,93 +53,162 @@ const allPosts = blogEntries
 
 // Get the most recent post (or undefined if no posts)
 const mostRecentPost = allPosts.length > 0 ? allPosts[0] : undefined;
+
+// Load GitHub repos directly at build time
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const reposPath = join(__dirname, '../../public/data/pinned-repos.json');
+const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
 ---
 
 <Layout 
     title="Nick Russo - Software Developer" 
     description="Software developer specializing in backend systems, distributed applications, and AI. Building with Python, Go, Rust, and modern web technologies."
 >
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Hero Section -->
-        <header class="py-16">
-            <h1 class="text-4xl md:text-5xl font-bold mb-3">
-                <span class="text-accent-blue">Nick Russo</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                Software developer building systems and tools
-            </p>
-            <SocialLinks client:visible />
-        </header>
+    <!-- Hero Section -->
+    <section class="section-lg">
+        <div class="container container-md">
+            <div class="text-center">
+                <h1 class="heading-1">
+                    <span class="text-accent-blue">Nick Russo</span>
+                </h1>
+                <p class="body-large mb-12">
+                    Software developer specializing in backend systems, distributed applications, and AI. 
+                    Building reliable solutions with Python, Go, Rust, and modern web technologies.
+                </p>
+                <SocialLinks client:visible />
+            </div>
+        </div>
+    </section>
 
-        <!-- Background -->
-        <section class="pt-8 pb-12 border-t border-white/10">
-            <div class="content-backdrop">
-                <h2 class="text-lg font-semibold text-white mb-6">Background</h2>
-                <div class="space-y-6 text-gray-300">
-                    <p>
-                        I'm a software developer specializing in backend systems and distributed applications. 
-                        With experience in Python, Go, and various cloud technologies, I build reliable and 
-                        efficient solutions for complex problems.
+    <div class="divider"></div>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">About</h2>
+                <p class="body-normal text-text-secondary">
+                    Building reliable solutions across backend systems and AI
+                </p>
+            </div>
+            <div class="space-y-12">
+                <div class="space-y-6">
+                    <p class="body-large text-text-secondary leading-relaxed">
+                        I focus on backend development, distributed systems, and AI applications. 
+                        My work involves building scalable, reliable solutions using modern languages and frameworks.
                     </p>
-                    <p>
-                        Currently exploring AI applications, database innovations, and modern frontend frameworks 
-                        like Solid.js and Astro. Passionate about building solutions that solve real-world problems.
+                    <p class="body-normal text-text-secondary leading-relaxed">
+                        Currently exploring database innovations, high-performance computing with Mojo and Rust, 
+                        and developing AI-powered tools that solve real-world problems.
                     </p>
                 </div>
-                <div class="mt-6">
-                    <a 
-                        href="/about" 
-                        class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
-                    >
-                        About me →
+                <div class="border-t pt-8" style="border-color: var(--color-border-subtle);">
+                    <p class="body-normal text-text-secondary leading-relaxed">
+                        Over 10 years of coding experience. Over 15 years exploring Linux systems. 
+                        Always finding new ways to break things with code. Currently fascinated by 
+                        the intersection of AI and developer tooling.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a href="/about" class="link-primary link-arrow">
+                        Learn more
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Recent Writing -->
-        {mostRecentPost && (
-            <section class="py-12 border-t border-white/10">
-                <div class="content-backdrop">
-                    <h2 class="text-lg font-semibold text-white mb-6">Recent writing</h2>
-                    <div class="group">
-                        <a href={mostRecentPost.url} class="block">
-                            <h3 class="text-xl font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+    {mostRecentPost && (
+        <>
+            <div class="divider"></div>
+            
+            <!-- Recent Writing -->
+            <section class="section">
+                <div class="container container-sm">
+                    <div class="text-center mb-12">
+                        <h2 class="heading-2">Latest Writing</h2>
+                        <p class="body-normal text-text-secondary">
+                            Thoughts on software development, AI, and technology
+                        </p>
+                    </div>
+                    
+                    <article class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                        <a href={mostRecentPost.url} class="clickable-item">
+                            <div class="flex items-center justify-between text-text-tertiary body-small mb-4">
+                                <time datetime={mostRecentPost.pubDate.toISOString()}>
+                                    {mostRecentPost.formattedDate}
+                                </time>
+                                <span>{mostRecentPost.readingTime}</span>
+                            </div>
+                            
+                            <h3 class="heading-2 mb-4 text-text-primary">
                                 {mostRecentPost.title}
                             </h3>
-                            <p class="text-gray-400 text-sm mb-3">
-                                {mostRecentPost.formattedDate} • {mostRecentPost.readingTime}
+                            
+                            <p class="body-normal text-text-secondary leading-relaxed mb-6">
+                                {mostRecentPost.excerpt}
                             </p>
-                            <p class="text-gray-300">{mostRecentPost.excerpt}</p>
+                            
+                            <div class="flex items-center gap-3">
+                                {mostRecentPost.tags.map((tag) => (
+                                    <span class="body-small text-text-tertiary">#{tag}</span>
+                                ))}
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <div class="text-center mt-8">
+                        <a href="/blog" class="btn btn-secondary link-arrow">
+                            All posts
                         </a>
                     </div>
-                <div class="mt-6">
-                    <a 
-                        href="/blog" 
-                        class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
-                    >
-                        All posts →
-                    </a>
                 </div>
             </section>
-        )}
+        </>
+    )}
 
-        <!-- Projects -->
-        <section class="py-12 border-t border-white/10">
-            <div class="content-backdrop">
-                <h2 class="text-lg font-semibold text-white mb-6">Featured Repositories</h2>
-                <ErrorBoundary client:idle>
-                    <GithubRepos client:idle username="nijaru" limit={6} />
-                </ErrorBoundary>
-                <div class="mt-6">
-                    <a 
-                        href="/projects" 
-                        class="text-accent-blue hover:text-blue-400 text-sm font-medium transition-colors"
-                    >
-                        All projects →
-                    </a>
-                </div>
+    <div class="divider"></div>
+
+    <!-- Projects -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Featured Projects</h2>
+                <p class="body-normal text-text-secondary">
+                    Open source projects and experiments from GitHub
+                </p>
             </div>
-        </section>
-    </div>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {githubRepos.map((repo) => (
+                    <div class="group">
+                        <a
+                            href={repo.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block"
+                        >
+                            <h3 class="text-lg font-medium text-white group-hover:text-accent-blue transition-colors mb-2">
+                                {repo.name}
+                            </h3>
+                            <p class="text-gray-300 text-sm mb-3">
+                                {repo.description || "No description available"}
+                            </p>
+                            <div class="flex items-center space-x-4 text-xs text-gray-400">
+                                {repo.language && <span>{repo.language}</span>}
+                                <span>★ {repo.stargazers_count || 0}</span>
+                            </div>
+                        </a>
+                    </div>
+                ))}
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/projects" class="btn btn-secondary link-arrow">
+                    View all projects
+                </a>
+            </div>
+        </div>
+    </section>
 </Layout>
