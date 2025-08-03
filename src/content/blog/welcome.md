@@ -1,5 +1,5 @@
 ---
-title: "Welcome to My New Site"
+title: "Welcome"
 pubDate: 2025-03-01T12:00:00
 description: "Rebuilding my personal website with Solid.js and Astro, featuring a custom space theme."
 author: "Nick Russo"

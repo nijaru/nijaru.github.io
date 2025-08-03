@@ -1,7 +1,7 @@
 ---
 title: "Future"
 description: "When AI maintains context across sessions, the entire interaction model transforms."
-pubDate: 2025-08-03T10:00:00
+pubDate: 2025-07-31T10:00:00
 author: "Nick Russo"
 tags: ["ai", "future", "agents", "technology"]
 ---

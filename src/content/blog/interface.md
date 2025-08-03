@@ -1,7 +1,7 @@
 ---
 title: "Interface"
 description: "The best technology disappears. What happens when computers do too?"
-pubDate: 2025-08-10T10:00:00
+pubDate: 2025-08-03T10:00:00
 author: "Nick Russo"
 tags: ["ai", "future", "interfaces", "technology"]
 ---
