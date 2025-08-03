@@ -1,6 +1,6 @@
 ---
 title: "Type It Yourself"
-pubDate: 2025-08-06T10:00:00
+pubDate: 2025-07-28T10:00:00
 description: "Why I still type AI-suggested code by hand."
 author: "Nick Russo"
 tags: ["AI", "Development", "Productivity", "Learning"]
