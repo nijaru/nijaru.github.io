@@ -3,8 +3,8 @@
 ## Popular HN Posts to Analyze
 
 ### Short-Form Posts (High Impact)
-- [ ] **"Fast"** - https://www.catherinejue.com/fast (HN: https://news.ycombinator.com/item?id=44736967)
-- [ ] **"Slow"** - https://michaelnotebook.com/slow/index.html (HN: https://news.ycombinator.com/item?id=44748934)
+- [x] **"Fast"** - https://www.catherinejue.com/fast (HN: https://news.ycombinator.com/item?id=44736967) - Analyzed in docs/blog-research/
+- [x] **"Slow"** - https://michaelnotebook.com/slow/index.html (HN: https://news.ycombinator.com/item?id=44748934) - Analyzed in docs/blog-research/
 
 ### AI/Tech Posts
 - [ ] **"LLM Inevitabilism"** - https://tomrenner.com/posts/llm-inevitabilism/ (HN: https://news.ycombinator.com/item?id=44567857)
@@ -24,21 +24,30 @@
 - [ ] Use of technical detail vs accessibility
 - [ ] Call to action effectiveness
 
-### 2. HN Algolia API Searches
-API endpoint: `https://hn.algolia.com/api/v1/search`
+### 2. HN Algolia Searches
 
-Topics to search:
-- [ ] "AI agents" (past month, sorted by points)
-- [ ] "Claude Code" (all time, sorted by points)
-- [ ] "LLM workflow" (past 3 months)
-- [ ] "AI memory" or "persistent context"
-- [ ] "proactive AI" or "agentic AI"
-- [ ] Posts with 500+ points about AI (2024-2025)
+**API Documentation**: https://hn.algolia.com/api
 
-Example query:
+Example API queries:
+```bash
+# Search for AI agents with 100+ points in 2025
+curl "https://hn.algolia.com/api/v1/search?query=AI%20agents&tags=story&numericFilters=created_at_i>1735689600,points>100"
+
+# Get specific story by ID
+curl "https://hn.algolia.com/api/v1/items/44736967"
+
+# Search with date range (timestamps)
+curl "https://hn.algolia.com/api/v1/search_by_date?query=Claude%20Code&tags=story&numericFilters=created_at_i>1704067200,created_at_i<1754352000"
 ```
-https://hn.algolia.com/api/v1/search?query=AI%20agents&tags=story&numericFilters=created_at_i>1704067200,points>100
-```
+
+Direct search links:
+- [ ] [AI agents (2025, 100+ points)](https://hn.algolia.com/?dateRange=custom&dateStart=1735689600&dateEnd=1754352000&hitsPerPage=30&minScore=100&page=0&prefix=false&query=AI%20agents&sort=byPopularity&type=story)
+- [ ] [Claude Code (all time, sorted by points)](https://hn.algolia.com/?hitsPerPage=30&page=0&prefix=true&query=%22Claude%20Code%22&sort=byPopularity&type=story)
+- [ ] [LLM workflow (2025)](https://hn.algolia.com/?dateRange=custom&dateStart=1735689600&dateEnd=1754352000&hitsPerPage=30&page=0&prefix=false&query=LLM%20workflow&sort=byPopularity&type=story)
+- [ ] [Persistent context AI (2024-2025)](https://hn.algolia.com/?dateRange=custom&dateStart=1704067200&dateEnd=1754352000&hitsPerPage=30&page=0&prefix=false&query=persistent%20context%20AI&sort=byPopularity&type=story)
+- [ ] [AI memory (2024-2025, 50+ points)](https://hn.algolia.com/?dateRange=custom&dateStart=1704067200&dateEnd=1754352000&hitsPerPage=30&minScore=50&page=0&prefix=false&query=AI%20memory&sort=byPopularity&type=story)
+- [ ] [Proactive AI or agentic (2024-2025)](https://hn.algolia.com/?dateRange=custom&dateStart=1704067200&dateEnd=1754352000&hitsPerPage=30&page=0&prefix=false&query=proactive%20AI%20OR%20agentic&sort=byPopularity&type=story)
+- [ ] [Popular AI posts (500+ points, past year)](https://hn.algolia.com/?dateRange=pastYear&hitsPerPage=30&minScore=500&page=0&prefix=false&query=AI&sort=byPopularity&type=story)
 
 ### 3. Content Themes to Research
 - [ ] Current state of AI agent frameworks (LangChain, AutoGen, CrewAI)
