@@ -1,6 +1,6 @@
 ---
 title: "Type It Yourself"
-pubDate: 2025-03-02T10:00:00
+pubDate: 2025-07-25T10:00:00
 description: "Why I still type AI-suggested code by hand."
 author: "Nick Russo"
 tags: ["AI", "Development", "Productivity", "Learning"]
@@ -24,7 +24,7 @@ When AI writes code, you lose context. Not the AI's context - yours.
 
 You stop understanding your codebase. You stop learning patterns. You stop growing as a developer.
 
-You trade your mental model for the AI's. You outsource understanding to a context window.
+You spend all your time giving the AI context. You never build your own.
 
 ## My Workflow
 
@@ -58,7 +58,9 @@ Don't use it to avoid thinking.
 
 Cool. Do you understand what you shipped?
 
-Can you debug it at 3am when it breaks? Can you extend it next month? Can you explain it to your team?
+Can you debug it when it breaks?
+Can you extend it next month?
+Can you explain it to your team?
 
 Speed without understanding is technical debt with compound interest.
 
