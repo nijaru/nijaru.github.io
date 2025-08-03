@@ -86,9 +86,7 @@ The screen disappears. The computer remains.
 
 If you're designing interfaces, ask yourself:
 
-What can I remove?
-What decisions can I eliminate?
-What actions can I anticipate?
+What can I remove? What decisions can I eliminate? What actions can I anticipate?
 
 Every prompt is a failure of design. Every click is friction. Every command is complexity.
 

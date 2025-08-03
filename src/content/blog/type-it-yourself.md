@@ -32,21 +32,13 @@ I use Zed with Claude. I add files to context manually. The AI suggests code. I 
 
 Yes, it's slower. That's the point.
 
-By typing the code, I:
-- Understand every line
-- Spot potential issues
-- Learn new patterns
-- Maintain mental model
+By typing the code, I understand every line, spot potential issues, learn new patterns, and maintain my mental model.
 
 The AI guides. I build.
 
 ## The Real Value
 
-AI is incredible at:
-- Explaining unfamiliar code
-- Suggesting approaches
-- Finding edge cases
-- Remembering syntax
+AI is incredible at explaining unfamiliar code, suggesting approaches, finding edge cases, and remembering syntax.
 
 Use it for those things.
 
@@ -68,9 +60,7 @@ Speed without understanding is technical debt with compound interest.
 
 I'm not saying abandon AI tools. I use them daily.
 
-But there's a difference between:
-- AI writes, you watch
-- AI suggests, you implement
+But there's a difference between AI writing while you watch, and AI suggesting while you implement.
 
 One makes you faster today. The other makes you better forever.
 
