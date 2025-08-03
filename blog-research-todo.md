@@ -7,9 +7,9 @@
 - [x] **"Slow"** - https://michaelnotebook.com/slow/index.html (HN: https://news.ycombinator.com/item?id=44748934) - Analyzed in docs/blog-research/
 
 ### AI/Tech Posts
-- [ ] **"LLM Inevitabilism"** - https://tomrenner.com/posts/llm-inevitabilism/ (HN: https://news.ycombinator.com/item?id=44567857)
-- [ ] **"Introducing Kiro"** - https://kiro.dev/blog/introducing-kiro/ (HN: https://news.ycombinator.com/item?id=44560662)
-- [ ] **"You're All Nuts"** - https://fly.io/blog/youre-all-nuts/ (HN: https://news.ycombinator.com/item?id=44163063)
+- [x] **"LLM Inevitabilism"** - https://tomrenner.com/posts/llm-inevitabilism/ (HN: https://news.ycombinator.com/item?id=44567857) - Analyzed in docs/blog-research/
+- [x] **"Introducing Kiro"** - https://kiro.dev/blog/introducing-kiro/ (HN: https://news.ycombinator.com/item?id=44560662) - Analyzed in docs/blog-research/
+- [x] **"You're All Nuts"** - https://fly.io/blog/youre-all-nuts/ (HN: https://news.ycombinator.com/item?id=44163063) - Analyzed in docs/blog-research/
 
 ### Anthropic Posts
 - [ ] **Claude 4 Announcement** - https://www.anthropic.com/news/claude-4 (HN: https://news.ycombinator.com/item?id=44063703)
