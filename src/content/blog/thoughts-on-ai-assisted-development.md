@@ -1,32 +1,93 @@
 ---
-title: "Thoughts on AI-Assisted Development"
-pubDate: 2024-03-02T10:00:00
-description: "Reflections on the benefits and trade-offs of AI-assisted development and coding."
+title: "Type It Yourself"
+pubDate: 2025-03-02T10:00:00
+description: "Why I still type AI-suggested code by hand."
 author: "Nick Russo"
 tags: ["AI", "Development", "Productivity", "Learning"]
-image:
-  url: "https://nijaru.github.io/images/ai-development.png"
-  alt: "AI-assisted development concept"
 ---
 
-I wanted to write a follow-up to my previous post. I assume it was readily apparent throughout that it was AI-generated. After spending some time using Claude Code and other AI coding tools, I've been reflecting on how they impact both my development workflow and the learning process.
+Everyone's using AI wrong.
 
-I used *Claude 3.7 Sonnet Thinking* to write the blog post itself. It certainly did a *job*. It covered everything about my site upgrade, working with Claude Code, and a bit about me. I'm sure I could've worked it into something better with more prompting. I was able to coax it into generating some jokes that were almost funny. It wasn't bad, but there is something about AI-generated prose that doesn't sound quite right. The tone just feels a little off. I did end up editing parts of my previous post since I couldn't convince the AI not to write like an AI.
+They let it write code while they watch. They're building nothing and learning less.
 
-As for Claude Code, I didn't have high initial expectations, but I was quite impressed with it. Most of the site update was very straightforward. I would tell it what I wanted for the site, and it would create or modify files as needed. There was the occasional request that needed some extra prompting or workaround to fix, but it was able to complete most requests without any issues.
+## The Seductive Trap
 
-Most of my LLM coding usage has been with Zed. You add relevant files to context manually and work with the LLM in the assistant panel. You can have it automatically edit highlighted lines as well, but I tend to avoid that and just edit the code myself. I like this workflow because I can quickly give it the required context, review the output, make any corrections, then apply the changes.
+Claude Code impressed me. Tell it what you want, it modifies your files. Aider, Cursor, Copilot - they all promise the same thing: code faster by coding less.
 
-By editing the code myself, I keep my own mental context up to date. Claude Code, aider, and similar tools drastically reduce the amount of time it takes to code, but you lose a lot of personal context. I haven't spent a lot of time with automated tools like these because I have preferred a manual approach, and I still think editing code yourself has a lot of value.
+It works. For trivial tasks.
 
-Letting AI completely take the reins is useful for trivial tasks. For everything else, you lose so much gained knowledge. The trade-off for increased velocity is significant, though it can be worthwhile in some cases.
+But watch what happens to your brain.
 
-**For anything complex, building things yourself with guidance from AI is infinitely more valuable than guiding AI to build things for you.**
+## The Context Problem
 
-Still, it is quite impressive how far you can get with just enough domain knowledge to steer it in the right direction.
+When AI writes code, you lose context. Not the AI's context - yours.
 
-In case you couldn't tell, this post was 100% all-organic homegrown and handwritten.
+You stop understanding your codebase. You stop learning patterns. You stop growing as a developer.
 
-<p class="bg-blue-500/10 border-l-4 border-blue-500 pl-4 pr-4 py-4 rounded-r my-6 backdrop-blur-sm">
-I'm currently looking for new engineering opportunities! If you're hiring someone who enjoys building backends, dealing with databases, applying AI, and has strong Python or Go skills, please reach out.
-</p>
+You trade your mental model for the AI's. You outsource understanding to a context window.
+
+## My Workflow
+
+I use Zed with Claude. I add files to context manually. The AI suggests code. I type it myself.
+
+Yes, it's slower. That's the point.
+
+By typing the code, I:
+- Understand every line
+- Spot potential issues
+- Learn new patterns
+- Maintain mental model
+
+The AI guides. I build.
+
+## The Real Value
+
+AI is incredible at:
+- Explaining unfamiliar code
+- Suggesting approaches
+- Finding edge cases
+- Remembering syntax
+
+Use it for those things.
+
+Don't use it to avoid thinking.
+
+## Speed vs Understanding
+
+"But I ship 10x faster with AI writing my code!"
+
+Cool. Do you understand what you shipped?
+
+Can you debug it at 3am when it breaks? Can you extend it next month? Can you explain it to your team?
+
+Speed without understanding is technical debt with compound interest.
+
+## The Middle Path
+
+I'm not saying abandon AI tools. I use them daily.
+
+But there's a difference between:
+- AI writes, you watch
+- AI suggests, you implement
+
+One makes you faster today. The other makes you better forever.
+
+## For Complex Work
+
+Simple CRUD endpoint? Let AI write it.
+
+Complex business logic? Type it yourself.
+
+The more complex the problem, the more valuable manual implementation becomes. You need to understand the nuances, the trade-offs, the why behind every decision.
+
+AI can't give you that understanding. Only building can.
+
+## The Uncomfortable Truth
+
+Most developers using AI are getting worse at coding.
+
+They're faster at producing code they don't understand. They're building features they can't debug. They're shipping products they can't maintain.
+
+Building things yourself with AI guidance is infinitely more valuable than guiding AI to build things for you.
+
+Choose wisely.
