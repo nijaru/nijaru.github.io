@@ -3,6 +3,7 @@ import Layout from "./Layout.astro";
 import ReflectionText from "../components/ReflectionText";
 import TextGlow from "../components/TextGlow";
 import CodeBlock from "../components/CodeBlock";
+import HiringNotice from "../components/HiringNotice.astro";
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
 
@@ -95,6 +96,17 @@ const readingTime = calculateReadingTime(post.body);
             </div>
         </div>
     </section>
+
+    <div class="divider"></div>
+
+    <!-- Hiring Notice -->
+    <section class="section-sm">
+        <div class="container container-md">
+            <HiringNotice />
+        </div>
+    </section>
+
+    <div class="divider"></div>
 
     <!-- Navigation -->
     <section class="section-sm">

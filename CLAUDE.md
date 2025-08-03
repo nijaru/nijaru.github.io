@@ -97,3 +97,5 @@ scripts/            # Build and utility scripts
 - **Design**: Complete UI/UX refactor (2024-2025) - professional design system, optimized spacing, unified messaging
 - **Performance**: GitHub repos instant loading, removed unused components, optimized SocialLinks (CSS-only tooltips), reduced bundle size
 - **UX**: Fixed width issues, restored clickable areas, improved blog post layout, consistent terminology
+- **Blog Series**: Created focused 3-part AI series following HN success patterns: "Type It Yourself", "Future", "Interface"
+- **Hiring Component**: Added HiringNotice.astro component across blog posts, about, and projects pages for professional visibility

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HiringNotice from "../components/HiringNotice.astro";
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -196,6 +197,15 @@ const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
                     View All Projects on GitHub
                 </a>
             </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Hiring Notice -->
+    <section class="section-sm">
+        <div class="container container-md">
+            <HiringNotice />
         </div>
     </section>
 
