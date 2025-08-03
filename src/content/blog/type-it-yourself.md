@@ -12,7 +12,7 @@ They let it write code while they watch. They're building nothing and learning l
 
 ## The Seductive Trap
 
-Claude Code impressed me. Tell it what you want, it modifies your files. Aider, Cursor, Copilot - they all promise the same thing: code faster by coding less.
+Claude Code impressed me. Tell it what you want, it modifies your files. Cursor, Windsurf, Gemini - they all promise the same thing: code faster by coding less.
 
 It works. For trivial tasks.
 
@@ -68,7 +68,7 @@ One makes you faster today. The other makes you better forever.
 
 Simple CRUD endpoint? Let AI write it.
 
-Complex business logic? Type it yourself.
+Complex business logic? Don't vibe code it away.
 
 The more complex the problem, the more valuable manual implementation becomes. You need to understand the nuances, the trade-offs, the why behind every decision.
 
