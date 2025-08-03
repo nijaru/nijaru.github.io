@@ -10,17 +10,17 @@ Current AI is goldfish AI.
 
 Every conversation starts from zero. Every context needs explaining. Every project requires setup. We've built incredibly intelligent systems with the memory of a goldfish.
 
-I use Claude daily. It's transformative. But watch yourself work with it - it's 80% explaining, 20% doing. It's like having a brilliant colleague with severe amnesia.
+I use Claude daily. It's powerful. But watch yourself work with it - it's 80% explaining, 20% doing. It's like having a brilliant colleague with severe amnesia.
 
 ## Memory Changes Everything
 
 Imagine your AI maintains context about:
 - Your ongoing projects and their status
-- Your coding patterns and preferences
+- Your work patterns and preferences
 - Your common workflows and decisions
-- Your team's conventions and standards
+- Your organization's conventions and standards
 
-Not through surveillance, but through natural interaction. The way a good colleague learns that you prefer functional components, that you always forget to update tests, that you're migrating to TypeScript.
+Not through surveillance, but through natural interaction. The way a good colleague learns your preferences, your blind spots, your current priorities.
 
 This isn't about bigger context windows. It's about *persistent understanding*.
 
@@ -36,9 +36,11 @@ You start refactoring. It knows why - it saw the bug report. It suggests the fix
 
 This isn't just for programmers.
 
-Your grandmother won't need to understand prompts. The AI will know she's trying to video call her grandkids every Sunday at 2pm. It'll just work.
+Your grandmother won't need to understand prompts. The AI will remember she video calls her grandkids every Sunday at 2pm. It'll notice when she opens her laptop that afternoon and ask if she wants to start the call. When the connection is poor, it'll automatically switch to a clearer line. When she mentions her grandson's soccer game, it'll remember to ask about it next week.
 
-Your artist friend won't need to learn tools. The AI will understand their creative process, remember their style, organize their portfolio without being asked.
+No tutorials. No setup. It just works the way she thinks.
+
+People working on long-term projects won't lose context when they return. The AI will remember where they left off, what they were thinking, what problems they were solving.
 
 Everyone gets a personal assistant that actually assists.
 
