@@ -36,13 +36,27 @@ You start refactoring. It knows why - it saw the bug report. It suggests the fix
 
 This isn't just for programmers.
 
-Your grandmother won't need to understand prompts. The AI will remember she video calls her grandkids every Sunday at 2pm. It'll notice when she opens her laptop that afternoon and ask if she wants to start the call. When the connection is poor, it'll automatically switch to a clearer line. When she mentions her grandson's soccer game, it'll remember to ask about it next week.
+You start planning a trip on your phone during lunch. Later that evening on your laptop, the AI already knows your dates, budget, and that you hate connecting flights. It doesn't make you start over.
 
-No tutorials. No setup. It just works the way she thinks.
+You're learning guitar and mention you're struggling with barre chords. Next session, it remembers and suggests easier songs to practice. It knows your skill level without you explaining again.
 
-People working on long-term projects won't lose context when they return. The AI will remember where they left off, what they were thinking, what problems they were solving.
+People working on long-term projects won't lose context when they return. The AI remembers where they left off, what they were thinking, what problems they were solving.
 
 Everyone gets a personal assistant that actually assists.
+
+## The Interface Revolution
+
+We're still thinking too small about interfaces.
+
+Near term: your AI enhances what exists. It watches your screen, listens when you speak, tracks where you look. You gesture at something and it knows what you mean. You start typing and it finishes your thought.
+
+But why stop there?
+
+Future interfaces won't need keyboards or mice. You think about opening a file and it opens. You glance at an email and it's already summarized. Your AI doesn't just respond to commands - it anticipates them.
+
+This isn't HAL from 2001. It's not Clippy asking if you want help. It's Ghost in the Shell level integration - technology that reads your intent and acts on it seamlessly.
+
+The computer disappears. The interface becomes thought itself.
 
 ## It's Already Starting
 
