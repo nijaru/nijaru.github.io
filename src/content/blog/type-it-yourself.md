@@ -6,9 +6,11 @@ author: "Nick Russo"
 tags: ["AI", "Development", "Productivity", "Learning"]
 ---
 
-Everyone's using AI wrong.
+AI coding tools promise speed. But there's a hidden cost.
 
-They let it write code while they watch. They're building nothing and learning less.
+Watch developers work with AI. They let it write code while they observe. It looks productive. It feels effortless.
+
+But something's not right.
 
 ## The Problem
 
@@ -38,7 +40,7 @@ One makes you faster today. The other makes you better forever.
 
 "But I ship 10x faster with AI writing my code!"
 
-Cool. Do you understand what you shipped? Can you debug it when it breaks? Can you extend it next month? Can you explain it to your team?
+That's real. AI can dramatically accelerate development. But ask yourself: Do you understand what you shipped? Can you debug it when it breaks? Can you extend it next month? Can you explain it to your team?
 
 Speed without understanding is technical debt with compound interest.
 
@@ -46,7 +48,7 @@ Simple CRUD endpoint? Let AI write it. Complex business logic? Don't vibe code i
 
 The more complex the problem, the more valuable manual implementation becomes. You need to understand the nuances, the trade-offs, the why behind every decision. AI can't give you that understanding. Only building can.
 
-Most developers using AI are getting worse at coding. They're faster at producing code they don't understand. They're building features they can't debug. They're shipping products they can't maintain.
+There's a subtle trap here. The faster AI writes code, the less you understand it. You become faster at producing code you don't fully grasp. You build features that are harder to debug. You ship products that are difficult to maintain.
 
 Building things yourself with AI guidance is infinitely more valuable than guiding AI to build things for you.
 

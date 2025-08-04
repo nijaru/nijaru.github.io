@@ -40,9 +40,9 @@ No commands. No prompts. Just seamless assistance. When AI remembers you across 
 
 ## Building Wrong
 
-Everyone's racing to build better chat interfaces. Better ways to type at computers. They're optimizing the wrong thing.
+The industry is racing to build better chat interfaces. Better ways to type at computers. But this optimizes the wrong thing.
 
-The goal isn't faster command input. It's eliminating commands entirely. Stop building chatbots. Start building systems that anticipate needs. Stop improving prompts. Start removing them.
+The goal isn't faster command input. It's eliminating commands entirely. Instead of building better chatbots, we could build systems that anticipate needs. Instead of improving prompts, we could remove them.
 
 Invisible doesn't mean autonomous. It means the interface adapts to you, not the other way around. You can still type, click, speak when you want. You just won't need to.
 
