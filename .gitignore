@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # Local notes
 notes/
+
+# Blog research and drafts
+blog-prompt-*.md
+blog-research-todo.md
+docs/blog-research/
+.blog-post-patterns.md
