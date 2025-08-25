@@ -22,13 +22,22 @@ const categories = [
   },
   {
     id: 'learning',
-    label: 'Learning',
+    label: 'Currently Learning',
     skills: [
       { name: 'Rust', color: 'text-orange-500', icon: 'devicon-rust-plain' },
       { name: 'Mojo', color: 'text-yellow-500', icon: '🔥' }, // Using emoji for Mojo
       { name: 'FastAPI', color: 'text-green-500', icon: 'devicon-fastapi-plain' },
-      { name: 'Gleam', color: 'text-purple-400', icon: 'devicon-elixir-plain' }, // Using elixir as similar functional language
       { name: 'Solid.js', color: 'text-accent-blue', icon: 'devicon-javascript-plain' }
+    ]
+  },
+  {
+    id: 'interested',
+    label: 'Interested In',
+    skills: [
+      { name: 'LangChain', color: 'text-green-400', icon: '🔗' }, // Chain emoji for LangChain
+      { name: 'Elixir', color: 'text-purple-500', icon: 'devicon-elixir-plain' },
+      { name: 'DuckDB', color: 'text-yellow-400', icon: '🦆' }, // Duck emoji for DuckDB
+      { name: 'Zig', color: 'text-orange-400', icon: 'devicon-c-plain' } // Using C as similar systems language
     ]
   },
   {
@@ -38,6 +47,7 @@ const categories = [
       { name: 'Linux', color: 'text-yellow-500', icon: 'devicon-linux-plain' },
       { name: 'Git', color: 'text-red-500', icon: 'devicon-git-plain' },
       { name: 'Docker', color: 'text-blue-500', icon: 'devicon-docker-plain' },
+      { name: 'gRPC', color: 'text-cyan-500', icon: 'devicon-grpc-plain' },
       { name: 'SQLite', color: 'text-blue-400', icon: 'devicon-sqlite-plain' },
       { name: 'PostgreSQL', color: 'text-blue-600', icon: 'devicon-postgresql-plain' },
       { name: 'MySQL', color: 'text-blue-500', icon: 'devicon-mysql-plain' },

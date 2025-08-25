@@ -90,7 +90,7 @@ scripts/            # Build and utility scripts
 - **Typography**: Switched to Geist + JetBrains Mono, implemented responsive font sizing
 - **Performance**: Font preloading, terser minification, error boundaries, bundle optimization
 - **TypeScript**: Converted critical components (GithubRepos, ErrorBoundary) for better maintainability
-- **Content**: Refreshed about/projects pages, improved blog posts, added Gleam to tech interests
+- **Content**: Refreshed about/projects pages, improved blog posts, organized tech skills into learning/interested sections
 - **Features**: RSS feed, robots.txt, web manifest, sitemap generation, cache headers
 - **SEO**: Comprehensive meta tags, Open Graph, Twitter Card support
 - **Infrastructure**: Added Vercel/Netlify configurations for enhanced hosting performance
