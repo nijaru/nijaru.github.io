@@ -18,11 +18,20 @@
     "forks_count": 0
   },
   {
-    "name": "max-whisper",
-    "description": null,
-    "html_url": "https://github.com/nijaru/max-whisper",
+    "name": "yt-text",
+    "description": "Download YouTube audio and convert it to text using yt-dlp and OpenAI Whisper",
+    "html_url": "https://github.com/nijaru/yt-text",
     "homepage": null,
     "language": "Python",
+    "stargazers_count": 1,
+    "forks_count": 1
+  },
+  {
+    "name": "agent-contexts",
+    "description": "Markdown files to provide context for AI coding assistants",
+    "html_url": "https://github.com/nijaru/agent-contexts",
+    "homepage": null,
+    "language": "Mojo",
     "stargazers_count": 0,
     "forks_count": 0
   }
