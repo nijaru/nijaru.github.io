@@ -342,7 +342,7 @@
   margin-top: var(--space-6);
 }
 
-.hover\\:scale-\\[1\\.02\\]:hover {
+.hover\:scale-\[1\.02\]:hover {
   transform: scale(1.02);
 }
 
@@ -490,15 +490,15 @@
 }
 
 .container-sm {
-  max-width: 40rem; /* 640px - blog posts/reading */
+  max-width: 56rem; /* 896px - blog posts/reading */
 }
 
 .container-md {
-  max-width: 47rem; /* 752px - general content */
+  max-width: 64rem; /* 1024px - general content */
 }
 
 .container-lg {
-  max-width: 50rem; /* 800px - wide content */
+  max-width: 72rem; /* 1152px - wide content */
 }
 
 /* Content sections */
