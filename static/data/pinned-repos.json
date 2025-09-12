@@ -1,19 +1,10 @@
 [
   {
-    "name": "dotfiles",
-    "description": "My dotfiles",
-    "html_url": "https://github.com/nijaru/dotfiles",
-    "homepage": "",
-    "language": "Shell",
-    "stargazers_count": 1,
-    "forks_count": 0
-  },
-  {
-    "name": "nijaru.github.io",
-    "description": "Personal website",
-    "html_url": "https://github.com/nijaru/nijaru.github.io",
-    "homepage": "https://nijaru.com",
-    "language": "JavaScript",
+    "name": "zenith",
+    "description": "Modern Python web framework with clean architecture and type-safe dependency injection. Outperforms FastAPI.",
+    "html_url": "https://github.com/nijaru/zenith",
+    "homepage": "http://nijaru.com/zenith/",
+    "language": "Python",
     "stargazers_count": 0,
     "forks_count": 0
   },
@@ -33,6 +24,24 @@
     "homepage": null,
     "language": "Python",
     "stargazers_count": 0,
+    "forks_count": 0
+  },
+  {
+    "name": "nijaru.github.io",
+    "description": "Personal website",
+    "html_url": "https://github.com/nijaru/nijaru.github.io",
+    "homepage": "https://nijaru.com",
+    "language": "Astro",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  {
+    "name": "dotfiles",
+    "description": "My dotfiles",
+    "html_url": "https://github.com/nijaru/dotfiles",
+    "homepage": "",
+    "language": "Shell",
+    "stargazers_count": 1,
     "forks_count": 0
   }
 ]
