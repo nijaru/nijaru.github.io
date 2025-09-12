@@ -1,7 +1,7 @@
 [
   {
     "name": "zenith",
-    "description": "Modern Python web framework with clean architecture and type-safe dependency injection. Outperforms FastAPI.",
+    "description": "Type-safe Python web framework with clean architecture and high performance",
     "html_url": "https://github.com/nijaru/zenith",
     "homepage": "http://nijaru.com/zenith/",
     "language": "Python",
