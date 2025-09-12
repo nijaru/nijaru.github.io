@@ -44,21 +44,77 @@ const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
             
             <div class="space-y-8">
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://github.com/nijaru/zenith"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item"
+                    >
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            Zenith Web Framework
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Modern Python web framework designed for high performance and 
+                            developer experience. Built with async/await, type safety, 
+                            and minimal boilerplate in mind.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Open Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Web Framework</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://github.com/nijaru/yt-text"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item"
+                    >
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            YouTube Text Extractor
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Tool for extracting and processing text content from YouTube videos. 
+                            Uses Zenith framework with yt-dlp and OpenAI Whisper for transcript 
+                            extraction, subtitle parsing, and content analysis workflows.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Open Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Zenith</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <div class="clickable-item cursor-default">
                         <h3 class="heading-3 mb-4 text-text-primary">
                             Vector Database
                         </h3>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
                             High-performance vector database from scratch for similarity search and 
-                            embedding operations. Focused on efficient indexing algorithms, 
-                            memory management, and SIMD optimizations.
+                            embedding operations. Built primarily in Mojo with Rust and Python 
+                            components for efficient indexing and memory management.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Closed Source</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Vector Search</span>
+                            <span class="body-small text-text-tertiary">Mojo</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">SIMD</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Vector Search</span>
                         </div>
                     </div>
                 </div>
@@ -84,73 +140,27 @@ const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/zenith"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item"
-                    >
-                        <h3 class="heading-3 mb-4 text-text-primary">
-                            Zenith Web Framework
-                        </h3>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern Python web framework designed for high performance and 
-                            developer experience. Built with async/await, type safety, 
-                            and minimal boilerplate in mind.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Web Framework</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <div class="clickable-item cursor-default">
                         <h3 class="heading-3 mb-4 text-text-primary">
                             AI Financial Terminal
                         </h3>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
                             Advanced financial analytics and trading terminal powered by AI. 
-                            Real-time market data processing, intelligent pattern recognition, 
-                            and automated analysis for informed decision making.
+                            Built using Zenith framework for real-time market data processing, 
+                            intelligent pattern recognition, and automated analysis.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Zenith</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">AI/ML</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">FinTech</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/yt-text"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item"
-                    >
-                        <h3 class="heading-3 mb-4 text-text-primary">
-                            YouTube Text Extractor
-                        </h3>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Efficient tool for extracting and processing text content from YouTube 
-                            videos. Supports transcript extraction, subtitle parsing, and 
-                            content analysis workflows.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Text Processing</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
