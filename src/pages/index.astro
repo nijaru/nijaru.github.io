@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ReflectionText from "../components/ReflectionText";
-import TextGlow from "../components/TextGlow";
-import BlogPostPreview from "../components/BlogPostPreview";
+import ReflectionText from "../components/ReflectionText.astro";
+import TextGlow from "../components/TextGlow.astro";
+import BlogPostPreview from "../components/BlogPostPreview.astro";
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import ArrowLink from "../components/ArrowLink";
-import SectionHeading from "../components/SectionHeading";
-import SocialLinks from "../components/SocialLinks";
+import ArrowLink from "../components/ArrowLink.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SocialLinks from "../components/SocialLinks.astro";
 import { getCollection } from 'astro:content';
 
 // Get all blog posts from the collection

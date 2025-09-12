@@ -1,5 +1,4 @@
-import { For } from 'solid-js';
-
+---
 // Move static data outside component to prevent recreation on each render
 const categories = [
   {
@@ -27,7 +26,7 @@ const categories = [
       { name: 'Rust', color: 'text-orange-500', icon: 'devicon-rust-plain' },
       { name: 'Mojo', color: 'text-yellow-500', icon: '🔥' }, // Using emoji for Mojo
       { name: 'FastAPI', color: 'text-green-500', icon: 'devicon-fastapi-plain' },
-      { name: 'Solid.js', color: 'text-accent-blue', icon: 'devicon-javascript-plain' }
+      { name: 'Astro', color: 'text-accent-blue', icon: 'devicon-javascript-plain' }
     ]
   },
   {
@@ -48,56 +47,34 @@ const categories = [
       { name: 'Git', color: 'text-red-500', icon: 'devicon-git-plain' },
       { name: 'Docker', color: 'text-blue-500', icon: 'devicon-docker-plain' },
       { name: 'gRPC', color: 'text-cyan-500', icon: 'devicon-grpc-plain' },
-      { name: 'SQLite', color: 'text-blue-400', icon: 'devicon-sqlite-plain' },
-      { name: 'PostgreSQL', color: 'text-blue-600', icon: 'devicon-postgresql-plain' },
-      { name: 'MySQL', color: 'text-blue-500', icon: 'devicon-mysql-plain' },
-      { name: 'Redis', color: 'text-red-500', icon: 'devicon-redis-plain' }
+      { name: 'Postgres', color: 'text-blue-400', icon: 'devicon-postgresql-plain' },
+      { name: 'Neovim', color: 'text-green-400', icon: 'devicon-vim-plain' }
     ]
   }
 ];
+---
 
-// Pre-calculate animation delays to avoid calculations during render
-const getAnimationDelays = () => {
-  const delays = {};
-  categories.forEach(category => {
-    delays[category.id] = category.skills.map((_, index) => `${(index * 0.2) % 2}s`);
-  });
-  return delays;
-};
-
-const animationDelays = getAnimationDelays();
-
-export default function TechSkills() {
-  
-  return (
-    <div class="space-y-6">
-      <For each={categories}>
-        {(category) => (
-          <div class="mb-6">
-            <h3 class="text-lg font-medium text-blue-400 mb-3 text-left">
-              {category.label}
-            </h3>
-            
-            <div class="flex flex-wrap gap-3 justify-start">
-              <For each={category.skills}>
-                {(skill, index) => (
-                  <div 
-                    class="skill-card flex items-center gap-2 animate-float" 
-                    style={{ 'animation-delay': animationDelays[category.id][index()] }}
-                  >
-                    {skill.icon && (
-                      skill.icon.startsWith('devicon-') ? 
-                        <i class={`${skill.icon} text-base`}></i> : 
-                        <span class="text-base">{skill.icon}</span>
-                    )}
-                    <span class={`font-medium ${skill.color}`}>{skill.name}</span>
-                  </div>
-                )}
-              </For>
-            </div>
+<div class="grid gap-12">
+  {categories.map((category) => (
+    <div key={category.id}>
+      <h3 class="text-xl font-semibold mb-6 text-white">
+        {category.label}
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        {category.skills.map((skill) => (
+          <div
+            key={skill.name}
+            class="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/5 hover:bg-white/5 transition-all duration-200"
+          >
+            {skill.icon.startsWith('devicon-') ? (
+              <i class={`${skill.icon} ${skill.color} text-lg`}></i>
+            ) : (
+              <span class="text-lg">{skill.icon}</span>
+            )}
+            <span class="text-gray-300">{skill.name}</span>
           </div>
-        )}
-      </For>
+        ))}
+      </div>
     </div>
-  );
-}
+  ))}
+</div>

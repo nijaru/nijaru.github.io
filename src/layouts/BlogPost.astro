@@ -1,8 +1,8 @@
 ---
 import Layout from "./Layout.astro";
-import ReflectionText from "../components/ReflectionText";
-import TextGlow from "../components/TextGlow";
-import CodeBlock from "../components/CodeBlock";
+import ReflectionText from "../components/ReflectionText.astro";
+import TextGlow from "../components/TextGlow.astro";
+import CodeBlock from "../components/CodeBlock.astro";
 import HiringNotice from "../components/HiringNotice.astro";
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
@@ -91,7 +91,7 @@ const readingTime = calculateReadingTime(post.body);
             <div class="glass-card p-12">
                 <article class="blog-content prose prose-invert max-w-none">
                     <slot />
-                    <CodeBlock client:load />
+                    <CodeBlock />
                 </article>
             </div>
         </div>

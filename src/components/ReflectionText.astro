@@ -1,0 +1,12 @@
+---
+// ReflectionText component - Simple text wrapper
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={[className]}>
+  <slot />
+</span>

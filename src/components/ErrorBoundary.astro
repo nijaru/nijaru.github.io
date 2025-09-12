@@ -1,0 +1,13 @@
+---
+// ErrorBoundary component - Simple fallback wrapper
+// In Astro, error boundaries are handled differently, this is just a passthrough
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={[className]}>
+  <slot />
+</div>

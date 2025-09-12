@@ -1,8 +1,8 @@
 ---
-import NavBar from "../components/NavBar";
-import StarField from "../components/StarField";
-import SocialLinks from "../components/SocialLinks";
-import BackToTop from "../components/BackToTop";
+import NavBar from "../components/NavBar.astro";
+import StarField from "../components/StarField.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import BackToTop from "../components/BackToTop.astro";
 import '../styles/design-system.css';
 
 interface Props {
@@ -38,8 +38,8 @@ const pathname = Astro.url.pathname;
         <slot name="head" />
     </head>
     <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
-        <StarField client:idle />
-        <NavBar client:visible pathname={pathname} />
+        <StarField />
+        <NavBar />
 
         <main class="pt-24 pb-16 min-h-screen">
             <slot />
@@ -51,7 +51,7 @@ const pathname = Astro.url.pathname;
             </div>
         </footer>
         
-        <BackToTop client:idle />
+        <BackToTop />
     </body>
 </html>
 
