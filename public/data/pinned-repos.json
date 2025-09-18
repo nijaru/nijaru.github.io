@@ -1,7 +1,7 @@
 [
   {
     "name": "zenith",
-    "description": "Type-safe Python web framework with clean architecture and high performance",
+    "description": "Rails-like Python web framework. Zero-config setup, ActiveRecord patterns, 85% less boilerplate.",
     "html_url": "https://github.com/nijaru/zenith",
     "homepage": "http://nijaru.com/zenith/",
     "language": "Python",
@@ -22,7 +22,7 @@
     "description": "Markdown files to provide context for AI coding assistants",
     "html_url": "https://github.com/nijaru/agent-contexts",
     "homepage": null,
-    "language": "Python",
+    "language": null,
     "stargazers_count": 1,
     "forks_count": 0
   },
