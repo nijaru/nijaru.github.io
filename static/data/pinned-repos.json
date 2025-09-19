@@ -1,7 +1,7 @@
 [
   {
     "name": "zenith",
-    "description": "Rails-like Python web framework. Zero-config setup, ActiveRecord patterns, 85% less boilerplate.",
+    "description": "Python web framework with built-in auth, docs, middleware, and real-time features",
     "html_url": "https://github.com/nijaru/zenith",
     "homepage": "http://nijaru.com/zenith/",
     "language": "Python",
