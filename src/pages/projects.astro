@@ -30,6 +30,7 @@ async function getStarCount(owner: string, repo: string): Promise<number> {
 
 const zenithStars = await getStarCount('nijaru', 'zenith');
 const ytTextStars = await getStarCount('nijaru', 'yt-text');
+const syStars = await getStarCount('nijaru', 'sy');
 ---
 
 <Layout 
@@ -44,7 +45,7 @@ const ytTextStars = await getStarCount('nijaru', 'yt-text');
                     <span class="text-accent-blue">Projects</span>
                 </h1>
                 <p class="body-large text-text-secondary max-w-2xl mx-auto">
-                    Open source experiments and tools across AI, databases, and developer productivity
+                    Building databases, AI tools, and developer infrastructure
                 </p>
             </div>
         </div>
@@ -58,11 +59,174 @@ const ytTextStars = await getStarCount('nijaru', 'yt-text');
             <div class="text-center mb-12">
                 <h2 class="heading-2">Current Projects</h2>
                 <p class="body-normal text-text-secondary">
-                    Active development and experimentation
+                    Active development
                 </p>
             </div>
             
             <div class="space-y-8">
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            OmenDB
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Production database with learned indexes, achieving 9.85x faster queries
+                            on time-series workloads. Multi-table SQL interface with columnar storage,
+                            WAL, and crash recovery.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Database</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            DJScout
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            AI DJ intelligence platform that learns from professional sets to generate
+                            optimal track sequences. LSTM models trained on 10K+ DJ mixes with
+                            ultra-fast audio analysis.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://cuelists.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item"
+                    >
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            Cuelists
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Modern DJ tracklist archive platform - a clean, fast alternative to
+                            1001tracklists. Community-driven platform for discovering and sharing
+                            tracklists from festivals, clubs, and radio shows.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">TypeScript</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Next.js</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Cloudflare</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Recent Projects -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Recent Projects</h2>
+                <p class="body-normal text-text-secondary">
+                    Completed and functional projects
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://alttextapi.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item"
+                    >
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            AltText API
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            AI-powered alt text generation API and website. Credit-based billing,
+                            batch processing, and API key management. Built on Cloudflare Workers
+                            with D1 database for global edge deployment.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">TypeScript</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Cloudflare</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://github.com/nijaru/sy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item"
+                    >
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            sy
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Modern file synchronization tool - rsync reimagined. Delta sync,
+                            parallel transfers, and streaming algorithms in Rust. 40-79% faster
+                            than rsync on local sync benchmarks.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Open Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">CLI Tool</span>
+                            {syStars > 0 && (
+                                <>
+                                    <span class="body-small text-text-tertiary">•</span>
+                                    <span class="body-small text-text-tertiary">★ {syStars}</span>
+                                </>
+                            )}
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-4 text-text-primary">
+                            aircher
+                        </h3>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Terminal-based AI coding assistant with workflow automation,
+                            intelligent context management, and seamless editor integration.
+                            Built for developer productivity.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/LLM</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://github.com/nijaru/zenith"
@@ -71,12 +235,12 @@ const ytTextStars = await getStarCount('nijaru', 'yt-text');
                         class="clickable-item"
                     >
                         <h3 class="heading-3 mb-4 text-text-primary">
-                            Zenith Web Framework
+                            Zenith
                         </h3>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern Python web framework designed for high performance and
-                            developer experience. Built with async/await, type safety,
-                            and minimal boilerplate in mind.
+                            Modern Python web framework with intuitive developer experience and
+                            exceptional performance. Zero-config setup, chainable queries,
+                            and 9,600+ req/s throughput.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Open Source</span>
@@ -102,12 +266,12 @@ const ytTextStars = await getStarCount('nijaru', 'yt-text');
                         class="clickable-item"
                     >
                         <h3 class="heading-3 mb-4 text-text-primary">
-                            YouTube Text Extractor
+                            yt-text
                         </h3>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Tool for extracting and processing text content from YouTube videos.
-                            Uses Zenith framework with yt-dlp and OpenAI Whisper for transcript
-                            extraction, subtitle parsing, and content analysis workflows.
+                            High-performance video transcription service with multi-platform support.
+                            Advanced AI backends (MLX, whisper.cpp, OpenAI) with intelligent fallback
+                            and real-time streaming.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Open Source</span>
@@ -125,74 +289,6 @@ const ytTextStars = await getStarCount('nijaru', 'yt-text');
                             )}
                         </div>
                     </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-4 text-text-primary">
-                            Vector Database
-                        </h3>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            High-performance vector database from scratch for similarity search and 
-                            embedding operations. Built primarily in Mojo with Rust and Python 
-                            components for efficient indexing and memory management.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Mojo</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Vector Search</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-4 text-text-primary">
-                            AI Coding Agent (Aircher)
-                        </h3>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Terminal-based AI coding assistant with advanced workflow automation, 
-                            intelligent context management, and seamless editor integration. 
-                            Built for developer productivity.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/LLM</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-4 text-text-primary">
-                            AI Financial Terminal
-                        </h3>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Advanced financial analytics and trading terminal powered by AI. 
-                            Built using Zenith framework for real-time market data processing, 
-                            intelligent pattern recognition, and automated analysis.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Zenith</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">FinTech</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
