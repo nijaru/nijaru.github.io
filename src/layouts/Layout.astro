@@ -3,15 +3,18 @@ import NavBar from "../components/NavBar.astro";
 import StarField from "../components/StarField.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import BackToTop from "../components/BackToTop.astro";
+import '../styles/tailwind.css';
 import '../styles/design-system.css';
 
 interface Props {
     title: string;
     description?: string;
+    ogType?: string;
 }
 
-const { title, description = "Nick Russo - Software Engineer" } = Astro.props;
+const { title, description = "Nick Russo - Software Engineer", ogType = "website" } = Astro.props;
 const pathname = Astro.url.pathname;
+const canonicalURL = new URL(pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -23,18 +26,35 @@ const pathname = Astro.url.pathname;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description} />
         <title>{title}</title>
-        
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content="Nick Russo" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:creator" content="@nijaru0x" />
+
         <!-- Geist and JetBrains Mono fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
+
         <!-- Load Geist for body text and JetBrains Mono for code -->
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
         <!-- Load Geist from Vercel CDN for better performance -->
         <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist/style.css" rel="stylesheet">
         <!-- Devicons for programming language and tool icons -->
         <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet">
-        
+
         <slot name="head" />
     </head>
     <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
@@ -56,10 +76,6 @@ const pathname = Astro.url.pathname;
 </html>
 
 <style is:global>
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-
     @keyframes twinkle {
         0%,
         100% {

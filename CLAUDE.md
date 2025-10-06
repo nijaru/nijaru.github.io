@@ -1,9 +1,8 @@
 # CLAUDE.md - Personal Website Guidelines
 
 ## Technology Stack
-- **Astro v5.10.2** - Static site generation with component islands
-- **Solid.js** - Reactive UI components with signals/resources  
-- **Tailwind CSS** - Utility-first styling with custom space/accent colors
+- **Astro v5.13.7** - Static site generation with pure vanilla JS components
+- **Tailwind CSS v4** - Next-gen CSS engine via @tailwindcss/vite (5x faster builds)
 - **Geist + JetBrains Mono** - Modern typography stack for body text and code
 - **Node.js >=18** - Runtime requirement
 
@@ -16,19 +15,19 @@ npm run preview      # Preview production build
 ```
 
 ## Architecture Decisions
-- **Static generation**: All pages pre-rendered for performance
-- **Component islands**: Solid.js components hydrated on demand with `client:` directives
+- **Static generation**: All pages pre-rendered for performance (0KB JavaScript bundles)
+- **Vanilla JS components**: Pure Astro components with inline scripts (no framework overhead)
 - **Font loading**: Geist (body) + JetBrains Mono (code) via CDN/Google Fonts
-- **GitHub integration**: Pinned repos fetched via Actions → static JSON files
-- **SSR compatibility**: GitHub repos component handles server/client rendering differences
+- **GitHub integration**: Pinned repos fetched via Actions → static JSON, stars fetched at build time
+- **SEO**: Comprehensive Open Graph, Twitter Cards, canonical URLs, structured data
 
 ## Code Patterns
-- **Components**: PascalCase files (NavBar.jsx), functional with explicit props
-- **Pages**: kebab-case Astro files (about.astro) 
-- **Styling**: Tailwind utilities with responsive font sizing, custom CSS variables for theme colors
+- **Components**: PascalCase Astro files (NavBar.astro), functional with explicit props
+- **Pages**: kebab-case Astro files (about.astro)
+- **Styling**: Tailwind v4 utilities + custom CSS variables for theme colors
 - **Typography**: CSS clamp() for responsive scaling (16px→18px body, 18px→20px nav)
-- **State**: Solid signals for reactive data, resources for async loading
-- **Error handling**: try/catch blocks with fallback UI states, ErrorBoundary components
+- **Interactivity**: Inline vanilla JavaScript in <script> tags, DOM APIs
+- **Error handling**: try/catch blocks with fallback UI states
 
 ## Design System (2024-2025 Refactor)
 - **Philosophy**: Modern space theme with professional execution - inspired by Apple, Linear, Modular, Vercel
@@ -49,11 +48,11 @@ npm run preview      # Preview production build
 ## File Structure
 ```
 src/
-├── components/     # Solid.js UI components
+├── components/     # Vanilla JS Astro components
 ├── content/        # Markdown blog posts
-├── layouts/        # Astro layout templates  
+├── layouts/        # Astro layout templates
 ├── pages/          # Astro page routes
-└── styles/         # Global CSS and markdown styles
+└── styles/         # Tailwind v4, design system, markdown CSS
 public/
 └── data/           # Static JSON data files
 scripts/            # Build and utility scripts
@@ -63,12 +62,13 @@ scripts/            # Build and utility scripts
 
 ### **Design Refinement Process (2024-2025 Major UI Refactor Complete)**
 - **Phase 1**: ✅ Refined star field - depth layers, reduced motion support, professional opacity
-- **Phase 1.5**: ✅ Strategic glow effects - removed from headings/text, kept for CTAs and hero only  
+- **Phase 1.5**: ✅ Strategic glow effects - removed from headings/text, kept for CTAs and hero only
 - **Phase 1.75**: ✅ Zero-overhead performance - pre-sorted arrays, static quality, 80% CPU reduction
 - **Phase 1.9**: ✅ Bundle optimization - removed FontAwesome, saved 0.95kB, eliminated 4 dependencies
 - **Phase 2**: ✅ Enhanced code blocks - Shiki syntax highlighting, line numbers, copy buttons, space theme
 - **Phase 3**: ✅ Complete UI/UX refactor - professional design system, optimized layouts, unified messaging
-- **Phase 4**: 🔄 Blog enhancements - reading progress indicator, TOC improvements (optional)
+- **Phase 4**: ✅ Framework migration - Solid.js → Vanilla JS (0KB bundle), Tailwind v3 → v4
+- **Phase 5**: ✅ Blog & SEO enhancements - prev/next navigation, Open Graph tags, GitHub stars
 
 ### **Code Quality Standards**
 - **Accessibility**: Respect `prefers-reduced-motion`, high contrast ratios, keyboard navigation
@@ -85,17 +85,15 @@ scripts/            # Build and utility scripts
 - **Bundle targets**: <50kB total JS, <3kB per component (gzipped)
 - **Core Web Vitals**: LCP <2.5s, FID <100ms, CLS <0.1
 
-## Recent Updates
-- **Security**: Updated Astro to v5.10.2, resolved all vulnerabilities
-- **Typography**: Switched to Geist + JetBrains Mono, implemented responsive font sizing
-- **Performance**: Font preloading, terser minification, error boundaries, bundle optimization
-- **TypeScript**: Converted critical components (GithubRepos, ErrorBoundary) for better maintainability
-- **Content**: Refreshed about/projects pages, improved blog posts, organized tech skills into learning/interested sections
-- **Features**: RSS feed, robots.txt, web manifest, sitemap generation, cache headers
-- **SEO**: Comprehensive meta tags, Open Graph, Twitter Card support
-- **Infrastructure**: Added Vercel/Netlify configurations for enhanced hosting performance
-- **Design**: Complete UI/UX refactor (2024-2025) - professional design system, optimized spacing, unified messaging
-- **Performance**: GitHub repos instant loading, removed unused components, optimized SocialLinks (CSS-only tooltips), reduced bundle size
-- **UX**: Fixed width issues, restored clickable areas, improved blog post layout, consistent terminology
-- **Blog Series**: Created focused 3-part AI series following HN success patterns: "Type It Yourself", "Future", "Interface"
-- **Hiring Component**: Added HiringNotice.astro component across blog posts, about, and projects pages for professional visibility
+## Recent Updates (October 2025)
+- **Tailwind v4**: Migrated to @tailwindcss/vite for 5x faster full builds, 100x+ faster incremental
+- **Framework Removal**: Converted all Solid.js components to vanilla JS (292KB → 0KB JavaScript)
+- **GitHub Stars**: Added dynamic star count display for open source projects (nijaru/zenith, nijaru/yt-text)
+- **Blog Navigation**: Implemented prev/next post navigation with sorted chronological order
+- **SEO Optimization**: Comprehensive Open Graph tags, Twitter Cards (@nijaru0x), canonical URLs
+- **Security**: Updated to Astro v5.13.7, resolved all vulnerabilities
+- **Typography**: Geist + JetBrains Mono with responsive font sizing
+- **Performance**: StarField 3.07kB (1.31kB gzipped), CSS-only tooltips, build-time data loading
+- **Content**: 3-part AI blog series ("Type It Yourself", "Future", "Interface")
+- **Components**: HiringNotice across blog/about/projects, professional design system
+- **Infrastructure**: Vercel/Netlify configs, RSS feed, sitemap, robots.txt

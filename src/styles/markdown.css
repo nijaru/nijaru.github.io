@@ -10,22 +10,28 @@
 }
 
 .blog-content h2 {
-    @apply font-semibold mb-4 text-accent-blue;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-accent-primary);
     font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
     transition: color 0.3s ease;
 }
 
 .blog-content h2:hover {
-    @apply text-blue-400;
+    color: #60a5fa;
 }
 
 .blog-content h3 {
-    @apply font-semibold mb-3 text-accent-blue;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent-primary);
     font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
 }
 
 .blog-content h4 {
-    @apply font-semibold mb-2 text-accent-blue;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-primary);
     font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
 }
 
@@ -33,24 +39,37 @@
 
 /* Basic text styling */
 .blog-content p {
-    @apply text-gray-200 mb-5;
+    color: #e5e7eb;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
 /* Lists */
 .blog-content ul {
-    @apply list-disc text-gray-200 space-y-2 mb-5;
+    list-style-type: disc;
+    color: #e5e7eb;
+    margin-bottom: 1.25rem;
     padding-left: 1.5rem;
     line-height: 1.6;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
+.blog-content ul > * + * {
+    margin-top: 0.5rem;
+}
+
 .blog-content ol {
-    @apply list-decimal text-gray-200 space-y-2 mb-5;
+    list-style-type: decimal;
+    color: #e5e7eb;
+    margin-bottom: 1.25rem;
     padding-left: 1.5rem;
     line-height: 1.6;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+.blog-content ol > * + * {
+    margin-top: 0.5rem;
 }
 
 /* Enhanced code blocks */
@@ -123,27 +142,35 @@
 
 /* Fallback styles for regular code blocks */
 .blog-content pre {
-    @apply rounded-md overflow-x-auto bg-dark-800;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    background: #1a1a1a;
     margin: 1.25rem 0;
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .blog-content code {
-    @apply text-accent-blue rounded bg-dark-700/50;
+    color: var(--color-accent-primary);
+    border-radius: 0.25rem;
+    background: rgba(38, 38, 38, 0.5);
     padding: 0.125rem 0.25rem;
     font-size: 0.9em;
 }
 
 .blog-content pre code {
-    @apply text-gray-200 bg-transparent;
+    color: #e5e7eb;
+    background: transparent;
     padding: 0;
     font-size: 0.9em;
 }
 
 /* Blockquotes */
 .blog-content blockquote {
-    @apply border-l-4 border-blue-500 text-gray-200 italic bg-blue-500/10;
+    border-left: 4px solid #3b82f6;
+    color: #e5e7eb;
+    font-style: italic;
+    background: rgba(59, 130, 246, 0.1);
     padding: 0.75rem 1rem 0.75rem 1.25rem;
     margin: 1.5rem 0;
     line-height: 1.6;
@@ -152,28 +179,46 @@
 
 /* Links */
 .blog-content a {
-    @apply text-accent-blue hover:text-accent-blue underline transition-colors duration-200;
+    color: var(--color-accent-primary);
+    text-decoration: underline;
+    transition: color 200ms;
+}
+
+.blog-content a:hover {
+    color: var(--color-accent-primary);
 }
 
 /* Images */
 .blog-content img {
-    @apply max-w-full h-auto my-6 rounded-lg mx-auto;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
 }
 
 /* Horizontal rule */
 .blog-content hr {
-    @apply my-8 border-dark-700;
+    margin: 2rem 0;
+    border-color: #262626;
 }
 
 /* Table */
 .blog-content table {
-    @apply w-full my-6 border-collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
 }
 
 .blog-content th {
-    @apply bg-dark-700 text-gray-200 p-2 border border-dark-600 text-left;
+    background: #262626;
+    color: #e5e7eb;
+    padding: 0.5rem;
+    border: 1px solid #333333;
+    text-align: left;
 }
 
 .blog-content td {
-    @apply p-2 border border-dark-600 text-gray-300;
+    padding: 0.5rem;
+    border: 1px solid #333333;
+    color: #d1d5db;
 }

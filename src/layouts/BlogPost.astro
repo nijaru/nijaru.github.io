@@ -9,9 +9,11 @@ import '../styles/markdown.css';
 
 interface Props {
     post: CollectionEntry<'blog'>;
+    prevPost?: CollectionEntry<'blog'> | null;
+    nextPost?: CollectionEntry<'blog'> | null;
 }
 
-const { post } = Astro.props;
+const { post, prevPost = null, nextPost = null } = Astro.props;
 const { title, pubDate, description, author, tags, image } = post.data;
 
 // Format the date
@@ -32,8 +34,13 @@ function calculateReadingTime(text) {
 const readingTime = calculateReadingTime(post.body);
 ---
 
-<Layout title={title + " - Nick Russo"} description={description}>
+<Layout title={title + " - Nick Russo"} description={description} ogType="article">
     <Fragment slot="head">
+        <!-- Open Graph Article Metadata -->
+        <meta property="article:published_time" content={pubDate.toISOString()} />
+        <meta property="article:author" content={author} />
+        {tags.map((tag) => <meta property="article:tag" content={tag} />)}
+
         <!-- Schema.org structured data for blog post -->
         <script
             type="application/ld+json"
@@ -107,6 +114,51 @@ const readingTime = calculateReadingTime(post.body);
     </section>
 
     <div class="divider"></div>
+
+    <!-- Post Navigation -->
+    {(prevPost || nextPost) && (
+        <section class="section-sm">
+            <div class="container container-md">
+                <div class="grid gap-6 md:grid-cols-2">
+                    {prevPost ? (
+                        <a
+                            href={`/blog/${prevPost.slug}`}
+                            class="glass-card p-6 hover:border-color-border-default transition-all group"
+                        >
+                            <div class="body-small text-text-tertiary mb-2">← Previous Post</div>
+                            <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
+                                {prevPost.data.title}
+                            </h3>
+                            <p class="body-small text-text-secondary line-clamp-2">
+                                {prevPost.data.description}
+                            </p>
+                        </a>
+                    ) : (
+                        <div></div>
+                    )}
+
+                    {nextPost ? (
+                        <a
+                            href={`/blog/${nextPost.slug}`}
+                            class="glass-card p-6 hover:border-color-border-default transition-all group text-right"
+                        >
+                            <div class="body-small text-text-tertiary mb-2">Next Post →</div>
+                            <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
+                                {nextPost.data.title}
+                            </h3>
+                            <p class="body-small text-text-secondary line-clamp-2">
+                                {nextPost.data.description}
+                            </p>
+                        </a>
+                    ) : (
+                        <div></div>
+                    )}
+                </div>
+            </div>
+        </section>
+    )}
+
+    {(prevPost || nextPost) && <div class="divider"></div>}
 
     <!-- Navigation -->
     <section class="section-sm">

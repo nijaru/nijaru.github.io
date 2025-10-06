@@ -8,16 +8,26 @@ export async function getStaticPaths() {
     return import.meta.env.PROD ? !data.draft : true;
   });
 
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  // Sort by date descending (newest first)
+  const sortedEntries = blogEntries.sort((a, b) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return sortedEntries.map((entry, index) => {
+    const prevPost = index < sortedEntries.length - 1 ? sortedEntries[index + 1] : null;
+    const nextPost = index > 0 ? sortedEntries[index - 1] : null;
+
+    return {
+      params: { slug: entry.slug },
+      props: { entry, prevPost, nextPost },
+    };
+  });
 }
 
-const { entry } = Astro.props;
+const { entry, prevPost, nextPost } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BlogPost post={entry}>
+<BlogPost post={entry} prevPost={prevPost} nextPost={nextPost}>
   <Content />
 </BlogPost>
