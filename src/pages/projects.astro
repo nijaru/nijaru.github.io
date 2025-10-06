@@ -137,11 +137,11 @@ const syStars = await getStarCount('nijaru', 'sy');
                             WAL, and crash recovery.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Database</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
                         </div>
                     </div>
                 </div>
@@ -158,13 +158,13 @@ const syStars = await getStarCount('nijaru', 'sy');
                             ultra-fast audio analysis.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Python</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
                     </div>
                 </div>
@@ -174,9 +174,9 @@ const syStars = await getStarCount('nijaru', 'sy');
                         href="https://cuelists.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="clickable-item"
+                        class="clickable-item group"
                     >
-                        <h3 class="heading-3 mb-2 text-text-primary">
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             Cuelists
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
@@ -186,13 +186,13 @@ const syStars = await getStarCount('nijaru', 'sy');
                             tracklists from festivals, clubs, and radio shows.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">TypeScript</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Next.js</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Cloudflare</span>
+                            <span class="body-small text-text-tertiary">Web App</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
                     </a>
                 </div>
@@ -206,37 +206,41 @@ const syStars = await getStarCount('nijaru', 'sy');
     <section class="section">
         <div class="container container-sm">
             <div class="text-center mb-12">
-                <h2 class="heading-2">Recent Projects</h2>
+                <h2 class="heading-2">Stable Projects</h2>
                 <p class="body-normal text-text-secondary">
-                    Completed and functional projects
+                    Production-ready and functional
                 </p>
             </div>
 
             <div class="space-y-8">
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
-                        href="https://alttextapi.com"
+                        href="https://github.com/nijaru/zenith"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="clickable-item"
+                        class="clickable-item group"
                     >
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            AltText API
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
+                            Zenith
                         </h3>
                         <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            AI-powered alt text generation API and website. Credit-based billing,
-                            batch processing, and API key management. Built on Cloudflare Workers
-                            with D1 database for global edge deployment.
+                            Modern Python web framework with intuitive developer experience and
+                            exceptional performance. Zero-config setup, chainable queries,
+                            and 9,600+ req/s throughput.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">Python</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">TypeScript</span>
+                            <span class="body-small text-text-tertiary">Web Framework</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Cloudflare</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">Open Source</span>
+                            {zenithStars > 0 && (
+                                <>
+                                    <span class="body-small text-text-tertiary">•</span>
+                                    <span class="body-small text-text-tertiary">★ {zenithStars}</span>
+                                </>
+                            )}
                         </div>
                     </a>
                 </div>
@@ -246,9 +250,9 @@ const syStars = await getStarCount('nijaru', 'sy');
                         href="https://github.com/nijaru/sy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="clickable-item"
+                        class="clickable-item group"
                     >
-                        <h3 class="heading-3 mb-2 text-text-primary">
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             sy
                         </h3>
                         <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
@@ -258,17 +262,45 @@ const syStars = await getStarCount('nijaru', 'sy');
                             than rsync on local sync benchmarks.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">CLI Tool</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Open Source</span>
                             {syStars > 0 && (
                                 <>
                                     <span class="body-small text-text-tertiary">•</span>
                                     <span class="body-small text-text-tertiary">★ {syStars}</span>
                                 </>
                             )}
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <a
+                        href="https://alttextapi.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item group"
+                    >
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
+                            AltText API
+                        </h3>
+                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            AI-powered alt text generation API and website. Credit-based billing,
+                            batch processing, and API key management. Built on Cloudflare Workers
+                            with D1 database for global edge deployment.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">TypeScript</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">API/Web App</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
                     </a>
                 </div>
@@ -285,45 +317,13 @@ const syStars = await getStarCount('nijaru', 'sy');
                             Built for developer productivity.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">AI/LLM</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/zenith"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            Zenith
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern Python web framework with intuitive developer experience and
-                            exceptional performance. Zero-config setup, chainable queries,
-                            and 9,600+ req/s throughput.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Web Framework</span>
-                            {zenithStars > 0 && (
-                                <>
-                                    <span class="body-small text-text-tertiary">•</span>
-                                    <span class="body-small text-text-tertiary">★ {zenithStars}</span>
-                                </>
-                            )}
-                        </div>
-                    </a>
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
@@ -331,9 +331,9 @@ const syStars = await getStarCount('nijaru', 'sy');
                         href="https://github.com/nijaru/yt-text"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="clickable-item"
+                        class="clickable-item group"
                     >
-                        <h3 class="heading-3 mb-2 text-text-primary">
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             yt-text
                         </h3>
                         <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
@@ -343,13 +343,11 @@ const syStars = await getStarCount('nijaru', 'sy');
                             and real-time streaming.
                         </p>
                         <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Python</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Zenith</span>
-                            <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Open Source</span>
                             {ytTextStars > 0 && (
                                 <>
                                     <span class="body-small text-text-tertiary">•</span>
