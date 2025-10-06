@@ -20,40 +20,42 @@ const navItems = [
 
 <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b" style="background-color: var(--glass-bg); border-color: var(--color-border-subtle);">
   <div class="container">
-    <div class="flex justify-between h-16">
+    <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <a href="/" class="text-xl font-bold flex items-center text-text-primary">
           <span class="text-accent-primary">Nick</span>
           <span class="ml-1">Russo</span>
         </a>
       </div>
-      
-      <nav class="hidden md:flex items-center gap-2">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${
-              isActive(item.href, pathname) ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'
-            }`}
+
+      <div class="flex items-center gap-2">
+        <nav class="hidden md:flex items-center gap-2">
+          {navItems.map(item => (
+            <a
+              href={item.href}
+              class={`px-3 py-2 text-lg font-medium transition-colors rounded-lg ${
+                isActive(item.href, pathname) ? 'text-accent-primary' : 'text-text-primary hover:text-accent-primary'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-button"
+            class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open main menu"
           >
-            {item.label}
-          </a>
-        ))}
-      </nav>
-      
-      <div class="md:hidden flex items-center">
-        <button 
-          id="mobile-menu-button"
-          class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          aria-label="Open main menu"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

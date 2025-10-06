@@ -88,12 +88,14 @@ scripts/            # Build and utility scripts
 ## Recent Updates (October 2025)
 - **Tailwind v4**: Migrated to @tailwindcss/vite for 5x faster full builds, 100x+ faster incremental
 - **Framework Removal**: Converted all Solid.js components to vanilla JS (292KB → 0KB JavaScript)
-- **GitHub Stars**: Added dynamic star count display for open source projects (nijaru/zenith, nijaru/yt-text)
+- **GitHub Stars**: Added dynamic star count display with automated 6-hour updates via GitHub Actions
+- **GitHub Automation**: Workflows for pinned repos and stars with repository-dispatch v4
 - **Blog Navigation**: Implemented prev/next post navigation with sorted chronological order
 - **SEO Optimization**: Comprehensive Open Graph tags, Twitter Cards (@nijaru0x), canonical URLs
 - **Security**: Updated to Astro v5.13.7, resolved all vulnerabilities
 - **Typography**: Geist + JetBrains Mono with responsive font sizing
 - **Performance**: StarField 3.07kB (1.31kB gzipped), CSS-only tooltips, build-time data loading
-- **Content**: 3-part AI blog series ("Type It Yourself", "Future", "Interface")
+- **Content**: 3-part AI blog series ("Type It Yourself", "Future", "Interface"), simplified bio
 - **Components**: HiringNotice across blog/about/projects, professional design system
+- **Navigation**: Fixed NavBar responsive layout - proper alignment on desktop, hamburger menu on mobile
 - **Infrastructure**: Vercel/Netlify configs, RSS feed, sitemap, robots.txt
