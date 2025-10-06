@@ -57,7 +57,7 @@ const categories = [
 <div class="grid gap-12">
   {categories.map((category) => (
     <div key={category.id}>
-      <h3 class="text-xl font-semibold mb-6 text-white">
+      <h3 class="text-xl font-semibold mb-6 text-text-primary">
         {category.label}
       </h3>
       <div class="flex flex-wrap gap-3">
@@ -71,7 +71,7 @@ const categories = [
             ) : (
               <span class="text-lg">{skill.icon}</span>
             )}
-            <span class="text-gray-300">{skill.name}</span>
+            <span class="text-text-secondary">{skill.name}</span>
           </div>
         ))}
       </div>
