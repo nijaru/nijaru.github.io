@@ -5,6 +5,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 import BackToTop from "../components/BackToTop.astro";
 import '../styles/tailwind.css';
 import '../styles/design-system.css';
+import { execSync } from 'child_process';
 
 interface Props {
     title: string;
@@ -13,6 +14,9 @@ interface Props {
 }
 
 const { title, description = "Nick Russo - Software Engineer", ogType = "website" } = Astro.props;
+
+// Get git commit hash at build time
+const gitHash = execSync('git rev-parse --short HEAD').toString().trim();
 const pathname = Astro.url.pathname;
 const canonicalURL = new URL(pathname, Astro.site);
 ---
@@ -68,6 +72,7 @@ const canonicalURL = new URL(pathname, Astro.site);
         <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
             <div class="container container-md">
                 <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
+                <p class="text-xs mt-2" style="color: transparent; user-select: text;">{gitHash}</p>
             </div>
         </footer>
         
