@@ -1,21 +1,39 @@
 [
   {
-    "name": "zenith",
-    "description": "Python web framework with built-in auth, docs, middleware, and real-time features",
-    "html_url": "https://github.com/nijaru/zenith",
-    "homepage": "http://nijaru.com/zenith/",
-    "language": "Python",
-    "stargazers_count": 0,
+    "name": "dotfiles",
+    "description": "My dotfiles",
+    "html_url": "https://github.com/nijaru/dotfiles",
+    "homepage": "",
+    "language": "Shell",
+    "stargazers_count": 1,
     "forks_count": 0
   },
   {
-    "name": "yt-text",
-    "description": "Download YouTube audio and convert it to text using yt-dlp and OpenAI Whisper",
-    "html_url": "https://github.com/nijaru/yt-text",
-    "homepage": null,
+    "name": "zenith",
+    "description": "Fast, modern Python web framework with zero-config defaults and Rails-like developer experience",
+    "html_url": "https://github.com/nijaru/zenith",
+    "homepage": "http://nijaru.com/zenith/",
     "language": "Python",
     "stargazers_count": 1,
-    "forks_count": 1
+    "forks_count": 0
+  },
+  {
+    "name": "sy",
+    "description": "Modern file synchronization tool - rsync, reimagined",
+    "html_url": "https://github.com/nijaru/sy",
+    "homepage": null,
+    "language": "Rust",
+    "stargazers_count": 2,
+    "forks_count": 0
+  },
+  {
+    "name": "kombrucha",
+    "description": "Fast, parallel package manager compatible with Homebrew formulae",
+    "html_url": "https://github.com/nijaru/kombrucha",
+    "homepage": null,
+    "language": "Rust",
+    "stargazers_count": 0,
+    "forks_count": 0
   },
   {
     "name": "agent-contexts",
@@ -27,21 +45,12 @@
     "forks_count": 0
   },
   {
-    "name": "nijaru.github.io",
-    "description": "Personal website",
-    "html_url": "https://github.com/nijaru/nijaru.github.io",
-    "homepage": "https://nijaru.com",
-    "language": "Astro",
+    "name": "global-agents-config",
+    "description": "Proposal for standardized global AGENTS.md configuration at ~/.config/agents/AGENTS.md",
+    "html_url": "https://github.com/nijaru/global-agents-config",
+    "homepage": null,
+    "language": null,
     "stargazers_count": 0,
-    "forks_count": 0
-  },
-  {
-    "name": "dotfiles",
-    "description": "My dotfiles",
-    "html_url": "https://github.com/nijaru/dotfiles",
-    "homepage": "",
-    "language": "Shell",
-    "stargazers_count": 1,
     "forks_count": 0
   }
 ]
