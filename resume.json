@@ -1,0 +1,184 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Nicholas Russo",
+    "label": "Software Engineer",
+    "email": "nijaru7[at]gmail.com",
+    "url": "https://nijaru.com",
+    "summary": "Software developer with 2.5 years of experience specializing in backend development and scalable API architecture using Python, Rust, and Go. Demonstrated expertise in optimizing system performance and reliability through efficient, maintainable code. Currently building AI/ML infrastructure with focus on vector databases and LLM engineering.",
+    "location": {
+      "city": "San Francisco Bay Area",
+      "region": "CA",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "nijaru",
+        "url": "https://github.com/nijaru"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Omnitier, Inc.",
+      "position": "Software Engineer",
+      "startDate": "2021-01",
+      "endDate": "2023-05",
+      "highlights": [
+        "Developed regression testing system using Go and Python, significantly improving code stability",
+        "Optimized Python script performance by ~90%, reducing runtime from 45 minutes to 5 minutes by minimizing system calls",
+        "Enhanced React frontend with new features using gRPC API and resolved critical bugs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "42 Silicon Valley",
+      "area": "Computer Science",
+      "studyType": "",
+      "startDate": "2018",
+      "endDate": "2020",
+      "location": "Fremont, CA"
+    },
+    {
+      "institution": "Las Positas College",
+      "area": "Computer Science",
+      "studyType": "",
+      "startDate": "2014",
+      "endDate": "2018",
+      "location": "Livermore, CA",
+      "courses": [
+        "Computer Science Club President 2016 - 2017"
+      ]
+    },
+    {
+      "institution": "Dev Bootcamp",
+      "area": "Web Development",
+      "studyType": "",
+      "startDate": "2016",
+      "endDate": "2017",
+      "location": "San Francisco, CA"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": [
+        "Python (Advanced)",
+        "Rust (Advanced)",
+        "Go (Advanced)",
+        "TypeScript (Intermediate)",
+        "C (Intermediate)",
+        "C++ (Intermediate)"
+      ]
+    },
+    {
+      "name": "Currently Learning",
+      "keywords": [
+        "Mojo"
+      ]
+    },
+    {
+      "name": "Backend/APIs",
+      "keywords": [
+        "FastAPI",
+        "Flask",
+        "Django",
+        "gRPC",
+        "Ruby on Rails"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": [
+        "PostgreSQL",
+        "SQLite",
+        "MySQL",
+        "Redis",
+        "Vector Databases"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "keywords": [
+        "Docker",
+        "Linux (Gentoo, CoreOS, Alpine, Fedora, RHEL, Ubuntu)",
+        "Kubernetes"
+      ]
+    },
+    {
+      "name": "Cloud/DevOps",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "DigitalOcean",
+        "Cloudflare",
+        "Git",
+        "GitHub Actions",
+        "Zed",
+        "Neovim",
+        "VS Code"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "OmenDB",
+      "description": "PostgreSQL-compatible vector database implementing HNSW indexing and binary quantization. Drop-in pgvector replacement optimized for memory efficiency and query performance at scale",
+      "url": "https://github.com/omendb",
+      "keywords": [
+        "Rust",
+        "Vector Database",
+        "Database Systems"
+      ]
+    },
+    {
+      "name": "Zenith",
+      "description": "Python web framework with chainable query APIs, zero-config setup, and async request handling. Built for developer experience and production performance",
+      "url": "https://github.com/nijaru/zenith",
+      "keywords": [
+        "Python",
+        "Web Framework",
+        "API Design"
+      ]
+    },
+    {
+      "name": "sy",
+      "description": "File synchronization tool with delta sync, parallel transfers, and streaming algorithms. Modern alternative to rsync built in Rust",
+      "url": "https://github.com/nijaru/sy",
+      "keywords": [
+        "Rust",
+        "CLI Tools",
+        "Systems Programming"
+      ]
+    },
+    {
+      "name": "Kombrucha",
+      "description": "Package manager with parallel downloads, dependency resolution, and improved caching. Homebrew alternative focused on speed and reliability",
+      "url": "https://github.com/nijaru/kombrucha",
+      "keywords": [
+        "Rust",
+        "Package Management",
+        "Developer Tools"
+      ]
+    },
+    {
+      "name": "Pacabot",
+      "description": "Trading bot with market analysis, automated strategy execution, and risk management. Real-time data processing for algorithmic trading",
+      "keywords": [
+        "Python",
+        "AI/ML",
+        "Finance"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "2nd Place & Ingenico Winner",
+      "date": "2016",
+      "awarder": "Money 20/20 Las Vegas 2016",
+      "summary": "Team Kairos - Developed cross-terminal payment application with REST API for business partnerships. Built with Go and PostgreSQL, deployed on CoreOS"
+    }
+  ]
+}
