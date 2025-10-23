@@ -1,4 +1,383 @@
 ---
-// Redirect /resume to /linkedin
-return Astro.redirect("/linkedin", 301);
+import Layout from "../layouts/Layout.astro";
+
+// Professional experience from PDF
+const experience = [
+    {
+        company: "Omnitier, Inc.",
+        title: "Software Engineer",
+        period: "January 2021 - May 2023",
+        achievements: [
+            "Developed regression testing system using Go and Python, significantly improving code stability",
+            "Optimized Python script performance by ~90%, reducing runtime from 45 minutes to 5 minutes by minimizing system calls",
+            "Enhanced React frontend with new features using gRPC API and resolved critical bugs"
+        ]
+    },
+    {
+        company: "Robert Half Inc.",
+        title: "IT Support Intern",
+        period: "June 2011 - December 2011",
+        achievements: [
+            "Managed software deployment and hardware maintenance across multiple offices"
+        ]
+    },
+    {
+        company: "City of Pleasanton",
+        title: "IT Intern",
+        period: "January 2010 - May 2010",
+        achievements: [
+            "Performed routine IT tasks and assisted in thin client deployment to city library"
+        ]
+    }
+];
+
+// Education from PDF + LinkedIn
+const education = [
+    {
+        school: "42 Silicon Valley",
+        location: "Fremont, CA",
+        degree: "Computer Science",
+        period: "2018 - 2020"
+    },
+    {
+        school: "Las Positas College",
+        location: "Livermore, CA",
+        degree: "Computer Science",
+        period: "2014 - 2015, 2016 - 2018",
+        detail: "Computer Science Club President 2016 - 2017"
+    },
+    {
+        school: "Dev Bootcamp",
+        location: "San Francisco, CA",
+        degree: "Web Development",
+        period: "Fall 2016 - Spring 2017"
+    },
+    {
+        school: "Chabot College",
+        location: "Hayward, CA",
+        degree: "Music Recording Technology",
+        period: "2013 - 2014"
+    }
+];
+
+// Current projects (from your site)
+const projects = [
+    {
+        name: "OmenDB",
+        url: "https://github.com/omendb",
+        description: "PostgreSQL-compatible vector database with HNSW + Binary Quantization. Drop-in pgvector replacement targeting 10x faster queries and 24x better memory efficiency",
+        tech: ["Rust", "Vector Database", "HTAP Architecture"]
+    },
+    {
+        name: "Zenith",
+        url: "https://github.com/nijaru/zenith",
+        description: "Modern Python web framework with exceptional performance (9,600+ req/s throughput) and intuitive developer experience",
+        tech: ["Python", "Web Framework", "API Design"]
+    },
+    {
+        name: "sy",
+        url: "https://github.com/nijaru/sy",
+        description: "Modern file synchronization tool - rsync reimagined with delta sync and parallel transfers. 40-79% faster than rsync",
+        tech: ["Rust", "CLI Tools", "Systems Programming"]
+    },
+    {
+        name: "Kombrucha",
+        url: "https://github.com/nijaru/kombrucha",
+        description: "Modern package manager reimagining Homebrew with fast dependency resolution and parallel downloads",
+        tech: ["Rust", "Package Management"]
+    },
+    {
+        name: "yt-text",
+        url: "https://github.com/nijaru/yt-text",
+        description: "Web and CLI application for YouTube audio transcription using yt-dlp and OpenAI Whisper",
+        tech: ["Python", "AI/ML", "NLP"]
+    }
+];
+
+// Awards from PDF
+const awards = [
+    {
+        title: "2nd Place & Ingenico Winner, Money 20/20 Las Vegas 2016",
+        project: "Team Kairos",
+        description: "Developed cross-terminal payment application with REST API for business partnerships. Built with Go and PostgreSQL, deployed on CoreOS using DigitalOcean"
+    }
+];
+
+// Skills from PDF + current work
+const skills = {
+    languages: [
+        { name: "Python", level: "Advanced" },
+        { name: "Rust", level: "Advanced" },
+        { name: "Go", level: "Advanced" },
+        { name: "TypeScript", level: "Intermediate" },
+        { name: "C", level: "Intermediate" },
+        { name: "C++", level: "Intermediate" }
+    ],
+    backend: ["Go", "gRPC", "Ruby on Rails", "Flask", "Django", "FastAPI"],
+    databases: ["PostgreSQL", "SQLite", "MySQL", "Redis", "Vector Databases"],
+    infrastructure: ["Docker", "Linux (RHEL, Fedora, Debian, Ubuntu, Gentoo, CoreOS, Alpine)"],
+    cloud: ["AWS", "Google Cloud", "DigitalOcean", "Cloudflare", "GitHub Actions"],
+    tools: ["Git", "Zed", "Neovim", "VS Code", "Bash/Zsh"]
+};
 ---
+
+<Layout
+    title="Nicholas Russo - Resume"
+    description="Software developer with 2.5 years of experience specializing in backend development, distributed systems, AI/ML infrastructure, and high-performance databases."
+    ogType="profile"
+>
+    <!-- Resume Container -->
+    <div class="py-8 print:py-4">
+        <div class="container mx-auto max-w-5xl px-6">
+
+            <!-- Header -->
+            <section class="mb-8 print:mb-6">
+                <div class="text-center">
+                    <h1 class="text-5xl font-bold text-text-primary mb-3 print:text-4xl">
+                        Nicholas Russo
+                    </h1>
+                    <div class="flex flex-wrap justify-center gap-3 text-sm text-text-secondary mb-6 print:text-xs print:mb-4">
+                        <span>1-925-699-1715</span>
+                        <span class="text-text-tertiary">•</span>
+                        <span>nijaru7[at]gmail.com</span>
+                        <span class="text-text-tertiary">•</span>
+                        <a href="https://github.com/nijaru" class="hover:text-accent-blue transition-colors print:text-text-primary">
+                            github.com/nijaru
+                        </a>
+                        <span class="text-text-tertiary">•</span>
+                        <a href="https://nijaru.com" class="hover:text-accent-blue transition-colors print:text-text-primary">
+                            nijaru.com
+                        </a>
+                    </div>
+                    <button onclick="window.print()" class="btn btn-primary print:hidden">
+                        Download PDF
+                    </button>
+                </div>
+            </section>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Summary -->
+                <section class="mb-8 print:mb-5">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        SUMMARY
+                    </h2>
+                    <p class="text-text-secondary leading-relaxed print:text-sm">
+                        Software developer with 2.5 years of experience specializing in backend development and
+                        scalable API architecture using Python, Rust, and Go. Demonstrated expertise in optimizing
+                        system performance and reliability through efficient, maintainable code. Proficient in
+                        developing and deploying services across Linux environments, databases, and cloud platforms.
+                        Currently building AI/ML infrastructure with focus on vector databases and LLM engineering.
+                    </p>
+                </section>
+
+                <!-- Skills -->
+                <section class="mb-8 print:mb-5">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        SKILLS
+                    </h2>
+                    <div class="space-y-3 print:space-y-2">
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Languages:</span>
+                            <span class="text-text-secondary text-sm">
+                                {skills.languages.map((lang, i) => (
+                                    <span>{lang.name} ({lang.level}){i < skills.languages.length - 1 ? ', ' : ''}</span>
+                                ))}
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Backend:</span>
+                            <span class="text-text-secondary text-sm">{skills.backend.join(', ')}</span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Databases:</span>
+                            <span class="text-text-secondary text-sm">{skills.databases.join(', ')}</span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Infrastructure:</span>
+                            <span class="text-text-secondary text-sm">{skills.infrastructure.join(', ')}</span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Cloud:</span>
+                            <span class="text-text-secondary text-sm">{skills.cloud.join(', ')}</span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-2">
+                            <span class="font-semibold text-text-primary text-sm">Tools:</span>
+                            <span class="text-text-secondary text-sm">{skills.tools.join(', ')}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="mb-8 print:mb-5">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        PROFESSIONAL EXPERIENCE
+                    </h2>
+                    <div class="space-y-6 print:space-y-4">
+                        {experience.map((job) => (
+                            <div>
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h3 class="text-lg font-bold text-text-primary print:text-base">
+                                        {job.title}
+                                    </h3>
+                                    <span class="text-sm text-text-tertiary print:text-xs whitespace-nowrap ml-4">
+                                        {job.period}
+                                    </span>
+                                </div>
+                                <p class="text-base font-semibold text-text-secondary mb-2 print:text-sm">
+                                    {job.company}
+                                </p>
+                                <ul class="list-disc list-outside ml-5 space-y-1 print:space-y-0.5">
+                                    {job.achievements.map((achievement) => (
+                                        <li class="text-text-secondary text-sm leading-relaxed print:text-xs">
+                                            {achievement}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="mb-8 print:mb-5">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        PROJECTS
+                    </h2>
+                    <div class="space-y-4 print:space-y-3">
+                        {projects.map((project) => (
+                            <div>
+                                <h3 class="text-base font-bold text-text-primary mb-1 print:text-sm">
+                                    {project.url ? (
+                                        <a
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="hover:text-accent-blue transition-colors"
+                                        >
+                                            {project.name}
+                                        </a>
+                                    ) : (
+                                        project.name
+                                    )}
+                                    {project.url && (
+                                        <span class="text-text-tertiary font-normal ml-2 print:ml-1">
+                                            - {project.url.replace('https://', '')}
+                                        </span>
+                                    )}
+                                </h3>
+                                <p class="text-text-secondary text-sm leading-relaxed mb-1 print:text-xs">
+                                    {project.description}
+                                </p>
+                                <p class="text-text-tertiary text-xs">
+                                    {project.tech.join(' • ')}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <!-- Awards -->
+                <section class="mb-8 print:mb-5">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        AWARDS
+                    </h2>
+                    <div class="space-y-4 print:space-y-3">
+                        {awards.map((award) => (
+                            <div>
+                                <h3 class="text-base font-bold text-text-primary mb-1 print:text-sm">
+                                    {award.title} - {award.project}
+                                </h3>
+                                <p class="text-text-secondary text-sm leading-relaxed print:text-xs">
+                                    {award.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="mb-8 print:mb-4">
+                    <h2 class="text-2xl font-bold text-accent-blue mb-4 pb-2 border-b-2 border-accent-blue/30 print:text-xl print:mb-3">
+                        EDUCATION
+                    </h2>
+                    <div class="space-y-3 print:space-y-2">
+                        {education.map((edu) => (
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h3 class="text-base font-bold text-text-primary print:text-sm">
+                                        {edu.school}
+                                        <span class="text-text-secondary font-normal">, {edu.location}</span>
+                                    </h3>
+                                    <p class="text-text-secondary text-sm print:text-xs">
+                                        {edu.degree}
+                                        {edu.detail && (
+                                            <span class="block text-text-tertiary text-xs mt-0.5">{edu.detail}</span>
+                                        )}
+                                    </p>
+                                </div>
+                                <span class="text-sm text-text-tertiary whitespace-nowrap ml-4 print:text-xs">
+                                    {edu.period}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center text-text-tertiary text-sm print:hidden mt-12">
+                <p class="mb-2">
+                    <a href="/" class="text-accent-blue hover:underline">← Back to main site</a>
+                </p>
+                <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+            </div>
+
+        </div>
+    </div>
+</Layout>
+
+<style>
+    @media print {
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        body {
+            background: white !important;
+            color: black !important;
+        }
+
+        /* Hide buttons */
+        button, .btn {
+            display: none !important;
+        }
+
+        /* Optimize colors for print */
+        .text-accent-blue,
+        .border-accent-blue {
+            color: black !important;
+            border-color: black !important;
+        }
+
+        .text-text-primary,
+        .text-text-secondary,
+        .text-text-tertiary {
+            color: black !important;
+        }
+
+        a {
+            color: black !important;
+            text-decoration: none !important;
+        }
+
+        /* Prevent page breaks */
+        section {
+            page-break-inside: avoid;
+        }
+
+        h2, h3 {
+            page-break-after: avoid;
+        }
+    }
+</style>
