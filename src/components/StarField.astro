@@ -50,17 +50,17 @@
     if (layer < 0.7) {
       // Small background stars (70%)
       size = Math.random() * 0.8 + 0.2;
-      baseOpacity = Math.random() * 0.2 + 0.1;
+      baseOpacity = Math.random() * 0.15 + 0.07;
       twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.01 + 0.005;
     } else if (layer < 0.9) {
       // Medium stars (20%)
       size = Math.random() * 1.2 + 0.8;
-      baseOpacity = Math.random() * 0.3 + 0.2;
+      baseOpacity = Math.random() * 0.23 + 0.15;
       twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.015 + 0.008;
     } else {
       // Large prominent stars (10%)
       size = Math.random() * 1.8 + 1.2;
-      baseOpacity = Math.random() * 0.4 + 0.3;
+      baseOpacity = Math.random() * 0.3 + 0.23;
       twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.02 + 0.01;
     }
     
@@ -73,7 +73,7 @@
       size,
       opacity: baseOpacity,
       baseOpacity,
-      maxOpacity: Math.min(baseOpacity + 0.15, 0.4),
+      maxOpacity: Math.min(baseOpacity + 0.12, 0.35),
       twinkleFactor,
       twinkleDirection: Math.random() > 0.5 ? 1 : -1,
       isAccentStar,
