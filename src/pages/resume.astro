@@ -137,7 +137,7 @@ const skills = {
                     <h2 class="text-xl font-bold text-accent-blue mb-3 pb-1 border-b-2 border-accent-blue/30 print:text-base print:mb-2">
                         SUMMARY
                     </h2>
-                    <p class="text-text-secondary leading-relaxed text-sm print:text-xs print:leading-tight">
+                    <p class="text-text-secondary leading-relaxed print:text-xs print:leading-tight">
                         Software developer with 2.5 years of experience specializing in backend development and
                         scalable API architecture using Python, Rust, and Go. Demonstrated expertise in optimizing
                         system performance and reliability through efficient, maintainable code. Currently building
@@ -151,33 +151,33 @@ const skills = {
                         SKILLS
                     </h2>
                     <div class="space-y-2 print:space-y-1">
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Languages:</span>
-                            <span class="text-text-secondary text-xs">
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Languages:</span>
+                            <span class="text-text-secondary text-sm">
                                 {skills.languages.map((lang, i) => (
                                     <span>{lang.name} ({lang.level}){i < skills.languages.length - 1 ? ', ' : ''}</span>
                                 ))}
                             </span>
                         </div>
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Currently Learning:</span>
-                            <span class="text-text-secondary text-xs">{skills.current.join(', ')}</span>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Currently Learning:</span>
+                            <span class="text-text-secondary text-sm">{skills.current.join(', ')}</span>
                         </div>
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Backend/APIs:</span>
-                            <span class="text-text-secondary text-xs">{skills.backend.join(', ')}</span>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Backend/APIs:</span>
+                            <span class="text-text-secondary text-sm">{skills.backend.join(', ')}</span>
                         </div>
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Databases:</span>
-                            <span class="text-text-secondary text-xs">{skills.databases.join(', ')}</span>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Databases:</span>
+                            <span class="text-text-secondary text-sm">{skills.databases.join(', ')}</span>
                         </div>
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Infrastructure:</span>
-                            <span class="text-text-secondary text-xs">{skills.infrastructure.join(', ')}</span>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Infrastructure:</span>
+                            <span class="text-text-secondary text-sm">{skills.infrastructure.join(', ')}</span>
                         </div>
-                        <div class="grid grid-cols-[120px_1fr] gap-2 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-xs">Cloud/DevOps:</span>
-                            <span class="text-text-secondary text-xs">{skills.cloud.join(', ')}, {skills.tools.join(', ')}</span>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Cloud/DevOps:</span>
+                            <span class="text-text-secondary text-sm">{skills.cloud.join(', ')}, {skills.tools.join(', ')}</span>
                         </div>
                     </div>
                 </section>
@@ -201,9 +201,9 @@ const skills = {
                                 <p class="text-sm font-semibold text-text-secondary mb-1 print:text-xs">
                                     {job.company}
                                 </p>
-                                <ul class="list-disc list-outside ml-4 space-y-0.5 print:ml-3">
+                                <ul class="list-disc list-outside ml-5 space-y-1 print:ml-3 print:space-y-0.5">
                                     {job.achievements.map((achievement) => (
-                                        <li class="text-text-secondary text-xs leading-relaxed print:leading-tight">
+                                        <li class="text-text-secondary text-sm leading-relaxed print:text-xs print:leading-tight">
                                             {achievement}
                                         </li>
                                     ))}
@@ -221,7 +221,7 @@ const skills = {
                     <div class="space-y-3 print:space-y-1.5">
                         {projects.map((project) => (
                             <div>
-                                <h3 class="text-sm font-bold text-text-primary mb-0.5 print:text-xs">
+                                <h3 class="text-base font-bold text-text-primary mb-1 print:text-xs print:mb-0.5">
                                     {project.url ? (
                                         <a
                                             href={project.url}
@@ -240,10 +240,10 @@ const skills = {
                                         </span>
                                     )}
                                 </h3>
-                                <p class="text-text-secondary text-xs leading-relaxed mb-0.5 print:leading-tight">
+                                <p class="text-text-secondary text-sm leading-relaxed mb-1 print:text-xs print:mb-0.5 print:leading-tight">
                                     {project.description}
                                 </p>
-                                <p class="text-text-tertiary text-xs">
+                                <p class="text-text-tertiary text-xs print:text-xs">
                                     {project.tech.join(' • ')}
                                 </p>
                             </div>
@@ -259,10 +259,10 @@ const skills = {
                     <div class="space-y-3 print:space-y-1.5">
                         {awards.map((award) => (
                             <div>
-                                <h3 class="text-sm font-bold text-text-primary mb-0.5 print:text-xs">
+                                <h3 class="text-base font-bold text-text-primary mb-1 print:text-xs print:mb-0.5">
                                     {award.title} - {award.project}
                                 </h3>
-                                <p class="text-text-secondary text-xs leading-relaxed print:leading-tight">
+                                <p class="text-text-secondary text-sm leading-relaxed print:text-xs print:leading-tight">
                                     {award.description}
                                 </p>
                             </div>
@@ -279,18 +279,18 @@ const skills = {
                         {education.map((edu) => (
                             <div class="flex justify-between items-start">
                                 <div class="flex-1">
-                                    <h3 class="text-sm font-bold text-text-primary print:text-xs">
+                                    <h3 class="text-base font-bold text-text-primary print:text-xs">
                                         {edu.school}
                                         <span class="text-text-secondary font-normal">, {edu.location}</span>
                                     </h3>
-                                    <p class="text-text-secondary text-xs">
+                                    <p class="text-text-secondary text-sm print:text-xs">
                                         {edu.degree}
                                         {edu.detail && (
                                             <span class="block text-text-tertiary text-xs mt-0.5">{edu.detail}</span>
                                         )}
                                     </p>
                                 </div>
-                                <span class="text-xs text-text-tertiary whitespace-nowrap ml-4">
+                                <span class="text-sm text-text-tertiary whitespace-nowrap ml-4 print:text-xs">
                                     {edu.period}
                                 </span>
                             </div>

@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'src/pages/resume.astro'
+      - 'src/pages/resume-print.astro'
       - '.github/workflows/generate-resume-pdf.yml'
   workflow_dispatch:
 
@@ -48,8 +49,8 @@ jobs:
 
             const page = await browser.newPage();
 
-            // Load the built resume page
-            const resumePath = path.join(__dirname, 'dist', 'resume', 'index.html');
+            // Load the built resume-print page (optimized for PDF, no nav/footer)
+            const resumePath = path.join(__dirname, 'dist', 'resume-print', 'index.html');
             await page.goto(`file://${resumePath}`, {
               waitUntil: 'networkidle0'
             });
