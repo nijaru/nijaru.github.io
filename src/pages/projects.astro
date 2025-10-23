@@ -132,16 +132,78 @@ const syStars = await getStarCount('nijaru', 'sy');
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Production database with learned indexes, achieving ~10x faster queries
-                            on time-series workloads. Multi-table SQL interface with columnar storage,
-                            WAL, and crash recovery.
+                            PostgreSQL-compatible vector database with HNSW + Binary Quantization. Drop-in pgvector
+                            replacement targeting 10x faster queries and 24x better memory efficiency at 10M+ vectors.
+                            Hybrid HTAP architecture with ALEX learned indexes for SQL. Cloud and self-hosting planned.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Database</span>
+                            <span class="body-small text-text-tertiary">Vector Database</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Source-available (EL 2.0)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-2 text-text-primary">
+                            Kombrucha
+                        </h3>
+                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Modern package manager reimagining Homebrew in Rust. Fast, reliable dependency
+                            resolution with parallel downloads and improved caching strategies.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Package Manager</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Open Source (soon)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-2 text-text-primary">
+                            Pacabot
+                        </h3>
+                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            AI-powered trading bot with advanced market analysis and automated strategy
+                            execution. Real-time data processing with risk management controls.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-2 text-text-primary">
+                            Autonomous AI Agents
+                        </h3>
+                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Advanced autonomous agent systems with multi-step reasoning and task execution.
+                            Research and development in agent architectures and coordination patterns.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
                     </div>
                 </div>
@@ -169,33 +231,6 @@ const syStars = await getStarCount('nijaru', 'sy');
                     </div>
                 </div>
 
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://cuelists.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            Cuelists
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern DJ tracklist archive platform - a clean, fast alternative to
-                            1001tracklists. Community-driven platform for discovering and sharing
-                            tracklists from festivals, clubs, and radio shows.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">TypeScript</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Next.js</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Web App</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -356,6 +391,27 @@ const syStars = await getStarCount('nijaru', 'sy');
                             )}
                         </div>
                     </a>
+                </div>
+
+                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-2 text-text-primary">
+                            vllama
+                        </h3>
+                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
+                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                            Ollama-compatible LLM inference server powered by vLLM. High-throughput
+                            model serving with OpenAI-compatible API and efficient batching for
+                            production deployments.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <span class="body-small text-text-tertiary">Python</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">AI/ML</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
