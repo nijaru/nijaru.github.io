@@ -33,12 +33,12 @@ jobs:
       - name: Generate PDF from resume.json
         run: |
           # Generate PDF using JSON Resume with the elegant theme
-          resume export Nicholas_Russo_Resume.pdf --format pdf --theme elegant
+          resume export public/Nicholas_Russo_Resume.pdf --format pdf --theme elegant
 
       - name: Commit PDF to repository
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add Nicholas_Russo_Resume.pdf
+          git add public/Nicholas_Russo_Resume.pdf
           git diff --staged --quiet || git commit -m "chore: auto-update resume PDF"
           git push
