@@ -10,28 +10,52 @@ const keyProjects = [
         url: "https://github.com/omendb",
         description: "PostgreSQL-compatible vector database with HNSW + Binary Quantization targeting 10x faster queries and 24x better memory efficiency than pgvector",
         tech: ["Rust", "Vector Search", "Database Systems"],
-        metrics: "10x performance, 24x memory efficiency vs pgvector"
+        metrics: "10x faster, 24x memory efficiency"
+    },
+    {
+        name: "Pacabot",
+        description: "AI-powered trading bot with advanced market analysis and automated strategy execution",
+        tech: ["Python", "AI/ML", "Finance"],
+        metrics: "Real-time analysis"
     },
     {
         name: "Zenith",
         url: "https://github.com/nijaru/zenith",
         description: "Modern Python web framework with exceptional performance and intuitive developer experience",
         tech: ["Python", "Web Framework", "API Design"],
-        metrics: "9,600+ req/s throughput"
+        metrics: "9,600+ req/s"
     },
     {
         name: "sy",
         url: "https://github.com/nijaru/sy",
         description: "Modern file synchronization tool - rsync reimagined with delta sync and parallel transfers",
         tech: ["Rust", "CLI Tools", "Systems Programming"],
-        metrics: "40-79% faster than rsync on benchmarks"
+        metrics: "40-79% faster than rsync"
     },
     {
         name: "Kombrucha",
         url: "https://github.com/nijaru/kombrucha",
-        description: "Modern package manager reimagining Homebrew with fast dependency resolution and parallel downloads",
-        tech: ["Rust", "Package Management", "Developer Tools"],
-        metrics: "Fast, reliable dependency resolution"
+        description: "Modern package manager reimagining Homebrew with fast dependency resolution",
+        tech: ["Rust", "Package Management"],
+        metrics: "Fast dependency resolution"
+    }
+];
+
+const experience = [
+    {
+        company: "OmniTier Inc.",
+        title: "Software Developer",
+        period: "Current",
+        description: "Backend development and distributed systems"
+    }
+];
+
+const education = [
+    {
+        school: "42 Silicon Valley",
+        degree: "Computer Science",
+        period: "2018-2020",
+        description: "Intensive software engineering program"
     }
 ];
 
@@ -43,9 +67,7 @@ const skills = {
         "API Design",
         "Backend Architecture",
         "Vector Search",
-        "Distributed Systems",
-        "DevOps",
-        "Full-Stack Development"
+        "Distributed Systems"
     ],
     tools: [
         "PostgreSQL",
@@ -57,116 +79,118 @@ const skills = {
         "Cloudflare"
     ]
 };
-
-const currentFocus = [
-    "Building OmenDB - PostgreSQL-compatible vector database with advanced indexing",
-    "AI systems architecture and autonomous coding agents",
-    "High-performance systems programming in Rust",
-    "Machine learning infrastructure and model serving"
-];
 ---
 
 <Layout
     title="Nick Russo - Professional Profile"
-    description="Software developer specializing in AI systems, databases, and backend infrastructure. Building high-performance tools for modern applications."
+    description="Software developer specializing in backend development, distributed systems, AI infrastructure, and high-performance databases."
     ogType="profile"
 >
     <!-- Professional Profile Container -->
-    <div class="min-h-screen py-12">
+    <div class="py-8 print:py-4">
         <div class="container mx-auto max-w-4xl px-6">
 
             <!-- Header/Hero Section -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <div class="flex items-start justify-between gap-6">
                         <div class="flex-1">
-                            <h1 class="text-4xl font-bold text-text-primary mb-2">
+                            <h1 class="text-4xl font-bold text-text-primary mb-2 print:text-3xl">
                                 Nick Russo
                             </h1>
-                            <p class="text-xl text-accent-blue mb-3">
-                                Software Developer | AI Systems Engineer | Backend Architect
+                            <p class="text-xl text-accent-blue mb-2 print:text-lg print:text-text-primary">
+                                Software Developer | Backend & Distributed Systems
                             </p>
-                            <p class="body-normal text-text-tertiary mb-4">
+                            <p class="body-normal text-text-tertiary mb-3 print:text-sm">
                                 San Francisco Bay Area
                             </p>
-                            <div class="flex flex-wrap gap-4 mb-6">
-                                <a href="mailto:nijaru7@gmail.com" class="text-text-secondary hover:text-accent-blue transition-colors flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
+                            <div class="flex flex-wrap gap-3 text-sm print:text-xs">
+                                <a href="mailto:nijaru7@gmail.com" class="text-text-secondary hover:text-accent-blue transition-colors print:text-text-primary">
                                     nijaru7@gmail.com
                                 </a>
-                                <a href="https://nijaru.dev" class="text-text-secondary hover:text-accent-blue transition-colors flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                                    </svg>
-                                    nijaru.dev
+                                <span class="text-text-tertiary">•</span>
+                                <a href="https://nijaru.com" class="text-text-secondary hover:text-accent-blue transition-colors print:text-text-primary">
+                                    nijaru.com
                                 </a>
-                                <a href="https://github.com/nijaru" class="text-text-secondary hover:text-accent-blue transition-colors flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                                    </svg>
+                                <span class="text-text-tertiary">•</span>
+                                <a href="https://github.com/nijaru" class="text-text-secondary hover:text-accent-blue transition-colors print:text-text-primary">
                                     github.com/nijaru
                                 </a>
                             </div>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="/resume.pdf" class="btn btn-primary" download>
-                                Download Resume
-                            </a>
-                            <button onclick="window.print()" class="btn btn-secondary">
-                                Print Profile
-                            </button>
-                        </div>
+                        <button onclick="window.print()" class="btn btn-primary print:hidden whitespace-nowrap">
+                            Download Resume
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Professional Summary -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6">Professional Summary</h2>
-                    <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                        Software developer with extensive experience building AI systems, high-performance databases,
-                        and scalable backend infrastructure. Specializing in systems programming, vector search, and
-                        machine learning infrastructure with a focus on performance optimization and developer experience.
-                    </p>
-                    <p class="body-normal text-text-secondary leading-relaxed">
-                        Strong track record of building production-ready tools and frameworks, from low-level database
-                        internals to full-stack applications. Passionate about making complex systems simple, fast,
-                        and accessible to developers.
+            <!-- About -->
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <h2 class="text-2xl font-bold text-text-primary mb-4 print:text-xl">About</h2>
+                    <p class="body-normal text-text-secondary leading-relaxed print:text-sm">
+                        Software developer specializing in backend development and distributed systems.
+                        I build AI infrastructure, high-performance databases, and developer tools from
+                        low-level internals to full-stack applications. Experience with production APIs,
+                        vector search systems, and machine learning infrastructure at scale.
                     </p>
                 </div>
             </section>
 
+            <!-- Experience -->
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <h2 class="text-2xl font-bold text-text-primary mb-4 print:text-xl">Experience</h2>
+                    <div class="space-y-4">
+                        {experience.map((job) => (
+                            <div class="border-b border-white/5 pb-4 last:border-0 last:pb-0 print:border-0">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-text-primary print:text-base">{job.title}</h3>
+                                        <p class="text-accent-blue print:text-text-primary">{job.company}</p>
+                                    </div>
+                                    <span class="text-sm text-text-tertiary whitespace-nowrap print:text-xs">{job.period}</span>
+                                </div>
+                                <p class="body-normal text-text-secondary print:text-sm">{job.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <!-- Key Projects -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6">Key Projects</h2>
-                    <div class="space-y-6">
-                        {keyProjects.map((project, index) => (
-                            <div class={index < keyProjects.length - 1 ? "border-b border-white/5 pb-6" : ""}>
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <h2 class="text-2xl font-bold text-text-primary mb-4 print:text-xl">Key Projects</h2>
+                    <div class="space-y-4 print:space-y-2">
+                        {keyProjects.map((project) => (
+                            <div class="border-b border-white/5 pb-4 last:border-0 last:pb-0 print:border-0 print:pb-2">
                                 <div class="flex items-start justify-between mb-2">
-                                    <h3 class="text-xl font-semibold text-text-primary">
-                                        <a
-                                            href={project.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="hover:text-accent-blue transition-colors"
-                                        >
-                                            {project.name}
-                                        </a>
+                                    <h3 class="text-lg font-semibold text-text-primary print:text-base">
+                                        {project.url ? (
+                                            <a
+                                                href={project.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="hover:text-accent-blue transition-colors"
+                                            >
+                                                {project.name}
+                                            </a>
+                                        ) : (
+                                            project.name
+                                        )}
                                     </h3>
-                                    <span class="body-small text-accent-blue font-medium">
+                                    <span class="text-sm text-accent-blue font-medium whitespace-nowrap ml-4 print:text-xs print:text-text-tertiary">
                                         {project.metrics}
                                     </span>
                                 </div>
-                                <p class="body-normal text-text-secondary mb-3 leading-relaxed">
+                                <p class="body-normal text-text-secondary mb-2 leading-relaxed print:text-sm print:mb-1">
                                     {project.description}
                                 </p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 print:gap-1">
                                     {project.tech.map((tech) => (
-                                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-text-tertiary">
+                                        <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-text-tertiary print:border-0 print:bg-transparent print:px-0">
                                             {tech}
                                         </span>
                                     ))}
@@ -174,127 +198,78 @@ const currentFocus = [
                             </div>
                         ))}
                     </div>
-                    <div class="mt-6 text-center">
-                        <a href="/projects" class="text-accent-blue hover:underline">
-                            View all projects →
-                        </a>
-                    </div>
                 </div>
             </section>
 
             <!-- Technical Skills -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6">Technical Skills</h2>
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <h2 class="text-2xl font-bold text-text-primary mb-4 print:text-xl">Technical Skills</h2>
 
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-text-primary mb-3">Primary Languages</h3>
-                        <div class="flex flex-wrap gap-2">
-                            {skills.primary.map((skill) => (
-                                <span class="px-4 py-2 bg-accent-blue/10 border border-accent-blue/30 rounded-lg text-accent-blue font-medium">
-                                    {skill}
-                                </span>
-                            ))}
+                    <div class="grid md:grid-cols-3 gap-4 print:gap-2">
+                        <div>
+                            <h3 class="text-sm font-semibold text-text-primary mb-2 print:text-xs">Languages</h3>
+                            <div class="flex flex-wrap gap-2 print:gap-1">
+                                {skills.primary.map((skill) => (
+                                    <span class="px-3 py-1 bg-accent-blue/10 border border-accent-blue/30 rounded text-sm text-accent-blue print:text-xs print:border-0 print:bg-transparent print:px-0 print:text-text-primary">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-text-primary mb-3">Areas of Expertise</h3>
-                        <div class="flex flex-wrap gap-2">
-                            {skills.areas.map((skill) => (
-                                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-text-secondary">
-                                    {skill}
-                                </span>
-                            ))}
+                        <div>
+                            <h3 class="text-sm font-semibold text-text-primary mb-2 print:text-xs">Expertise</h3>
+                            <div class="flex flex-wrap gap-2 print:gap-1">
+                                {skills.areas.map((skill) => (
+                                    <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-text-secondary print:border-0 print:bg-transparent print:px-0">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h3 class="text-lg font-semibold text-text-primary mb-3">Tools & Technologies</h3>
-                        <div class="flex flex-wrap gap-2">
-                            {skills.tools.map((skill) => (
-                                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-text-secondary">
-                                    {skill}
-                                </span>
-                            ))}
+                        <div>
+                            <h3 class="text-sm font-semibold text-text-primary mb-2 print:text-xs">Tools</h3>
+                            <div class="flex flex-wrap gap-2 print:gap-1">
+                                {skills.tools.map((skill) => (
+                                    <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-text-secondary print:border-0 print:bg-transparent print:px-0">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Current Focus -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6">Current Focus</h2>
-                    <ul class="space-y-3">
-                        {currentFocus.map((item) => (
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                                <span class="body-normal text-text-secondary">{item}</span>
-                            </li>
+            <!-- Education -->
+            <section class="mb-8 print:mb-4">
+                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-6 print:border-0 print:p-0">
+                    <h2 class="text-2xl font-bold text-text-primary mb-4 print:text-xl">Education</h2>
+                    <div class="space-y-4">
+                        {education.map((edu) => (
+                            <div class="border-b border-white/5 pb-4 last:border-0 last:pb-0 print:border-0">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-text-primary print:text-base">{edu.school}</h3>
+                                        <p class="text-accent-blue print:text-text-primary">{edu.degree}</p>
+                                    </div>
+                                    <span class="text-sm text-text-tertiary whitespace-nowrap print:text-xs">{edu.period}</span>
+                                </div>
+                                <p class="body-normal text-text-secondary print:text-sm">{edu.description}</p>
+                            </div>
                         ))}
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Experience Highlights -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6">Experience Highlights</h2>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            <span class="body-normal text-text-secondary">Built production APIs and backend systems handling high-volume traffic</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            <span class="body-normal text-text-secondary">Developed vector database with advanced indexing algorithms and query optimization</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            <span class="body-normal text-text-secondary">Created open-source developer tools and frameworks used by the community</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            <span class="body-normal text-text-secondary">Implemented AI/ML infrastructure for model training and inference at scale</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            <span class="body-normal text-text-secondary">Deep expertise in performance optimization and systems-level programming</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Social Links & Contact -->
-            <section class="mb-12">
-                <div class="bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-lg p-8">
-                    <h2 class="heading-2 mb-6 text-center">Connect With Me</h2>
-                    <div class="flex justify-center">
-                        <SocialLinks />
                     </div>
                 </div>
             </section>
 
             <!-- Footer Note -->
-            <div class="text-center text-text-tertiary body-small">
-                <p class="mb-2">Professional profile for Nick Russo</p>
-                <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
-                <p class="mt-4">
+            <div class="text-center text-text-tertiary text-sm print:hidden mt-12">
+                <p class="mb-2">
                     <a href="/" class="text-accent-blue hover:underline">← Back to main site</a>
                 </p>
+                <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
             </div>
 
         </div>
@@ -303,17 +278,59 @@ const currentFocus = [
 
 <style>
     @media print {
-        /* Optimize for printing */
-        .btn, button {
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        body {
+            background: white !important;
+            color: black !important;
+        }
+
+        /* Hide all buttons and interactive elements */
+        button, .btn {
             display: none !important;
         }
 
+        /* Remove backgrounds and borders */
+        .bg-white\/\[0\.02\],
+        .backdrop-blur-sm,
+        .border {
+            background: transparent !important;
+            border: none !important;
+            backdrop-filter: none !important;
+        }
+
+        /* Compress spacing */
         section {
             page-break-inside: avoid;
+            margin-bottom: 1rem !important;
         }
 
         h2 {
             page-break-after: avoid;
+            margin-bottom: 0.5rem !important;
+        }
+
+        /* Optimize colors for print */
+        .text-accent-blue,
+        .text-text-primary,
+        .text-text-secondary,
+        .text-text-tertiary {
+            color: black !important;
+        }
+
+        /* Remove tech skill pills background */
+        span[class*="px-"] {
+            padding: 0 !important;
+            background: transparent !important;
+            border: none !important;
+        }
+
+        /* Ensure single page */
+        .container {
+            max-width: 100% !important;
         }
     }
 </style>
