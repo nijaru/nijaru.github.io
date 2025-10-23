@@ -31,6 +31,7 @@ async function getStarCount(owner: string, repo: string): Promise<number> {
 const zenithStars = await getStarCount('nijaru', 'zenith');
 const ytTextStars = await getStarCount('nijaru', 'yt-text');
 const syStars = await getStarCount('nijaru', 'sy');
+const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
 ---
 
 <Layout 
@@ -231,8 +232,13 @@ const syStars = await getStarCount('nijaru', 'sy');
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
+                    <a
+                        href="https://github.com/nijaru/kombrucha"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item group"
+                    >
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             Kombrucha
                         </h3>
                         <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
@@ -245,9 +251,15 @@ const syStars = await getStarCount('nijaru', 'sy');
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Package Manager</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
+                            <span class="body-small text-text-tertiary">Open Source</span>
+                            {kombruchaStars > 0 && (
+                                <>
+                                    <span class="body-small text-text-tertiary">•</span>
+                                    <span class="body-small text-text-tertiary">★ {kombruchaStars}</span>
+                                </>
+                            )}
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
