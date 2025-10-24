@@ -8,9 +8,9 @@ const experience = [
         title: "Software Engineer",
         period: "January 2021 - May 2023",
         achievements: [
-            "Developed regression testing system using Go and Python, significantly improving code stability",
-            "Optimized Python script performance by ~90%, reducing runtime from 45 minutes to 5 minutes by minimizing system calls",
-            "Enhanced React frontend with new features using gRPC API and resolved critical bugs"
+            "Optimized critical Python backend service by ~90%, reducing runtime from 45 minutes to 5 minutes through system call reduction and algorithmic improvements",
+            "Built comprehensive regression testing infrastructure using Go and Python, improving code stability across distributed services",
+            "Developed gRPC API integrations and enhanced React frontend features, maintaining full-stack service reliability"
         ]
     }
 ];
@@ -34,7 +34,7 @@ const education = [
         school: "Dev Bootcamp",
         location: "San Francisco, CA",
         degree: "Web Development",
-        period: "Fall 2016 - Spring 2017"
+        period: "March 2016 - May 2016"
     }
 ];
 
@@ -86,16 +86,16 @@ const skills = {
         { name: "Python", level: "Advanced" },
         { name: "Rust", level: "Advanced" },
         { name: "Go", level: "Advanced" },
-        { name: "TypeScript", level: "Intermediate" },
         { name: "C", level: "Intermediate" },
-        { name: "C++", level: "Intermediate" }
+        { name: "C++", level: "Intermediate" },
+        { name: "JavaScript", level: "Beginner" },
+        { name: "Mojo", level: "Beginner" }
     ],
-    current: ["Mojo"],
-    backend: ["FastAPI", "Flask", "Django", "gRPC", "Ruby on Rails"],
-    databases: ["PostgreSQL", "SQLite", "MySQL", "Redis", "Vector Databases"],
-    infrastructure: ["Docker", "Linux (Gentoo, CoreOS, Alpine, Fedora, RHEL, Ubuntu)", "Kubernetes"],
-    cloud: ["AWS", "GCP", "DigitalOcean", "Cloudflare"],
-    tools: ["Git", "GitHub Actions", "Zed", "Neovim", "VS Code"]
+    backend: ["FastAPI", "Flask", "Django", "Zenith", "Ruby on Rails", "gRPC"],
+    databases: ["PostgreSQL", "SQLite", "MySQL", "Redis"],
+    infrastructure: ["Docker", "Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo)", "Kubernetes (Beginner)"],
+    cloudPlatforms: ["AWS", "GCP", "DigitalOcean", "Cloudflare"],
+    tools: ["Git", "GitHub Actions", "Zed", "Neovim", "mise", "uv", "Ghostty", "Fish", "ripgrep", "fzf", "fd", "Tailscale"]
 };
 ---
 
@@ -115,7 +115,7 @@ const skills = {
                         Nicholas Russo
                     </h1>
                     <div class="flex flex-wrap justify-center gap-2 text-sm text-text-secondary mb-4 print:text-xs print:mb-2 print:gap-1">
-                        <span>nijaru7[at]gmail.com</span>
+                        <span>nijaru7@gmail.com</span>
                         <span class="text-text-tertiary">•</span>
                         <a href="https://github.com/nijaru" class="hover:text-accent-blue transition-colors print:text-text-primary">
                             github.com/nijaru
@@ -138,10 +138,7 @@ const skills = {
                         SUMMARY
                     </h2>
                     <p class="text-text-secondary leading-relaxed print:text-xs print:leading-tight">
-                        Software developer with 2.5 years of experience specializing in backend development and
-                        scalable API architecture using Python, Rust, and Go. Demonstrated expertise in optimizing
-                        system performance and reliability through efficient, maintainable code. Currently building
-                        AI/ML infrastructure with focus on vector databases and LLM engineering.
+                        Backend engineer with 2.5 years of experience building and optimizing distributed systems. Work includes performance optimization, API development, database systems, and testing infrastructure. Open source projects focus on systems programming and developer tooling.
                     </p>
                 </section>
 
@@ -160,10 +157,6 @@ const skills = {
                             </span>
                         </div>
                         <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-sm">Currently Learning:</span>
-                            <span class="text-text-secondary text-sm">{skills.current.join(', ')}</span>
-                        </div>
-                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
                             <span class="font-semibold text-text-primary text-sm">Backend/APIs:</span>
                             <span class="text-text-secondary text-sm">{skills.backend.join(', ')}</span>
                         </div>
@@ -176,8 +169,12 @@ const skills = {
                             <span class="text-text-secondary text-sm">{skills.infrastructure.join(', ')}</span>
                         </div>
                         <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
-                            <span class="font-semibold text-text-primary text-sm">Cloud/DevOps:</span>
-                            <span class="text-text-secondary text-sm">{skills.cloud.join(', ')}, {skills.tools.join(', ')}</span>
+                            <span class="font-semibold text-text-primary text-sm">Cloud Platforms:</span>
+                            <span class="text-text-secondary text-sm">{skills.cloudPlatforms.join(', ')}</span>
+                        </div>
+                        <div class="grid grid-cols-[140px_1fr] gap-3 items-start print:gap-1">
+                            <span class="font-semibold text-text-primary text-sm">Tools:</span>
+                            <span class="text-text-secondary text-sm">{skills.tools.join(', ')}</span>
                         </div>
                     </div>
                 </section>
