@@ -1,0 +1,194 @@
+%-------------------------
+% Resume in LaTeX
+% Based on Nicholas Russo's Pages resume layout
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Inter}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% No extra margin adjustments needed with geometry package
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Spacing constants for uniformity
+\newcommand{\sectionSpaceAbove}{-12pt}
+\newcommand{\sectionSpaceBelow}{-6pt}
+\newcommand{\afterListSpace}{-3pt}
+\newcommand{\afterHeadingSpace}{-6pt}
+\newcommand{\betweenItemsSpace}{-12pt}
+\newcommand{\nestedListTopSpace}{4pt}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{\sectionSpaceAbove}\scshape\raggedright\large\color{blue}
+}{}{0em}{}[\color{blue}\titlerule \vspace{\sectionSpaceBelow}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{\afterHeadingSpace}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{\afterHeadingSpace}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=\betweenItemsSpace]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{\afterListSpace}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=\nestedListTopSpace]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{\afterListSpace}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\LARGE \scshape Nicholas Russo} \\ \vspace{2pt}
+    \small nijaru7[at]gmail.com $|$
+    \href{https://github.com/nijaru}{github.com/nijaru} $|$
+    \href{https://nijaru.com}{nijaru.com}
+\end{center}
+\vspace{-8pt}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\setlength{\baselineskip}{14pt}
+Backend engineer with 2.5 years of experience building and optimizing distributed systems. Work includes performance optimization, API development, database systems, and testing infrastructure. Open source projects focus on systems programming and developer tooling.
+\setlength{\baselineskip}{12pt}
+\vspace{-3pt}
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python (Advanced), Rust (Advanced), Go (Advanced), C (Intermediate), C++ (Intermediate), JavaScript (Beginner), Mojo (Beginner)} \\[2pt]
+     \textbf{Backend/APIs}{: FastAPI, Flask, Django, Zenith, Ruby on Rails, gRPC} \\[2pt]
+     \textbf{Databases}{: PostgreSQL, SQLite, MySQL, Redis} \\[2pt]
+     \textbf{Infrastructure}{: Docker, Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo), Kubernetes (Beginner)} \\[2pt]
+     \textbf{Cloud Platforms}{: AWS, GCP, DigitalOcean, Cloudflare} \\[2pt]
+     \textbf{Tools}{: Git, GitHub Actions, Zed, Neovim, mise, uv, Ghostty, Fish, ripgrep, fzf, fd, Tailscale}
+    }}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer}{January 2021 -- May 2023}
+      {Omnitier, Inc.}{}
+      \resumeItemListStart
+        \resumeItem{Optimized critical Python backend service by \textasciitilde90\%, reducing runtime from 45 minutes to 5 minutes through system call reduction and algorithmic improvements}
+        \resumeItem{Built comprehensive regression testing infrastructure using Go and Python, improving code stability across distributed services}
+        \resumeItem{Developed gRPC API integrations and enhanced React frontend features, maintaining full-stack service reliability}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{OmenDB} $|$ \href{https://github.com/omendb}{\underline{github.com/omendb}} $|$ \emph{Rust, Vector Database, Database Systems}}{}
+          \resumeItemListStart
+            \resumeItem{PostgreSQL-compatible vector database implementing HNSW indexing and binary quantization. Drop-in pgvector replacement optimized for memory efficiency and query performance at scale}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Zenith} $|$ \href{https://github.com/nijaru/zenith}{\underline{github.com/nijaru/zenith}} $|$ \emph{Python, Web Framework, API Design}}{}
+          \resumeItemListStart
+            \resumeItem{Python web framework with chainable query APIs, zero-config setup, and async request handling. Built for developer experience and production performance}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{sy} $|$ \href{https://github.com/nijaru/sy}{\underline{github.com/nijaru/sy}} $|$ \emph{Rust, CLI Tools, Systems Programming}}{}
+          \resumeItemListStart
+            \resumeItem{File synchronization tool with delta sync, parallel transfers, and streaming algorithms. Modern alternative to rsync built in Rust}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Kombrucha} $|$ \href{https://github.com/nijaru/kombrucha}{\underline{github.com/nijaru/kombrucha}} $|$ \emph{Rust, Package Management, Developer Tools}}{}
+          \resumeItemListStart
+            \resumeItem{Package manager with parallel downloads, dependency resolution, and improved caching. Homebrew alternative focused on speed and reliability}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Pacabot} $|$ \emph{Python, AI/ML, Finance}}{}
+          \resumeItemListStart
+            \resumeItem{Trading bot with market analysis, automated strategy execution, and risk management. Real-time data processing for algorithmic trading}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Awards}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{2nd Place \& Ingenico Winner, Money 20/20 Las Vegas 2016} $|$ \emph{Team Kairos}}{}
+          \resumeItemListStart
+            \resumeItem{Developed cross-terminal payment application with REST API for business partnerships. Built with Go and PostgreSQL, deployed on CoreOS}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {42 Silicon Valley}{2018 -- 2020}
+      {Computer Science}{Fremont, CA}
+    \resumeSubheading
+      {Las Positas College}{2014 -- 2015, 2016 -- 2018}
+      {Computer Science}{Livermore, CA}
+      \resumeItemListStart
+        \resumeItem{Computer Science Club President 2016 -- 2017}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Dev Bootcamp}{March 2016 -- May 2016}
+      {Web Development}{San Francisco, CA}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
