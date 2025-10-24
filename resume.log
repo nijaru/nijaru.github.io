@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  24 OCT 2025 00:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  24 OCT 2025 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,54 +500,54 @@ LaTeX Font Warning: Font shape `TU/Inter(0)/m/sc' undefined
 (Font)              using `TU/Inter(0)/m/n' instead on input line 96.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 121.
+(Font)              <7> on input line 124.
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 121--122
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 124--125
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 135--136
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 138--139
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 141--142
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 144--145
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 147--148
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 150--151
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 153--154
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 156--157
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 159--160
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 162--163
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 170--171
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 173--174
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 181--184
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 184--187
 [] 
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 184--185
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 187--188
 []  
  []
 
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 190--191
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 193--194
 []  
  []
 
@@ -574,6 +574,6 @@ Here is how much of TeX's memory you used:
  36604 multiletter control sequences out of 15000+600000
  561734 words of font info for 71 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 79i,11n,93p,298b,345s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,93p,302b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on resume.pdf (1 page).
