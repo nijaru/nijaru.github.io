@@ -8,7 +8,7 @@ const experience = [
         title: "Software Engineer",
         period: "January 2021 - May 2023",
         achievements: [
-            "Optimized critical Python backend service by ~90%, reducing runtime from 45 minutes to 5 minutes through system call reduction and algorithmic improvements",
+            "Optimized critical Python backend service by ~90%, reducing runtime from 45 minutes to 5 minutes by migrating to os.scandir() API (reduced system calls) and Path objects for efficient filesystem traversal",
             "Built comprehensive regression testing infrastructure using Go and Python, improving code stability across distributed services",
             "Developed gRPC API integrations and enhanced React frontend features, maintaining full-stack service reliability"
         ]
@@ -43,7 +43,7 @@ const projects = [
     {
         name: "OmenDB",
         url: "https://github.com/omendb",
-        description: "PostgreSQL-compatible vector database implementing HNSW indexing and binary quantization. Drop-in pgvector replacement optimized for memory efficiency and query performance at scale",
+        description: "PostgreSQL-compatible vector database in Rust with HNSW indexing and binary quantization. Implementing hybrid HTAP architecture with ALEX learned indexes for SQL. Targeting 10x faster queries and 24x better memory efficiency than pgvector at 10M+ vectors",
         tech: ["Rust", "Vector Database", "Database Systems"]
     },
     {
@@ -55,13 +55,13 @@ const projects = [
     {
         name: "sy",
         url: "https://github.com/nijaru/sy",
-        description: "File synchronization tool with delta sync, parallel transfers, and streaming algorithms. Modern alternative to rsync built in Rust",
+        description: "File synchronization tool implementing rsync algorithm with TRUE O(1) rolling hash (2ns/op), Adler-32 + xxHash3 checksums. Streaming delta sync with constant 256KB memory, adaptive block sizing. 2-11x faster than rsync",
         tech: ["Rust", "CLI Tools", "Systems Programming"]
     },
     {
         name: "Kombrucha",
         url: "https://github.com/nijaru/kombrucha",
-        description: "Package manager with parallel downloads, dependency resolution, and improved caching. Homebrew alternative focused on speed and reliability",
+        description: "Homebrew-compatible package manager with fully parallelized API operations, breadth-first dependency resolution, and in-memory LRU caching (1000 formulae + 500 casks). 5.5x faster for upgrade operations",
         tech: ["Rust", "Package Management", "Developer Tools"]
     },
     {
