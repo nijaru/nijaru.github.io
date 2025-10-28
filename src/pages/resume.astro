@@ -43,7 +43,7 @@ const projects = [
     {
         name: "OmenDB",
         url: "https://github.com/omendb",
-        description: "PostgreSQL-compatible vector database in Rust with HNSW indexing and binary quantization. Implementing hybrid HTAP architecture with ALEX learned indexes for SQL. Targeting 10x faster queries and 24x better memory efficiency than pgvector at 10M+ vectors",
+        description: "PostgreSQL-compatible vector database in Rust implementing HNSW indexing, binary quantization, and hybrid HTAP architecture with ALEX learned indexes for SQL",
         tech: ["Rust", "Vector Database", "Database Systems"]
     },
     {
@@ -55,13 +55,13 @@ const projects = [
     {
         name: "sy",
         url: "https://github.com/nijaru/sy",
-        description: "File synchronization tool implementing rsync algorithm with TRUE O(1) rolling hash (2ns/op), Adler-32 + xxHash3 checksums. Streaming delta sync with constant 256KB memory, adaptive block sizing. 2-11x faster than rsync",
+        description: "File synchronization tool in Rust implementing delta sync with streaming architecture. 2-11x faster than rsync through parallel transfers and optimization",
         tech: ["Rust", "CLI Tools", "Systems Programming"]
     },
     {
         name: "Kombrucha",
         url: "https://github.com/nijaru/kombrucha",
-        description: "Homebrew-compatible package manager with fully parallelized API operations, breadth-first dependency resolution, and in-memory LRU caching (1000 formulae + 500 casks). 5.5x faster for upgrade operations",
+        description: "Homebrew-compatible package manager with fully parallelized API operations and in-memory LRU caching. 5.5x faster for upgrade operations",
         tech: ["Rust", "Package Management", "Developer Tools"]
     },
     {
