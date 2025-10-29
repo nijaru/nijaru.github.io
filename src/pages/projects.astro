@@ -133,9 +133,8 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            PostgreSQL-compatible vector database with HNSW + Binary Quantization. Drop-in pgvector
-                            replacement targeting 10x faster queries and 24x better memory efficiency at 10M+ vectors.
-                            Hybrid HTAP architecture with ALEX learned indexes for SQL. Cloud and self-hosting planned.
+                            PostgreSQL-compatible vector database in Rust implementing HNSW indexing, binary quantization,
+                            and hybrid HTAP architecture with ALEX learned indexes for SQL. Cloud and self-hosting planned.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>
@@ -286,35 +285,20 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
+                    <a
+                        href="https://github.com/nijaru/vllama"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="clickable-item group"
+                    >
+                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             vllama
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Ollama-compatible LLM inference server powered by vLLM. High-throughput
-                            model serving with OpenAI-compatible API and efficient batching for
-                            production deployments.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source (soon)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            Autonomous AI Coding Agents
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Autonomous systems for code generation and software development tasks.
-                            Research and development in agent architectures and workflows.
+                            Ollama-compatible LLM inference server powered by vLLM. Proven 29.95x faster than
+                            Ollama for concurrent requests through PagedAttention and continuous batching.
+                            High-throughput model serving for Linux + NVIDIA GPUs.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Python</span>
@@ -323,27 +307,11 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">AI/ML</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
+                            <span class="body-small text-text-tertiary">Open Source</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="divider"></div>
-
-    <!-- Other Projects -->
-    <section class="section">
-        <div class="container container-sm">
-            <div class="text-center mb-12">
-                <h2 class="heading-2">Other Projects</h2>
-                <p class="body-normal text-text-secondary">
-                    Additional work and experiments
-                </p>
-            </div>
-
-            <div class="space-y-8">
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://github.com/nijaru/aircher"
@@ -370,6 +338,23 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                     </a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Other Projects -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="text-center mb-12">
+                <h2 class="heading-2">Other Projects</h2>
+                <p class="body-normal text-text-secondary">
+                    Additional work and experiments
+                </p>
+            </div>
+
+            <div class="space-y-8">
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <a
                         href="https://alttextapi.com"
