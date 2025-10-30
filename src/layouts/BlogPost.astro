@@ -119,39 +119,50 @@ const readingTime = calculateReadingTime(post.body);
     {(prevPost || nextPost) && (
         <section class="section-sm">
             <div class="container container-md">
-                <div class="grid gap-6 md:grid-cols-2">
-                    {prevPost ? (
+                <div class="flex flex-col gap-6">
+                    {prevPost && (
                         <a
                             href={`/blog/${prevPost.slug}`}
-                            class="glass-card p-6 hover:border-color-border-default transition-all group"
+                            class="glass-card p-6 hover:border-color-border-default transition-all group flex items-center gap-6"
                         >
-                            <div class="body-small text-text-tertiary mb-2">← Previous Post</div>
-                            <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
-                                {prevPost.data.title}
-                            </h3>
-                            <p class="body-small text-text-secondary line-clamp-2">
-                                {prevPost.data.description}
-                            </p>
+                            <div class="flex-shrink-0 text-text-tertiary group-hover:text-accent-primary transition-colors">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="body-small text-text-tertiary mb-2">Previous Post</div>
+                                <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
+                                    {prevPost.data.title}
+                                </h3>
+                                <p class="body-small text-text-secondary line-clamp-2">
+                                    {prevPost.data.description}
+                                </p>
+                            </div>
                         </a>
-                    ) : (
-                        <div></div>
                     )}
 
-                    {nextPost ? (
+                    {nextPost && (
                         <a
                             href={`/blog/${nextPost.slug}`}
-                            class="glass-card p-6 hover:border-color-border-default transition-all group text-right"
+                            class="glass-card p-6 hover:border-color-border-default transition-all group flex items-center gap-6"
                         >
-                            <div class="body-small text-text-tertiary mb-2">Next Post →</div>
-                            <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
-                                {nextPost.data.title}
-                            </h3>
-                            <p class="body-small text-text-secondary line-clamp-2">
-                                {nextPost.data.description}
-                            </p>
+                            <div class="flex-shrink-0 w-[40px]"></div>
+                            <div class="flex-1 min-w-0">
+                                <div class="body-small text-text-tertiary mb-2">Next Post</div>
+                                <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
+                                    {nextPost.data.title}
+                                </h3>
+                                <p class="body-small text-text-secondary line-clamp-2">
+                                    {nextPost.data.description}
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0 text-text-tertiary group-hover:text-accent-primary transition-colors">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
                         </a>
-                    ) : (
-                        <div></div>
                     )}
                 </div>
             </div>

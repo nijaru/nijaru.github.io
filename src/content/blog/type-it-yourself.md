@@ -1,55 +1,41 @@
 ---
-title: "Type It Yourself"
+title: "Presence"
 pubDate: 2025-07-28T10:00:00
-description: "Why I still type AI-suggested code by hand."
+description: "AI writes code faster than I ever could. The tradeoff is feeling disconnected from what it's building."
 author: "Nick Russo"
-tags: ["AI", "Development", "Productivity", "Learning"]
+tags: ["AI", "Development", "Productivity"]
 ---
 
-AI coding tools promise speed. But there's a hidden cost.
+AI writes code faster than I can. Not just a little faster - dramatically faster. Claude Code can scaffold entire features, refactor complex systems, and implement APIs in minutes instead of hours.
 
-Watch developers work with AI. They let it write code while they observe. It looks productive. It feels effortless.
+This velocity enables building substantial projects in weeks instead of months. The speed is real, the possibilities are significant.
 
-But something's not right.
+But there's a tradeoff I've noticed: I feel less present in what's actually happening.
 
-## The Problem
+## Being There
 
-Claude Code impressed me. Tell it what you want, it modifies your files. Cursor, Windsurf, Gemini - they all promise the same thing: code faster by coding less.
+When Claude writes the code directly, I'm reviewing instead of building. I read through the changes, verify they look right, run tests, merge. It works. The code ships. The features function.
 
-It works. For trivial tasks. But watch what happens to your brain.
+But I don't have the same mental model I'd have if I'd written it myself. The edge cases aren't as obvious. The design decisions aren't as internalized. When something breaks, I have to rebuild context about code I approved but didn't write.
 
-When AI writes code, you lose context. Not the AI's context - yours. You stop understanding your codebase. You stop learning patterns. You stop growing as a developer.
+This isn't necessarily bad. It's just different. Like the difference between driving somewhere and being a passenger - you get to the same destination, but your sense of the route differs.
 
-You spend all your time giving the AI context. You never build your own.
+## When It Matters
 
-## A Better Way
+For straightforward implementation - API endpoints, database models, test boilerplate - presence doesn't matter much. The patterns are standard. The tradeoffs are well-understood. Let AI handle it.
 
-I use Zed with Claude. I add files to context manually. The AI suggests code. I type it myself.
+For complex logic or novel approaches, presence becomes significant. When I'm implementing something new or solving a non-standard problem, I want to be in the details. Not because typing is inherently better, but because that's where understanding develops.
 
-Yes, it's slower. That's the point.
+I've started using AI differently based on complexity. Simple tasks: let it write. Complex problems: have it suggest approaches and generate pieces, but I write the core logic myself. Not for purity, but because I need to understand what I'm building.
 
-By typing the code, I understand every line, spot potential issues, learn new patterns, and maintain my mental model. The AI guides. I build.
+## The Actual Tradeoff
 
-AI is incredible at explaining unfamiliar code, suggesting approaches, finding edge cases, and remembering syntax. Use it for those things. Don't use it to avoid thinking.
+The honest assessment: AI-generated code means I ship more but understand less of what I ship. For some projects, that's fine. For others, it's a problem.
 
-I'm not saying abandon AI tools. I use them daily. But there's a difference between AI writing while you watch, and AI suggesting while you implement.
+When I need to debug something deep in the system, the lack of presence shows. When I need to extend functionality in unexpected ways, it matters. When I'm trying to optimize performance, it becomes friction.
 
-One makes you faster today. The other makes you better forever.
+This is the real exchange. Incredible speed and possibility, but you're further from the implementation. You can move faster than ever, but you're navigating with less detailed maps.
 
-## The Stakes
+I don't think this means we should avoid AI code generation. The capabilities are too valuable. But it does mean being deliberate about when to let AI write versus when to write yourself.
 
-"But I ship 10x faster with AI writing my code!"
-
-That's real. AI can dramatically accelerate development. But ask yourself: Do you understand what you shipped? Can you debug it when it breaks? Can you extend it next month? Can you explain it to your team?
-
-Speed without understanding is technical debt with compound interest.
-
-Simple CRUD endpoint? Let AI write it. Complex business logic? Don't vibe code it away.
-
-The more complex the problem, the more valuable manual implementation becomes. You need to understand the nuances, the trade-offs, the why behind every decision. AI can't give you that understanding. Only building can.
-
-There's a subtle trap here. The faster AI writes code, the less you understand it. You become faster at producing code you don't fully grasp. You build features that are harder to debug. You ship products that are difficult to maintain.
-
-Building things yourself with AI guidance is infinitely more valuable than guiding AI to build things for you.
-
-Choose wisely.
+Presence is the price of velocity. Sometimes it's worth paying. Sometimes it's not.
