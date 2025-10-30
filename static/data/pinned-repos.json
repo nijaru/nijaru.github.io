@@ -36,21 +36,21 @@
     "forks_count": 0
   },
   {
-    "name": "agent-contexts",
-    "description": "Markdown files to provide context for AI coding assistants",
-    "html_url": "https://github.com/nijaru/agent-contexts",
+    "name": "aircher",
+    "description": "AI Agent TUI Coding Tool",
+    "html_url": "https://github.com/nijaru/aircher",
     "homepage": null,
-    "language": null,
-    "stargazers_count": 2,
+    "language": "Rust",
+    "stargazers_count": 0,
     "forks_count": 0
   },
   {
-    "name": "global-agents-config",
-    "description": "Proposal for standardized global AGENTS.md configuration at ~/.config/agents/AGENTS.md",
-    "html_url": "https://github.com/nijaru/global-agents-config",
+    "name": "vllama",
+    "description": null,
+    "html_url": "https://github.com/nijaru/vllama",
     "homepage": null,
-    "language": null,
-    "stargazers_count": 1,
+    "language": "Rust",
+    "stargazers_count": 0,
     "forks_count": 0
   }
 ]
