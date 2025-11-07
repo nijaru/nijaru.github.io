@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'mono': ['ui-monospace', 'monospace'],
       },
       fontSize: {
         'responsive-sm': 'clamp(0.875rem, 0.8rem + 0.375vw, 1rem)',     // 14px -> 16px
