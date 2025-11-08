@@ -135,9 +135,21 @@
     \resumeSubHeadingListStart
 
       \resumeProjectHeading
+          {\textbf{seerdb} $|$ \href{https://github.com/omendb/seerdb}{\underline{github.com/omendb/seerdb}} $|$ \emph{Rust, Storage Engine, Database Systems}}{}
+          \resumeItemListStart
+            \resumeItem{Research-grade storage engine with ALEX learned indexes beating RocksDB 2.14x on writes, 1.12x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
           {\textbf{OmenDB} $|$ \emph{Rust, Vector Database, Database Systems}}{}
           \resumeItemListStart
-            \resumeItem{PostgreSQL-compatible vector database in Rust implementing HNSW indexing, binary quantization, and hybrid HTAP architecture. Production-validated at 1M vector scale}
+            \resumeItem{Embedded vector database in Rust implementing HNSW indexing and binary quantization. Custom storage backend with MVCC transactions}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Pacabot} $|$ \emph{Python, AI/ML, Finance}}{}
+          \resumeItemListStart
+            \resumeItem{AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7}
           \resumeItemListEnd
 
       \resumeProjectHeading
@@ -150,18 +162,6 @@
           {\textbf{sy} $|$ \href{https://github.com/nijaru/sy}{\underline{github.com/nijaru/sy}} $|$ \emph{Rust, CLI Tools, Systems Programming}}{}
           \resumeItemListStart
             \resumeItem{File synchronization tool in Rust implementing delta sync with streaming architecture. 2-11x faster than rsync through parallel transfers and optimization}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Kombrucha} $|$ \href{https://github.com/nijaru/kombrucha}{\underline{github.com/nijaru/kombrucha}} $|$ \emph{Rust, Package Management, Developer Tools}}{}
-          \resumeItemListStart
-            \resumeItem{Homebrew-compatible package manager with fully parallelized API operations and in-memory LRU caching. 5.5x faster for upgrade operations}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Pacabot} $|$ \emph{Python, AI/ML, Finance}}{}
-          \resumeItemListStart
-            \resumeItem{AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd

@@ -41,15 +41,20 @@ const education = [
 // Current projects
 const projects = [
     {
-        name: "OmenDB",
-        description: "Cloud-native vector database implementing HNSW+ indexing, binary quantization, and custom storage backend with MVCC transactions. PostgreSQL-compatible with planned full-text search and graph capabilities",
-        tech: ["Rust", "Vector Database", "Database Systems"]
-    },
-    {
         name: "seerdb",
         url: "https://github.com/omendb/seerdb",
         description: "Research-grade storage engine with ALEX learned indexes beating RocksDB 2.14x on writes, 1.12x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
         tech: ["Rust", "Storage Engine", "Database Systems"]
+    },
+    {
+        name: "OmenDB",
+        description: "Embedded vector database in Rust implementing HNSW indexing and binary quantization. Custom storage backend with MVCC transactions",
+        tech: ["Rust", "Vector Database", "Database Systems"]
+    },
+    {
+        name: "Pacabot",
+        description: "AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7",
+        tech: ["Python", "AI/ML", "Finance"]
     },
     {
         name: "Zenith",
@@ -62,17 +67,6 @@ const projects = [
         url: "https://github.com/nijaru/sy",
         description: "File synchronization tool in Rust implementing delta sync with streaming architecture. 2-11x faster than rsync through parallel transfers and optimization",
         tech: ["Rust", "CLI Tools", "Systems Programming"]
-    },
-    {
-        name: "Kombrucha",
-        url: "https://github.com/nijaru/kombrucha",
-        description: "Homebrew-compatible package manager with fully parallelized API operations and in-memory LRU caching. 5.5x faster for upgrade operations",
-        tech: ["Rust", "Package Management", "Developer Tools"]
-    },
-    {
-        name: "Pacabot",
-        description: "AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7",
-        tech: ["Python", "AI/ML", "Finance"]
     }
 ];
 
