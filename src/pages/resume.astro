@@ -42,14 +42,13 @@ const education = [
 const projects = [
     {
         name: "OmenDB",
-        url: "https://github.com/omendb/omendb",
-        description: "Embedded PostgreSQL-compatible vector database implementing HNSW indexing, binary quantization, and RocksDB storage with MVCC transactions",
+        description: "Cloud-native vector database implementing HNSW+ indexing, binary quantization, and custom storage backend with MVCC transactions. PostgreSQL-compatible with planned full-text search and graph capabilities",
         tech: ["Rust", "Vector Database", "Database Systems"]
     },
     {
         name: "seerdb",
         url: "https://github.com/omendb/seerdb",
-        description: "Storage engine implementing LSM trees with learned data structures, bloom filters, memtables, SSTables, WAL, and adaptive compaction",
+        description: "Research-grade storage engine with ALEX learned indexes beating RocksDB 2.14x on writes, 1.12x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
         tech: ["Rust", "Storage Engine", "Database Systems"]
     },
     {

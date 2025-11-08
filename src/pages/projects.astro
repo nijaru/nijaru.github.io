@@ -127,28 +127,23 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
 
             <div class="space-y-8">
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/omendb/omendb"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
+                    <div class="clickable-item cursor-default">
+                        <h3 class="heading-3 mb-2 text-text-primary">
                             OmenDB
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Embedded PostgreSQL-compatible vector database in Rust with HNSW indexing and binary quantization.
-                            With planned full-text search, graph links, and time series. RocksDB storage backend with MVCC transactions.
+                            Cloud-native vector database in Rust with HNSW+ indexing and binary quantization.
+                            PostgreSQL-compatible with planned full-text search, graph links, and time series. Custom storage backend with MVCC transactions.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Vector Database</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
+                            <span class="body-small text-text-tertiary">Closed Source</span>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
@@ -303,16 +298,16 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                         <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
                             seerdb
                         </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
+                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">Experimental</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Storage engine with learned data structures and adaptive LSM trees. Implementing
-                            bloom filters, memtables, SSTables, WAL, and compaction. Research-driven approach
-                            integrating recent advances in learned indexes and modern optimizations.
+                            Research-grade storage engine with ALEX learned indexes beating RocksDB on all major workloads
+                            (2.14x writes, 1.12x reads, 1.23x mixed). Implements WiscKey key-value separation, Dostoevsky adaptive
+                            compaction, and learned bloom filters. 4.82x better write amplification than traditional LSM trees.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>
                             <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Database Systems</span>
+                            <span class="body-small text-text-tertiary">Storage Engine</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Open Source</span>
                         </div>
