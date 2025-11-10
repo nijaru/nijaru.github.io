@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "bun run build:resume && astro build",
+    "build": "astro build",
     "build:resume": "xelatex -interaction=nonstopmode resume.tex && cp resume.pdf public/Nicholas_Russo_Resume.pdf && rm -f resume.aux resume.log resume.out",
     "preview": "astro preview",
     "astro": "astro",
