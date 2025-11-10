@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "bun run build:resume && astro build",
+    "build:resume": "xelatex -interaction=nonstopmode resume.tex && cp resume.pdf public/Nicholas_Russo_Resume.pdf && rm -f resume.aux resume.log resume.out",
     "preview": "astro preview",
     "astro": "astro",
-    "check-deps": "node scripts/check-deps.js"
+    "check-deps": "bun scripts/check-deps.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",

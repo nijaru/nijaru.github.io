@@ -1,33 +1,33 @@
 # nijaru.github.io
 
-Personal website built with Astro v5.10.2 and Solid.js, featuring a space-themed design with responsive typography and interactive components.
+Personal website built with Astro and Tailwind CSS v4, featuring clean design with responsive typography.
 
 ## Technology Stack
 
-- **Astro v5.10.2** - Static site generation with component islands architecture
-- **Solid.js** - Reactive UI components with signals/resources  
-- **Tailwind CSS** - Utility-first styling with custom responsive font system
-- **TypeScript** - Type safety for critical components
-- **Atkinson Hyperlegible** - Accessible typography optimized for readability
+- **Astro v5** - Static site generation with component islands architecture
+- **Tailwind CSS v4** - Utility-first styling with custom responsive font system
+- **Bun** - Fast JavaScript runtime and package manager
+- **Inter** - Self-hosted variable font for consistent typography
+- **LaTeX** - Resume generation with XeLaTeX
 
 ## Project Structure
 
 ```
 src/
-├── components/          # Solid.js interactive components
-│   ├── GithubRepos.tsx     # GitHub repositories display (TypeScript)
-│   ├── ErrorBoundary.tsx   # Error handling wrapper (TypeScript)
-│   ├── NavBar.jsx          # Navigation with responsive sizing
-│   ├── TextGlow.jsx        # Text glow animation effects
-│   └── ...
-├── content/             # Markdown blog posts with frontmatter
+├── components/          # Astro components
+├── content/             # Markdown blog posts
 ├── layouts/             # Astro layout templates
 ├── pages/               # File-based routing
-└── styles/              # Global CSS and markdown styles
+│   ├── resume.astro         # Online resume
+│   └── projects.astro       # Projects showcase
+└── utils/               # Utilities and helpers
 public/
-├── data/                # Static JSON data (GitHub repos)
-├── manifest.json        # PWA manifest
-└── robots.txt           # SEO configuration
+├── data/                    # Static JSON (pinned repos)
+├── fonts/                   # Self-hosted Inter font
+├── Nicholas_Russo_Resume.pdf  # Generated from resume.tex
+├── manifest.json            # PWA manifest
+└── robots.txt               # SEO config
+resume.tex               # LaTeX source for PDF resume
 ```
 
 ## Features
@@ -40,25 +40,29 @@ public/
 - **PWA Ready** - Web manifest and offline-capable architecture
 
 ### Performance
-- **Font Optimization** - Preloaded Atkinson Hyperlegible with subset loading
+- **Font Optimization** - Self-hosted Inter variable font with subset loading
 - **Bundle Optimization** - Terser minification with tree shaking
-- **Error Boundaries** - Graceful failure handling for API components
-- **Cache Headers** - Long-term caching for static assets (Vercel/Netlify)
+- **Static-first** - Pre-rendered pages for maximum speed
 
 ### Accessibility
 - **Screen Reader Support** - Semantic HTML and ARIA attributes
 - **Keyboard Navigation** - Full keyboard accessibility
-- **High Contrast** - Space theme with sufficient color contrast
-- **Readable Fonts** - Atkinson Hyperlegible designed for accessibility
+- **Readable Fonts** - Inter variable font for clarity
 
 ## Development
 
 ```bash
-npm install          # Install dependencies
-npm run dev          # Development server (localhost:4321)
-npm run build        # Production build → dist/
-npm run preview      # Preview production build
+bun install          # Install dependencies
+bun run dev          # Development server (localhost:4321)
+bun run build        # Build resume PDF + production build → dist/
+bun run build:resume # Generate resume PDF only
+bun run preview      # Preview production build
 ```
+
+**Resume Generation:**
+- `bun run build:resume` - Compiles `resume.tex` to PDF and copies to `public/`
+- Requires XeLaTeX (installed via TeX Live)
+- PDF automatically generated before each production build
 
 ## GitHub Integration
 
@@ -90,22 +94,21 @@ The site uses CSS `clamp()` for responsive font scaling:
 - Navigation: Scales from 18px (mobile) to 20px (desktop)
 - Brand name: Scales from 20px (mobile) to 24px (desktop)
 
-## Hosting & Performance
+## Hosting
 
-**Optimized for:**
-- **GitHub Pages** - Default hosting with automatic deployments
-- **Vercel/Netlify** - Enhanced with cache headers for better performance
-- **Cloudflare Pages** - Full optimization with 1-week asset caching
+**Deployed on:**
+- **Cloudflare Pages** - Automatic deployments from main branch
+- Domain managed through Cloudflare DNS
 
 **Lighthouse Scores:** Optimized for Core Web Vitals with font preloading, minification, and selective component hydration.
 
 ## Architecture Decisions
 
 - **Static-first** - Pre-rendered pages for maximum performance
-- **Island architecture** - JavaScript only where needed (`client:idle`, `client:visible`)
-- **TypeScript** - Critical components converted for better maintainability
-- **Error boundaries** - Graceful degradation for API failures
-- **Responsive fonts** - Better readability across all devices
+- **Bun over npm** - Faster installs and builds
+- **Self-hosted fonts** - No external font CDN dependencies
+- **Automated resume** - PDF generated from LaTeX on build
+- **Responsive fonts** - CSS clamp() for fluid typography
 
 ## License
 
