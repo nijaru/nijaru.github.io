@@ -21,7 +21,6 @@ export default defineConfig({
       },
     },
   },
-  publicDir: 'static',
   markdown: {
     rehypePlugins: [rehypeH2TextGlow],
     shikiConfig: {
