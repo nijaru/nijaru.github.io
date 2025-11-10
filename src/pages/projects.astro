@@ -129,15 +129,18 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <div class="clickable-item cursor-default">
                         <h3 class="heading-3 mb-2 text-text-primary">
-                            OmenDB
+                            omendb
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Embedded vector database in Rust with HNSW indexing and binary quantization.
-                            RocksDB storage backend with MVCC transactions. Planned features include full-text search, graph links, and time series.
+                            Vector database company building embedded library and cloud-native managed service.
+                            Embedded library has dual implementations in Rust (production) and Mojo (research) for 1K-1M vector workloads.
+                            Cloud version in active development targeting billion-scale production deployments with automatic tiered storage (RAM → SSD → S3).
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>
+                            <span class="body-small text-text-tertiary">•</span>
+                            <span class="body-small text-text-tertiary">Mojo</span>
                             <span class="body-small text-text-tertiary">•</span>
                             <span class="body-small text-text-tertiary">Vector Database</span>
                             <span class="body-small text-text-tertiary">•</span>
@@ -300,9 +303,9 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
                         </h3>
                         <p class="text-sm mb-4" style="color: var(--color-accent-primary);">Experimental</p>
                         <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Experimental storage engine with ALEX learned indexes beating RocksDB on all major workloads
-                            (2.14x writes, 1.12x reads, 1.23x mixed). Implements WiscKey key-value separation, Dostoevsky adaptive
-                            compaction, and learned bloom filters. 4.82x better write amplification than traditional LSM trees.
+                            Experimental storage engine with learned indexes and modern LSM optimizations. Benchmarks show 2.14x faster writes
+                            and 1.12x faster reads vs RocksDB, with improved write amplification through key-value separation.
+                            Open source and in early development - object storage and transaction features in progress.
                         </p>
                         <div class="flex items-center gap-3">
                             <span class="body-small text-text-tertiary">Rust</span>

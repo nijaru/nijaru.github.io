@@ -41,15 +41,15 @@ const education = [
 // Current projects
 const projects = [
     {
-        name: "seerdb",
-        url: "https://github.com/omendb/seerdb",
-        description: "Experimental storage engine with ALEX learned indexes beating RocksDB 2.14x on writes, 1.12x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
-        tech: ["Rust", "Storage Engine", "Database Systems"]
+        name: "omendb",
+        description: "Vector database with embedded library and cloud service. Embedded implementations in Rust (production) and Mojo (research) supporting 1K-1M vectors. Cloud service in development for billion-scale deployments with tiered storage",
+        tech: ["Rust", "Mojo", "Vector Database", "Database Systems"]
     },
     {
-        name: "OmenDB",
-        description: "Embedded vector database in Rust implementing HNSW indexing and binary quantization. RocksDB storage backend with MVCC transactions",
-        tech: ["Rust", "Vector Database", "Database Systems"]
+        name: "seerdb",
+        url: "https://github.com/omendb/seerdb",
+        description: "Experimental storage engine with learned indexes. Benchmarks show 2.14x faster writes, 1.12x faster reads vs RocksDB. Implements WiscKey key-value separation for improved write amplification. Open source, early development stage",
+        tech: ["Rust", "Storage Engine", "Database Systems"]
     },
     {
         name: "Pacabot",
