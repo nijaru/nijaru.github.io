@@ -42,13 +42,13 @@ const education = [
 const projects = [
     {
         name: "omendb",
-        description: "Vector database with embedded library and cloud service. Embedded implementations in Rust (production) and Mojo (research) supporting 1K-1M vectors. Cloud service in development for billion-scale deployments with tiered storage",
+        description: "Building vector database with embedded library (Rust + Mojo implementations) for 1K-1M vectors and cloud service targeting billion-scale deployments with automatic tiered storage (RAM, SSD, S3)",
         tech: ["Rust", "Mojo", "Vector Database", "Database Systems"]
     },
     {
         name: "seerdb",
         url: "https://github.com/omendb/seerdb",
-        description: "Experimental storage engine with learned indexes. Benchmarks show 2.14x faster writes, 1.12x faster reads vs RocksDB. Implements WiscKey key-value separation for improved write amplification. Open source, early development stage",
+        description: "Experimental storage engine with learned indexes. Benchmarks show 2.14x faster writes, 1.12x faster reads vs RocksDB, with 4.82x better write amplification (~1x) through WiscKey key-value separation. Open source, early development stage",
         tech: ["Rust", "Storage Engine", "Database Systems"]
     },
     {
