@@ -23,7 +23,7 @@ bun run preview      # Preview production build
 - **Automated resume**: PDF generated from LaTeX source on build
 - **GitHub integration**: Pinned repos fetched via Actions → static JSON
 - **SEO**: Open Graph tags, sitemap, robots.txt
-- **Deployment**: Cloudflare Pages with automatic deployments
+- **Deployment**: Cloudflare Pages with GitHub auto-deploy on push to main
 
 ## File Structure
 ```
@@ -59,11 +59,12 @@ resume.tex          # LaTeX source for PDF resume
 - **Performance**: Static-first, minimal JavaScript
 
 ## Deployment
-- **Platform**: Cloudflare Pages
+- **Platform**: Cloudflare Pages (GitHub integration)
 - **Build command**: `bun run build`
-- **Output directory**: `dist/`
-- **Branch**: `main` (automatic deployments)
-- **Domain**: Managed via Cloudflare DNS
+- **Build output directory**: `dist/`
+- **Production branch**: `main` (automatic deployments on push)
+- **Framework preset**: Astro (auto-detected)
+- **Domain**: nijaru.com (Cloudflare DNS)
 
 ## Development Guidelines
 - **Accessibility**: Semantic HTML, keyboard navigation, high contrast
