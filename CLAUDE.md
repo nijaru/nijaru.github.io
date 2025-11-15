@@ -4,7 +4,8 @@
 - **Astro v5** - Static site generation with component islands
 - **Tailwind CSS v4** - Next-gen CSS engine via @tailwindcss/vite
 - **Bun** - Fast JavaScript runtime and package manager
-- **Inter** - Self-hosted variable font
+- **Atkinson Hyperlegible** - Accessibility-focused font (via Fontsource)
+- **JetBrains Mono** - Monospace font for code (via Fontsource)
 - **XeLaTeX** - Resume PDF generation
 
 ## Build & Development
@@ -52,11 +53,11 @@ resume.tex          # LaTeX source for PDF resume
 - **Requirements**: XeLaTeX (installed via TeX Live)
 
 ## Design System
-- **Philosophy**: Clean, professional design
+- **Philosophy**: Clean, professional design with accessibility focus
 - **Colors**: High contrast text, single blue accent (#4493f8)
-- **Typography**: Inter variable font with responsive scaling via CSS clamp()
+- **Typography**: Atkinson Hyperlegible (18px base) + JetBrains Mono for code
 - **Layout**: Responsive grid, mobile-first approach
-- **Performance**: Static-first, minimal JavaScript
+- **Performance**: Static-first, self-hosted fonts, minimal JavaScript
 
 ## Deployment
 - **Platform**: Cloudflare Pages (GitHub integration)

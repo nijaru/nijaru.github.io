@@ -49,8 +49,7 @@ const canonicalURL = new URL(pathname, Astro.site);
         <meta property="twitter:description" content={description} />
         <meta property="twitter:creator" content="@nijaru0x" />
 
-        <!-- Preload Inter font for better performance -->
-        <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- Fonts loaded via Fontsource -->
         <!-- Devicons for programming language and tool icons -->
         <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet">
 
@@ -133,14 +132,11 @@ const canonicalURL = new URL(pathname, Astro.site);
 
     body {
         font-family:
-            "Inter",
+            "Atkinson Hyperlegible",
             system-ui,
             -apple-system,
             BlinkMacSystemFont,
             "Segoe UI",
-            Roboto,
-            "Helvetica Neue",
-            Arial,
             sans-serif;
         font-weight: 400;
         color: #ffffff;
@@ -149,11 +145,9 @@ const canonicalURL = new URL(pathname, Astro.site);
     /* Monospace font for code elements */
     code, pre, .font-mono {
         font-family:
+            "JetBrains Mono",
             "SF Mono",
             Monaco,
-            "Inconsolata",
-            "Roboto Mono",
-            "Source Code Pro",
             Consolas,
             "Liberation Mono",
             Menlo,
