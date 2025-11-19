@@ -4,6 +4,7 @@ import HiringNotice from "../components/HiringNotice.astro";
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { projects, type Project } from "../data/projects";
 
 // Load GitHub repos directly at build time
 const __filename = fileURLToPath(import.meta.url);
@@ -28,10 +29,16 @@ async function getStarCount(owner: string, repo: string): Promise<number> {
     }
 }
 
-const zenithStars = await getStarCount('nijaru', 'zenith');
-const ytTextStars = await getStarCount('nijaru', 'yt-text');
-const syStars = await getStarCount('nijaru', 'sy');
-const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
+// Populate stars for all projects that have a repo
+for (const project of projects) {
+    if (project.repo) {
+        project.stars = await getStarCount(project.repo.owner, project.repo.name);
+    }
+}
+
+// Helper to categorize projects
+const recentProjects = projects.filter(p => p.category === 'Recent');
+const otherProjects = projects.filter(p => p.category === 'Other');
 ---
 
 <Layout 
@@ -65,7 +72,7 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
             </div>
 
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {githubRepos.map((repo) => (
+                {githubRepos.map((repo: any) => (
                     <div class="group">
                         <a
                             href={repo.html_url}
@@ -126,245 +133,58 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
             </div>
 
             <div class="space-y-8">
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/omendb/seerdb"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            seerdb
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">Experimental</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Experimental storage engine with learned indexes and modern LSM optimizations. Benchmarks show 2.47x faster writes
-                            and 2.07x faster reads vs RocksDB, with 4.82x better write amplification through WiscKey key-value separation.
-                            Open source - implementing object storage and transaction features.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Storage Engine</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            omendb
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Vector database with embedded library and server implementations.
-                            Embedded library has dual implementations in Rust (production) and Mojo (research) for 1K-1M vector workloads.
-                            Server version in active development targeting billion-scale production deployments with automatic tiered storage (RAM → SSD → S3).
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Mojo</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Vector Database</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                        </div>
+                {recentProjects.map(project => (
+                    <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                        {project.url ? (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="clickable-item group"
+                            >
+                                <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
+                                    {project.name}
+                                </h3>
+                                <p class="text-sm mb-4" style={`color: ${project.status === 'Stable' ? '#22c55e' : 'var(--color-accent-primary)'};`}>{project.status}</p>
+                                <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                                    {project.description}
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    {project.tech.map((t, i) => (
+                                        <>
+                                            <span class="body-small text-text-tertiary">{t}</span>
+                                            {i < project.tech.length - 1 && <span class="body-small text-text-tertiary">•</span>}
+                                        </>
+                                    ))}
+                                    {project.stars !== undefined && project.stars > 0 && (
+                                        <>
+                                            <span class="body-small text-text-tertiary">•</span>
+                                            <span class="body-small text-text-tertiary">★ {project.stars}</span>
+                                        </>
+                                    )}
+                                </div>
+                            </a>
+                        ) : (
+                            <div class="clickable-item cursor-default">
+                                <h3 class="heading-3 mb-2 text-text-primary">
+                                    {project.name}
+                                </h3>
+                                <p class="text-sm mb-4" style={`color: ${project.status === 'Stable' ? '#22c55e' : 'var(--color-accent-primary)'};`}>{project.status}</p>
+                                <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                                    {project.description}
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    {project.tech.map((t, i) => (
+                                        <>
+                                            <span class="body-small text-text-tertiary">{t}</span>
+                                            {i < project.tech.length - 1 && <span class="body-small text-text-tertiary">•</span>}
+                                        </>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/zenith"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            Zenith
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern Python web framework with intuitive developer experience and
-                            exceptional performance. Zero-config setup, chainable queries,
-                            and 9,600+ req/s throughput.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Web Framework</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            {zenithStars > 0 && (
-                                <>
-                                    <span class="body-small text-text-tertiary">•</span>
-                                    <span class="body-small text-text-tertiary">★ {zenithStars}</span>
-                                </>
-                            )}
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            Pacabot
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            AI trading bot with multi-agent analysis system using 13 data sources including market data,
-                            SEC filings, news, and social sentiment. Real-time research capability with automated risk management.
-                            Production-ready and running 24/7.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/sy"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            sy
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern file synchronization tool - rsync reimagined. Delta sync,
-                            parallel transfers, and streaming algorithms in Rust. 40-79% faster
-                            than rsync on local sync benchmarks.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">CLI Tool</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            {syStars > 0 && (
-                                <>
-                                    <span class="body-small text-text-tertiary">•</span>
-                                    <span class="body-small text-text-tertiary">★ {syStars}</span>
-                                </>
-                            )}
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/stop"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            stop
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Structured process monitoring with JSON output for AI agents and automation.
-                            Filter, sort, and query processes with clean structured data. v0.0.1 complete
-                            with 29 tests passing.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">CLI Tool</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/kombrucha"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            Kombrucha
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Modern package manager reimagining Homebrew in Rust. Fast, reliable dependency
-                            resolution with parallel downloads and improved caching strategies.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Package Manager</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            {kombruchaStars > 0 && (
-                                <>
-                                    <span class="body-small text-text-tertiary">•</span>
-                                    <span class="body-small text-text-tertiary">★ {kombruchaStars}</span>
-                                </>
-                            )}
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/aircher"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            aircher
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            Intelligent coding agent backend that maintains working memory of your codebase
-                            and task history. Learns project patterns and manages context automatically.
-                            Works with Zed, Neovim, and terminal frontends via Agent Client Protocol.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/LLM</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <div class="clickable-item cursor-default">
-                        <h3 class="heading-3 mb-2 text-text-primary">
-                            DJScout
-                        </h3>
-                        <p class="text-sm mb-4" style="color: var(--color-accent-primary);">In development</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            AI DJ intelligence platform with LSTM models trained on 10K+ professional sets.
-                            Iterating on model improvements and playlist generation quality.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Rust</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                        </div>
-                    </div>
-                </div>
-
+                ))}
             </div>
         </div>
     </section>
@@ -382,65 +202,38 @@ const kombruchaStars = await getStarCount('nijaru', 'kombrucha');
             </div>
 
             <div class="space-y-8">
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://alttextapi.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            AltText API
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            AI-powered alt text generation API and website. Credit-based billing,
-                            batch processing, and API key management. Built on Cloudflare Workers
-                            with D1 database for global edge deployment.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">TypeScript</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">API/Web App</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Closed Source</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                    <a
-                        href="https://github.com/nijaru/yt-text"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="clickable-item group"
-                    >
-                        <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
-                            yt-text
-                        </h3>
-                        <p class="text-sm mb-4" style="color: #22c55e;">Stable</p>
-                        <p class="body-normal text-text-secondary leading-relaxed mb-4">
-                            High-performance video transcription service with multi-platform support.
-                            Advanced AI backends (MLX, whisper.cpp, OpenAI) with intelligent fallback
-                            and real-time streaming.
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <span class="body-small text-text-tertiary">Python</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">AI/ML</span>
-                            <span class="body-small text-text-tertiary">•</span>
-                            <span class="body-small text-text-tertiary">Open Source</span>
-                            {ytTextStars > 0 && (
-                                <>
-                                    <span class="body-small text-text-tertiary">•</span>
-                                    <span class="body-small text-text-tertiary">★ {ytTextStars}</span>
-                                </>
-                            )}
-                        </div>
-                    </a>
-                </div>
+                {otherProjects.map(project => (
+                    <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
+                        <a
+                            href={project.url || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="clickable-item group"
+                        >
+                            <h3 class="heading-3 mb-2 text-text-primary group-hover:underline">
+                                {project.name}
+                            </h3>
+                            <p class="text-sm mb-4" style={`color: ${project.status === 'Stable' ? '#22c55e' : 'var(--color-accent-primary)'};`}>{project.status}</p>
+                            <p class="body-normal text-text-secondary leading-relaxed mb-4">
+                                {project.description}
+                            </p>
+                            <div class="flex items-center gap-3">
+                                {project.tech.map((t, i) => (
+                                    <>
+                                        <span class="body-small text-text-tertiary">{t}</span>
+                                        {i < project.tech.length - 1 && <span class="body-small text-text-tertiary">•</span>}
+                                    </>
+                                ))}
+                                {project.stars !== undefined && project.stars > 0 && (
+                                    <>
+                                        <span class="body-small text-text-tertiary">•</span>
+                                        <span class="body-small text-text-tertiary">★ {project.stars}</span>
+                                    </>
+                                )}
+                            </div>
+                        </a>
+                    </div>
+                ))}
             </div>
         </div>
     </section>
