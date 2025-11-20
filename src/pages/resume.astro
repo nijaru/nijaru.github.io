@@ -43,24 +43,24 @@ const projects = [
     {
         name: "seerdb",
         url: "https://github.com/omendb/seerdb",
-        description: "Experimental storage engine with learned indexes beating RocksDB 2.47x on writes, 2.07x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
+        description: "Production-ready storage engine with learned indexes beating RocksDB 2.47x on writes, 2.07x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
         tech: ["Rust", "Storage Engine", "Database Systems"]
     },
     {
         name: "omendb",
-        description: "Building vector database with embedded library (Rust + Mojo implementations) for 1K-1M vectors and cloud service targeting billion-scale deployments with automatic tiered storage (RAM, SSD, S3)",
+        description: "Vector database with embedded library (Rust + Mojo implementations) and cloud service targeting billion-scale deployments. Tiered storage architecture (RAM → SSD → S3)",
         tech: ["Rust", "Mojo", "Vector Database", "Database Systems"]
     },
     {
         name: "Pacabot",
-        description: "AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7",
-        tech: ["Python", "AI/ML", "Finance"]
+        description: "AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management",
+        tech: ["Python", "LangGraph", "AI/ML", "Finance"]
     },
     {
-        name: "Zenith",
-        url: "https://github.com/nijaru/zenith",
-        description: "Python web framework with chainable query APIs, zero-config setup, and async request handling. Built for developer experience and production performance",
-        tech: ["Python", "Web Framework", "API Design"]
+        name: "Aircher",
+        url: "https://github.com/nijaru/aircher",
+        description: "AI coding agent backend using LangGraph for multi-agent orchestration. Maintains working memory of codebase and task history, learns project patterns. Supports Agent Client Protocol for editor integrations",
+        tech: ["Python", "LangGraph", "AI/ML"]
     },
     {
         name: "sy",

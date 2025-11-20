@@ -20,17 +20,33 @@ export const projects: Project[] = [
     {
         name: "seerdb",
         url: "https://github.com/omendb/seerdb",
-        description: "Experimental storage engine with learned indexes and modern LSM optimizations. Benchmarks show 2.47x faster writes and 2.07x faster reads vs RocksDB, with 4.82x better write amplification through WiscKey key-value separation. Open source - implementing object storage and transaction features.",
-        status: "Experimental",
+        description: "Production-ready storage engine with learned indexes and modern LSM optimizations. Benchmarks show 2.47x faster writes and 2.07x faster reads vs RocksDB, with 4.82x better write amplification through WiscKey key-value separation. Apache 2.0 licensed.",
+        status: "Stable",
         tech: ["Rust", "Storage Engine", "Open Source"],
         repo: { owner: "omendb", name: "seerdb" },
         category: "Recent"
     },
     {
         name: "omendb",
-        description: "Vector database with embedded library and server implementations. Embedded library has dual implementations in Rust (production) and Mojo (research) for 1K-1M vector workloads. Server version in active development targeting billion-scale production deployments with automatic tiered storage (RAM → SSD → S3).",
+        description: "Vector database with embedded library (Rust + Mojo implementations) and cloud service targeting billion-scale deployments. Tiered storage architecture (RAM → SSD → S3)",
         status: "In development",
         tech: ["Rust", "Mojo", "Vector Database", "Closed Source"],
+        category: "Recent"
+    },
+    {
+        name: "aircher",
+        url: "https://github.com/nijaru/aircher",
+        description: "AI coding agent backend using LangGraph for multi-agent orchestration. Maintains working memory of codebase and task history, learns project patterns and manages context automatically. Supports Agent Client Protocol (ACP) for editor integrations.",
+        status: "In development",
+        tech: ["Python", "LangGraph", "AI/ML", "Open Source"],
+        repo: { owner: "nijaru", name: "aircher" },
+        category: "Recent"
+    },
+    {
+        name: "Pacabot",
+        description: "AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management.",
+        status: "In development",
+        tech: ["Python", "LangGraph", "AI/ML", "Closed Source"],
         category: "Recent"
     },
     {
@@ -40,13 +56,6 @@ export const projects: Project[] = [
         status: "Stable",
         tech: ["Python", "Web Framework", "Open Source"],
         repo: { owner: "nijaru", name: "zenith" },
-        category: "Recent"
-    },
-    {
-        name: "Pacabot",
-        description: "AI trading bot with multi-agent analysis system using 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research capability with automated risk management. Production-ready and running 24/7.",
-        status: "In development",
-        tech: ["Python", "AI/ML", "Closed Source"],
         category: "Recent"
     },
     {
@@ -74,15 +83,6 @@ export const projects: Project[] = [
         status: "Stable",
         tech: ["Rust", "Package Manager", "Open Source"],
         repo: { owner: "nijaru", name: "kombrucha" },
-        category: "Recent"
-    },
-    {
-        name: "aircher",
-        url: "https://github.com/nijaru/aircher",
-        description: "Intelligent coding agent backend that maintains working memory of your codebase and task history. Learns project patterns and manages context automatically. Works with Zed, Neovim, and terminal frontends via Agent Client Protocol.",
-        status: "In development",
-        tech: ["Rust", "AI/LLM", "Open Source"],
-        repo: { owner: "nijaru", name: "aircher" },
         category: "Recent"
     },
     {
