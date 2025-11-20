@@ -36,15 +36,6 @@
     "forks_count": 0
   },
   {
-    "name": "aircher",
-    "description": "AI Agent TUI Coding Tool",
-    "html_url": "https://github.com/nijaru/aircher",
-    "homepage": null,
-    "language": "Python",
-    "stargazers_count": 1,
-    "forks_count": 0
-  },
-  {
     "name": "dotfiles",
     "description": "My dotfiles",
     "html_url": "https://github.com/nijaru/dotfiles",
