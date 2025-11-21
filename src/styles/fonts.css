@@ -1,6 +1,8 @@
-/* Atkinson Hyperlegible - Primary font (accessibility-focused) */
-@import '@fontsource/atkinson-hyperlegible/400.css';
-@import '@fontsource/atkinson-hyperlegible/700.css';
+/* Inter - Primary font */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
 
 /* JetBrains Mono - Monospace for code */
 @import '@fontsource/jetbrains-mono/400.css';
