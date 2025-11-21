@@ -418,14 +418,6 @@
   justify-content: center;
 }
 
-.gap-4 {
-  gap: var(--space-4);
-}
-
-.mb-6 {
-  margin-bottom: var(--space-6);
-}
-
 .max-w-none {
   max-width: none;
 }

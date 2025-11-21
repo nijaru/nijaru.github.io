@@ -107,34 +107,46 @@
         let frame = 0;
         let animationFrameId: number | null = null;
 
-        // Nebula System
+        // Nebula System - Pre-rendered for performance
         interface Nebula {
             x: number;
             y: number;
             radius: number;
-            color: string;
-            opacity: number;
-            z: number; // Very deep background (0.05 or so)
+            z: number;
+            canvas: HTMLCanvasElement; // Pre-rendered gradient
         }
 
         const nebulaClouds: Nebula[] = Array.from({ length: 6 }, () => {
-            // Increased count
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
-            return {
-                x,
-                y,
-                radius: Math.random() * 400 + 500, // Larger radius (500-900px)
-                // Balanced space colors - visible but not overwhelming
-                color:
-                    Math.random() > 0.6
-                        ? "90, 35, 140" // Balanced Purple
-                        : Math.random() > 0.5
-                          ? "35, 100, 110" // Balanced Teal
-                          : "35, 70, 150", // Balanced Blue
-                opacity: Math.random() * 0.08 + 0.13, // Slightly brighter (0.13 to 0.21)
-                z: Math.random() * 0.05 + 0.02, // Deep background
-            };
+            const radius = Math.random() * 400 + 500;
+            const color =
+                Math.random() > 0.6
+                    ? "90, 35, 140" // Balanced Purple
+                    : Math.random() > 0.5
+                      ? "35, 100, 110" // Balanced Teal
+                      : "35, 70, 150"; // Balanced Blue
+            const opacity = Math.random() * 0.08 + 0.13;
+            const z = Math.random() * 0.05 + 0.02;
+
+            // Pre-render nebula to offscreen canvas (once, not per frame)
+            const nebulaCanvas = document.createElement("canvas");
+            const size = radius * 2;
+            nebulaCanvas.width = size;
+            nebulaCanvas.height = size;
+            const nebulaCtx = nebulaCanvas.getContext("2d");
+            if (nebulaCtx) {
+                const gradient = nebulaCtx.createRadialGradient(
+                    radius, radius, 0,
+                    radius, radius, radius
+                );
+                gradient.addColorStop(0, `rgba(${color}, ${opacity})`);
+                gradient.addColorStop(1, `rgba(${color}, 0)`);
+                nebulaCtx.fillStyle = gradient;
+                nebulaCtx.fillRect(0, 0, size, size);
+            }
+
+            return { x, y, radius, z, canvas: nebulaCanvas };
         });
 
         const animate = () => {
@@ -166,33 +178,20 @@
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Render Nebula Clouds
+            // Render Nebula Clouds (using pre-rendered canvases)
             nebulaClouds.forEach((nebula) => {
                 // Parallax for nebula (very slow)
                 let y = nebula.y - scrollY * nebula.z;
                 // Wrap vertically
-                y =
-                    (((y % (canvas.height + nebula.radius * 2)) +
-                        canvas.height +
-                        nebula.radius * 2) %
-                        (canvas.height + nebula.radius * 2)) -
-                    nebula.radius;
+                const wrapHeight = canvas.height + nebula.radius * 2;
+                y = (((y % wrapHeight) + wrapHeight) % wrapHeight) - nebula.radius;
 
-                // Also wrap horizontally for full infinite feel if needed, but vertical is main
-                // Simple draw
-                const gradient = ctx.createRadialGradient(
-                    nebula.x,
-                    y,
-                    0,
-                    nebula.x,
-                    y,
-                    nebula.radius,
+                // Draw pre-rendered nebula at position (much faster than creating gradient each frame)
+                ctx.drawImage(
+                    nebula.canvas,
+                    nebula.x - nebula.radius,
+                    y - nebula.radius
                 );
-                gradient.addColorStop(0, `rgba(${nebula.color}, ${nebula.opacity})`);
-                gradient.addColorStop(1, `rgba(${nebula.color}, 0)`);
-
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
             });
 
             // Update star opacity using static quality settings
@@ -379,7 +378,7 @@
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
 
-                // Reposition all stars proportionally
+                // Reposition all stars and nebulas proportionally
                 if (oldWidth > 0 && oldHeight > 0) {
                     const widthRatio = canvas.width / oldWidth;
                     const heightRatio = canvas.height / oldHeight;
@@ -387,6 +386,11 @@
                     allStars.forEach((star) => {
                         star.x = Math.min(star.x * widthRatio, canvas.width - 1);
                         star.y = Math.min(star.y * heightRatio, canvas.height - 1);
+                    });
+
+                    nebulaClouds.forEach((nebula) => {
+                        nebula.x = nebula.x * widthRatio;
+                        nebula.y = nebula.y * heightRatio;
                     });
                 }
 
