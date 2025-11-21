@@ -61,25 +61,27 @@ const { showFooter = true } = Astro.props;
         <slot name="head" />
     </head>
     <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
-        <div transition:persist>
-            <StarField />
-        </div>
-        <NavBar />
+        <div class="page-wrapper">
+            <div transition:persist>
+                <StarField />
+            </div>
+            <NavBar />
 
-        <main class="pt-24 pb-16 min-h-screen">
-            <slot />
-        </main>
-        
-        {showFooter && (
-            <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
-                <div class="container container-md">
-                    <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
-                    <p class="text-xs mt-2" style="color: #08090a; user-select: text;">{gitHash}</p>
-                </div>
-            </footer>
-        )}
-        
-        <BackToTop />
+            <main class="pt-24 pb-16 min-h-screen">
+                <slot />
+            </main>
+
+            {showFooter && (
+                <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
+                    <div class="container container-md">
+                        <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
+                        <p class="text-xs mt-2" style="color: #08090a; user-select: text;">{gitHash}</p>
+                    </div>
+                </footer>
+            )}
+
+            <BackToTop />
+        </div>
     </body>
 </html>
 
@@ -135,14 +137,8 @@ const { showFooter = true } = Astro.props;
         pointer-events: none;
     }
 
-    html, body {
-        scroll-behavior: smooth;
-        overscroll-behavior-y: none;
-        overflow-x: hidden;
-        max-width: 100vw;
-    }
-
     html {
+        scroll-behavior: smooth;
         font-size: 112.5%; /* 18px base */
     }
 
@@ -156,6 +152,13 @@ const { showFooter = true } = Astro.props;
             sans-serif;
         font-weight: 400;
         color: #ffffff;
+        overscroll-behavior-y: none;
+    }
+
+    .page-wrapper {
+        width: 100%;
+        overflow-x: clip;
+        position: relative;
     }
 
     /* Monospace font for code elements */
