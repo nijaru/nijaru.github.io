@@ -49,67 +49,62 @@ posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
     title="Blog - Nick Russo" 
     description="Thoughts on software development, AI-assisted programming, and technology. Read Nick Russo's insights on building modern software."
 >
-    <!-- Hero Section -->
-    <section class="section">
-        <div class="container container-md">
-            <div class="text-center">
-                <h1 class="heading-1">
-                    <span class="text-accent-blue">Blog</span>
-                </h1>
-                <p class="body-large text-text-secondary max-w-2xl mx-auto mb-4">
-                    Thoughts on software development, programming languages, AI, and technology
-                </p>
-                <a
-                    href="/rss.xml"
-                    class="btn btn-ghost"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
-                        <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0A5 5 0 009 10a1 1 0 01-1-1z"></path>
-                        <path d="M3 15a2 2 0 104 0 2 2 0 00-4 0z"></path>
-                    </svg>
-                    RSS Feed
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="container container-sm pt-32 pb-16">
+        <!-- Hero Section -->
+        <section class="mb-16 text-center">
+            <h1 class="heading-1 mb-6">
+                <span class="text-accent-primary">Blog</span>
+            </h1>
+            <p class="body-large text-text-secondary max-w-2xl mx-auto mb-8">
+                Thoughts on software development, programming languages, AI, and technology
+            </p>
+            <a
+                href="/rss.xml"
+                class="btn btn-ghost inline-flex items-center gap-2 text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
+                    <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0A5 5 0 009 10a1 1 0 01-1-1z"></path>
+                    <path d="M3 15a2 2 0 104 0 2 2 0 00-4 0z"></path>
+                </svg>
+                RSS Feed
+            </a>
+        </section>
 
-    <div class="divider"></div>
+        <div class="divider my-16"></div>
 
-    <!-- Blog Posts -->
-    <section class="section">
-        <div class="container container-sm">
-            <div class="content-bg-subtle">
+        <!-- Blog Posts -->
+        <section>
             {posts.length === 0 ? (
                 <div class="text-center py-16">
                     <div class="heading-3 mb-4 text-text-secondary">No Posts Yet</div>
                     <p class="body-normal text-text-tertiary">Check back soon for new content!</p>
                 </div>
             ) : (
-                <div class="space-y-8">
+                <div class="grid gap-8">
                     {posts.map((post) => (
-                        <article class="border-b pb-8" style="border-color: var(--color-border-subtle);">
-                            <a href={post.url} class="clickable-item">
-                                <div class="flex items-center justify-between text-text-tertiary body-small mb-4">
+                        <article class="group">
+                            <a href={post.url} class="glass-panel glass-panel-interactive p-8 block">
+                                <div class="flex items-center justify-between text-text-tertiary text-sm mb-4 font-mono">
                                     <time datetime={post.pubDate.toISOString()}>
                                         {post.formattedDate}
                                     </time>
                                     <span>{post.readingTime}</span>
                                 </div>
                                 
-                                <h2 class="heading-2 mb-4 text-text-primary">
+                                <h2 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-accent-primary transition-colors">
                                     {post.title}
                                 </h2>
                                 
-                                <p class="body-normal text-text-secondary leading-relaxed mb-6">
+                                <p class="text-text-secondary leading-relaxed mb-6 text-lg">
                                     {post.excerpt}
                                 </p>
                                 
                                 <div class="flex items-center gap-3">
                                     {post.tags.map((tag) => (
-                                        <span class="body-small text-text-tertiary">#{tag}</span>
+                                        <span class="text-xs font-medium text-text-tertiary px-3 py-1 rounded-full bg-white/5 border border-white/5 group-hover:border-white/10 transition-colors">#{tag}</span>
                                     ))}
                                 </div>
                             </a>
@@ -117,20 +112,15 @@ posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
                     ))}
                 </div>
             )}
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="divider"></div>
+        <div class="divider my-16"></div>
 
-    <!-- Navigation -->
-    <section class="section-sm">
-        <div class="container container-md">
-            <div class="text-center">
-                <a href="/" class="btn btn-secondary link-arrow">
-                    Back to Home
-                </a>
-            </div>
-        </div>
-    </section>
+        <!-- Navigation -->
+        <section class="text-center">
+            <a href="/" class="btn btn-ghost link-arrow">
+                Back to Home
+            </a>
+        </section>
+    </div>
 </Layout>

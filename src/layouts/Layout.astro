@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar.astro";
 import StarField from "../components/StarField.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import BackToTop from "../components/BackToTop.astro";
+import { ClientRouter } from 'astro:transitions';
 import '../styles/fonts.css';
 import '../styles/tailwind.css';
 import '../styles/design-system.css';
@@ -12,6 +13,7 @@ interface Props {
     title: string;
     description?: string;
     ogType?: string;
+    showFooter?: boolean;
 }
 
 const { title, description = "Nick Russo - Software Engineer", ogType = "website" } = Astro.props;
@@ -20,6 +22,8 @@ const { title, description = "Nick Russo - Software Engineer", ogType = "website
 const gitHash = execSync('git rev-parse --short HEAD').toString().trim();
 const pathname = Astro.url.pathname;
 const canonicalURL = new URL(pathname, Astro.site);
+
+const { showFooter = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -53,22 +57,27 @@ const canonicalURL = new URL(pathname, Astro.site);
         <!-- Devicons for programming language and tool icons -->
         <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet">
 
+        <ClientRouter />
         <slot name="head" />
     </head>
     <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
-        <StarField />
+        <div transition:persist>
+            <StarField />
+        </div>
         <NavBar />
 
         <main class="pt-24 pb-16 min-h-screen">
             <slot />
         </main>
         
-        <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
-            <div class="container container-md">
-                <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
-                <p class="text-xs mt-2" style="color: #08090a; user-select: text;">{gitHash}</p>
-            </div>
-        </footer>
+        {showFooter && (
+            <footer class="border-t py-8 text-center" style="border-color: var(--color-border-subtle);">
+                <div class="container container-md">
+                    <p class="body-small text-text-tertiary">© {new Date().getFullYear()} Nick Russo • Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="link-primary">Astro</a></p>
+                    <p class="text-xs mt-2" style="color: #08090a; user-select: text;">{gitHash}</p>
+                </div>
+            </footer>
+        )}
         
         <BackToTop />
     </body>
@@ -128,10 +137,12 @@ const canonicalURL = new URL(pathname, Astro.site);
 
     html {
         scroll-behavior: smooth;
+        overscroll-behavior-y: none;
     }
 
     body {
         font-family:
+            "Inter",
             "Atkinson Hyperlegible",
             system-ui,
             -apple-system,
@@ -140,6 +151,7 @@ const canonicalURL = new URL(pathname, Astro.site);
             sans-serif;
         font-weight: 400;
         color: #ffffff;
+        overflow-x: hidden;
     }
 
     /* Monospace font for code elements */
@@ -157,18 +169,28 @@ const canonicalURL = new URL(pathname, Astro.site);
     /* Custom scrollbar */
     ::-webkit-scrollbar {
         width: 8px;
+        background: transparent;
     }
 
     ::-webkit-scrollbar-track {
-        background: #000000; /* dark-950 */
+        background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #1a1a1a; /* dark-800 */
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 4px;
+        border: 2px solid transparent;
+        background-clip: content-box;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #2a2a2a; /* dark-700 */
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::selection {
+        background: rgba(68, 147, 248, 0.25); /* blue-500 with opacity */
+        color: #ffffff;
     }
 </style>

@@ -3,201 +3,539 @@
 ---
 
 <div class="fixed inset-0 overflow-hidden -z-10" style="background-color: #08090a">
-  <canvas 
-    id="starfield-canvas"
-    class="absolute inset-0"
-    style="opacity: 0; transition: opacity 0.8s ease-out"
-  />
+    <canvas
+        id="starfield-canvas"
+        class="absolute inset-0"
+        style="opacity: 0; transition: opacity 0.8s ease-out"></canvas>
 </div>
 
 <script>
-  const canvas = document.getElementById('starfield-canvas') as HTMLCanvasElement;
-  const ctx = canvas?.getContext('2d');
-  
-  if (ctx) {
-  
-  // Check for reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  // Set canvas dimensions to match viewport
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  
-  // One-time device capability detection for optimal quality level
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  const isMobile = window.innerWidth < 768;
-  const isLowPower = navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
-  
-  // Set static quality configuration - increased density and twinkling
-  const quality = (() => {
-    if (isMobile || isLowPower) {
-      return { maxStars: 400, densityDivider: 900, updateInterval: 6 };
-    } else if (devicePixelRatio > 1.5) {
-      return { maxStars: 700, densityDivider: 700, updateInterval: 4 };
-    } else {
-      return { maxStars: 900, densityDivider: 600, updateInterval: 3 };
-    }
-  })();
-  
-  const calculatedStars = Math.floor(window.innerWidth * window.innerHeight / quality.densityDivider);
-  const starCount = Math.min(calculatedStars, quality.maxStars);
-  
-  // Create and pre-sort stars for efficient rendering
-  const allStars = Array.from({ length: starCount }, () => {
-    const layer = Math.random();
-    let size, baseOpacity, twinkleFactor;
-    
-    if (layer < 0.7) {
-      // Small background stars (70%)
-      size = Math.random() * 0.8 + 0.2;
-      baseOpacity = Math.random() * 0.15 + 0.07;
-      twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.01 + 0.005;
-    } else if (layer < 0.9) {
-      // Medium stars (20%)
-      size = Math.random() * 1.2 + 0.8;
-      baseOpacity = Math.random() * 0.23 + 0.15;
-      twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.015 + 0.008;
-    } else {
-      // Large prominent stars (10%)
-      size = Math.random() * 1.8 + 1.2;
-      baseOpacity = Math.random() * 0.3 + 0.23;
-      twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.02 + 0.01;
-    }
-    
-    const isAccentStar = layer > 0.95;
-    const hasGlow = size > 1.0;
-    
-    return {
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size,
-      opacity: baseOpacity,
-      baseOpacity,
-      maxOpacity: Math.min(baseOpacity + 0.12, 0.35),
-      twinkleFactor,
-      twinkleDirection: Math.random() > 0.5 ? 1 : -1,
-      isAccentStar,
-      hasGlow
-    };
-  });
-  
-  // Pre-sort stars by type for efficient batched rendering
-  const whiteStars = allStars.filter(star => !star.isAccentStar);
-  const blueStars = allStars.filter(star => star.isAccentStar);
-  const glowStars = allStars.filter(star => star.hasGlow);
-  
-  // Simple, efficient animation loop
-  let frame = 0;
-  let animationFrameId: number | null = null;
-  
-  const animate = () => {
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Update star opacity using static quality settings
-    if (frame % quality.updateInterval === 0 && !prefersReducedMotion) {
-      allStars.forEach(star => {
-        star.opacity += star.twinkleFactor * star.twinkleDirection;
-        if (star.opacity > star.maxOpacity || star.opacity < star.baseOpacity * 0.5) {
-          star.twinkleDirection *= -1;
-        }
-      });
-    }
-    
-    // Efficient batched rendering using pre-sorted arrays
-    // Render glow effects first (behind main stars)
-    glowStars.forEach(star => {
-      if (star.opacity > 0.3) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = star.isAccentStar 
-          ? `hsla(220, 70%, 88%, ${star.opacity * 0.1})`
-          : `rgba(248, 249, 250, ${star.opacity * 0.08})`;
-        ctx.fill();
-      }
-    });
-    
-    // Render white stars
-    whiteStars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(248, 249, 250, ${star.opacity})`;
-      ctx.fill();
-    });
-    
-    // Render blue accent stars
-    blueStars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(220, 70%, 88%, ${star.opacity})`;
-      ctx.fill();
-    });
-    
-    // Elegant 4-second cycle
-    frame = (frame + 1) % 240;
-    
-    if (!prefersReducedMotion) {
-      animationFrameId = requestAnimationFrame(animate);
-    }
-  };
-  
-  // Show canvas once ready
-  canvas.style.opacity = '1';
-  
-  // Start animation (or render static if motion is reduced)
-  if (prefersReducedMotion) {
-    animate(); // Single render
-  } else {
-    animationFrameId = requestAnimationFrame(animate);
-  }
-  
-  // Efficient resize handler
-  let resizeTimeout: number;
-  const handleResize = () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const oldWidth = canvas.width;
-      const oldHeight = canvas.height;
-      
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      
-      // Reposition all stars proportionally
-      if (oldWidth > 0 && oldHeight > 0) {
-        const widthRatio = canvas.width / oldWidth;
-        const heightRatio = canvas.height / oldHeight;
-        
-        allStars.forEach(star => {
-          star.x = Math.min(star.x * widthRatio, canvas.width - 1);
-          star.y = Math.min(star.y * heightRatio, canvas.height - 1);
+    const canvas = document.getElementById("starfield-canvas") as HTMLCanvasElement;
+    const ctx = canvas?.getContext("2d");
+
+    if (ctx) {
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        // Set canvas dimensions to match viewport
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // One-time device capability detection for optimal quality level
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        const isMobile = window.innerWidth < 768;
+        const isLowPower =
+            navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
+
+        // Set static quality configuration - increased density and twinkling
+        const quality = (() => {
+            if (isMobile || isLowPower) {
+                return { maxStars: 400, densityDivider: 900, updateInterval: 6 };
+            } else if (devicePixelRatio > 1.5) {
+                return { maxStars: 700, densityDivider: 700, updateInterval: 4 };
+            } else {
+                return { maxStars: 900, densityDivider: 600, updateInterval: 3 };
+            }
+        })();
+
+        const calculatedStars = Math.floor(
+            (window.innerWidth * window.innerHeight) / quality.densityDivider,
+        );
+        const starCount = Math.min(calculatedStars, quality.maxStars);
+
+        // Create and pre-sort stars for efficient rendering
+        const allStars = Array.from({ length: starCount }, () => {
+            const layer = Math.random();
+            // z-depth for parallax (0.1 to 1.0) - closer stars are brighter and move faster
+            const z = Math.random() * 0.9 + 0.1;
+
+            let size, baseOpacity, twinkleFactor;
+
+            if (layer < 0.7) {
+                // Small background stars (70%) - Further away usually
+                size = Math.random() * 0.8 + 0.2;
+                baseOpacity = Math.random() * 0.15 + 0.07;
+                twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.01 + 0.005;
+            } else if (layer < 0.9) {
+                // Medium stars (20%)
+                size = Math.random() * 1.2 + 0.8;
+                baseOpacity = Math.random() * 0.23 + 0.15;
+                twinkleFactor = prefersReducedMotion
+                    ? 0
+                    : Math.random() * 0.015 + 0.008;
+            } else {
+                // Large prominent stars (10%) - Closer
+                size = Math.random() * 1.8 + 1.2;
+                baseOpacity = Math.random() * 0.3 + 0.23;
+                twinkleFactor = prefersReducedMotion ? 0 : Math.random() * 0.02 + 0.01;
+            }
+
+            const isAccentStar = layer > 0.95;
+            const hasGlow = size > 1.0;
+
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                z, // Depth factor
+                size,
+                opacity: baseOpacity,
+                baseOpacity,
+                maxOpacity: Math.min(baseOpacity + 0.12, 0.35),
+                twinkleFactor,
+                twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+                isAccentStar,
+                hasGlow,
+            };
         });
-      }
-      
-      // Force immediate re-render
-      if (!prefersReducedMotion && animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = requestAnimationFrame(animate);
-      } else if (prefersReducedMotion) {
-        animate();
-      }
-    }, 150);
-  };
-  
-  // Pause animation when tab is not visible (battery optimization)
-  const handleVisibilityChange = () => {
-    if (document.hidden) {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-      }
-    } else if (!prefersReducedMotion) {
-      if (!animationFrameId) {
-        animationFrameId = requestAnimationFrame(animate);
-      }
+
+        // Pre-sort stars by type for efficient batched rendering
+        const whiteStars = allStars.filter((star) => !star.isAccentStar);
+        const blueStars = allStars.filter((star) => star.isAccentStar);
+        const glowStars = allStars.filter((star) => star.hasGlow);
+
+        // Parallax state
+        let scrollY = window.scrollY;
+        let targetScrollY = scrollY;
+        let lastWindowScrollY = scrollY;
+        let virtualScrollY = 0;
+        let isWarping = false;
+        let warpDirection = 1;
+        let warpStartTime = 0;
+
+        // Simple, efficient animation loop
+        let frame = 0;
+        let animationFrameId: number | null = null;
+
+        // Nebula System
+        interface Nebula {
+            x: number;
+            y: number;
+            radius: number;
+            color: string;
+            opacity: number;
+            z: number; // Very deep background (0.05 or so)
+        }
+
+        const nebulaClouds: Nebula[] = Array.from({ length: 6 }, () => {
+            // Increased count
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            return {
+                x,
+                y,
+                radius: Math.random() * 400 + 500, // Larger radius (500-900px)
+                // Balanced space colors - visible but not overwhelming
+                color:
+                    Math.random() > 0.6
+                        ? "90, 35, 140" // Balanced Purple
+                        : Math.random() > 0.5
+                          ? "35, 100, 110" // Balanced Teal
+                          : "35, 70, 150", // Balanced Blue
+                opacity: Math.random() * 0.08 + 0.13, // Slightly brighter (0.13 to 0.21)
+                z: Math.random() * 0.05 + 0.02, // Deep background
+            };
+        });
+
+        const animate = () => {
+            // Track window scroll delta
+            const currentWindowScroll = window.scrollY;
+            const windowDelta = currentWindowScroll - lastWindowScrollY;
+            lastWindowScrollY = currentWindowScroll;
+
+            // Combine real scroll with virtual scroll
+            targetScrollY += windowDelta;
+
+            // Warp speed logic during transitions
+            if (isWarping) {
+                // Maintain high velocity relative to current position
+                // This ensures the warp effect persists throughout the entire loading phase
+                targetScrollY = scrollY + warpDirection * 5000;
+            } else if (!prefersReducedMotion) {
+                // Natural drift (slow constant forward motion)
+                targetScrollY += 0.5;
+            }
+
+            // Smooth scroll interpolation for parallax
+            scrollY += (targetScrollY - scrollY) * 0.1;
+
+            // Calculate velocity for warp effect
+            const velocity = Math.abs(targetScrollY - scrollY);
+            const warpFactor = Math.min(velocity * 0.02, 20); // Cap warp stretch
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Render Nebula Clouds
+            nebulaClouds.forEach((nebula) => {
+                // Parallax for nebula (very slow)
+                let y = nebula.y - scrollY * nebula.z;
+                // Wrap vertically
+                y =
+                    (((y % (canvas.height + nebula.radius * 2)) +
+                        canvas.height +
+                        nebula.radius * 2) %
+                        (canvas.height + nebula.radius * 2)) -
+                    nebula.radius;
+
+                // Also wrap horizontally for full infinite feel if needed, but vertical is main
+                // Simple draw
+                const gradient = ctx.createRadialGradient(
+                    nebula.x,
+                    y,
+                    0,
+                    nebula.x,
+                    y,
+                    nebula.radius,
+                );
+                gradient.addColorStop(0, `rgba(${nebula.color}, ${nebula.opacity})`);
+                gradient.addColorStop(1, `rgba(${nebula.color}, 0)`);
+
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            });
+
+            // Update star opacity using static quality settings
+            if (frame % quality.updateInterval === 0 && !prefersReducedMotion) {
+                allStars.forEach((star) => {
+                    star.opacity += star.twinkleFactor * star.twinkleDirection;
+                    if (
+                        star.opacity > star.maxOpacity ||
+                        star.opacity < star.baseOpacity * 0.5
+                    ) {
+                        star.twinkleDirection *= -1;
+                    }
+                });
+            }
+
+            // Helper to draw stars with parallax and warp
+            const drawStar = (star: any, color: string) => {
+                // Parallax offset: closer stars (higher z) move more
+                // We subtract because as you scroll down, stars should move up
+                let y = star.y - scrollY * star.z * 0.2;
+
+                // Wrap around vertically
+                y = ((y % canvas.height) + canvas.height) % canvas.height;
+
+                ctx.beginPath();
+
+                if (warpFactor > 0.5) {
+                    // Warp effect: stretch star into a line based on velocity
+                    const length = Math.max(
+                        star.size * 2,
+                        star.size * warpFactor * star.z,
+                    );
+                    ctx.moveTo(star.x, y - length);
+                    ctx.lineTo(star.x, y + length);
+                    ctx.lineWidth = star.size;
+                    ctx.strokeStyle = color;
+                    ctx.stroke();
+                } else {
+                    // Normal round star
+                    ctx.arc(star.x, y, star.size, 0, Math.PI * 2);
+                    ctx.fillStyle = color;
+                    ctx.fill();
+                }
+            };
+
+            // Efficient batched rendering using pre-sorted arrays
+            // Render glow effects first (behind main stars)
+            glowStars.forEach((star) => {
+                if (star.opacity > 0.3) {
+                    // Simple parallax for glow too
+                    let y = star.y - scrollY * star.z * 0.2;
+                    y = ((y % canvas.height) + canvas.height) % canvas.height;
+
+                    ctx.beginPath();
+                    ctx.arc(star.x, y, star.size * 1.5, 0, Math.PI * 2);
+                    ctx.fillStyle = star.isAccentStar
+                        ? `hsla(220, 70%, 88%, ${star.opacity * 0.1})`
+                        : `rgba(248, 249, 250, ${star.opacity * 0.08})`;
+                    ctx.fill();
+                }
+            });
+
+            // Render white stars
+            whiteStars.forEach((star) => {
+                drawStar(star, `rgba(248, 249, 250, ${star.opacity})`);
+            });
+
+            // Render blue accent stars
+            blueStars.forEach((star) => {
+                drawStar(star, `hsla(220, 70%, 88%, ${star.opacity})`);
+            });
+
+            // Shooting star logic
+            if (!isWarping && !prefersReducedMotion && Math.random() < 0.008) {
+                // Increased frequency slightly to 0.8%
+                createShootingStar();
+            }
+
+            updateAndRenderShootingStars();
+
+            // Elegant 4-second cycle
+            frame = (frame + 1) % 240;
+
+            if (!prefersReducedMotion) {
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        };
+
+        // Shooting Stars System
+        interface ShootingStar {
+            x: number;
+            y: number;
+            length: number;
+            speed: number;
+            opacity: number;
+            angle: number;
+            color: string; // Added color variation
+            width: number;
+        }
+
+        let shootingStars: ShootingStar[] = [];
+
+        const createShootingStar = () => {
+            const startX = Math.random() * canvas.width;
+            const startY = Math.random() * (canvas.height * 0.5); // Start in top half
+            const angle = Math.PI / 4 + (Math.random() * 0.2 - 0.1); // ~45 degrees
+
+            // Randomize color temperature
+            const isBlue = Math.random() > 0.7;
+            const color = isBlue ? "220, 230, 255" : "255, 255, 255";
+
+            shootingStars.push({
+                x: startX,
+                y: startY,
+                length: Math.random() * 100 + 50, // Longer trails
+                speed: Math.random() * 25 + 15, // Faster
+                opacity: 1,
+                angle: angle,
+                color: color,
+                width: Math.random() * 1.5 + 0.5,
+            });
+        };
+
+        const updateAndRenderShootingStars = () => {
+            for (let i = shootingStars.length - 1; i >= 0; i--) {
+                const star = shootingStars[i];
+
+                // Update
+                star.x += Math.cos(star.angle) * star.speed;
+                star.y += Math.sin(star.angle) * star.speed;
+                star.opacity -= 0.015; // Slower fade for longer trails
+
+                // Remove if faded or out of bounds
+                if (
+                    star.opacity <= 0 ||
+                    star.x > canvas.width + 200 ||
+                    star.y > canvas.height + 200
+                ) {
+                    shootingStars.splice(i, 1);
+                    continue;
+                }
+
+                // Render
+                const endX = star.x - Math.cos(star.angle) * star.length;
+                const endY = star.y - Math.sin(star.angle) * star.length;
+
+                const gradient = ctx.createLinearGradient(star.x, star.y, endX, endY);
+                gradient.addColorStop(0, `rgba(${star.color}, ${star.opacity})`);
+                gradient.addColorStop(1, `rgba(${star.color}, 0)`);
+
+                ctx.beginPath();
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(endX, endY);
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = star.width;
+                ctx.stroke();
+
+                // Head glow
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.width * 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${star.color}, ${star.opacity})`;
+                ctx.fill();
+            }
+        };
+
+        // Show canvas once ready
+        canvas.style.opacity = "1";
+
+        // Start animation (or render static if motion is reduced)
+        if (prefersReducedMotion) {
+            animate(); // Single render
+        } else {
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        // Efficient resize handler
+        let resizeTimeout: number;
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const oldWidth = canvas.width;
+                const oldHeight = canvas.height;
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                // Reposition all stars proportionally
+                if (oldWidth > 0 && oldHeight > 0) {
+                    const widthRatio = canvas.width / oldWidth;
+                    const heightRatio = canvas.height / oldHeight;
+
+                    allStars.forEach((star) => {
+                        star.x = Math.min(star.x * widthRatio, canvas.width - 1);
+                        star.y = Math.min(star.y * heightRatio, canvas.height - 1);
+                    });
+                }
+
+                // Force immediate re-render
+                if (!prefersReducedMotion && animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = requestAnimationFrame(animate);
+                } else if (prefersReducedMotion) {
+                    animate();
+                }
+            }, 150);
+        };
+
+        // Scroll handler for parallax - No-op now, tracked in animation loop via window.scrollY
+        // But we keep the listener if needed for other things, or remove it.
+        // Actually, we don't need a scroll listener to update targetScrollY anymore,
+        // we read window.scrollY in the loop.
+
+        // Virtual scroll handler for non-scrollable pages AND boundary scrolling
+        const handleWheel = (e: WheelEvent) => {
+            // If page is not scrollable OR we are at boundaries
+            const isScrollable =
+                document.documentElement.scrollHeight > window.innerHeight + 1;
+            const atTop = window.scrollY <= 0;
+            const atBottom =
+                window.scrollY + window.innerHeight >=
+                document.documentElement.scrollHeight - 1;
+
+            if (
+                !isScrollable ||
+                (atTop && e.deltaY < 0) ||
+                (atBottom && e.deltaY > 0)
+            ) {
+                targetScrollY += e.deltaY;
+            }
+        };
+
+        // Touch handling for mobile infinite scroll
+        let touchStartY = 0;
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            const touchY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchY;
+            touchStartY = touchY;
+
+            const isScrollable =
+                document.documentElement.scrollHeight > window.innerHeight + 1;
+            const atTop = window.scrollY <= 0;
+            const atBottom =
+                window.scrollY + window.innerHeight >=
+                document.documentElement.scrollHeight - 1;
+
+            if (!isScrollable || (atTop && deltaY < 0) || (atBottom && deltaY > 0)) {
+                targetScrollY += deltaY * 2; // Multiply for better feel
+            }
+        };
+
+        // Keyboard navigation handler
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const SCROLL_AMOUNT = 100;
+            const PAGE_AMOUNT = window.innerHeight * 0.8;
+
+            const isScrollable =
+                document.documentElement.scrollHeight > window.innerHeight + 1;
+            const atTop = window.scrollY <= 0;
+            const atBottom =
+                window.scrollY + window.innerHeight >=
+                document.documentElement.scrollHeight - 1;
+
+            let delta = 0;
+
+            switch (e.key) {
+                case "ArrowUp":
+                    delta = -SCROLL_AMOUNT;
+                    break;
+                case "ArrowDown":
+                    delta = SCROLL_AMOUNT;
+                    break;
+                case "PageUp":
+                    delta = -PAGE_AMOUNT;
+                    break;
+                case "PageDown":
+                    delta = PAGE_AMOUNT;
+                    break;
+                case " ":
+                    delta = e.shiftKey ? -PAGE_AMOUNT : PAGE_AMOUNT;
+                    break;
+                default:
+                    return;
+            }
+
+            // Only apply virtual scroll if we can't scroll naturally
+            if (!isScrollable || (atTop && delta < 0) || (atBottom && delta > 0)) {
+                targetScrollY += delta;
+                // Optional: prevent default only if we're taking over
+                // e.preventDefault();
+            }
+        };
+
+        // Pause animation when tab is not visible (battery optimization)
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            } else if (!prefersReducedMotion) {
+                if (!animationFrameId) {
+                    animationFrameId = requestAnimationFrame(animate);
+                }
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        // Removed scroll listener as we poll window.scrollY in animate()
+        window.addEventListener("wheel", handleWheel, { passive: true });
+        window.addEventListener("touchstart", handleTouchStart, { passive: true });
+        window.addEventListener("touchmove", handleTouchMove, { passive: true });
+        window.addEventListener("keydown", handleKeyDown);
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+
+        // Handle view transitions for warp effect
+        document.addEventListener("astro:before-preparation", (e: any) => {
+            const direction = e.detail?.direction || "forward";
+            warpDirection = direction === "back" ? -1 : 1;
+            isWarping = true;
+            warpStartTime = Date.now();
+        });
+
+        document.addEventListener("astro:after-swap", () => {
+            const MIN_WARP_DURATION = 200; // ms
+            const elapsed = Date.now() - warpStartTime;
+            const remaining = Math.max(0, MIN_WARP_DURATION - elapsed);
+
+            setTimeout(() => {
+                // Stop the warp
+                isWarping = false;
+
+                // Reset scroll tracking to avoid jump
+                lastWindowScrollY = window.scrollY;
+
+                // Set a target ahead to allow for a smooth deceleration ("landing" effect)
+                // rather than an abrupt stop.
+                targetScrollY = scrollY + warpDirection * 1000;
+            }, remaining);
+        });
     }
-  };
-  
-  window.addEventListener('resize', handleResize);
-  document.addEventListener('visibilitychange', handleVisibilityChange);
-  }
 </script>

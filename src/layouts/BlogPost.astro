@@ -1,7 +1,5 @@
 ---
 import Layout from "./Layout.astro";
-import ReflectionText from "../components/ReflectionText.astro";
-import TextGlow from "../components/TextGlow.astro";
 import CodeBlock from "../components/CodeBlock.astro";
 import HiringNotice from "../components/HiringNotice.astro";
 import type { CollectionEntry } from 'astro:content';
@@ -67,118 +65,88 @@ const readingTime = calculateReadingTime(post.body);
             })}
         />
     </Fragment>
-    <!-- Article Header -->
-    <section class="section">
-        <div class="container container-md">
-            <div class="text-center mb-12">
-                <h1 class="heading-1 mb-6">
-                    <span class="text-accent-blue">{title}</span>
-                </h1>
-                
-                <div class="flex items-center justify-center gap-4 mb-8 body-small text-text-tertiary">
-                    <time datetime={pubDate.toISOString()}>
-                        {formattedDate}
-                    </time>
-                    <span>•</span>
-                    <span>{readingTime}</span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-2">
-                    {
-                        tags.map((tag) => (
-                            <span class="badge badge-primary">
-                                {tag}
-                            </span>
-                        ))
-                    }
-                </div>
+    
+    <div class="container container-sm pt-32 pb-16">
+        <!-- Article Header -->
+        <header class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-text-primary leading-tight">
+                {title}
+            </h1>
+            
+            <div class="flex items-center justify-center gap-4 mb-8 text-sm text-text-tertiary font-mono">
+                <time datetime={pubDate.toISOString()}>
+                    {formattedDate}
+                </time>
+                <span>•</span>
+                <span>{readingTime}</span>
             </div>
 
-            <!-- Article Content -->
-            <div class="glass-card p-12">
-                <article class="blog-content prose prose-invert max-w-none">
-                    <slot />
-                    <CodeBlock />
-                </article>
+            <div class="flex flex-wrap justify-center gap-2">
+                {
+                    tags.map((tag) => (
+                        <span class="text-xs font-medium text-text-tertiary px-3 py-1 rounded-full bg-white/5 border border-white/5">
+                            {tag}
+                        </span>
+                    ))
+                }
             </div>
+        </header>
+
+        <div class="divider my-12"></div>
+
+        <!-- Article Content -->
+        <div class="content-bg-subtle">
+            <article class="blog-content prose prose-invert max-w-none prose-lg prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-secondary prose-strong:text-text-primary prose-code:text-accent-primary prose-pre:bg-surface-elevated prose-pre:border prose-pre:border-white/5">
+                <slot />
+                <CodeBlock />
+            </article>
         </div>
-    </section>
 
-    <div class="divider"></div>
+        <div class="divider my-16"></div>
 
-    <!-- Hiring Notice -->
-    <section class="section-sm">
-        <div class="container container-md">
+        <!-- Post Navigation -->
+        {(prevPost || nextPost) && (
+            <nav class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                {prevPost ? (
+                    <a
+                        href={`/blog/${prevPost.slug}`}
+                        class="group block p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-left"
+                    >
+                        <div class="text-xs text-text-tertiary mb-2 font-mono">Previous Post</div>
+                        <h3 class="text-lg font-semibold text-text-primary group-hover:text-accent-primary transition-colors mb-2">
+                            {prevPost.data.title}
+                        </h3>
+                    </a>
+                ) : (
+                    <div />
+                )}
+
+                {nextPost ? (
+                    <a
+                        href={`/blog/${nextPost.slug}`}
+                        class="group block p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-right"
+                    >
+                        <div class="text-xs text-text-tertiary mb-2 font-mono">Next Post</div>
+                        <h3 class="text-lg font-semibold text-text-primary group-hover:text-accent-primary transition-colors mb-2">
+                            {nextPost.data.title}
+                        </h3>
+                    </a>
+                ) : (
+                    <div />
+                )}
+            </nav>
+        )}
+
+        <!-- Hiring Notice -->
+        <section class="mb-16">
             <HiringNotice />
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Post Navigation -->
-    {(prevPost || nextPost) && (
-        <section class="section-sm">
-            <div class="container container-md">
-                <div class="flex flex-col gap-6">
-                    {prevPost && (
-                        <a
-                            href={`/blog/${prevPost.slug}`}
-                            class="glass-card p-6 hover:border-color-border-default transition-all group flex items-center gap-6"
-                        >
-                            <div class="flex-shrink-0 text-text-tertiary group-hover:text-accent-primary transition-colors">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="15 18 9 12 15 6"></polyline>
-                                </svg>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="body-small text-text-tertiary mb-2">Previous Post</div>
-                                <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
-                                    {prevPost.data.title}
-                                </h3>
-                                <p class="body-small text-text-secondary line-clamp-2">
-                                    {prevPost.data.description}
-                                </p>
-                            </div>
-                        </a>
-                    )}
-
-                    {nextPost && (
-                        <a
-                            href={`/blog/${nextPost.slug}`}
-                            class="glass-card p-6 hover:border-color-border-default transition-all group flex items-center gap-6"
-                        >
-                            <div class="flex-shrink-0 w-[40px]"></div>
-                            <div class="flex-1 min-w-0">
-                                <div class="body-small text-text-tertiary mb-2">Next Post</div>
-                                <h3 class="heading-3 mb-2 text-text-primary group-hover:text-accent-primary transition-colors">
-                                    {nextPost.data.title}
-                                </h3>
-                                <p class="body-small text-text-secondary line-clamp-2">
-                                    {nextPost.data.description}
-                                </p>
-                            </div>
-                            <div class="flex-shrink-0 text-text-tertiary group-hover:text-accent-primary transition-colors">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </a>
-                    )}
-                </div>
-            </div>
         </section>
-    )}
 
-    {(prevPost || nextPost) && <div class="divider"></div>}
-
-    <!-- Navigation -->
-    <section class="section-sm">
-        <div class="container container-md">
-            <div class="text-center">
-                <a href="/blog" class="btn btn-secondary link-arrow">
-                    Back to Blog
-                </a>
-            </div>
+        <!-- Navigation -->
+        <div class="text-center">
+            <a href="/blog" class="btn btn-ghost link-arrow">
+                Back to Blog
+            </a>
         </div>
-    </section>
+    </div>
 </Layout>

@@ -6,19 +6,23 @@ import SocialLinks from "../components/SocialLinks.astro";
 <Layout
     title="Nick Russo - Software Developer"
     description="Software developer building backend systems, distributed applications, and AI-powered tools."
+    showFooter={false}
 >
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center -mt-24">
-        <div class="container container-md">
+    <section class="fixed inset-0 flex items-center justify-center pointer-events-none">
+        <div class="container container-md pointer-events-auto">
             <div class="text-center">
                 <h1 class="heading-1 mb-6">
-                    <span class="text-accent-blue">Nick Russo</span>
+                    <span class="text-accent-blue">Nick</span> <span class="text-text-primary">Russo</span>
                 </h1>
                 <p class="body-large text-text-secondary mb-12">
-                    Software developer building backend systems, distributed applications, and AI-powered tools.
+                    Software developer building AI systems, high-performance databases, and intelligent developer tools.
                 </p>
                 <SocialLinks />
             </div>
         </div>
     </section>
+    
+    <!-- Scroll spacer to allow starfield movement -->
+    <!-- Removed to enable virtual infinite scroll -->
 </Layout>
