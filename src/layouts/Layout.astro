@@ -140,6 +140,8 @@ const { showFooter = true } = Astro.props;
     html {
         scroll-behavior: smooth;
         font-size: 112.5%; /* 18px base */
+        overflow-x: hidden;
+        max-width: 100vw;
     }
 
     body {
@@ -152,12 +154,12 @@ const { showFooter = true } = Astro.props;
             sans-serif;
         font-weight: 400;
         color: #ffffff;
-        overscroll-behavior-y: none;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
     .page-wrapper {
         width: 100%;
-        overflow-x: clip;
         position: relative;
     }
 

@@ -424,6 +424,10 @@
                 (atTop && e.deltaY < 0) ||
                 (atBottom && e.deltaY > 0)
             ) {
+                // Allow pull-to-refresh at the top of any page
+                if (atTop && e.deltaY < 0) return;
+
+                e.preventDefault();
                 targetScrollY += e.deltaY;
             }
         };
@@ -446,7 +450,13 @@
                 window.scrollY + window.innerHeight >=
                 document.documentElement.scrollHeight - 1;
 
-            if (!isScrollable || (atTop && deltaY < 0) || (atBottom && deltaY > 0)) {
+            // If we are at the top (whether scrollable or not) and pulling down,
+            // let the native pull-to-refresh behavior happen.
+            // Otherwise, if we are non-scrollable OR at the bottom, force virtual scroll.
+            const isPullingDownAtTop = atTop && deltaY < 0;
+            
+            if ( (!isScrollable && !isPullingDownAtTop) || (atBottom && deltaY > 0) ) {
+                if (e.cancelable) e.preventDefault();
                 targetScrollY += deltaY * 2; // Multiply for better feel
             }
         };
@@ -509,9 +519,9 @@
 
         window.addEventListener("resize", handleResize);
         // Removed scroll listener as we poll window.scrollY in animate()
-        window.addEventListener("wheel", handleWheel, { passive: true });
+        window.addEventListener("wheel", handleWheel, { passive: false });
         window.addEventListener("touchstart", handleTouchStart, { passive: true });
-        window.addEventListener("touchmove", handleTouchMove, { passive: true });
+        window.addEventListener("touchmove", handleTouchMove, { passive: false });
         window.addEventListener("keydown", handleKeyDown);
         document.addEventListener("visibilitychange", handleVisibilityChange);
 

@@ -79,12 +79,19 @@
 /* Professional clickable areas */
 .clickable-item {
   display: block;
-  padding: var(--space-6);
-  margin: calc(var(--space-6) * -1);
+  padding: var(--space-4);
+  margin: calc(var(--space-4) * -1);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   cursor: pointer;
   text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .clickable-item {
+    padding: var(--space-6);
+    margin: calc(var(--space-6) * -1);
+  }
 }
 
 .clickable-item:hover {
