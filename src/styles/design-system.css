@@ -117,6 +117,8 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hover effect for interactive cards */
@@ -537,6 +539,8 @@
   margin-right: auto;
   padding-left: var(--space-4);
   padding-right: var(--space-4);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .container-sm {
