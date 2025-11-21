@@ -186,6 +186,13 @@ const navItems = [
     });
   }
 
-  // Run on every page load (initial + after view transitions)
+  // Run on initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+
+  // Run after view transitions
   document.addEventListener('astro:page-load', initMobileMenu);
 </script>
