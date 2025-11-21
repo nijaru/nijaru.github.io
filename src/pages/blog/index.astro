@@ -81,6 +81,7 @@ posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
     <!-- Blog Posts -->
     <section class="section">
         <div class="container container-sm">
+            <div class="content-bg-subtle">
             {posts.length === 0 ? (
                 <div class="text-center py-16">
                     <div class="heading-3 mb-4 text-text-secondary">No Posts Yet</div>
@@ -116,6 +117,7 @@ posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
                     ))}
                 </div>
             )}
+            </div>
         </div>
     </section>
 

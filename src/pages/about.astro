@@ -30,18 +30,20 @@ import HiringNotice from "../components/HiringNotice.astro";
     <!-- About Section -->
     <section class="section">
         <div class="container container-sm">
-            <div class="space-y-12">
-                <div class="space-y-6">
-                    <h2 class="heading-2">About</h2>
-                    <p class="body-normal text-text-secondary leading-relaxed">
-                        I build AI systems, APIs, developer tools, and databases. I work with Python, Rust,
-                        Go, and TypeScript, from low-level database internals to API design and full-stack
-                        applications. Extensive experience building production APIs and backend systems.
-                    </p>
-                    <p class="body-normal text-text-secondary leading-relaxed">
-                        I enjoy making complex systems simple and fast, and like experimenting with new
-                        approaches to hard problems.
-                    </p>
+            <div class="content-bg-subtle">
+                <div class="space-y-12">
+                    <div class="space-y-6">
+                        <h2 class="heading-2">About</h2>
+                        <p class="body-normal text-text-secondary leading-relaxed">
+                            I build AI systems, APIs, developer tools, and databases. I work with Python, Rust,
+                            Go, and TypeScript, from low-level database internals to API design and full-stack
+                            applications. Extensive experience building production APIs and backend systems.
+                        </p>
+                        <p class="body-normal text-text-secondary leading-relaxed">
+                            I enjoy making complex systems simple and fast, and like experimenting with new
+                            approaches to hard problems.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,27 +52,30 @@ import HiringNotice from "../components/HiringNotice.astro";
     <!-- Technical Skills -->
     <section class="section">
         <div class="container container-sm">
-            <div class="text-center mb-12">
-                <h2 class="heading-2">Technical Skills</h2>
-                <p class="body-normal text-text-secondary">
-                    Languages, frameworks, and technologies I work with
-                </p>
+            <div class="content-bg-subtle">
+                <div class="text-center mb-12">
+                    <h2 class="heading-2">Technical Skills</h2>
+                    <p class="body-normal text-text-secondary">
+                        Languages, frameworks, and technologies I work with
+                    </p>
+                </div>
+                <TechSkills />
             </div>
-            <TechSkills />
         </div>
     </section>
 
     <!-- Tools & Setup -->
     <section class="section">
         <div class="container container-sm">
-            <div class="text-center mb-12">
-                <h2 class="heading-2">Tools & Setup</h2>
-                <p class="body-normal text-text-secondary">
-                    Development environment and tools that power my workflow
-                </p>
-            </div>
-            
-            <div class="space-y-12">
+            <div class="content-bg-subtle">
+                <div class="text-center mb-12">
+                    <h2 class="heading-2">Tools & Setup</h2>
+                    <p class="body-normal text-text-secondary">
+                        Development environment and tools that power my workflow
+                    </p>
+                </div>
+
+                <div class="space-y-12">
                 <!-- Development Environment -->
                 <div class="border-b pb-8" style="border-color: var(--color-border-subtle);">
                     <h3 class="heading-3 mb-6">Development Environment</h3>
@@ -128,6 +133,7 @@ import HiringNotice from "../components/HiringNotice.astro";
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </section>
@@ -137,13 +143,15 @@ import HiringNotice from "../components/HiringNotice.astro";
     <!-- Quote Section -->
     <section class="section">
         <div class="container container-sm">
-            <div class="text-center py-12">
-                    <blockquote class="text-lg italic text-text-secondary leading-relaxed mb-6">
-                        "There are only two hard things in Computer Science: cache invalidation,
-                        naming things, and off-by-one errors."
-                    </blockquote>
-                    <div class="body-small text-text-tertiary">
-                        — Phil Karlton (with Leon Bambrick's addition)
+            <div class="content-bg-subtle">
+                <div class="text-center py-12">
+                        <blockquote class="text-lg italic text-text-secondary leading-relaxed mb-6">
+                            "There are only two hard things in Computer Science: cache invalidation,
+                            naming things, and off-by-one errors."
+                        </blockquote>
+                        <div class="body-small text-text-tertiary">
+                            — Phil Karlton (with Leon Bambrick's addition)
+                        </div>
                     </div>
                 </div>
             </div>

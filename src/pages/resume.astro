@@ -106,6 +106,7 @@ const skills = {
     <!-- Resume Container -->
     <div class="py-6 print:py-0">
         <div class="container mx-auto max-w-5xl px-6 print:px-0">
+            <div class="content-bg">
 
             <!-- Header -->
             <section class="mb-6 print:mb-3">
@@ -293,7 +294,7 @@ const skills = {
                         ))}
                     </div>
                 </section>
-            </div>
+
 
             <!-- Footer -->
             <div class="text-center text-text-tertiary text-xs print:hidden mt-8">
@@ -301,6 +302,7 @@ const skills = {
                     <a href="/" class="text-accent-blue hover:underline">← Back to main site</a>
                 </p>
                 <p>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+            </div>
             </div>
 
         </div>
@@ -324,6 +326,13 @@ const skills = {
             color: black !important;
             font-size: 9pt !important;
             line-height: 1.3 !important;
+        }
+
+        /* Hide background effects for print */
+        .content-bg, .content-bg-subtle {
+            background: none !important;
+            backdrop-filter: none !important;
+            padding: 0 !important;
         }
 
         /* Hide buttons */
