@@ -138,6 +138,7 @@ const { showFooter = true } = Astro.props;
     html {
         scroll-behavior: smooth;
         overscroll-behavior-y: none;
+        font-size: 137.5%; /* 22px base - Atkinson renders smaller than Inter */
     }
 
     body {
@@ -148,7 +149,6 @@ const { showFooter = true } = Astro.props;
             BlinkMacSystemFont,
             "Segoe UI",
             sans-serif;
-        font-size: 1.375rem; /* 22px - Atkinson renders smaller than Inter */
         font-weight: 400;
         color: #ffffff;
         overflow-x: hidden;
