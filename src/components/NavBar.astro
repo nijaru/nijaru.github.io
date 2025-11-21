@@ -124,50 +124,68 @@ const navItems = [
 </style>
 
 <script>
-  const button = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  const icon = button?.querySelector('svg path');
-  
-  let isOpen = false;
-  
-  button?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    isOpen = !isOpen;
-    
-    if (isOpen) {
-      menu?.classList.remove('hidden');
-      // Small delay to allow display:flex to apply before transition
-      requestAnimationFrame(() => {
-        menu?.classList.add('open');
-      });
-    } else {
-      menu?.classList.remove('open');
-      // Wait for transition to finish before hiding
-      setTimeout(() => {
-        menu?.classList.add('hidden');
-      }, 200);
-    }
-    
-    button.setAttribute('aria-expanded', isOpen.toString());
-    
-    if (icon) {
-      icon.setAttribute('d', isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
-    }
-  });
+  function initMobileMenu() {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const icon = button?.querySelector('svg path');
 
-  // Close on click outside
-  document.addEventListener('click', (e) => {
-    if (isOpen && !menu?.contains(e.target as Node) && !button?.contains(e.target as Node)) {
-      isOpen = false;
-      menu?.classList.remove('open');
-      setTimeout(() => {
-        menu?.classList.add('hidden');
-      }, 200);
-      
-      button?.setAttribute('aria-expanded', 'false');
-      if (icon) {
-        icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-      }
+    if (!button || !menu) return;
+
+    let isOpen = false;
+
+    // Reset state on page load
+    menu.classList.add('hidden');
+    menu.classList.remove('open');
+    button.setAttribute('aria-expanded', 'false');
+    if (icon) {
+      icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
     }
-  });
+
+    // Remove old listeners by cloning
+    const newButton = button.cloneNode(true) as HTMLElement;
+    button.parentNode?.replaceChild(newButton, button);
+    const newIcon = newButton.querySelector('svg path');
+
+    newButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          menu.classList.add('open');
+        });
+      } else {
+        menu.classList.remove('open');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 200);
+      }
+
+      newButton.setAttribute('aria-expanded', isOpen.toString());
+
+      if (newIcon) {
+        newIcon.setAttribute('d', isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (isOpen && !menu.contains(e.target as Node) && !newButton.contains(e.target as Node)) {
+        isOpen = false;
+        menu.classList.remove('open');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 200);
+
+        newButton.setAttribute('aria-expanded', 'false');
+        if (newIcon) {
+          newIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        }
+      }
+    });
+  }
+
+  // Run on every page load (initial + after view transitions)
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
