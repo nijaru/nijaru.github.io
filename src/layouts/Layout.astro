@@ -135,11 +135,15 @@ const { showFooter = true } = Astro.props;
         pointer-events: none;
     }
 
-    html {
+    html, body {
         scroll-behavior: smooth;
         overscroll-behavior-y: none;
-        font-size: 112.5%; /* 18px base */
         overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    html {
+        font-size: 112.5%; /* 18px base */
     }
 
     body {
@@ -152,7 +156,6 @@ const { showFooter = true } = Astro.props;
             sans-serif;
         font-weight: 400;
         color: #ffffff;
-        overflow-x: hidden;
     }
 
     /* Monospace font for code elements */
