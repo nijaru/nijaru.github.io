@@ -13,10 +13,12 @@ interface Props {
     title: string;
     description?: string;
     ogType?: string;
+    image?: string;
     showFooter?: boolean;
 }
 
-const { title, description = "Nick Russo - Software Engineer", ogType = "website" } = Astro.props;
+const { title, description = "Nick Russo - Software Engineer", ogType = "website", image } = Astro.props;
+const ogImage = image ? new URL(image, Astro.site) : undefined;
 
 // Get git commit hash at build time
 const gitHash = execSync('git rev-parse --short HEAD').toString().trim();
@@ -45,13 +47,15 @@ const { showFooter = true } = Astro.props;
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:site_name" content="Nick Russo" />
+        {ogImage && <meta property="og:image" content={ogImage} />}
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
         <meta property="twitter:url" content={canonicalURL} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:creator" content="@nijaru0x" />
+        {ogImage && <meta property="twitter:image" content={ogImage} />}
 
         <!-- Fonts loaded via Fontsource -->
         <!-- Devicons for programming language and tool icons -->

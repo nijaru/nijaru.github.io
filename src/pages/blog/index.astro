@@ -1,20 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { calculateReadingTime } from "../../utils/readingTime";
 
 // Get all blog posts from the collection
 const blogEntries = await getCollection("blog", ({ data }) => {
     // Filter out draft posts in production
     return import.meta.env.PROD ? !data.draft : true;
 });
-
-// Calculate reading time
-function calculateReadingTime(text) {
-    const wordsPerMinute = 200;
-    const words = text.trim().split(/\s+/).length;
-    const minutes = Math.ceil(words / wordsPerMinute);
-    return `${minutes} min read`;
-}
 
 // Format and prepare post data
 const posts = await Promise.all(

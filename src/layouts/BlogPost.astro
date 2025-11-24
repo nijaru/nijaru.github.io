@@ -2,6 +2,7 @@
 import Layout from "./Layout.astro";
 import CodeBlock from "../components/CodeBlock.astro";
 import HiringNotice from "../components/HiringNotice.astro";
+import { calculateReadingTime } from "../utils/readingTime";
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
 
@@ -21,18 +22,10 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
     day: "numeric",
 });
 
-// Calculate reading time
-function calculateReadingTime(text) {
-    const wordsPerMinute = 200;
-    const words = text.trim().split(/\s+/).length;
-    const minutes = Math.ceil(words / wordsPerMinute);
-    return `${minutes} min read`;
-}
-
 const readingTime = calculateReadingTime(post.body);
 ---
 
-<Layout title={title + " - Nick Russo"} description={description} ogType="article">
+<Layout title={title + " - Nick Russo"} description={description} ogType="article" image={image?.url}>
     <Fragment slot="head">
         <!-- Open Graph Article Metadata -->
         <meta property="article:published_time" content={pubDate.toISOString()} />
