@@ -1,106 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import resumeData from "../../resume-data.json";
 
-// Professional experience - only recent SWE roles
-const experience = [
-    {
-        company: "Omnitier, Inc.",
-        title: "Software Engineer",
-        period: "January 2021 - May 2023",
-        achievements: [
-            "Reduced Python backend service runtime by ~90% (45 min → 5 min) by migrating to os.scandir() and Path objects, minimizing filesystem system calls",
-            "Built comprehensive regression testing infrastructure using Go and Python, improving code stability across distributed services",
-            "Developed gRPC API integrations and enhanced React frontend features, maintaining full-stack service reliability"
-        ]
-    }
-];
-
-// Education from PDF + LinkedIn
-const education = [
-    {
-        school: "42 Silicon Valley",
-        location: "Fremont, CA",
-        degree: "Computer Science",
-        period: "2018 - 2020"
-    },
-    {
-        school: "Las Positas College",
-        location: "Livermore, CA",
-        degree: "Computer Science",
-        period: "2014 - 2015, 2016 - 2018",
-        detail: "Computer Science Club President 2016 - 2017"
-    },
-    {
-        school: "Dev Bootcamp",
-        location: "San Francisco, CA",
-        degree: "Web Development",
-        period: "March 2016 - May 2016"
-    }
-];
-
-// Current projects
-const projects = [
-    {
-        name: "seerdb",
-        url: "https://github.com/omendb/seerdb",
-        description: "Production-ready storage engine with learned indexes beating RocksDB 2.47x on writes, 2.07x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees",
-        tech: ["Rust", "Storage Engine", "Database Systems"]
-    },
-    {
-        name: "omendb",
-        description: "Vector database with embedded library (Rust + Mojo implementations) and cloud service targeting billion-scale deployments. Tiered storage architecture (RAM → SSD → S3)",
-        tech: ["Rust", "Mojo", "Vector Database", "Database Systems"]
-    },
-    {
-        name: "Pacabot",
-        description: "AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management",
-        tech: ["Python", "LangGraph", "AI/ML", "Finance"]
-    },
-    {
-        name: "Aircher",
-        url: "https://github.com/nijaru/aircher",
-        description: "AI coding agent backend using LangGraph for multi-agent orchestration. Maintains working memory of codebase and task history, learns project patterns. Supports Agent Client Protocol for editor integrations",
-        tech: ["Python", "LangGraph", "AI/ML"]
-    },
-    {
-        name: "sy",
-        url: "https://github.com/nijaru/sy",
-        description: "File synchronization tool in Rust implementing delta sync with streaming architecture. 2-11x faster than rsync through parallel transfers and optimization",
-        tech: ["Rust", "CLI Tools", "Systems Programming"]
-    }
-];
-
-// Awards
-const awards = [
-    {
-        title: "2nd Place & Ingenico Winner, Money 20/20 Las Vegas 2016",
-        project: "Team Kairos",
-        description: "Developed cross-terminal payment application with REST API for business partnerships. Built with Go and PostgreSQL, deployed on CoreOS"
-    }
-];
-
-// Skills - updated based on current work
-const skills = {
-    languages: [
-        { name: "Python", level: "3+ years" },
-        { name: "Go", level: "3+ years" },
-        { name: "Rust", level: "1 year" },
-        { name: "C", level: "1 year" },
-        { name: "C++", level: "1 year" },
-        { name: "JavaScript", level: "<1 year" },
-        { name: "Mojo", level: "<1 year" }
-    ],
-    backend: ["FastAPI", "Flask", "Django", "Zenith", "Ruby on Rails", "gRPC"],
-    databases: ["PostgreSQL", "SQLite", "MySQL", "Redis"],
-    infrastructure: ["Docker", "Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo)", "Kubernetes (Beginner)"],
-    cloudPlatforms: ["AWS", "GCP", "DigitalOcean", "Cloudflare"],
-    tools: ["Git", "GitHub Actions", "Zed", "Neovim", "mise", "uv", "Ghostty", "Fish", "ripgrep", "fzf", "fd", "Tailscale"]
-};
+const { skills, projects, experience, awards, education, emailDisplay, github, website } = resumeData;
 ---
 
 <Layout
     title="Nicholas Russo - Resume"
-    description="Software developer with 2.5 years of work experience specializing in backend development, distributed systems, AI/ML infrastructure, and high-performance databases."
+    description="Backend engineer building database internals and AI agents. Systems programming in Rust and multi-agent AI with LangGraph."
     ogType="profile"
 >
     <!-- Resume Container -->
@@ -111,14 +18,14 @@ const skills = {
                 <span class="text-accent-primary">Nicholas</span> Russo
             </h1>
             <div class="flex flex-wrap justify-center gap-4 text-sm text-text-secondary print:text-xs print:gap-2 print:text-black">
-                <span>nijaru7[at]gmail.com</span>
+                <span>{emailDisplay}</span>
                 <span class="text-text-tertiary print:text-black">•</span>
-                <a href="https://github.com/nijaru" class="hover:text-accent-primary transition-colors print:text-black print:no-underline">
-                    github.com/nijaru
+                <a href={`https://${github}`} class="hover:text-accent-primary transition-colors print:text-black print:no-underline">
+                    {github}
                 </a>
                 <span class="text-text-tertiary print:text-black">•</span>
-                <a href="https://nijaru.com" class="hover:text-accent-primary transition-colors print:text-black print:no-underline">
-                    nijaru.com
+                <a href={`https://${website}`} class="hover:text-accent-primary transition-colors print:text-black print:no-underline">
+                    {website}
                 </a>
             </div>
             <div class="mt-8 print:hidden">
@@ -130,75 +37,30 @@ const skills = {
 
         <div class="divider my-12 print:hidden"></div>
 
-        <!-- Summary -->
-        <section class="mb-12 print:mb-6">
-            <h2 class="text-lg font-semibold text-accent-primary mb-4 uppercase tracking-wider print:text-black print:border-b print:border-black print:pb-1">Summary</h2>
-            <p class="text-text-secondary leading-relaxed print:text-black print:text-sm">
-                Backend engineer with 2.5 years of work experience building and optimizing distributed systems. Work includes performance optimization, API development, database systems, and testing infrastructure. Open source projects focus on systems programming and developer tooling.
-            </p>
-        </section>
-
         <!-- Skills -->
         <section class="mb-12 print:mb-6">
             <h2 class="text-lg font-semibold text-accent-primary mb-4 uppercase tracking-wider print:text-black print:border-b print:border-black print:pb-1">Skills</h2>
             <div class="space-y-3 print:space-y-2 print:text-sm">
                 <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
                     <span class="font-medium text-text-primary print:text-black">Languages:</span>
-                    <span class="text-text-secondary print:text-black">
-                        {skills.languages.map((lang, i) => (
-                            <span>{lang.name} ({lang.level}){i < skills.languages.length - 1 ? ', ' : ''}</span>
-                        ))}
-                    </span>
+                    <span class="text-text-secondary print:text-black">{skills.languages.join(', ')}</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
                     <span class="font-medium text-text-primary print:text-black">Backend/APIs:</span>
                     <span class="text-text-secondary print:text-black">{skills.backend.join(', ')}</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
-                    <span class="font-medium text-text-primary print:text-black">Databases:</span>
-                    <span class="text-text-secondary print:text-black">{skills.databases.join(', ')}</span>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
                     <span class="font-medium text-text-primary print:text-black">Infrastructure:</span>
                     <span class="text-text-secondary print:text-black">{skills.infrastructure.join(', ')}</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
-                    <span class="font-medium text-text-primary print:text-black">Cloud Platforms:</span>
-                    <span class="text-text-secondary print:text-black">{skills.cloudPlatforms.join(', ')}</span>
+                    <span class="font-medium text-text-primary print:text-black">Databases:</span>
+                    <span class="text-text-secondary print:text-black">{skills.databases.join(', ')}</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-4 items-start print:grid-cols-[120px_1fr]">
                     <span class="font-medium text-text-primary print:text-black">Tools:</span>
                     <span class="text-text-secondary print:text-black">{skills.tools.join(', ')}</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="mb-12 print:mb-6">
-            <h2 class="text-lg font-semibold text-accent-primary mb-6 uppercase tracking-wider print:text-black print:border-b print:border-black print:pb-1 print:mb-4">Experience</h2>
-            <div class="space-y-8 print:space-y-4">
-                {experience.map((job) => (
-                    <div>
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 print:flex-row print:justify-between">
-                            <h3 class="text-xl font-bold text-text-primary print:text-black print:text-base">
-                                {job.title}
-                            </h3>
-                            <span class="text-sm text-text-tertiary font-mono print:text-black print:text-xs">
-                                {job.period}
-                            </span>
-                        </div>
-                        <p class="text-md font-medium text-accent-primary mb-3 print:text-black print:text-sm print:mb-1">
-                            {job.company}
-                        </p>
-                        <ul class="list-disc list-outside ml-5 space-y-2 marker:text-accent-primary print:marker:text-black">
-                            {job.achievements.map((achievement) => (
-                                <li class="text-text-secondary leading-relaxed print:text-black print:text-sm">
-                                    {achievement}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
             </div>
         </section>
 
@@ -240,6 +102,35 @@ const skills = {
                         <p class="hidden print:block print:text-xs print:text-black print:italic">
                             Built with: {project.tech.join(', ')}
                         </p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-12 print:mb-6">
+            <h2 class="text-lg font-semibold text-accent-primary mb-6 uppercase tracking-wider print:text-black print:border-b print:border-black print:pb-1 print:mb-4">Experience</h2>
+            <div class="space-y-8 print:space-y-4">
+                {experience.map((job) => (
+                    <div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 print:flex-row print:justify-between">
+                            <h3 class="text-xl font-bold text-text-primary print:text-black print:text-base">
+                                {job.title}
+                            </h3>
+                            <span class="text-sm text-text-tertiary font-mono print:text-black print:text-xs">
+                                {job.period}
+                            </span>
+                        </div>
+                        <p class="text-md font-medium text-accent-primary mb-3 print:text-black print:text-sm print:mb-1">
+                            {job.company}
+                        </p>
+                        <ul class="list-disc list-outside ml-5 space-y-2 marker:text-accent-primary print:marker:text-black">
+                            {job.achievements.map((achievement) => (
+                                <li class="text-text-secondary leading-relaxed print:text-black print:text-sm">
+                                    {achievement}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 ))}
             </div>
@@ -298,7 +189,7 @@ const skills = {
                 Back to Home
             </a>
         </section>
-        
+
         <!-- Print Footer -->
         <div class="hidden print:block text-center text-xs mt-8 border-t pt-4">
             <p>Full resume and portfolio available at nijaru.com</p>

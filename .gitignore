@@ -30,4 +30,8 @@ docs/blog-research/
 *.aux
 *.log
 *.out
+resume.pdf
+
+# AI session temp files
+ai/tmp/
 

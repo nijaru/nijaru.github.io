@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="About - Nick Russo"
+    description="Backend engineer building database internals and AI agents."
+    ogType="profile"
+>
+    <div class="container container-sm pt-32 pb-16">
+        <section class="mb-12 text-center">
+            <h1 class="heading-1 mb-6">
+                <span class="text-accent-primary">About</span> Me
+            </h1>
+        </section>
+
+        <div class="prose prose-invert mx-auto">
+            <p class="text-lg text-text-secondary leading-relaxed mb-8">
+                Backend engineer from the Bay Area specializing in Python, Go, and Rust. Building database systems
+                and AI agents. Created <a href="https://github.com/omendb/seerdb" class="text-accent-primary hover:underline">seerdb</a>
+                (2.5x faster writes, 2x faster reads than RocksDB) and multi-agent systems with LangGraph.
+            </p>
+
+            <h2 class="text-xl font-semibold text-text-primary mb-4">Current Focus</h2>
+            <ul class="list-disc list-outside ml-5 space-y-2 text-text-secondary mb-8">
+                <li>Database systems and storage engines</li>
+                <li>AI/ML infrastructure and autonomous agents</li>
+                <li>Systems programming in Rust</li>
+                <li>Developer tools and CLI applications</li>
+            </ul>
+
+            <h2 class="text-xl font-semibold text-text-primary mb-4">Background</h2>
+            <p class="text-text-secondary leading-relaxed mb-8">
+                Previously worked at Omnitier building distributed systems and testing infrastructure.
+                Studied at 42 Silicon Valley and Dev Bootcamp. Based in the Bay Area.
+            </p>
+        </div>
+
+        <section class="text-center mt-12">
+            <div class="flex justify-center gap-4">
+                <a href="/resume" class="btn btn-secondary">
+                    View Resume
+                </a>
+                <a href="/projects" class="btn btn-ghost link-arrow">
+                    See Projects
+                </a>
+            </div>
+        </section>
+    </div>
+</Layout>

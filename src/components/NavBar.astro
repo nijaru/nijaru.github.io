@@ -1,6 +1,7 @@
 ---
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import XIcon from "./icons/XIcon.astro";
+import LinkedInIcon from "./icons/LinkedInIcon.astro";
 
 const pathname = Astro.url.pathname;
 
@@ -15,6 +16,7 @@ function isActive(path: string, currentPath: string): boolean {
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/projects', label: 'Projects' },
 ];
@@ -54,6 +56,15 @@ const navItems = [
           aria-label="GitHub"
         >
           <GitHubIcon class="w-5 h-5" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nick-russo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors"
+          aria-label="LinkedIn"
+        >
+          <LinkedInIcon class="w-4 h-4" />
         </a>
         <a
           href="https://twitter.com/nijaru0x"

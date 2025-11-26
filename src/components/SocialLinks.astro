@@ -1,10 +1,12 @@
 ---
 import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import XIcon from "./icons/XIcon.astro";
 
 const socialLinks = [
-  { name: 'GitHub', url: 'https://github.com/nijaru' },
-  { name: 'Twitter', url: 'https://twitter.com/nijaru0x' }
+  { name: 'GitHub', url: 'https://github.com/nijaru', icon: 'github' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nick-russo', icon: 'linkedin' },
+  { name: 'Twitter', url: 'https://twitter.com/nijaru0x', icon: 'twitter' }
 ];
 ---
 
@@ -18,7 +20,9 @@ const socialLinks = [
         class="social-link"
         aria-label={`Visit ${link.name} profile`}
       >
-        {link.name === 'GitHub' ? <GitHubIcon class="w-6 h-6" /> : <XIcon class="w-6 h-6" />}
+        {link.icon === 'github' && <GitHubIcon class="w-6 h-6" />}
+        {link.icon === 'linkedin' && <LinkedInIcon class="w-6 h-6" />}
+        {link.icon === 'twitter' && <XIcon class="w-6 h-6" />}
       </a>
       <span class="social-tooltip">{link.name}</span>
     </div>

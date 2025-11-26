@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "build:resume": "xelatex -interaction=nonstopmode resume.tex && cp resume.pdf public/Nicholas_Russo_Resume.pdf && rm -f resume.aux resume.log resume.out",
+    "generate:resume": "bun scripts/generate-resume.ts",
+    "build:resume": "bun run generate:resume && xelatex -interaction=nonstopmode resume.tex && cp resume.pdf public/Nicholas_Russo_Resume.pdf && rm -f resume.aux resume.log resume.out",
     "preview": "astro preview",
     "astro": "astro",
     "check-deps": "bun scripts/check-deps.js"

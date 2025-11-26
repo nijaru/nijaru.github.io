@@ -1,0 +1,89 @@
+{
+  "name": "Nicholas Russo",
+  "email": "nijaru7@gmail.com",
+  "emailDisplay": "nijaru7[at]gmail.com",
+  "github": "github.com/nijaru",
+  "website": "nijaru.com",
+  "skills": {
+    "languages": ["Python", "Go", "Rust", "C", "C++", "JavaScript"],
+    "backend": ["FastAPI", "Flask", "Django", "Ruby on Rails", "gRPC"],
+    "infrastructure": ["Docker", "Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo)", "AWS", "GCP", "DigitalOcean", "Cloudflare"],
+    "databases": ["PostgreSQL", "SQLite", "MySQL", "Redis", "ChromaDB", "DuckDB"],
+    "tools": ["Git", "GitHub Actions", "Zed", "Ghostty", "Fish"]
+  },
+  "projects": [
+    {
+      "name": "seerdb",
+      "url": "https://github.com/omendb/seerdb",
+      "tech": ["Rust", "Storage Engine", "Database Systems"],
+      "description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads than RocksDB with 5x lower write amplification"
+    },
+    {
+      "name": "omendb",
+      "url": null,
+      "tech": ["Rust", "Vector Database", "Database Systems"],
+      "description": "Vector database with embedded library (oadb) and cloud service. Tested at 1-10M+ vectors, optimizing for billion-scale. Tiered storage (RAM → SSD → S3)"
+    },
+    {
+      "name": "Pacabot",
+      "url": null,
+      "tech": ["Python", "LangGraph", "AI/ML", "Finance"],
+      "description": "AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management"
+    },
+    {
+      "name": "Aircher",
+      "url": "https://github.com/nijaru/aircher",
+      "tech": ["Python", "LangGraph", "AI/ML"],
+      "description": "AI coding agent with 3-layer knowledge system (SQLite + DuckDB + ChromaDB). LangGraph multi-agent orchestration with cross-session learning. ACP-compatible"
+    },
+    {
+      "name": "sy",
+      "url": "https://github.com/nijaru/sy",
+      "tech": ["Rust", "CLI Tools", "Systems Programming"],
+      "description": "Modern rsync alternative in Rust. 2-11x faster for local ops, delta sync, SSH/S3 support. Published on crates.io and Homebrew"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Omnitier, Inc.",
+      "title": "Software Engineer",
+      "period": "January 2021 - May 2023",
+      "location": "",
+      "achievements": [
+        "Reduced test suite runtime by 90% (45 min to 5 min) by reducing syscall overhead in filesystem operations",
+        "Built Python backend API and gRPC integrations for distributed services",
+        "Developed regression testing infrastructure in Go and Python"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "2nd Place & Ingenico Winner, Money 20/20 Las Vegas 2016",
+      "project": "Team Kairos",
+      "description": "Developed cross-terminal payment application with REST API for business partnerships. Built with Go and PostgreSQL, deployed on CoreOS"
+    }
+  ],
+  "education": [
+    {
+      "school": "42 Silicon Valley",
+      "degree": "Computer Science",
+      "location": "Fremont, CA",
+      "period": "2018 - 2020",
+      "detail": null
+    },
+    {
+      "school": "Las Positas College",
+      "degree": "Computer Science",
+      "location": "Livermore, CA",
+      "period": "2014 - 2015, 2016 - 2018",
+      "detail": "Computer Science Club President 2016 - 2017"
+    },
+    {
+      "school": "Dev Bootcamp",
+      "degree": "Web Development",
+      "location": "San Francisco, CA",
+      "period": "March 2016 - May 2016",
+      "detail": null
+    }
+  ]
+}

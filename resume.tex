@@ -26,8 +26,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% No extra margin adjustments needed with geometry package
-
 \urlstyle{same}
 
 \raggedbottom
@@ -35,12 +33,12 @@
 \setlength{\tabcolsep}{0in}
 
 % Spacing constants for uniformity
-\newcommand{\sectionSpaceAbove}{-14pt}
-\newcommand{\sectionSpaceBelow}{-6pt}
-\newcommand{\afterListSpace}{-3pt}
-\newcommand{\afterHeadingSpace}{-6pt}
-\newcommand{\betweenItemsSpace}{-12pt}
-\newcommand{\nestedListTopSpace}{4pt}
+\newcommand{\sectionSpaceAbove}{-10pt}
+\newcommand{\sectionSpaceBelow}{-4pt}
+\newcommand{\afterListSpace}{-2pt}
+\newcommand{\afterHeadingSpace}{-5pt}
+\newcommand{\betweenItemsSpace}{-8pt}
+\newcommand{\nestedListTopSpace}{3pt}
 
 % Section formatting
 \titleformat{\section}{
@@ -49,8 +47,8 @@
 
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
+  \item{
+    {#1 \vspace{-1pt}}
   }
 }
 
@@ -92,43 +90,17 @@
 \end{center}
 \vspace{-8pt}
 
-%-----------SUMMARY-----------
-\section{Summary}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \item
-    \setlength{\baselineskip}{14pt}
-    Backend engineer with 2.5 years of work experience building and optimizing distributed systems. Work includes performance optimization, API development, database systems, and testing infrastructure. Open source projects focus on systems programming and developer tooling.
-    \setlength{\baselineskip}{12pt}
-\end{itemize}
-\vspace{-3pt}
-
 %-----------SKILLS-----------
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python (3+ years), Go (3+ years), Rust (1 year), C (1 year), C++ (1 year), JavaScript (<1 year), Mojo (<1 year)} \\[2pt]
-     \textbf{Backend/APIs}{: FastAPI, Flask, Django, Zenith, Ruby on Rails, gRPC} \\[2pt]
-     \textbf{Databases}{: PostgreSQL, SQLite, MySQL, Redis} \\[2pt]
-     \textbf{Infrastructure}{: Docker, Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo), Kubernetes (Beginner)} \\[2pt]
-     \textbf{Cloud Platforms}{: AWS, GCP, DigitalOcean, Cloudflare} \\[2pt]
-     \textbf{Tools}{: Git, GitHub Actions, Zed, Neovim, mise, uv, Ghostty, Fish, ripgrep, fzf, fd, Tailscale}
+     \textbf{Languages}{: Python, Go, Rust, C, C++, JavaScript} \\[2pt]
+     \textbf{Backend/APIs}{: FastAPI, Flask, Django, Ruby on Rails, gRPC} \\[2pt]
+     \textbf{Infrastructure}{: Docker, Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo), AWS, GCP, DigitalOcean, Cloudflare} \\[2pt]
+     \textbf{Databases}{: PostgreSQL, SQLite, MySQL, Redis, ChromaDB, DuckDB} \\[2pt]
+     \textbf{Tools}{: Git, GitHub Actions, Zed, Ghostty, Fish}
     }}
 \end{itemize}
-
-%-----------EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Software Engineer}{January 2021 -- May 2023}
-      {Omnitier, Inc.}{}
-      \resumeItemListStart
-        \resumeItem{Optimized regression testing infrastructure, reducing test suite runtime by \textasciitilde90\% (45 min $\rightarrow$ 5 min) through filesystem optimization with os.scandir() and Path objects}
-        \resumeItem{Built comprehensive regression testing infrastructure using Go and Python, improving code stability across distributed services}
-        \resumeItem{Developed gRPC API integrations and enhanced React frontend features, maintaining full-stack service reliability}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
@@ -137,13 +109,13 @@
       \resumeProjectHeading
           {\textbf{seerdb} $|$ \href{https://github.com/omendb/seerdb}{\underline{github.com/omendb/seerdb}} $|$ \emph{Rust, Storage Engine, Database Systems}}{}
           \resumeItemListStart
-            \resumeItem{Production-ready storage engine with learned indexes beating RocksDB 2.47x on writes, 2.07x on reads. Implements WiscKey key-value separation achieving 4.82x better write amplification than traditional LSM trees}
+            \resumeItem{LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads than RocksDB with 5x lower write amplification}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{omendb} $|$ \emph{Rust, Mojo, Vector Database, Database Systems}}{}
+          {\textbf{omendb} $|$ \emph{Rust, Vector Database, Database Systems}}{}
           \resumeItemListStart
-            \resumeItem{Vector database with embedded library (Rust + Mojo implementations) and cloud service targeting billion-scale deployments. Tiered storage architecture (RAM $\rightarrow$ SSD $\rightarrow$ S3)}
+            \resumeItem{Vector database with embedded library (oadb) and cloud service. Tested at 1-10M+ vectors, optimizing for billion-scale. Tiered storage (RAM $\rightarrow$ SSD $\rightarrow$ S3)}
           \resumeItemListEnd
 
       \resumeProjectHeading
@@ -155,16 +127,31 @@
       \resumeProjectHeading
           {\textbf{Aircher} $|$ \href{https://github.com/nijaru/aircher}{\underline{github.com/nijaru/aircher}} $|$ \emph{Python, LangGraph, AI/ML}}{}
           \resumeItemListStart
-            \resumeItem{AI coding agent backend using LangGraph for multi-agent orchestration. Maintains working memory of codebase and task history, learns project patterns. Supports Agent Client Protocol for editor integrations}
+            \resumeItem{AI coding agent with 3-layer knowledge system (SQLite + DuckDB + ChromaDB). LangGraph multi-agent orchestration with cross-session learning. ACP-compatible}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{sy} $|$ \href{https://github.com/nijaru/sy}{\underline{github.com/nijaru/sy}} $|$ \emph{Rust, CLI Tools, Systems Programming}}{}
           \resumeItemListStart
-            \resumeItem{File synchronization tool in Rust implementing delta sync with streaming architecture. 2-11x faster than rsync through parallel transfers and optimization}
+            \resumeItem{Modern rsync alternative in Rust. 2-11x faster for local ops, delta sync, SSH/S3 support. Published on crates.io and Homebrew}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer}{January 2021 - May 2023}
+      {Omnitier, Inc.}{}
+      \resumeItemListStart
+        \resumeItem{Reduced test suite runtime by 90\% (45 min to 5 min) by reducing syscall overhead in filesystem operations}
+        \resumeItem{Built Python backend API and gRPC integrations for distributed services}
+        \resumeItem{Developed regression testing infrastructure in Go and Python}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
 
 %-----------AWARDS-----------
 \section{Awards}
@@ -180,16 +167,16 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {42 Silicon Valley}{2018 -- 2020}
+      {42 Silicon Valley}{2018 - 2020}
       {Computer Science}{Fremont, CA}
     \resumeSubheading
-      {Las Positas College}{2014 -- 2015, 2016 -- 2018}
+      {Las Positas College}{2014 - 2015, 2016 - 2018}
       {Computer Science}{Livermore, CA}
       \resumeItemListStart
-        \resumeItem{Computer Science Club President 2016 -- 2017}
+        \resumeItem{Computer Science Club President 2016 - 2017}
       \resumeItemListEnd
     \resumeSubheading
-      {Dev Bootcamp}{March 2016 -- May 2016}
+      {Dev Bootcamp}{March 2016 - May 2016}
       {Web Development}{San Francisco, CA}
   \resumeSubHeadingListEnd
 
