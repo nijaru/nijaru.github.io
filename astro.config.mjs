@@ -6,6 +6,11 @@ import { rehypeH2TextGlow } from './src/utils/customMarkdownHeadings.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nijaru.com',
+  compressHTML: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
   integrations: [
     sitemap(),
   ],

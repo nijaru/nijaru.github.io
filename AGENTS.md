@@ -23,7 +23,8 @@ bun run preview      # Preview production build
 ## Architecture Decisions
 - **Static-first**: All pages pre-rendered for maximum performance
 - **Bun over npm**: Faster installs and builds
-- **Self-hosted fonts**: Inter variable font, no external CDN dependencies
+- **Self-hosted fonts**: Atkinson Hyperlegible + JetBrains Mono, no external CDN dependencies
+- **No external CSS**: Removed devicons CDN (~100KB) - add back via `<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">` in Layout.astro if needed for tech icons
 - **Automated resume**: PDF generated from LaTeX source on build
 - **GitHub integration**: Pinned repos fetched via Actions → static JSON
 - **SEO**: Open Graph tags, sitemap, robots.txt
