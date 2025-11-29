@@ -1,11 +1,38 @@
 [
   {
+    "name": "dotfiles",
+    "description": "My dotfiles",
+    "html_url": "https://github.com/nijaru/dotfiles",
+    "homepage": "",
+    "language": "Shell",
+    "stargazers_count": 2,
+    "forks_count": 0
+  },
+  {
+    "name": "agent-contexts",
+    "description": "Markdown files to provide context for AI coding assistants",
+    "html_url": "https://github.com/nijaru/agent-contexts",
+    "homepage": null,
+    "language": null,
+    "stargazers_count": 2,
+    "forks_count": 0
+  },
+  {
     "name": "seerdb",
     "description": "Research-grade storage engine with learned data structures and modern optimizations",
     "html_url": "https://github.com/omendb/seerdb",
     "homepage": null,
     "language": "Rust",
     "stargazers_count": 1,
+    "forks_count": 0
+  },
+  {
+    "name": "sy",
+    "description": "Modern file synchronization tool - rsync, reimagined",
+    "html_url": "https://github.com/nijaru/sy",
+    "homepage": null,
+    "language": "Rust",
+    "stargazers_count": 8,
     "forks_count": 1
   },
   {
@@ -18,30 +45,12 @@
     "forks_count": 0
   },
   {
-    "name": "sy",
-    "description": "Modern file synchronization tool - rsync, reimagined",
-    "html_url": "https://github.com/nijaru/sy",
+    "name": "aircher",
+    "description": "AI Agent TUI Coding Tool",
+    "html_url": "https://github.com/nijaru/aircher",
     "homepage": null,
-    "language": "Rust",
-    "stargazers_count": 7,
-    "forks_count": 1
-  },
-  {
-    "name": "kombrucha",
-    "description": "Fast, parallel package manager compatible with Homebrew formulae",
-    "html_url": "https://github.com/nijaru/kombrucha",
-    "homepage": null,
-    "language": "Rust",
-    "stargazers_count": 3,
-    "forks_count": 0
-  },
-  {
-    "name": "dotfiles",
-    "description": "My dotfiles",
-    "html_url": "https://github.com/nijaru/dotfiles",
-    "homepage": "",
-    "language": "Shell",
-    "stargazers_count": 2,
+    "language": "Python",
+    "stargazers_count": 1,
     "forks_count": 0
   }
 ]
