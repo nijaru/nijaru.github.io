@@ -8,7 +8,8 @@ import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 
 const ROOT = join(import.meta.dir, "..");
-const data = JSON.parse(readFileSync(join(ROOT, "resume-data.json"), "utf-8"));
+const RESUME_DIR = join(ROOT, "resume");
+const data = JSON.parse(readFileSync(join(RESUME_DIR, "resume-data.json"), "utf-8"));
 
 // Helper to escape LaTeX special characters
 function escapeLatex(text: string): string {
@@ -290,7 +291,7 @@ ${education}
 const latex = generateLatex();
 const markdown = generateMarkdown();
 
-writeFileSync(join(ROOT, "resume.tex"), latex);
-writeFileSync(join(ROOT, "RESUME.md"), markdown);
+writeFileSync(join(RESUME_DIR, "resume.tex"), latex);
+writeFileSync(join(RESUME_DIR, "RESUME.md"), markdown);
 
-console.log("Generated resume.tex and RESUME.md from resume-data.json");
+console.log("Generated resume/resume.tex and resume/RESUME.md from resume/resume-data.json");

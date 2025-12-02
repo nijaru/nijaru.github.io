@@ -42,18 +42,20 @@ src/
 └── utils/          # Utilities
 public/
 ├── data/           # Static JSON (pinned repos)
-├── fonts/          # Self-hosted Inter font
-├── Nicholas_Russo_Resume.pdf  # Generated from resume.tex
+├── fonts/          # Self-hosted fonts
+├── Nicholas_Russo_Resume.pdf  # Generated from resume/resume.tex
 ├── manifest.json   # PWA manifest
 └── robots.txt      # SEO config
-resume.tex          # LaTeX source for PDF resume
+resume/
+├── resume-data.json     # Single-source resume data
+├── resume.tex           # Generated LaTeX (from data)
+└── RESUME.md            # Generated Markdown (from data)
 ```
 
 ## Resume Generation
-- **Source**: `resume.tex` (LaTeX)
-- **Build**: `bun run build:resume` compiles to PDF
+- **Source**: `resume/resume-data.json` → generates `resume.tex` and `RESUME.md`
+- **Build**: `bun run build:resume` generates files and compiles PDF
 - **Output**: Copied to `public/Nicholas_Russo_Resume.pdf`
-- **Automation**: Runs automatically before production builds
 - **Requirements**: XeLaTeX (installed via TeX Live)
 
 ## Design System

@@ -1,6 +1,6 @@
 /**
  * Fetch GitHub Pinned Repositories via GraphQL API
- * 
+ *
  * This script fetches a user's pinned GitHub repositories using the GraphQL API
  * and stores them in a static JSON file for client-side consumption.
  */
@@ -40,18 +40,13 @@ const query = `
   }
 `;
 
-// Paths to save the JSON file
-const publicOutputDir = path.join(__dirname, '..', 'public', 'data');
-const staticOutputDir = path.join(__dirname, '..', 'static', 'data');
-const publicOutputPath = path.join(publicOutputDir, 'pinned-repos.json');
-const staticOutputPath = path.join(staticOutputDir, 'pinned-repos.json');
+// Path to save the JSON file
+const outputDir = path.join(__dirname, '..', 'public', 'data');
+const outputPath = path.join(outputDir, 'pinned-repos.json');
 
-// Ensure the output directories exist
-if (!fs.existsSync(publicOutputDir)) {
-  fs.mkdirSync(publicOutputDir, { recursive: true });
-}
-if (!fs.existsSync(staticOutputDir)) {
-  fs.mkdirSync(staticOutputDir, { recursive: true });
+// Ensure the output directory exists
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
 }
 
 // GitHub API request options
@@ -64,35 +59,26 @@ const options = {
     'User-Agent': 'nijaru-github-io',
     'Authorization': `Bearer ${process.env.GITHUB_TOKEN || ''}`
   },
-  timeout: 15000 // Increase to 15 second timeout
+  timeout: 15000
 };
 
-// Function to generate fallback data if API call fails
+// Function to generate fallback data
 function generateFallbackData() {
-  try {
-    console.log('Attempting to use test-fetch.js to generate mock data');
-    
-    // Create a minimal fallback dataset
-    const fallbackData = [
-      {
-        name: "repository-placeholder",
-        description: "Repository data could not be fetched",
-        html_url: "https://github.com/nijaru",
-        homepage: null,
-        language: null,
-        stargazers_count: 0,
-        forks_count: 0
-      }
-    ];
-    
-    const jsonData = JSON.stringify(fallbackData, null, 2);
-    fs.writeFileSync(publicOutputPath, jsonData);
-    fs.writeFileSync(staticOutputPath, jsonData);
-    console.log('Created fallback repository data');
-  } catch (error) {
-    console.error('Failed to generate fallback data:', error);
-    process.exit(1);
-  }
+  const fallbackData = [
+    {
+      name: "repository-placeholder",
+      description: "Repository data could not be fetched",
+      html_url: "https://github.com/nijaru",
+      homepage: null,
+      language: null,
+      stargazers_count: 0,
+      forks_count: 0
+    }
+  ];
+
+  const jsonData = JSON.stringify(fallbackData, null, 2);
+  fs.writeFileSync(outputPath, jsonData);
+  console.log('Created fallback repository data');
 }
 
 // Verify GitHub token exists
@@ -112,15 +98,12 @@ const req = https.request(options, (res) => {
     if (res.statusCode !== 200) {
       console.error(`Error: Received status code ${res.statusCode}`);
       console.error(data);
-      
-      // Fall back to existing data if available
-      if (fs.existsSync(publicOutputPath)) {
+
+      if (fs.existsSync(outputPath)) {
         console.warn('Using existing pinned repositories data as fallback');
         process.exit(0);
       } else {
-        // Generate mock data as last resort
-        console.warn('Generating mock data as fallback');
-        generateMockData();
+        generateFallbackData();
         process.exit(0);
       }
       return;
@@ -128,29 +111,24 @@ const req = https.request(options, (res) => {
 
     try {
       const response = JSON.parse(data);
-      
+
       if (response.errors) {
         console.error('GraphQL Error:', response.errors);
-        
-        // Fall back to existing data if available
-        if (fs.existsSync(publicOutputPath)) {
+
+        if (fs.existsSync(outputPath)) {
           console.warn('Using existing pinned repositories data as fallback');
           process.exit(0);
         } else {
-          // Generate mock data as last resort
-          console.warn('Generating mock data as fallback');
-          generateMockData();
+          generateFallbackData();
           process.exit(0);
         }
         return;
       }
 
-      // Check if data structure is as expected
       if (!response.data?.user?.pinnedItems?.nodes) {
         throw new Error('Unexpected API response structure');
       }
 
-      // Extract and format repository data
       const repos = response.data.user.pinnedItems.nodes.map(repo => ({
         name: repo.name,
         description: repo.description,
@@ -161,22 +139,17 @@ const req = https.request(options, (res) => {
         forks_count: repo.forkCount
       }));
 
-      // Write formatted data to files (both in public and static directories)
       const jsonData = JSON.stringify(repos, null, 2);
-      fs.writeFileSync(publicOutputPath, jsonData);
-      fs.writeFileSync(staticOutputPath, jsonData);
-      console.log(`Successfully wrote ${repos.length} pinned repositories to both public and static directories`);
+      fs.writeFileSync(outputPath, jsonData);
+      console.log(`Successfully wrote ${repos.length} pinned repositories to public/data/`);
     } catch (error) {
       console.error('Error processing response:', error);
-      
-      // Fall back to existing data if available
-      if (fs.existsSync(publicOutputPath)) {
+
+      if (fs.existsSync(outputPath)) {
         console.warn('Using existing pinned repositories data as fallback');
         process.exit(0);
       } else {
-        // Generate mock data as last resort
-        console.warn('Generating mock data as fallback');
-        generateMockData();
+        generateFallbackData();
       }
     }
   });
@@ -184,51 +157,14 @@ const req = https.request(options, (res) => {
 
 req.on('error', (error) => {
   console.error('Request error:', error);
-  
-  // Fall back to existing data if available
-  if (fs.existsSync(publicOutputPath)) {
+
+  if (fs.existsSync(outputPath)) {
     console.warn('Using existing pinned repositories data as fallback');
     process.exit(0);
   } else {
-    // Generate mock data as last resort
-    console.warn('Generating mock data as fallback');
-    generateMockData();
+    generateFallbackData();
   }
 });
 
-// Function to generate mock data if all else fails
-function generateMockData() {
-  try {
-    // Import mock data generation logic
-    import('./test-fetch.js')
-      .then(() => console.log('Successfully generated mock data'))
-      .catch(err => {
-        console.error('Error importing mock data generator:', err);
-        
-        // Last resort fallback - create minimal mock data inline
-        const fallbackData = [
-          {
-            name: "repository-placeholder",
-            description: "Repository data could not be fetched",
-            html_url: "https://github.com/nijaru",
-            homepage: null,
-            language: null,
-            stargazers_count: 0,
-            forks_count: 0
-          }
-        ];
-        
-        const jsonData = JSON.stringify(fallbackData, null, 2);
-        fs.writeFileSync(publicOutputPath, jsonData);
-        fs.writeFileSync(staticOutputPath, jsonData);
-        console.log('Created emergency fallback repository data');
-      });
-  } catch (error) {
-    console.error('Failed to generate mock data:', error);
-    process.exit(1);
-  }
-}
-
-// Send the GraphQL query
 req.write(JSON.stringify({ query }));
 req.end();

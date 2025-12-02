@@ -17,21 +17,18 @@ pnpm-debug.log*
 # macOS
 .DS_Store
 
-# Local notes
+# Local notes and research
 notes/
-
-# Blog research and drafts
+docs/blog-research/
 blog-prompt-*.md
 blog-research-todo.md
-docs/blog-research/
 .blog-post-patterns.md
 
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-resume.pdf
+# LaTeX build artifacts (in resume/)
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
 
-# AI session temp files
-ai/tmp/
-
+# Deprecated directories
+static/
