@@ -411,7 +411,6 @@
 
         // Virtual scroll handler for non-scrollable pages AND boundary scrolling
         const handleWheel = (e: WheelEvent) => {
-            // If page is not scrollable OR we are at boundaries
             const isScrollable =
                 document.documentElement.scrollHeight > window.innerHeight + 1;
             const atTop = window.scrollY <= 0;
@@ -419,14 +418,15 @@
                 window.scrollY + window.innerHeight >=
                 document.documentElement.scrollHeight - 1;
 
+            // On mobile at top scrolling up: allow pull-to-refresh
+            if (isMobile && atTop && e.deltaY < 0) return;
+
+            // Virtual scroll when: not scrollable, OR at boundaries trying to scroll past
             if (
                 !isScrollable ||
                 (atTop && e.deltaY < 0) ||
                 (atBottom && e.deltaY > 0)
             ) {
-                // Allow pull-to-refresh at the top of any page
-                if (atTop && e.deltaY < 0) return;
-
                 e.preventDefault();
                 targetScrollY += e.deltaY;
             }
