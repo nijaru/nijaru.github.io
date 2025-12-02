@@ -22,7 +22,7 @@
       "name": "OmenDB",
       "url": "https://github.com/omendb/omendb",
       "tech": ["Rust", "Python", "Vector Database"],
-      "description": "Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. 9x faster than ChromaDB. Open source on PyPI"
+      "description": "Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. Open source on PyPI"
     },
     {
       "name": "Pacabot",

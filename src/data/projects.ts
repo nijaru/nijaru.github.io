@@ -31,7 +31,7 @@ export const projects: Project[] = [
 		name: "OmenDB",
 		url: "https://github.com/omendb/omendb",
 		description:
-			"Embedded vector database for Python. HNSW indexing with 8x memory compression, filtered search, persistent storage, and LangChain integration. 9x faster than ChromaDB. Open source on PyPI.",
+			"Embedded vector database for Python. HNSW indexing with 8x memory compression, filtered search, persistent storage, and LangChain integration. Open source on PyPI.",
 		status: "Stable",
 		tech: ["Rust", "Python", "Vector Database", "Open Source"],
 		repo: { owner: "omendb", name: "omendb" },

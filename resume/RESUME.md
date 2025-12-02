@@ -24,7 +24,7 @@ LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2
 ### OmenDB
 [github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
 
-Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. 9x faster than ChromaDB. Open source on PyPI.
+Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. Open source on PyPI.
 
 ### Pacabot
 Python, LangGraph, AI/ML, Finance
