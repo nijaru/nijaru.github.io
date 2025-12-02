@@ -19,10 +19,10 @@
       "description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads than RocksDB with 5x lower write amplification"
     },
     {
-      "name": "omendb",
-      "url": null,
-      "tech": ["Rust", "Vector Database", "Database Systems"],
-      "description": "Vector database with embedded library (oadb) and cloud service. Tested at 1-10M+ vectors, optimizing for billion-scale. Tiered storage (RAM → SSD → S3)"
+      "name": "OmenDB",
+      "url": "https://github.com/omendb/omendb",
+      "tech": ["Rust", "Python", "Vector Database"],
+      "description": "Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. 9x faster than ChromaDB. Open source on PyPI"
     },
     {
       "name": "Pacabot",

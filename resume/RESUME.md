@@ -21,10 +21,10 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads than RocksDB with 5x lower write amplification.
 
-### omendb
-Rust, Vector Database, Database Systems
+### OmenDB
+[github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
 
-Vector database with embedded library (oadb) and cloud service. Tested at 1-10M+ vectors, optimizing for billion-scale. Tiered storage (RAM → SSD → S3).
+Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. 9x faster than ChromaDB. Open source on PyPI.
 
 ### Pacabot
 Python, LangGraph, AI/ML, Finance

@@ -28,11 +28,13 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "omendb",
+		name: "OmenDB",
+		url: "https://github.com/omendb/omendb",
 		description:
-			"Vector database with embedded library (Rust + Mojo implementations) and cloud service targeting billion-scale deployments. Tiered storage architecture (RAM → SSD → S3)",
-		status: "In development",
-		tech: ["Rust", "Mojo", "Vector Database", "Closed Source"],
+			"Embedded vector database for Python. HNSW indexing with 8x memory compression, filtered search, persistent storage, and LangChain integration. 9x faster than ChromaDB. Open source on PyPI.",
+		status: "Stable",
+		tech: ["Rust", "Python", "Vector Database", "Open Source"],
+		repo: { owner: "omendb", name: "omendb" },
 		category: "Recent",
 	},
 	{
