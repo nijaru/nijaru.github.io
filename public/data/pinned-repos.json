@@ -28,7 +28,7 @@
   },
   {
     "name": "aircher",
-    "description": "AI Agent TUI Coding Tool",
+    "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
     "html_url": "https://github.com/nijaru/aircher",
     "homepage": null,
     "language": "Python",
