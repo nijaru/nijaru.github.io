@@ -37,7 +37,7 @@
   },
   {
     "name": "hygrep",
-    "description": "Hyper + Hybrid grep: fast scanning + neural reranking. Zero indexing, local inference, ~20k files/sec.",
+    "description": "Hyper hybrid grep: fast scanning + neural reranking. Zero indexing, local inference.",
     "html_url": "https://github.com/nijaru/hygrep",
     "homepage": null,
     "language": "Python",
