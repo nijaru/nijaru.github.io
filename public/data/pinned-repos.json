@@ -46,7 +46,7 @@
   },
   {
     "name": "sy",
-    "description": "Modern file synchronization tool - rsync, reimagined",
+    "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
     "html_url": "https://github.com/nijaru/sy",
     "homepage": null,
     "language": "Rust",

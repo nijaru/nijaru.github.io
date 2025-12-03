@@ -79,7 +79,7 @@ export const projects: Project[] = [
 		name: "sy",
 		url: "https://github.com/nijaru/sy",
 		description:
-			"Modern file synchronization tool - rsync reimagined. Delta sync, parallel transfers, and streaming algorithms in Rust. 40-79% faster than rsync on local sync benchmarks.",
+			"Modern file sync tool with delta transfers, parallel operations, and streaming algorithms. 40-79% faster than rsync on local benchmarks.",
 		status: "Stable",
 		tech: ["Rust", "CLI Tool", "Open Source"],
 		repo: { owner: "nijaru", name: "sy" },
