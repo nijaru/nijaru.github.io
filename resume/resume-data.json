@@ -37,10 +37,10 @@
       "description": "AI coding agent with 3-layer knowledge system (SQLite + DuckDB + ChromaDB). LangGraph multi-agent orchestration with cross-session learning. ACP-compatible"
     },
     {
-      "name": "sy",
-      "url": "https://github.com/nijaru/sy",
-      "tech": ["Rust", "CLI Tools", "Systems Programming"],
-      "description": "Modern rsync alternative in Rust. 2-11x faster for local ops, delta sync, SSH/S3 support. Published on crates.io and Homebrew"
+      "name": "hygrep",
+      "url": "https://github.com/nijaru/hygrep",
+      "tech": ["Python", "Mojo", "AI/ML"],
+      "description": "Semantic code search with neural reranking. Parallel Mojo scanner (~20k files/sec) + ONNX inference. Language-aware context extraction, agent-ready JSON output"
     }
   ],
   "experience": [

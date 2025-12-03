@@ -51,7 +51,7 @@ export const projects: Project[] = [
 		name: "Pacabot",
 		description:
 			"AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management.",
-		status: "In development",
+		status: "Stable",
 		tech: ["Python", "LangGraph", "AI/ML", "Closed Source"],
 		category: "Recent",
 	},
@@ -66,6 +66,16 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
+		name: "hygrep",
+		url: "https://github.com/nijaru/hygrep",
+		description:
+			"Semantic code search with neural reranking. Parallel Mojo scanner (~20k files/sec) + ONNX inference. Language-aware context extraction for Python, JS, TS, Go, Rust, and more. Agent-ready JSON output.",
+		status: "Stable",
+		tech: ["Python", "Mojo", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "hygrep" },
+		category: "Recent",
+	},
+	{
 		name: "sy",
 		url: "https://github.com/nijaru/sy",
 		description:
@@ -76,32 +86,12 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "stop",
-		url: "https://github.com/nijaru/stop",
-		description:
-			"Structured process monitoring with JSON output for AI agents and automation. Filter, sort, and query processes with clean structured data.",
-		status: "Stable",
-		tech: ["Rust", "CLI Tool", "Open Source"],
-		repo: { owner: "nijaru", name: "stop" },
-		category: "Recent",
-	},
-	{
-		name: "Kombrucha",
-		url: "https://github.com/nijaru/kombrucha",
-		description:
-			"Modern package manager reimagining Homebrew in Rust. Fast, reliable dependency resolution with parallel downloads and improved caching strategies.",
-		status: "Stable",
-		tech: ["Rust", "Package Manager", "Open Source"],
-		repo: { owner: "nijaru", name: "kombrucha" },
-		category: "Recent",
-	},
-	{
 		name: "DJScout",
 		description:
 			"AI DJ intelligence platform with LSTM models trained on 10K+ professional sets. Iterating on model improvements and playlist generation quality.",
 		status: "In development",
 		tech: ["Python", "Rust", "AI/ML", "Closed Source"],
-		category: "Recent",
+		category: "Other",
 	},
 	{
 		name: "AltText API",

@@ -24,7 +24,7 @@ LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2
 ### OmenDB
 [github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
 
-Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. Open source on PyPI.
+Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. Server mode in development.
 
 ### Pacabot
 Python, LangGraph, AI/ML, Finance
@@ -36,10 +36,10 @@ AI trading bot using LangGraph multi-agent system with 13 data sources including
 
 AI coding agent with 3-layer knowledge system (SQLite + DuckDB + ChromaDB). LangGraph multi-agent orchestration with cross-session learning. ACP-compatible.
 
-### sy
-[github.com/nijaru/sy](https://github.com/nijaru/sy) | Rust, CLI Tools, Systems Programming
+### hygrep
+[github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, Mojo, AI/ML
 
-Modern rsync alternative in Rust. 2-11x faster for local ops, delta sync, SSH/S3 support. Published on crates.io and Homebrew.
+Semantic code search with neural reranking. Parallel Mojo scanner (~20k files/sec) + ONNX inference. Language-aware context extraction, agent-ready JSON output.
 
 ## Experience
 
