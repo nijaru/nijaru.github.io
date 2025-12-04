@@ -52,7 +52,7 @@ export const projects: Project[] = [
 		description:
 			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
 		status: "Stable",
-		tech: ["Python", "LangGraph", "AI/ML", "Closed Source"],
+		tech: ["Python", "LangGraph", "AI/ML"],
 		category: "Recent",
 	},
 	{
@@ -90,7 +90,7 @@ export const projects: Project[] = [
 		description:
 			"DJ mix analysis using LSTM models trained on 10K+ professional sets. Analyzes track transitions and generates playlists.",
 		status: "In development",
-		tech: ["Python", "Rust", "AI/ML", "Closed Source"],
+		tech: ["Python", "Rust", "AI/ML"],
 		category: "Other",
 	},
 	{
@@ -99,7 +99,7 @@ export const projects: Project[] = [
 		description:
 			"Alt text generation API with batch processing. Deployed on Cloudflare Workers with D1 database for global edge distribution.",
 		status: "Stable",
-		tech: ["TypeScript", "API/Web App", "AI/ML", "Closed Source"],
+		tech: ["TypeScript", "API/Web App", "AI/ML"],
 		category: "Other",
 	},
 	{
