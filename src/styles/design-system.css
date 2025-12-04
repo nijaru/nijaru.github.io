@@ -26,9 +26,9 @@
   --color-text-tertiary: #71717a;
   --color-text-inverse: #000000;
   
-  --color-accent-primary: #3b82f6;
-  --color-accent-secondary: #2563eb;
-  --color-accent-tertiary: #60a5fa;
+  --color-accent-primary: #22d3ee;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-tertiary: #67e8f9;
   
   --color-border-subtle: rgba(255, 255, 255, 0.08);
   --color-border-default: rgba(255, 255, 255, 0.12);
@@ -260,7 +260,7 @@
 }
 
 .btn-ghost:hover {
-  background: rgba(68, 147, 248, 0.05);
+  background: rgba(34, 211, 238, 0.05);
   border-color: var(--color-border-subtle);
 }
 
@@ -396,9 +396,9 @@
 }
 
 .badge-primary {
-  background: rgba(68, 147, 248, 0.15);
+  background: rgba(34, 211, 238, 0.15);
   color: var(--color-accent-tertiary);
-  border: 1px solid rgba(68, 147, 248, 0.3);
+  border: 1px solid rgba(34, 211, 238, 0.3);
 }
 
 /* Responsive utilities */

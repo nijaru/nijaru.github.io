@@ -302,8 +302,8 @@
         let nextShootingStarDelay = 0;
 
         // Interval range in frames (60fps): mobile slightly less frequent
-        const minDelay = isMobile ? 180 : 120;  // 3s mobile, 2s desktop
-        const maxDelay = isMobile ? 420 : 300;  // 7s mobile, 5s desktop
+        const minDelay = isMobile ? 110 : 70;   // ~1.8s mobile, ~1.2s desktop
+        const maxDelay = isMobile ? 260 : 180;  // ~4.3s mobile, ~3s desktop
 
         const scheduleNextShootingStar = () => {
             nextShootingStarDelay = minDelay + Math.random() * (maxDelay - minDelay);

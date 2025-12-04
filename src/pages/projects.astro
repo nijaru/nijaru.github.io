@@ -14,7 +14,7 @@ const githubRepos = JSON.parse(readFileSync(reposPath, 'utf-8')).slice(0, 6);
 
 // Fetch star counts for open source projects
 async function getStarCount(owner: string, repo: string): Promise<number> {
-    if (import.meta.env.DEV) return 100; // Mock in dev
+    if (import.meta.env.DEV) return 0; // Hide stars in dev
 
     try {
         const headers: HeadersInit = {
@@ -78,27 +78,24 @@ const otherProjects = projects.filter(p => p.category === 'Other');
                 Live projects from GitHub with star counts
             </p>
 
-            <div class="grid gap-6 md:grid-cols-2">
+            <div class="grid gap-4 grid-cols-2 lg:grid-cols-3">
                 {githubRepos.map((repo: any) => (
                     <a
                         href={repo.html_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="glass-panel glass-panel-interactive p-6 group block"
+                        class="glass-panel glass-panel-interactive p-4 group block"
                     >
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-lg font-semibold text-text-primary group-hover:text-accent-primary transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-semibold text-text-primary group-hover:text-accent-primary transition-colors truncate pr-2">
                                 {repo.name}
                             </h3>
-                            <div class="flex items-center gap-1 text-sm text-text-tertiary">
+                            <div class="flex items-center gap-1 text-sm text-text-tertiary shrink-0">
                                 <span>★</span>
                                 <span>{repo.stargazers_count || 0}</span>
                             </div>
                         </div>
-                        <p class="text-text-secondary text-sm leading-relaxed mb-4 h-10 line-clamp-2">
-                            {repo.description || "No description available"}
-                        </p>
-                        <div class="flex items-center gap-3 text-xs text-text-tertiary">
+                        <div class="flex items-center gap-2 text-xs text-text-tertiary">
                             {repo.language && <span class="px-2 py-1 rounded-md bg-white/5">{repo.language}</span>}
                         </div>
                     </a>
@@ -129,49 +126,32 @@ const otherProjects = projects.filter(p => p.category === 'Other');
 
             <div class="space-y-12 content-bg-subtle">
                 {recentProjects.map(project => (
-                    <div class="group">
-                        {project.url ? (
-                            <a href={project.url} target="_blank" rel="noopener noreferrer" class="block">
-                                <div class="flex flex-col md:flex-row md:items-baseline gap-2 mb-3">
-                                    <h3 class="text-xl font-semibold text-text-primary group-hover:text-accent-primary transition-colors">
-                                        {project.name}
-                                    </h3>
-                                    <span class={`text-xs px-2 py-0.5 rounded-full border ${project.status === 'Stable' ? 'text-green-400 border-green-400/20 bg-green-400/10' : 'text-blue-400 border-blue-400/20 bg-blue-400/10'}`}>
-                                        {project.status}
-                                    </span>
-                                </div>
-                                <p class="text-text-secondary leading-relaxed mb-4 max-w-3xl">
-                                    {project.description}
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    {project.tech.map(t => (
-                                        <span class="text-xs text-text-tertiary px-2 py-1 rounded bg-white/5">{t}</span>
-                                    ))}
-                                    {project.stars !== undefined && project.stars > 0 && (
-                                        <span class="text-xs text-text-tertiary px-2 py-1 rounded bg-white/5">★ {project.stars}</span>
-                                    )}
-                                </div>
-                            </a>
-                        ) : (
-                            <div class="block">
-                                <div class="flex flex-col md:flex-row md:items-baseline gap-2 mb-3">
-                                    <h3 class="text-xl font-semibold text-text-primary">
-                                        {project.name}
-                                    </h3>
-                                    <span class={`text-xs px-2 py-0.5 rounded-full border ${project.status === 'Stable' ? 'text-green-400 border-green-400/20 bg-green-400/10' : 'text-blue-400 border-blue-400/20 bg-blue-400/10'}`}>
-                                        {project.status}
-                                    </span>
-                                </div>
-                                <p class="text-text-secondary leading-relaxed mb-4 max-w-3xl">
-                                    {project.description}
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    {project.tech.map(t => (
-                                        <span class="text-xs text-text-tertiary px-2 py-1 rounded bg-white/5">{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
+                    <div class="group project-item">
+                        <div class="flex flex-col md:flex-row md:items-baseline gap-2 mb-3">
+                            {project.url ? (
+                                <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-xl font-semibold text-text-primary hover:text-accent-primary transition-colors">
+                                    {project.name}
+                                </a>
+                            ) : (
+                                <h3 class="text-xl font-semibold text-text-primary">
+                                    {project.name}
+                                </h3>
+                            )}
+                            <span class={`text-xs px-2 py-0.5 rounded-full border ${project.status === 'Stable' ? 'text-green-400 border-green-400/20 bg-green-400/10' : 'text-blue-400 border-blue-400/20 bg-blue-400/10'}`}>
+                                {project.status}
+                            </span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed mb-4 max-w-3xl">
+                            {project.description}
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            {project.tech.map(t => (
+                                <span class="text-xs text-text-tertiary px-2 py-1 rounded bg-white/5">{t}</span>
+                            ))}
+                            {project.stars !== undefined && project.stars > 0 && (
+                                <span class="text-xs text-text-tertiary px-2 py-1 rounded bg-white/5">★ {project.stars}</span>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
@@ -223,3 +203,16 @@ const otherProjects = projects.filter(p => p.category === 'Other');
         </section>
     </div>
 </Layout>
+
+<style>
+    .project-item {
+        position: relative;
+        padding-left: 1rem;
+        border-left: 2px solid transparent;
+        transition: border-color 0.2s ease;
+    }
+
+    .project-item:hover {
+        border-left-color: var(--color-accent-primary);
+    }
+</style>

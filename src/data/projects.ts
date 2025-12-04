@@ -21,7 +21,7 @@ export const projects: Project[] = [
 		name: "seerdb",
 		url: "https://github.com/omendb/seerdb",
 		description:
-			"Production-ready storage engine with learned indexes and modern LSM optimizations. Benchmarks show 2.47x faster writes and 2.07x faster reads vs RocksDB, with 4.82x better write amplification through WiscKey key-value separation. Apache 2.0 licensed.",
+			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
 		status: "Stable",
 		tech: ["Rust", "Storage Engine", "Open Source"],
 		repo: { owner: "omendb", name: "seerdb" },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
 		name: "OmenDB",
 		url: "https://github.com/omendb/omendb",
 		description:
-			"Embedded vector database for Python. HNSW indexing with 8x memory compression, filtered search, persistent storage, and LangChain integration. Server mode in development.",
+			"Embedded vector database with Python bindings. Persistent storage, filtered search, LangChain integration.",
 		status: "Stable",
 		tech: ["Rust", "Python", "Vector Database", "Open Source"],
 		repo: { owner: "omendb", name: "omendb" },
@@ -41,7 +41,7 @@ export const projects: Project[] = [
 		name: "aircher",
 		url: "https://github.com/nijaru/aircher",
 		description:
-			"AI coding agent backend using LangGraph for multi-agent orchestration. Maintains working memory of codebase and task history, learns project patterns and manages context automatically. Supports Agent Client Protocol (ACP) for editor integrations.",
+			"AI coding agent using LangGraph for multi-agent orchestration. Maintains working memory of codebase structure and task history across sessions. Supports Agent Client Protocol (ACP) for editor integrations.",
 		status: "In development",
 		tech: ["Python", "LangGraph", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "aircher" },
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 	{
 		name: "Pacabot",
 		description:
-			"AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management.",
+			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
 		status: "Stable",
 		tech: ["Python", "LangGraph", "AI/ML", "Closed Source"],
 		category: "Recent",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
 		name: "Zenith",
 		url: "https://github.com/nijaru/zenith",
 		description:
-			"Modern Python web framework with intuitive developer experience and exceptional performance. Zero-config setup, chainable queries, and 9,600+ req/s throughput.",
+			"Python web framework with zero-config setup, chainable ORM queries, and one-liner features (auth, admin, API docs). Async architecture with 9,600+ req/s throughput.",
 		status: "Stable",
 		tech: ["Python", "Web Framework", "Open Source"],
 		repo: { owner: "nijaru", name: "zenith" },
@@ -69,7 +69,7 @@ export const projects: Project[] = [
 		name: "hygrep",
 		url: "https://github.com/nijaru/hygrep",
 		description:
-			"Semantic code search with neural reranking. Parallel Mojo scanner (~20k files/sec) + ONNX inference. Language-aware context extraction for Python, JS, TS, Go, Rust, and more. Agent-ready JSON output.",
+			"Hybrid code search combining grep with neural reranking. Parallel Mojo scanner (~20k files/sec) finds matches, ONNX reranker scores by relevance. Extracts functions and classes for Python, JavaScript, TypeScript, Go, and Rust.",
 		status: "Stable",
 		tech: ["Python", "Mojo", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "hygrep" },
@@ -79,7 +79,7 @@ export const projects: Project[] = [
 		name: "sy",
 		url: "https://github.com/nijaru/sy",
 		description:
-			"Modern file sync tool with delta transfers, parallel operations, and streaming algorithms. 40-79% faster than rsync on local benchmarks.",
+			"File sync tool with delta transfers, parallel operations, and streaming algorithms. 40-79% faster than rsync in benchmarks.",
 		status: "Stable",
 		tech: ["Rust", "CLI Tool", "Open Source"],
 		repo: { owner: "nijaru", name: "sy" },
@@ -88,7 +88,7 @@ export const projects: Project[] = [
 	{
 		name: "DJScout",
 		description:
-			"AI DJ intelligence platform with LSTM models trained on 10K+ professional sets. Iterating on model improvements and playlist generation quality.",
+			"DJ mix analysis using LSTM models trained on 10K+ professional sets. Analyzes track transitions and generates playlists.",
 		status: "In development",
 		tech: ["Python", "Rust", "AI/ML", "Closed Source"],
 		category: "Other",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
 		name: "AltText API",
 		url: "https://alttextapi.com",
 		description:
-			"AI-powered alt text generation API and website. Credit-based billing, batch processing, and API key management. Built on Cloudflare Workers with D1 database for global edge deployment.",
+			"Alt text generation API with batch processing. Deployed on Cloudflare Workers with D1 database for global edge distribution.",
 		status: "Stable",
 		tech: ["TypeScript", "API/Web App", "AI/ML", "Closed Source"],
 		category: "Other",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
 		name: "yt-text",
 		url: "https://github.com/nijaru/yt-text",
 		description:
-			"High-performance video transcription service with multi-platform support. Advanced AI backends (MLX, whisper.cpp, OpenAI) with intelligent fallback and real-time streaming.",
+			"Video transcription with multiple Whisper backends (MLX, whisper.cpp, OpenAI). Automatic fallback between backends with streaming output.",
 		status: "Stable",
 		tech: ["Python", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "yt-text" },

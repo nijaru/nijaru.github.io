@@ -19,27 +19,27 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 ### seerdb
 [github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
 
-LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads than RocksDB with 5x lower write amplification.
+LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
 
 ### OmenDB
 [github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
 
-Embedded vector database for Python. HNSW indexing with 8x compression, filtered search, and persistent storage. Server mode in development.
+Embedded vector database with Python bindings, persistent storage, and filtered search.
 
 ### Pacabot
 Python, LangGraph, AI/ML, Finance
 
-AI trading bot using LangGraph multi-agent system with 13 data sources including market data, SEC filings, news, and social sentiment. Real-time research with automated risk management.
+AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment.
 
 ### Aircher
 [github.com/nijaru/aircher](https://github.com/nijaru/aircher) | Python, LangGraph, AI/ML
 
-AI coding agent with 3-layer knowledge system (SQLite + DuckDB + ChromaDB). LangGraph multi-agent orchestration with cross-session learning. ACP-compatible.
+AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support.
 
 ### hygrep
 [github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, Mojo, AI/ML
 
-Semantic code search with neural reranking. Parallel Mojo scanner (~20k files/sec) + ONNX inference. Language-aware context extraction, agent-ready JSON output.
+Hybrid code search combining grep with neural reranking. Parallel Mojo scanner (~20k files/sec) with ONNX reranker for relevance scoring.
 
 ## Experience
 
