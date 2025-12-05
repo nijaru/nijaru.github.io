@@ -69,9 +69,9 @@ export const projects: Project[] = [
 		name: "hygrep",
 		url: "https://github.com/nijaru/hygrep",
 		description:
-			"Hybrid code search combining grep with neural reranking. Parallel Mojo scanner (~20k files/sec) finds matches, ONNX reranker scores by relevance. Extracts functions and classes for Python, JavaScript, TypeScript, Go, and Rust.",
+			"Semantic code search with automatic local indexing. Uses tree-sitter to extract functions and classes, embeds them locally, and searches via vector similarity. Supports 22+ languages including Python, TypeScript, Rust, and Go.",
 		status: "Stable",
-		tech: ["Python", "Mojo", "AI/ML", "Open Source"],
+		tech: ["Python", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "hygrep" },
 		category: "Recent",
 	},

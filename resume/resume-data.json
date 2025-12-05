@@ -53,8 +53,8 @@
 		{
 			"name": "hygrep",
 			"url": "https://github.com/nijaru/hygrep",
-			"tech": ["Python", "Mojo", "AI/ML"],
-			"description": "Hybrid code search combining grep with neural reranking. Parallel Mojo scanner (~20k files/sec) with ONNX reranker for relevance scoring"
+			"tech": ["Python", "AI/ML"],
+			"description": "Semantic code search with automatic local indexing. Tree-sitter syntax extraction with local embeddings. Supports 22+ languages"
 		}
 	],
 	"experience": [

@@ -37,9 +37,9 @@ AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources in
 AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support.
 
 ### hygrep
-[github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, Mojo, AI/ML
+[github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, AI/ML
 
-Hybrid code search combining grep with neural reranking. Parallel Mojo scanner (~20k files/sec) with ONNX reranker for relevance scoring.
+Semantic code search with automatic local indexing. Tree-sitter syntax extraction with local embeddings. Supports 22+ languages.
 
 ## Experience
 
