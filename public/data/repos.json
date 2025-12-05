@@ -1,0 +1,136 @@
+{
+  "pinned": [
+    {
+      "name": "dotfiles",
+      "owner": "nijaru",
+      "description": "My dotfiles",
+      "html_url": "https://github.com/nijaru/dotfiles",
+      "homepage": "",
+      "language": "Shell",
+      "stargazers_count": 3,
+      "forks_count": 0
+    },
+    {
+      "name": "agent-contexts",
+      "owner": "nijaru",
+      "description": "Markdown files to provide context for AI coding assistants",
+      "html_url": "https://github.com/nijaru/agent-contexts",
+      "homepage": null,
+      "language": null,
+      "stargazers_count": 2,
+      "forks_count": 0
+    },
+    {
+      "name": "seerdb",
+      "owner": "omendb",
+      "description": "Research-grade storage engine with learned data structures and modern optimizations",
+      "html_url": "https://github.com/omendb/seerdb",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "aircher",
+      "owner": "nijaru",
+      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
+      "html_url": "https://github.com/nijaru/aircher",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "hygrep",
+      "owner": "nijaru",
+      "description": "Hyper hybrid grep: fast scanning + neural reranking. Zero indexing, local inference.",
+      "html_url": "https://github.com/nijaru/hygrep",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "sy",
+      "owner": "nijaru",
+      "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
+      "html_url": "https://github.com/nijaru/sy",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 9,
+      "forks_count": 1
+    }
+  ],
+  "projects": {
+    "omendb/seerdb": {
+      "name": "seerdb",
+      "owner": "omendb",
+      "description": "Research-grade storage engine with learned data structures and modern optimizations",
+      "html_url": "https://github.com/omendb/seerdb",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    "omendb/omendb": {
+      "name": "omendb",
+      "owner": "omendb",
+      "description": "Fast embedded vector database with HNSW + ACORN-1 filtered search",
+      "html_url": "https://github.com/omendb/omendb",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    "nijaru/aircher": {
+      "name": "aircher",
+      "owner": "nijaru",
+      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
+      "html_url": "https://github.com/nijaru/aircher",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    "nijaru/zenith": {
+      "name": "zenith",
+      "owner": "nijaru",
+      "description": "Fast, modern Python web framework with zero-config defaults and Rails-like developer experience",
+      "html_url": "https://github.com/nijaru/zenith",
+      "homepage": "https://zenith.nijaru.com",
+      "language": "Python",
+      "stargazers_count": 2,
+      "forks_count": 0
+    },
+    "nijaru/hygrep": {
+      "name": "hygrep",
+      "owner": "nijaru",
+      "description": "Hyper hybrid grep: fast scanning + neural reranking. Zero indexing, local inference.",
+      "html_url": "https://github.com/nijaru/hygrep",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    "nijaru/sy": {
+      "name": "sy",
+      "owner": "nijaru",
+      "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
+      "html_url": "https://github.com/nijaru/sy",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 9,
+      "forks_count": 1
+    },
+    "nijaru/yt-text": {
+      "name": "yt-text",
+      "owner": "nijaru",
+      "description": "Download YouTube audio and convert it to text using yt-dlp and OpenAI Whisper",
+      "html_url": "https://github.com/nijaru/yt-text",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 1
+    }
+  }
+}
