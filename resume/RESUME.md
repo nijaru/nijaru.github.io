@@ -21,6 +21,11 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations.
 
+### seerdb
+[github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
+
+LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
+
 ### hhg
 [github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, AI/ML
 
@@ -35,11 +40,6 @@ AI coding agent using LangGraph multi-agent orchestration. Maintains codebase co
 Python, LangGraph, AI/ML, Finance
 
 AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment.
-
-### seerdb
-[github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
-
-LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
 
 ## Experience
 

@@ -24,6 +24,16 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
+		name: "seerdb",
+		url: "https://github.com/omendb/seerdb",
+		description:
+			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
+		status: "Stable",
+		tech: ["Rust", "Storage Engine", "Open Source"],
+		repo: { owner: "omendb", name: "seerdb" },
+		category: "Recent",
+	},
+	{
 		name: "hhg",
 		url: "https://github.com/nijaru/hygrep",
 		description:
@@ -34,13 +44,13 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "seerdb",
-		url: "https://github.com/omendb/seerdb",
+		name: "jb",
+		url: "https://github.com/nijaru/jb",
 		description:
-			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
-		status: "Stable",
-		tech: ["Rust", "Storage Engine", "Open Source"],
-		repo: { owner: "omendb", name: "seerdb" },
+			"Background job manager for AI agents. Spawns tasks that survive session end, run in parallel, and can be monitored from any context. Includes Claude Code skills integration.",
+		status: "In development",
+		tech: ["Rust", "CLI Tool", "Open Source"],
+		repo: { owner: "nijaru", name: "jb" },
 		category: "Recent",
 	},
 	{
@@ -59,16 +69,6 @@ export const projects: Project[] = [
 			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
 		status: "Stable",
 		tech: ["Python", "LangGraph", "AI/ML"],
-		category: "Recent",
-	},
-	{
-		name: "jb",
-		url: "https://github.com/nijaru/jb",
-		description:
-			"Background job manager for AI agents. Spawns tasks that survive session end, run in parallel, and can be monitored from any context. Includes Claude Code skills integration.",
-		status: "In development",
-		tech: ["Rust", "CLI Tool", "Open Source"],
-		repo: { owner: "nijaru", name: "jb" },
 		category: "Recent",
 	},
 	{

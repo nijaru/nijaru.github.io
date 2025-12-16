@@ -33,6 +33,12 @@
 			"description": "Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations"
 		},
 		{
+			"name": "seerdb",
+			"url": "https://github.com/omendb/seerdb",
+			"tech": ["Rust", "Storage Engine", "Database Systems"],
+			"description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB"
+		},
+		{
 			"name": "hhg",
 			"url": "https://github.com/nijaru/hygrep",
 			"tech": ["Python", "AI/ML"],
@@ -49,12 +55,6 @@
 			"url": null,
 			"tech": ["Python", "LangGraph", "AI/ML", "Finance"],
 			"description": "AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment"
-		},
-		{
-			"name": "seerdb",
-			"url": "https://github.com/omendb/seerdb",
-			"tech": ["Rust", "Storage Engine", "Database Systems"],
-			"description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB"
 		}
 	],
 	"experience": [
