@@ -16,30 +16,30 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 ## Projects
 
-### seerdb
-[github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
-
-LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
-
 ### omendb
 [github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
 
 Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations.
 
-### Pacabot
-Python, LangGraph, AI/ML, Finance
-
-AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment.
-
-### Aircher
-[github.com/nijaru/aircher](https://github.com/nijaru/aircher) | Python, LangGraph, AI/ML
-
-AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support.
-
 ### hhg
 [github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, AI/ML
 
 Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages.
+
+### aircher
+[github.com/nijaru/aircher](https://github.com/nijaru/aircher) | Python, LangGraph, AI/ML
+
+AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support.
+
+### pacabot
+Python, LangGraph, AI/ML, Finance
+
+AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment.
+
+### seerdb
+[github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
+
+LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
 
 ## Experience
 

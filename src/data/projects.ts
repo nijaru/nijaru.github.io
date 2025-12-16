@@ -13,20 +13,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-	// Featured - loaded from GitHub in original, but we can define them here to centralize
-	// The original logic fetched pinned repos. We can keep that or merge it.
-	// For now, let's capture the manually defined ones which seem more curated.
-
-	{
-		name: "seerdb",
-		url: "https://github.com/omendb/seerdb",
-		description:
-			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
-		status: "Stable",
-		tech: ["Rust", "Storage Engine", "Open Source"],
-		repo: { owner: "omendb", name: "seerdb" },
-		category: "Recent",
-	},
 	{
 		name: "omendb",
 		url: "https://github.com/omendb/omendb",
@@ -35,34 +21,6 @@ export const projects: Project[] = [
 		status: "Stable",
 		tech: ["Rust", "Python", "Vector Database", "Open Source"],
 		repo: { owner: "omendb", name: "omendb" },
-		category: "Recent",
-	},
-	{
-		name: "aircher",
-		url: "https://github.com/nijaru/aircher",
-		description:
-			"AI coding agent using LangGraph for multi-agent orchestration. Maintains working memory of codebase structure and task history across sessions. Supports Agent Client Protocol (ACP) for editor integrations.",
-		status: "In development",
-		tech: ["Python", "LangGraph", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "aircher" },
-		category: "Recent",
-	},
-	{
-		name: "Pacabot",
-		description:
-			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
-		status: "Stable",
-		tech: ["Python", "LangGraph", "AI/ML"],
-		category: "Recent",
-	},
-	{
-		name: "Zenith",
-		url: "https://github.com/nijaru/zenith",
-		description:
-			"Python web framework with zero-config setup, chainable ORM queries, and one-liner features (auth, admin, API docs). Async architecture with 9,600+ req/s throughput.",
-		status: "Stable",
-		tech: ["Python", "Web Framework", "Open Source"],
-		repo: { owner: "nijaru", name: "zenith" },
 		category: "Recent",
 	},
 	{
@@ -76,6 +34,34 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
+		name: "seerdb",
+		url: "https://github.com/omendb/seerdb",
+		description:
+			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
+		status: "Stable",
+		tech: ["Rust", "Storage Engine", "Open Source"],
+		repo: { owner: "omendb", name: "seerdb" },
+		category: "Recent",
+	},
+	{
+		name: "aircher",
+		url: "https://github.com/nijaru/aircher",
+		description:
+			"AI coding agent using LangGraph for multi-agent orchestration. Maintains working memory of codebase structure and task history across sessions. Supports Agent Client Protocol (ACP) for editor integrations.",
+		status: "In development",
+		tech: ["Python", "LangGraph", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "aircher" },
+		category: "Recent",
+	},
+	{
+		name: "pacabot",
+		description:
+			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
+		status: "Stable",
+		tech: ["Python", "LangGraph", "AI/ML"],
+		category: "Recent",
+	},
+	{
 		name: "jb",
 		url: "https://github.com/nijaru/jb",
 		description:
@@ -83,6 +69,16 @@ export const projects: Project[] = [
 		status: "In development",
 		tech: ["Rust", "CLI Tool", "Open Source"],
 		repo: { owner: "nijaru", name: "jb" },
+		category: "Recent",
+	},
+	{
+		name: "zenith",
+		url: "https://github.com/nijaru/zenith",
+		description:
+			"Python web framework with zero-config setup, chainable ORM queries, and one-liner features (auth, admin, API docs). Async architecture with 9,600+ req/s throughput.",
+		status: "Stable",
+		tech: ["Python", "Web Framework", "Open Source"],
+		repo: { owner: "nijaru", name: "zenith" },
 		category: "Recent",
 	},
 	{
@@ -96,7 +92,7 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "DJScout",
+		name: "djscout",
 		description:
 			"DJ mix analysis using LSTM models trained on 10K+ professional sets. Analyzes track transitions and generates playlists.",
 		status: "In development",
@@ -104,7 +100,7 @@ export const projects: Project[] = [
 		category: "Other",
 	},
 	{
-		name: "AltText API",
+		name: "alttext api",
 		url: "https://alttextapi.com",
 		description:
 			"Alt text generation API with batch processing. Deployed on Cloudflare Workers with D1 database for global edge distribution.",
