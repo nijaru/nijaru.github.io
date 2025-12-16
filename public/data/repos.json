@@ -1,16 +1,6 @@
 {
   "pinned": [
     {
-      "name": "seerdb",
-      "owner": "omendb",
-      "description": "Research-grade storage engine with learned data structures and modern optimizations",
-      "html_url": "https://github.com/omendb/seerdb",
-      "homepage": null,
-      "language": "Rust",
-      "stargazers_count": 4,
-      "forks_count": 0
-    },
-    {
       "name": "omendb",
       "owner": "omendb",
       "description": "Fast embedded vector database with HNSW + ACORN-1 filtered search",
@@ -21,20 +11,40 @@
       "forks_count": 0
     },
     {
-      "name": "sy",
-      "owner": "nijaru",
-      "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
-      "html_url": "https://github.com/nijaru/sy",
+      "name": "seerdb",
+      "owner": "omendb",
+      "description": "Research-grade storage engine with learned data structures and modern optimizations",
+      "html_url": "https://github.com/omendb/seerdb",
       "homepage": null,
       "language": "Rust",
-      "stargazers_count": 11,
-      "forks_count": 1
+      "stargazers_count": 4,
+      "forks_count": 0
     },
     {
       "name": "hygrep",
       "owner": "nijaru",
       "description": "Hybrid grep — semantic + keyword code search",
       "html_url": "https://github.com/nijaru/hygrep",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "jb",
+      "owner": "nijaru",
+      "description": "jb - Background job manager for AI agents",
+      "html_url": "https://github.com/nijaru/jb",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "aircher",
+      "owner": "nijaru",
+      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
+      "html_url": "https://github.com/nijaru/aircher",
       "homepage": null,
       "language": "Python",
       "stargazers_count": 1,
@@ -48,16 +58,6 @@
       "homepage": "https://zenith.nijaru.com",
       "language": "Python",
       "stargazers_count": 2,
-      "forks_count": 0
-    },
-    {
-      "name": "aircher",
-      "owner": "nijaru",
-      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
-      "html_url": "https://github.com/nijaru/aircher",
-      "homepage": null,
-      "language": "Python",
-      "stargazers_count": 1,
       "forks_count": 0
     }
   ],
