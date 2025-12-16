@@ -33,10 +33,10 @@
 			"description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB"
 		},
 		{
-			"name": "OmenDB",
+			"name": "omendb",
 			"url": "https://github.com/omendb/omendb",
 			"tech": ["Rust", "Python", "Vector Database"],
-			"description": "Embedded vector database with Python bindings, persistent storage, and filtered search"
+			"description": "Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations"
 		},
 		{
 			"name": "Pacabot",
@@ -51,10 +51,10 @@
 			"description": "AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support"
 		},
 		{
-			"name": "hygrep",
+			"name": "hhg",
 			"url": "https://github.com/nijaru/hygrep",
 			"tech": ["Python", "AI/ML"],
-			"description": "Semantic code search with automatic local indexing. Tree-sitter syntax extraction with local embeddings. Supports 22+ languages"
+			"description": "Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages"
 		}
 	],
 	"experience": [

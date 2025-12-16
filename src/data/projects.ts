@@ -28,10 +28,10 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "OmenDB",
+		name: "omendb",
 		url: "https://github.com/omendb/omendb",
 		description:
-			"Embedded vector database with Python bindings. Persistent storage, filtered search, LangChain integration.",
+			"Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search (vector + BM25). LangChain and LlamaIndex integrations.",
 		status: "Stable",
 		tech: ["Rust", "Python", "Vector Database", "Open Source"],
 		repo: { owner: "omendb", name: "omendb" },
@@ -66,13 +66,23 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "hygrep",
+		name: "hhg",
 		url: "https://github.com/nijaru/hygrep",
 		description:
-			"Semantic code search with automatic local indexing. Uses tree-sitter to extract functions and classes, embeds them locally, and searches via vector similarity. Supports 22+ languages including Python, TypeScript, Rust, and Go.",
+			"Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 code languages plus Markdown and text files.",
 		status: "Stable",
 		tech: ["Python", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "hygrep" },
+		category: "Recent",
+	},
+	{
+		name: "jb",
+		url: "https://github.com/nijaru/jb",
+		description:
+			"Background job manager for AI agents. Spawns tasks that survive session end, run in parallel, and can be monitored from any context. Includes Claude Code skills integration.",
+		status: "In development",
+		tech: ["Rust", "CLI Tool", "Open Source"],
+		repo: { owner: "nijaru", name: "jb" },
 		category: "Recent",
 	},
 	{

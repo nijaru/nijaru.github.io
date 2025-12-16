@@ -33,7 +33,7 @@
     {
       "name": "hygrep",
       "owner": "nijaru",
-      "description": "Hyper hybrid grep: fast scanning + neural reranking. Zero indexing, local inference.",
+      "description": "Hybrid grep — semantic + keyword code search",
       "html_url": "https://github.com/nijaru/hygrep",
       "homepage": null,
       "language": "Python",
@@ -105,11 +105,21 @@
     "nijaru/hygrep": {
       "name": "hygrep",
       "owner": "nijaru",
-      "description": "Hyper hybrid grep: fast scanning + neural reranking. Zero indexing, local inference.",
+      "description": "Hybrid grep — semantic + keyword code search",
       "html_url": "https://github.com/nijaru/hygrep",
       "homepage": null,
       "language": "Python",
       "stargazers_count": 1,
+      "forks_count": 0
+    },
+    "nijaru/jb": {
+      "name": "jb",
+      "owner": "nijaru",
+      "description": "jb - Background job manager for AI agents",
+      "html_url": "https://github.com/nijaru/jb",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 0,
       "forks_count": 0
     },
     "nijaru/sy": {

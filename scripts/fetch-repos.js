@@ -22,6 +22,7 @@ const projectRepos = [
 	{ owner: "nijaru", name: "aircher" },
 	{ owner: "nijaru", name: "zenith" },
 	{ owner: "nijaru", name: "hygrep" },
+	{ owner: "nijaru", name: "jb" },
 	{ owner: "nijaru", name: "sy" },
 	{ owner: "nijaru", name: "yt-text" },
 ];
