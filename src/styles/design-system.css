@@ -48,7 +48,6 @@
   --glass-highlight: rgba(255, 255, 255, 0.02);
 
   /* Font families */
-  --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Monaco, monospace;
 
@@ -142,47 +141,17 @@
   box-sizing: border-box;
 }
 
-/* Hover effect for interactive cards - Enhanced with glow */
+/* Hover effect for interactive cards - Subtle glow */
 .glass-panel-interactive {
   cursor: pointer;
 }
 
-.glass-panel-interactive::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  pointer-events: none;
-}
-
-.glass-panel-interactive::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, transparent 40%, transparent 60%, rgba(34, 211, 238, 0.1) 100%);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  pointer-events: none;
-  z-index: -1;
-}
-
 .glass-panel-interactive:hover {
-  transform: translateY(-3px);
-  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.15);
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(34, 211, 238, 0.06);
-}
-
-.glass-panel-interactive:hover::before {
-  opacity: 1;
-}
-
-.glass-panel-interactive:hover::after {
-  opacity: 1;
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(34, 211, 238, 0.04);
 }
 
 /* Content background - subtle version for improved legibility */
@@ -297,45 +266,38 @@
   border-color: var(--color-border-subtle);
 }
 
-/* Professional typography system - Syne display font */
+/* Professional typography system */
 .heading-1 {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-4xl), 8vw, var(--text-6xl));
+  font-size: var(--text-4xl);
   font-weight: 700;
   line-height: var(--leading-tight);
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .heading-2 {
-  font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 600;
   line-height: var(--leading-snug);
   color: var(--color-text-primary);
   margin-bottom: var(--space-5);
-  letter-spacing: -0.02em;
 }
 
 .heading-3 {
-  font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 600;
   line-height: var(--leading-snug);
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  letter-spacing: -0.01em;
 }
 
-/* Hero title - Extra large display */
+/* Hero title - Large display */
 .heading-hero {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-5xl), 12vw, var(--text-7xl));
-  font-weight: 800;
-  line-height: 1;
+  font-size: clamp(var(--text-5xl), 10vw, var(--text-6xl));
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--color-text-primary);
-  letter-spacing: -0.04em;
 }
 
 .body-large {
