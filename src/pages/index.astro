@@ -11,14 +11,29 @@ import SocialLinks from "../components/SocialLinks.astro";
     <!-- Hero Section -->
     <section class="fixed inset-0 flex items-center justify-center pointer-events-none">
         <div class="container container-md pointer-events-auto">
-            <div class="text-center">
-                <h1 class="heading-1 mb-6 hero-animate" style="--delay: 0">
-                    <span class="text-accent-blue">Nick</span> <span class="text-text-primary">Russo</span>
+            <div class="text-center hero-content">
+                <!-- Orbital decoration -->
+                <div class="orbital-container">
+                    <div class="orbital-ring orbital-ring-1"></div>
+                    <div class="orbital-ring orbital-ring-2"></div>
+                    <div class="orbital-dot orbital-dot-1"></div>
+                    <div class="orbital-dot orbital-dot-2"></div>
+                    <div class="orbital-dot orbital-dot-3"></div>
+                </div>
+
+                <h1 class="heading-hero mb-4 hero-animate" style="--delay: 0">
+                    <span class="name-first">Nick</span>
+                    <span class="name-last">Russo</span>
                 </h1>
-                <p class="body-large text-text-secondary mb-12 hero-animate" style="--delay: 1">
-                    Software developer building AI, databases, and developer tools.
+
+                <!-- Subtle scan line effect -->
+                <div class="scan-line hero-animate" style="--delay: 1"></div>
+
+                <p class="tagline hero-animate" style="--delay: 2">
+                    Building AI, databases, and developer tools
                 </p>
-                <div class="hero-animate" style="--delay: 2">
+
+                <div class="hero-animate mt-10" style="--delay: 3">
                     <SocialLinks />
                 </div>
             </div>
@@ -27,10 +42,164 @@ import SocialLinks from "../components/SocialLinks.astro";
 </Layout>
 
 <style>
+    .hero-content {
+        position: relative;
+    }
+
+    /* Orbital decoration system */
+    .orbital-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        height: 320px;
+        pointer-events: none;
+    }
+
+    @media (min-width: 640px) {
+        .orbital-container {
+            width: 420px;
+            height: 420px;
+        }
+    }
+
+    .orbital-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(34, 211, 238, 0.08);
+    }
+
+    .orbital-ring-1 {
+        animation: orbit-pulse 4s ease-in-out infinite;
+    }
+
+    .orbital-ring-2 {
+        inset: 30px;
+        border-color: rgba(34, 211, 238, 0.05);
+        animation: orbit-pulse 4s ease-in-out infinite 1s;
+    }
+
+    .orbital-dot {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--color-accent-primary);
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+    }
+
+    .orbital-dot-1 {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: dot-orbit 20s linear infinite;
+    }
+
+    .orbital-dot-2 {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        animation: dot-orbit 25s linear infinite reverse;
+        width: 3px;
+        height: 3px;
+        opacity: 0.7;
+    }
+
+    .orbital-dot-3 {
+        bottom: 20%;
+        left: 10%;
+        animation: dot-orbit 30s linear infinite;
+        width: 2px;
+        height: 2px;
+        opacity: 0.5;
+    }
+
+    @keyframes orbit-pulse {
+        0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.02);
+        }
+    }
+
+    @keyframes dot-orbit {
+        from {
+            transform: rotate(0deg) translateX(160px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(160px) rotate(-360deg);
+        }
+    }
+
+    @media (min-width: 640px) {
+        @keyframes dot-orbit {
+            from {
+                transform: rotate(0deg) translateX(210px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(210px) rotate(-360deg);
+            }
+        }
+    }
+
+    /* Name styling with gradient */
+    .name-first {
+        background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-tertiary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .name-last {
+        color: var(--color-text-primary);
+        margin-left: 0.15em;
+    }
+
+    /* Scan line decoration */
+    .scan-line {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--color-accent-primary), transparent);
+        margin: 1.5rem auto;
+        opacity: 0.4;
+        animation: scan-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes scan-glow {
+        0%, 100% {
+            opacity: 0.3;
+            width: 100px;
+        }
+        50% {
+            opacity: 0.6;
+            width: 140px;
+        }
+    }
+
+    /* Tagline styling */
+    .tagline {
+        font-family: var(--font-body);
+        font-size: var(--text-lg);
+        color: var(--color-text-secondary);
+        letter-spacing: 0.02em;
+    }
+
+    @media (min-width: 640px) {
+        .tagline {
+            font-size: var(--text-xl);
+        }
+    }
+
+    /* Entrance animations */
     @keyframes fadeUp {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(24px);
         }
         to {
             opacity: 1;
@@ -39,14 +208,29 @@ import SocialLinks from "../components/SocialLinks.astro";
     }
 
     .hero-animate {
-        animation: fadeUp 0.6s ease-out backwards;
-        animation-delay: calc(var(--delay) * 0.1s);
+        animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        animation-delay: calc(var(--delay) * 0.12s);
     }
 
     @media (prefers-reduced-motion: reduce) {
         .hero-animate {
             animation: none;
             opacity: 1;
+        }
+
+        .orbital-ring,
+        .orbital-dot,
+        .scan-line {
+            animation: none;
+        }
+
+        .orbital-ring {
+            opacity: 0.4;
+        }
+
+        .scan-line {
+            opacity: 0.4;
+            width: 120px;
         }
     }
 </style>

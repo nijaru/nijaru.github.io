@@ -24,8 +24,8 @@ const navItems = [
 <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
   <nav class="glass-nav rounded-full px-6 py-3 flex items-center justify-between gap-8 transition-all duration-300 ease-out pointer-events-auto">
     <div class="flex items-center">
-      <a href="/" class="text-lg font-bold flex items-center text-text-primary hover:text-white transition-colors">
-        <span class="text-accent-primary">Nick</span>
+      <a href="/" class="nav-logo text-lg flex items-center text-text-primary hover:text-white transition-colors">
+        <span class="nav-logo-first">Nick</span>
         <span class="ml-1">Russo</span>
       </a>
     </div>
@@ -35,23 +35,23 @@ const navItems = [
       {navItems.map(item => (
         <a
           href={item.href}
-          class={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-            isActive(item.href, pathname) 
-              ? 'text-white bg-white/10' 
+          class={`nav-link relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+            isActive(item.href, pathname)
+              ? 'text-white bg-white/10'
               : 'text-text-secondary hover:text-white hover:bg-white/5'
           }`}
         >
           {item.label}
         </a>
       ))}
-      
+
       <!-- Social Icons -->
       <div class="flex items-center gap-1 ml-2 pl-2 border-l border-white/10">
         <a
           href="https://github.com/nijaru"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 text-text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors"
+          class="nav-social p-2 text-text-secondary hover:text-accent-primary hover:bg-white/5 rounded-full transition-colors"
           aria-label="GitHub"
         >
           <GitHubIcon class="w-5 h-5" />
@@ -60,7 +60,7 @@ const navItems = [
           href="https://www.linkedin.com/in/nick-russo"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 text-text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors"
+          class="nav-social p-2 text-text-secondary hover:text-accent-primary hover:bg-white/5 rounded-full transition-colors"
           aria-label="LinkedIn"
         >
           <LinkedInIcon class="w-4 h-4" />
@@ -69,7 +69,7 @@ const navItems = [
           href="https://twitter.com/nijaru0x"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 text-text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors"
+          class="nav-social p-2 text-text-secondary hover:text-accent-primary hover:bg-white/5 rounded-full transition-colors"
           aria-label="Twitter / X"
         >
           <XIcon class="w-4 h-4" />
@@ -114,14 +114,67 @@ const navItems = [
 
 <style>
   .glass-nav {
-    background: rgba(22, 23, 29, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: rgba(8, 8, 14, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Logo styling */
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo-first {
+    background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Nav link hover glow */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .nav-link:hover::before {
+    opacity: 1;
+  }
+
+  /* Social icon glow */
+  .nav-social {
+    position: relative;
+  }
+
+  .nav-social::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .nav-social:hover::after {
+    opacity: 1;
   }
 
   /* Mobile menu animation classes */
@@ -129,6 +182,13 @@ const navItems = [
     display: flex;
     transform: scale(100%);
     opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::before,
+    .nav-social::after {
+      transition: none;
+    }
   }
 </style>
 

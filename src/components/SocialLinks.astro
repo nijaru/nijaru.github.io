@@ -10,9 +10,9 @@ const socialLinks = [
 ];
 ---
 
-<div class="flex justify-center gap-6">
+<div class="social-links-container">
   {socialLinks.map(link => (
-    <div class="social-link-wrapper">
+    <div class="social-link-wrapper" data-magnetic>
       <a
         href={link.url}
         target="_blank"
@@ -20,9 +20,10 @@ const socialLinks = [
         class="social-link"
         aria-label={`Visit ${link.name} profile`}
       >
-        {link.icon === 'github' && <GitHubIcon class="w-6 h-6" />}
-        {link.icon === 'linkedin' && <LinkedInIcon class="w-6 h-6" />}
-        {link.icon === 'twitter' && <XIcon class="w-6 h-6" />}
+        <span class="social-glow"></span>
+        {link.icon === 'github' && <GitHubIcon class="w-5 h-5 relative z-10" />}
+        {link.icon === 'linkedin' && <LinkedInIcon class="w-5 h-5 relative z-10" />}
+        {link.icon === 'twitter' && <XIcon class="w-5 h-5 relative z-10" />}
       </a>
       <span class="social-tooltip">{link.name}</span>
     </div>
@@ -30,6 +31,12 @@ const socialLinks = [
 </div>
 
 <style>
+  .social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
   .social-link-wrapper {
     position: relative;
   }
@@ -41,36 +48,56 @@ const socialLinks = [
     width: 3rem;
     height: 3rem;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--color-text-secondary);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .social-glow {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
   }
 
   .social-link:hover {
     color: var(--color-accent-primary);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(34, 211, 238, 0.08);
+    border-color: rgba(34, 211, 238, 0.3);
+    box-shadow:
+      0 0 20px rgba(34, 211, 238, 0.15),
+      0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .social-link:hover .social-glow {
+    opacity: 1;
   }
 
   .social-tooltip {
     position: absolute;
     top: -2.5rem;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 0.25rem 0.5rem;
+    transform: translateX(-50%) translateY(4px);
+    padding: 0.35rem 0.75rem;
     background: var(--color-surface-elevated);
     color: var(--color-text-primary);
-    font-size: 0.75rem;
-    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 0.375rem;
     border: 1px solid var(--color-border-subtle);
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .social-tooltip::after {
@@ -81,13 +108,59 @@ const socialLinks = [
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid var(--color-surface-elevated);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-surface-elevated);
   }
 
   .social-link:hover + .social-tooltip,
   .social-link:focus + .social-tooltip {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-link,
+    .social-tooltip,
+    .social-glow {
+      transition: none;
+    }
   }
 </style>
+
+<script>
+  function initMagneticLinks() {
+    const magneticElements = document.querySelectorAll('[data-magnetic]');
+
+    magneticElements.forEach((wrapper) => {
+      const link = wrapper.querySelector('.social-link');
+      if (!link) return;
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = wrapper.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = (e.clientX - centerX) * 0.15;
+        const deltaY = (e.clientY - centerY) * 0.15;
+
+        (link as HTMLElement).style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      };
+
+      const handleMouseLeave = () => {
+        (link as HTMLElement).style.transform = 'translate(0, 0)';
+      };
+
+      wrapper.addEventListener('mousemove', handleMouseMove as EventListener);
+      wrapper.addEventListener('mouseleave', handleMouseLeave);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMagneticLinks);
+  } else {
+    initMagneticLinks();
+  }
+
+  document.addEventListener('astro:page-load', initMagneticLinks);
+</script>

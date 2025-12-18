@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+/* Custom theme extensions for Tailwind v4 */
+@theme {
+  --color-accent-primary: #22d3ee;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-tertiary: #67e8f9;
+  --color-accent-warm: #f59e0b;
+}

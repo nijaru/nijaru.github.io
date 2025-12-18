@@ -17,6 +17,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/atkinson-hyperlegible": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/syne": "^5.2.7",
     "astro": "^5.16.4"
   },
   "engines": {
