@@ -10,27 +10,18 @@ import SocialLinks from "../components/SocialLinks.astro";
 >
     <!-- Hero Section -->
     <section class="fixed inset-0 flex items-center justify-center pointer-events-none">
-        <!-- Orbital system - large rings containing the content -->
-        <div class="orbital-system">
-            <!-- Outer orbit ring -->
-            <div class="orbit-ring orbit-outer"></div>
-            <!-- Inner orbit ring -->
-            <div class="orbit-ring orbit-inner"></div>
-
-            <!-- Orbiting moons -->
-            <div class="moon moon-1">
-                <div class="moon-body"></div>
-            </div>
-            <div class="moon moon-2">
-                <div class="moon-body"></div>
-            </div>
-            <div class="moon moon-3">
-                <div class="moon-body"></div>
-            </div>
+        <!-- Event horizon effect - dark sphere with subtle rim glow -->
+        <div class="event-horizon">
+            <div class="horizon-rim"></div>
+            <div class="horizon-core"></div>
         </div>
 
-        <!-- Black hole / void effect behind content -->
-        <div class="void-effect"></div>
+        <!-- Drifting specks - move independently from stars -->
+        <div class="specks">
+            <div class="speck speck-1"></div>
+            <div class="speck speck-2"></div>
+            <div class="speck speck-3"></div>
+        </div>
 
         <div class="container container-md pointer-events-auto relative z-10">
             <div class="text-center">
@@ -52,111 +43,108 @@ import SocialLinks from "../components/SocialLinks.astro";
 </Layout>
 
 <style>
-    /* Orbital system - viewport-scale rings */
-    .orbital-system {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: min(90vw, 90vh);
-        height: min(90vw, 90vh);
-        pointer-events: none;
-    }
-
-    .orbit-ring {
-        position: absolute;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .orbit-outer {
-        inset: 0;
-    }
-
-    .orbit-inner {
-        inset: 15%;
-        border-color: rgba(255, 255, 255, 0.03);
-    }
-
-    /* Black hole / void effect */
-    .void-effect {
+    /* Event horizon - layered effect for depth */
+    .event-horizon {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: min(50vw, 50vh);
         height: min(50vw, 50vh);
-        background: radial-gradient(
-            circle at center,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.2) 30%,
-            transparent 70%
-        );
         pointer-events: none;
     }
 
-    /* Moon containers - handle orbit animation */
-    .moon {
+    /* Outer rim glow - subtle light bending effect */
+    .horizon-rim {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
+        inset: -15%;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at center,
+            transparent 45%,
+            rgba(80, 60, 40, 0.03) 50%,
+            rgba(120, 80, 50, 0.05) 55%,
+            rgba(100, 70, 45, 0.03) 60%,
+            transparent 70%
+        );
     }
 
-    /* Moon bodies - the actual visible spheres */
-    .moon-body {
+    /* Dark core - the actual event horizon */
+    .horizon-core {
         position: absolute;
+        inset: 20%;
         border-radius: 50%;
-        background: linear-gradient(
-            135deg,
-            rgba(180, 180, 190, 0.5) 0%,
-            rgba(100, 100, 110, 0.3) 50%,
-            rgba(60, 60, 70, 0.2) 100%
+        background: radial-gradient(
+            circle at center,
+            #000000 0%,
+            #000000 70%,
+            rgba(0, 0, 0, 0.95) 85%,
+            rgba(0, 0, 0, 0.8) 95%,
+            transparent 100%
         );
         box-shadow:
-            inset -2px -2px 4px rgba(0, 0, 0, 0.3),
-            inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+            0 0 60px rgba(0, 0, 0, 0.5),
+            0 0 100px rgba(0, 0, 0, 0.3);
     }
 
-    /* Moon 1 - large, slow orbit on outer ring */
-    .moon-1 {
-        animation: orbit 60s linear infinite;
-    }
-    .moon-1 .moon-body {
-        width: 10px;
-        height: 10px;
-        transform: translate(-50%, -50%) translateX(calc(min(45vw, 45vh)));
+    /* Drifting specks - subtle particles moving across screen */
+    .specks {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
     }
 
-    /* Moon 2 - medium, medium speed on inner ring */
-    .moon-2 {
-        animation: orbit 40s linear infinite reverse;
-    }
-    .moon-2 .moon-body {
-        width: 6px;
-        height: 6px;
-        transform: translate(-50%, -50%) translateX(calc(min(32vw, 32vh)));
-        opacity: 0.7;
+    .speck {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
     }
 
-    /* Moon 3 - small, faster orbit */
-    .moon-3 {
-        animation: orbit 25s linear infinite;
+    .speck-1 {
+        width: 2px;
+        height: 2px;
+        top: 25%;
+        left: -2%;
+        animation: drift-1 90s linear infinite;
     }
-    .moon-3 .moon-body {
-        width: 4px;
-        height: 4px;
-        transform: translate(-50%, -50%) translateX(calc(min(38vw, 38vh)));
+
+    .speck-2 {
+        width: 3px;
+        height: 3px;
+        top: 55%;
+        left: -3%;
         opacity: 0.5;
+        animation: drift-2 70s linear infinite;
+        animation-delay: -25s;
     }
 
-    @keyframes orbit {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+    .speck-3 {
+        width: 2px;
+        height: 2px;
+        top: 75%;
+        right: -2%;
+        opacity: 0.3;
+        animation: drift-3 110s linear infinite;
+        animation-delay: -50s;
     }
 
-    /* Name styling - simple cyan/white */
+    @keyframes drift-1 {
+        from { transform: translateX(0); }
+        to { transform: translateX(110vw); }
+    }
+
+    @keyframes drift-2 {
+        from { transform: translate(0, 0); }
+        to { transform: translate(110vw, -15vh); }
+    }
+
+    @keyframes drift-3 {
+        from { transform: translateX(0); }
+        to { transform: translateX(-110vw); }
+    }
+
+    /* Name styling */
     .name-first {
         color: var(--color-accent-primary);
     }
@@ -197,12 +185,16 @@ import SocialLinks from "../components/SocialLinks.astro";
 
     @media (prefers-reduced-motion: reduce) {
         .hero-animate,
-        .moon {
+        .speck {
             animation: none;
         }
 
         .hero-animate {
             opacity: 1;
+        }
+
+        .speck {
+            display: none;
         }
     }
 </style>
