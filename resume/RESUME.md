@@ -32,7 +32,7 @@ LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2
 Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages.
 
 ### jb
-[github.com/nijaru/jb](https://github.com/nijaru/jb) | Go, Developer Tools
+[github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, Developer Tools
 
 Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows.
 

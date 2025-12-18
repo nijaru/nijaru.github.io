@@ -47,7 +47,7 @@
 		{
 			"name": "jb",
 			"url": "https://github.com/nijaru/jb",
-			"tech": ["Go", "Developer Tools"],
+			"tech": ["Rust", "Developer Tools"],
 			"description": "Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows"
 		},
 		{
