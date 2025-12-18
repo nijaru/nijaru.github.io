@@ -72,25 +72,26 @@ import SocialLinks from "../components/SocialLinks.astro";
         );
     }
 
-    /* Dark core - fuzzy edge event horizon */
+    /* Dark core - very fuzzy edge event horizon */
     .horizon-core {
         position: absolute;
-        inset: 15%;
+        inset: 10%;
         border-radius: 50%;
         background: radial-gradient(
             circle at center,
             #000000 0%,
-            #000000 40%,
-            rgba(0, 0, 0, 0.9) 55%,
-            rgba(0, 0, 0, 0.6) 70%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0.1) 95%,
+            #000000 25%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.5) 55%,
+            rgba(0, 0, 0, 0.25) 70%,
+            rgba(0, 0, 0, 0.1) 85%,
+            rgba(0, 0, 0, 0.03) 95%,
             transparent 100%
         );
-        filter: blur(2px);
+        filter: blur(8px);
         box-shadow:
-            0 0 80px rgba(0, 0, 0, 0.6),
-            0 0 120px rgba(0, 0, 0, 0.4);
+            0 0 100px rgba(0, 0, 0, 0.5),
+            0 0 150px rgba(0, 0, 0, 0.3);
     }
 
     /* Drifting specks - subtle particles moving across screen */
