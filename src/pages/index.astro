@@ -52,15 +52,15 @@ import SocialLinks from "../components/SocialLinks.astro";
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 105vw;
-        height: 105vw;
+        width: 115vw;
+        height: 115vw;
         pointer-events: none;
     }
 
     @media (min-width: 768px) {
         .event-horizon {
-            width: min(80vw, 80vh);
-            height: min(80vw, 80vh);
+            width: min(85vw, 85vh);
+            height: min(85vw, 85vh);
         }
     }
 
@@ -107,6 +107,7 @@ import SocialLinks from "../components/SocialLinks.astro";
         inset: 0;
         overflow: hidden;
         pointer-events: none;
+        z-index: -1;
     }
 
     .speck {
