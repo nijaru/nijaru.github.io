@@ -8,33 +8,23 @@ import Layout from "../layouts/Layout.astro";
     ogType="profile"
 >
     <div class="container container-sm pt-32 pb-16">
-        <section class="mb-12 text-center">
-            <h1 class="heading-1 mb-6">
+        <section class="text-center">
+            <h1 class="heading-1 mb-8">
                 <span class="text-gradient">About</span> Me
             </h1>
-        </section>
 
-        <div class="prose prose-invert mx-auto">
-            <p class="text-lg text-text-secondary leading-relaxed mb-8">
-                Backend engineer from the Bay Area specializing in Python, Go, and Rust. Building database systems,
-                developer tools, and AI agents.
+            <p class="text-lg text-text-secondary leading-relaxed max-w-xl mx-auto mb-10">
+                Backend engineer from the Bay Area. Building databases, AI tools, and developer tooling with Python, Go, and Rust.
             </p>
 
-            <h2 class="text-xl font-semibold text-text-primary mb-4">Current Focus</h2>
-            <ul class="list-disc list-outside ml-5 space-y-2 text-text-secondary">
-                <li>Database systems and storage engines</li>
-                <li>AI/ML infrastructure and autonomous agents</li>
-                <li>Systems programming in Rust</li>
-                <li>Developer tools and CLI applications</li>
-            </ul>
-        </div>
-
-        <div class="divider my-16"></div>
-
-        <section class="text-center">
-            <a href="/" class="btn btn-ghost link-arrow">
-                Back to Home
-            </a>
+            <div class="flex justify-center gap-4">
+                <a href="/projects" class="btn btn-primary">
+                    View Projects
+                </a>
+                <a href="/resume" class="btn btn-secondary">
+                    Resume
+                </a>
+            </div>
         </section>
     </div>
 </Layout>
