@@ -10,9 +10,8 @@ import SocialLinks from "../components/SocialLinks.astro";
 >
     <!-- Hero Section -->
     <section class="fixed inset-0 flex items-center justify-center pointer-events-none">
-        <!-- Event horizon effect - dark sphere with subtle rim glow -->
+        <!-- Event horizon effect - dark sphere -->
         <div class="event-horizon">
-            <div class="horizon-rim"></div>
             <div class="horizon-core"></div>
         </div>
 
@@ -62,21 +61,6 @@ import SocialLinks from "../components/SocialLinks.astro";
             width: min(95vw, 95vh);
             height: min(95vw, 95vh);
         }
-    }
-
-    /* Outer rim glow - subtle light bending effect */
-    .horizon-rim {
-        position: absolute;
-        inset: -15%;
-        border-radius: 50%;
-        background: radial-gradient(
-            circle at center,
-            transparent 45%,
-            rgba(80, 60, 40, 0.03) 50%,
-            rgba(120, 80, 50, 0.05) 55%,
-            rgba(100, 70, 45, 0.03) 60%,
-            transparent 70%
-        );
     }
 
     /* Dark core - fuzzy edge event horizon */
