@@ -51,12 +51,6 @@
 			"description": "Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows"
 		},
 		{
-			"name": "aircher",
-			"url": "https://github.com/nijaru/aircher",
-			"tech": ["Python", "LangGraph", "AI/ML"],
-			"description": "AI coding agent using LangGraph multi-agent orchestration. Maintains codebase context and task history across sessions. ACP protocol support"
-		},
-		{
 			"name": "pacabot",
 			"url": null,
 			"tech": ["Python", "LangGraph", "AI/ML", "Finance"],
