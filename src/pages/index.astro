@@ -27,16 +27,20 @@ import SocialLinks from "../components/SocialLinks.astro";
 
         <div class="container container-md pointer-events-auto relative z-10">
             <div class="text-center">
-                <h1 class="heading-hero mb-6 hero-animate" style="--delay: 0">
+                <h1 class="heading-hero mb-4 hero-animate" style="--delay: 0">
                     <span class="text-gradient">Nick</span>
                     <span class="name-last">Russo</span>
                 </h1>
 
                 <p class="tagline hero-animate" style="--delay: 1">
-                    Building AI, databases, and developer tools
+                    Backend engineer from the Bay Area
                 </p>
 
-                <div class="hero-animate mt-10" style="--delay: 2">
+                <p class="tagline-sub hero-animate" style="--delay: 2">
+                    Building databases, AI tools, and developer tooling
+                </p>
+
+                <div class="hero-animate mt-10" style="--delay: 3">
                     <SocialLinks />
                 </div>
             </div>
@@ -184,12 +188,21 @@ import SocialLinks from "../components/SocialLinks.astro";
     /* Tagline styling */
     .tagline {
         font-size: var(--text-lg);
+        color: var(--color-text-primary);
+    }
+
+    .tagline-sub {
+        font-size: var(--text-base);
         color: var(--color-text-secondary);
+        margin-top: 0.5rem;
     }
 
     @media (min-width: 640px) {
         .tagline {
             font-size: var(--text-xl);
+        }
+        .tagline-sub {
+            font-size: var(--text-lg);
         }
     }
 
