@@ -45,6 +45,12 @@
 			"description": "Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages"
 		},
 		{
+			"name": "jb",
+			"url": "https://github.com/nijaru/jb",
+			"tech": ["Go", "Developer Tools"],
+			"description": "Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows"
+		},
+		{
 			"name": "aircher",
 			"url": "https://github.com/nijaru/aircher",
 			"tech": ["Python", "LangGraph", "AI/ML"],
