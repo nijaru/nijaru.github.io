@@ -26,14 +26,14 @@
   --color-text-tertiary: #5c5c6e;
   --color-text-inverse: #050508;
 
-  /* Primary accent - Cosmic Cyan */
-  --color-accent-primary: #22d3ee;
-  --color-accent-secondary: #06b6d4;
-  --color-accent-tertiary: #67e8f9;
+  /* Primary accent - Amber/Gold */
+  --color-accent-primary: #fbbf24;
+  --color-accent-secondary: #f59e0b;
+  --color-accent-tertiary: #fcd34d;
 
-  /* Secondary accent - Nebula Gold (warm contrast) */
-  --color-accent-warm: #f59e0b;
-  --color-accent-warm-muted: rgba(245, 158, 11, 0.6);
+  /* Secondary accent - Orange (warm contrast) */
+  --color-accent-warm: #f97316;
+  --color-accent-warm-muted: rgba(249, 115, 22, 0.6);
 
   --color-border-subtle: rgba(255, 255, 255, 0.06);
   --color-border-default: rgba(255, 255, 255, 0.1);
@@ -42,9 +42,9 @@
   /* Glass morphism - Enhanced with glow */
   --glass-bg: rgba(8, 8, 14, 0.7);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(34, 211, 238, 0.3);
+  --glass-border-hover: rgba(251, 191, 36, 0.3);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --glass-shadow-glow: 0 0 40px rgba(34, 211, 238, 0.08);
+  --glass-shadow-glow: 0 0 40px rgba(251, 191, 36, 0.08);
   --glass-highlight: rgba(255, 255, 255, 0.02);
 
   /* Font families */
@@ -148,10 +148,10 @@
 
 .glass-panel-interactive:hover {
   transform: translateY(-2px);
-  border-color: rgba(34, 211, 238, 0.15);
+  border-color: rgba(251, 191, 36, 0.15);
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(34, 211, 238, 0.04);
+    0 0 20px rgba(251, 191, 36, 0.04);
 }
 
 /* Content background - subtle version for improved legibility */
@@ -214,6 +214,13 @@
   color: var(--color-text-primary);
 }
 
+.text-gradient {
+  background: linear-gradient(to right, #fbbf24, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Professional button system */
 .btn {
   display: inline-flex;
@@ -262,7 +269,7 @@
 }
 
 .btn-ghost:hover {
-  background: rgba(34, 211, 238, 0.05);
+  background: rgba(251, 191, 36, 0.05);
   border-color: var(--color-border-subtle);
 }
 
@@ -405,9 +412,9 @@
 }
 
 .badge-primary {
-  background: rgba(34, 211, 238, 0.15);
+  background: rgba(251, 191, 36, 0.15);
   color: var(--color-accent-tertiary);
-  border: 1px solid rgba(34, 211, 238, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
 /* Responsive utilities */

@@ -40,36 +40,36 @@
 /* Basic text styling */
 .blog-content p {
     color: #e5e7eb;
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
 }
 
 /* Lists */
 .blog-content ul {
     list-style-type: disc;
     color: #e5e7eb;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     padding-left: 1.5rem;
-    line-height: 1.6;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.75;
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
 }
 
 .blog-content ul > * + * {
-    margin-top: 0.5rem;
+    margin-top: 0.625rem;
 }
 
 .blog-content ol {
     list-style-type: decimal;
     color: #e5e7eb;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     padding-left: 1.5rem;
-    line-height: 1.6;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.75;
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
 }
 
 .blog-content ol > * + * {
-    margin-top: 0.5rem;
+    margin-top: 0.625rem;
 }
 
 /* Enhanced code blocks */
@@ -153,8 +153,8 @@
 .blog-content code {
     color: var(--color-accent-primary);
     border-radius: 0.25rem;
-    background: rgba(38, 38, 38, 0.5);
-    padding: 0.125rem 0.25rem;
+    background: rgba(251, 191, 36, 0.1);
+    padding: 0.125rem 0.375rem;
     font-size: 0.9em;
 }
 
@@ -167,14 +167,15 @@
 
 /* Blockquotes */
 .blog-content blockquote {
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid var(--color-accent-primary);
     color: #e5e7eb;
     font-style: italic;
-    background: rgba(59, 130, 246, 0.1);
-    padding: 0.75rem 1rem 0.75rem 1.25rem;
-    margin: 1.5rem 0;
-    line-height: 1.6;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    background: rgba(251, 191, 36, 0.08);
+    padding: 1rem 1.25rem 1rem 1.5rem;
+    margin: 1.75rem 0;
+    line-height: 1.75;
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
+    border-radius: 0 0.375rem 0.375rem 0;
 }
 
 /* Links */
