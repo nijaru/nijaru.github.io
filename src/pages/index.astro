@@ -52,9 +52,16 @@ import SocialLinks from "../components/SocialLinks.astro";
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: min(50vw, 50vh);
-        height: min(50vw, 50vh);
+        width: min(85vw, 85vh);
+        height: min(85vw, 85vh);
         pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+        .event-horizon {
+            width: min(60vw, 60vh);
+            height: min(60vw, 60vh);
+        }
     }
 
     /* Outer rim glow - subtle light bending effect */
@@ -72,7 +79,7 @@ import SocialLinks from "../components/SocialLinks.astro";
         );
     }
 
-    /* Dark core - very fuzzy edge event horizon */
+    /* Dark core - fuzzy edge event horizon */
     .horizon-core {
         position: absolute;
         inset: 10%;
@@ -88,10 +95,16 @@ import SocialLinks from "../components/SocialLinks.astro";
             rgba(0, 0, 0, 0.03) 95%,
             transparent 100%
         );
-        filter: blur(8px);
+        filter: blur(6px);
         box-shadow:
             0 0 100px rgba(0, 0, 0, 0.5),
             0 0 150px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 768px) {
+        .horizon-core {
+            filter: blur(4px);
+        }
     }
 
     /* Drifting specks - subtle particles moving across screen */
