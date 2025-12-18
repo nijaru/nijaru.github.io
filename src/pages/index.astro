@@ -33,14 +33,10 @@ import SocialLinks from "../components/SocialLinks.astro";
                 </h1>
 
                 <p class="tagline hero-animate" style="--delay: 1">
-                    Backend engineer from the Bay
+                    Backend engineer building databases, AI tools, and developer tooling
                 </p>
 
-                <p class="tagline-sub hero-animate" style="--delay: 2">
-                    Building databases, AI tools, and developer tooling
-                </p>
-
-                <div class="hero-animate mt-10" style="--delay: 3">
+                <div class="hero-animate mt-8" style="--delay: 2">
                     <SocialLinks />
                 </div>
             </div>
@@ -188,21 +184,12 @@ import SocialLinks from "../components/SocialLinks.astro";
     /* Tagline styling */
     .tagline {
         font-size: var(--text-lg);
-        color: var(--color-text-primary);
-    }
-
-    .tagline-sub {
-        font-size: var(--text-base);
         color: var(--color-text-secondary);
-        margin-top: 0.5rem;
     }
 
     @media (min-width: 640px) {
         .tagline {
             font-size: var(--text-xl);
-        }
-        .tagline-sub {
-            font-size: var(--text-lg);
         }
     }
 
