@@ -164,8 +164,10 @@
                 // This ensures the warp effect persists throughout the entire loading phase
                 targetScrollY = scrollY + warpDirection * 5000;
             } else if (!prefersReducedMotion) {
-                // Natural drift (slow constant forward motion)
-                targetScrollY += 0.5;
+                // Natural drift with subtle variation for organic feel
+                // Base drift + sine wave variation (0.3 to 0.7 range)
+                const driftVariation = 0.5 + Math.sin(frame * 0.01) * 0.2;
+                targetScrollY += driftVariation;
             }
 
             // Smooth scroll interpolation for parallax
