@@ -41,16 +41,6 @@
       "forks_count": 0
     },
     {
-      "name": "aircher",
-      "owner": "nijaru",
-      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
-      "html_url": "https://github.com/nijaru/aircher",
-      "homepage": null,
-      "language": "Python",
-      "stargazers_count": 1,
-      "forks_count": 0
-    },
-    {
       "name": "zenith",
       "owner": "nijaru",
       "description": "Fast, modern Python web framework with zero-config defaults and Rails-like developer experience",
@@ -59,6 +49,16 @@
       "language": "Python",
       "stargazers_count": 2,
       "forks_count": 0
+    },
+    {
+      "name": "sy",
+      "owner": "nijaru",
+      "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
+      "html_url": "https://github.com/nijaru/sy",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 11,
+      "forks_count": 1
     }
   ],
   "projects": {
