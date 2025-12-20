@@ -55,12 +55,10 @@ export const projects: Project[] = [
 	},
 	{
 		name: "aircher",
-		url: "https://github.com/nijaru/aircher",
 		description:
-			"AI coding agent using LangGraph for multi-agent orchestration. Maintains working memory of codebase structure and task history across sessions. Supports Agent Client Protocol (ACP) for editor integrations.",
+			"Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, relational, contextual) with pluggable archetypes. Primary demo is a coding agent with tree-sitter integration.",
 		status: "In development",
-		tech: ["Python", "LangGraph", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "aircher" },
+		tech: ["TypeScript", "Bun", "AI/ML"],
 		category: "Recent",
 	},
 	{
