@@ -42,7 +42,7 @@
 			"name": "pacabot",
 			"url": null,
 			"tech": ["Rust", "Finance", "Quantitative"],
-			"description": "Quantitative trading system. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection"
+			"description": "Rust trading bot with statistical edge detection. Real-time price feeds, fair-value pricing, risk-managed position sizing"
 		},
 		{
 			"name": "jb",

@@ -66,7 +66,7 @@ export const projects: Project[] = [
 	{
 		name: "pacabot",
 		description:
-			"Quantitative trading system in Rust. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection.",
+			"Algorithmic trading system in Rust. Options pricing model, dynamic position sizing, real-time volatility tracking.",
 		status: "Stable",
 		tech: ["Rust", "Finance", "Quantitative"],
 		category: "Recent",

@@ -29,7 +29,7 @@ LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2
 ### pacabot
 Rust, Finance, Quantitative
 
-Quantitative trading system. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection.
+Rust trading bot with statistical edge detection. Real-time price feeds, fair-value pricing, risk-managed position sizing.
 
 ### jb
 [github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, Developer Tools
