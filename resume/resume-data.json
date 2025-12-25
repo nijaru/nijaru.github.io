@@ -39,10 +39,10 @@
 			"description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB"
 		},
 		{
-			"name": "hhg",
-			"url": "https://github.com/nijaru/hygrep",
-			"tech": ["Python", "AI/ML"],
-			"description": "Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages"
+			"name": "pacabot",
+			"url": null,
+			"tech": ["Rust", "Finance", "Quantitative"],
+			"description": "Quantitative trading system. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection"
 		},
 		{
 			"name": "jb",
@@ -51,10 +51,10 @@
 			"description": "Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows"
 		},
 		{
-			"name": "pacabot",
-			"url": null,
-			"tech": ["Python", "LangGraph", "AI/ML", "Finance"],
-			"description": "AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment"
+			"name": "aircher",
+			"url": "https://github.com/nijaru/aircher",
+			"tech": ["TypeScript", "Bun", "AI/ML"],
+			"description": "Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes"
 		}
 	],
 	"experience": [

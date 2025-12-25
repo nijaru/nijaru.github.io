@@ -55,18 +55,20 @@ export const projects: Project[] = [
 	},
 	{
 		name: "aircher",
+		url: "https://github.com/nijaru/aircher",
 		description:
-			"Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, relational, contextual) with pluggable archetypes. Primary demo is a coding agent with tree-sitter integration.",
+			"Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes. Primary demo is a coding agent with tree-sitter integration.",
 		status: "In development",
-		tech: ["TypeScript", "Bun", "AI/ML"],
+		tech: ["TypeScript", "Bun", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "aircher" },
 		category: "Recent",
 	},
 	{
 		name: "pacabot",
 		description:
-			"AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment for analysis and trade decisions.",
+			"Quantitative trading system in Rust. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection.",
 		status: "Stable",
-		tech: ["Python", "LangGraph", "AI/ML"],
+		tech: ["Rust", "Finance", "Quantitative"],
 		category: "Recent",
 	},
 	{

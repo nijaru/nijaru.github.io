@@ -26,20 +26,20 @@ Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantizatio
 
 LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
 
-### hhg
-[github.com/nijaru/hygrep](https://github.com/nijaru/hygrep) | Python, AI/ML
+### pacabot
+Rust, Finance, Quantitative
 
-Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 languages.
+Quantitative trading system. Black-Scholes pricing, Kelly criterion sizing, real-time volatility tracking with regime detection.
 
 ### jb
 [github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, Developer Tools
 
 Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows.
 
-### pacabot
-Python, LangGraph, AI/ML, Finance
+### aircher
+[github.com/nijaru/aircher](https://github.com/nijaru/aircher) | TypeScript, Bun, AI/ML
 
-AI trading bot using LangGraph multi-agent system. Aggregates 13 data sources including market data, SEC filings, news, and social sentiment.
+Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes.
 
 ## Experience
 
