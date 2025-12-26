@@ -82,6 +82,16 @@
       "stargazers_count": 1,
       "forks_count": 0
     },
+    "nijaru/aircher": {
+      "name": "aircher",
+      "owner": "nijaru",
+      "description": "AI coding agent with LangGraph orchestration and cross-session memory. ACP-compatible.",
+      "html_url": "https://github.com/nijaru/aircher",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
     "nijaru/zenith": {
       "name": "zenith",
       "owner": "nijaru",
