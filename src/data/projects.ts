@@ -55,12 +55,10 @@ export const projects: Project[] = [
 	},
 	{
 		name: "aircher",
-		url: "https://github.com/nijaru/aircher",
 		description:
-			"Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes. Primary demo is a coding agent with tree-sitter integration.",
+			"Local-first memory framework for AI agents with multi-layer architecture.",
 		status: "In development",
-		tech: ["TypeScript", "Bun", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "aircher" },
+		tech: ["TypeScript", "Bun", "AI/ML"],
 		category: "Recent",
 	},
 	{
