@@ -34,6 +34,13 @@
   /* Secondary accent - Teal (for gradients) */
   --color-accent-teal: #14b8a6;
 
+  /* Accent with opacity variants */
+  --color-accent-5: rgba(34, 211, 238, 0.05);
+  --color-accent-8: rgba(34, 211, 238, 0.08);
+  --color-accent-10: rgba(34, 211, 238, 0.1);
+  --color-accent-15: rgba(34, 211, 238, 0.15);
+  --color-accent-30: rgba(34, 211, 238, 0.3);
+
   /* Gradient */
   --gradient-accent: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-teal));
 
@@ -41,12 +48,12 @@
   --color-border-default: rgba(255, 255, 255, 0.1);
   --color-border-emphasis: rgba(255, 255, 255, 0.18);
 
-  /* Glass morphism - Enhanced with glow */
+  /* Glass morphism */
   --glass-bg: rgba(8, 8, 14, 0.7);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(34, 211, 238, 0.3);
+  --glass-border-hover: var(--color-accent-30);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --glass-shadow-glow: 0 0 40px rgba(34, 211, 238, 0.08);
+  --glass-shadow-glow: 0 0 40px var(--color-accent-8);
   --glass-highlight: rgba(255, 255, 255, 0.02);
 
   /* Font families */
@@ -151,10 +158,10 @@
 
 .glass-panel-interactive:hover {
   transform: translateY(-2px);
-  border-color: rgba(34, 211, 238, 0.15);
+  border-color: var(--color-accent-15);
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(34, 211, 238, 0.04);
+    0 0 20px var(--color-accent-5);
 }
 
 /* Content background - subtle version for improved legibility */
@@ -202,10 +209,6 @@
 }
 
 .text-accent-primary {
-  color: var(--color-accent-primary);
-}
-
-.text-accent-blue {
   color: var(--color-accent-primary);
 }
 
@@ -272,7 +275,7 @@
 }
 
 .btn-ghost:hover {
-  background: rgba(34, 211, 238, 0.05);
+  background: var(--color-accent-5);
   border-color: var(--color-border-subtle);
 }
 
@@ -415,9 +418,9 @@
 }
 
 .badge-primary {
-  background: rgba(34, 211, 238, 0.15);
+  background: var(--color-accent-15);
   color: var(--color-accent-tertiary);
-  border: 1px solid rgba(34, 211, 238, 0.3);
+  border: 1px solid var(--color-accent-30);
 }
 
 /* Responsive utilities */
@@ -433,12 +436,6 @@
     padding-left: var(--space-8);
     padding-right: var(--space-8);
   }
-}
-
-/* Remove old unprofessional styles */
-.content-backdrop,
-.content-fade {
-  display: none;
 }
 
 /* Accessibility */
