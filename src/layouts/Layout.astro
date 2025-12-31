@@ -1,7 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import StarField from "../components/StarField.astro";
-import SocialLinks from "../components/SocialLinks.astro";
 import BackToTop from "../components/BackToTop.astro";
 import { ClientRouter } from 'astro:transitions';
 import '../styles/fonts.css';
@@ -88,57 +87,6 @@ const { showFooter = true } = Astro.props;
 </html>
 
 <style is:global>
-    @keyframes twinkle {
-        0%,
-        100% {
-            opacity: 0.2;
-        }
-        50% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes float {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes shine {
-        0% {
-            background-position: -100% 0;
-        }
-        100% {
-            background-position: 200% 0;
-        }
-    }
-
-    .shine-text {
-        position: relative;
-    }
-
-    .shine-text::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            rgba(255, 255, 255, 0) 100%
-        );
-        background-size: 200% 100%;
-        animation: shine 4s ease-in-out infinite;
-        pointer-events: none;
-    }
-
     html {
         scroll-behavior: smooth;
         font-size: 112.5%; /* 18px base */
