@@ -1,6 +1,12 @@
-/* Atkinson Hyperlegible - Primary font (accessibility-focused) */
-@import '@fontsource/atkinson-hyperlegible/400.css';
-@import '@fontsource/atkinson-hyperlegible/700.css';
+/* Geist Sans - Body text (modern, polished) */
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/700.css';
+
+/* Outfit - Headers (geometric, clean) */
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
 
 /* JetBrains Mono - Monospace for code */
 @import '@fontsource/jetbrains-mono/400.css';

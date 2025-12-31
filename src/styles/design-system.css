@@ -50,7 +50,8 @@
   --glass-highlight: rgba(255, 255, 255, 0.02);
 
   /* Font families */
-  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-body: "Geist Sans", system-ui, sans-serif;
+  --font-heading: "Outfit", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Monaco, monospace;
 
   /* Typography scale */
