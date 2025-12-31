@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import { rehypeH2TextGlow } from './src/utils/customMarkdownHeadings.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +26,6 @@ export default defineConfig({
     },
   },
   markdown: {
-    rehypePlugins: [rehypeH2TextGlow],
     shikiConfig: {
       theme: 'one-dark-pro',
       wrap: true,

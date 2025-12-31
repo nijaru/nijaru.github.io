@@ -39,7 +39,7 @@
 
 /* Basic text styling */
 .blog-content p {
-    color: #e5e7eb;
+    color: var(--color-gray-200);
     margin-bottom: 1.5rem;
     line-height: 1.75;
     font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
@@ -48,7 +48,7 @@
 /* Lists */
 .blog-content ul {
     list-style-type: disc;
-    color: #e5e7eb;
+    color: var(--color-gray-200);
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
     line-height: 1.75;
@@ -61,7 +61,7 @@
 
 .blog-content ol {
     list-style-type: decimal;
-    color: #e5e7eb;
+    color: var(--color-gray-200);
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
     line-height: 1.75;
@@ -75,7 +75,7 @@
 /* Enhanced code blocks */
 .enhanced-code-block {
     position: relative;
-    background: #1a1a1a; /* dark-800 */
+    background: var(--color-code-bg);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -83,14 +83,14 @@
 }
 
 .code-block-header {
-    background: #0a0a0a; /* dark-900 */
+    background: var(--color-code-header);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.875rem;
-    color: #9ca3af; /* gray-400 */
+    color: var(--color-gray-400);
 }
 
 .copy-btn {
@@ -100,7 +100,7 @@
     padding: 0.25rem 0.75rem;
     border-radius: 0.25rem;
     transition: all 0.2s ease;
-    color: #9ca3af; /* gray-400 */
+    color: var(--color-gray-400);
     cursor: pointer;
     border: none;
     background: transparent;
@@ -132,7 +132,7 @@
     top: 0;
     width: 3rem;
     text-align: right;
-    color: #6b7280; /* gray-500 */
+    color: var(--color-gray-500);
     font-size: 0.875rem;
     line-height: 1.5rem;
     user-select: none;
@@ -144,7 +144,7 @@
 .blog-content pre {
     border-radius: 0.375rem;
     overflow-x: auto;
-    background: #1a1a1a;
+    background: var(--color-code-bg);
     margin: 1.25rem 0;
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -159,7 +159,7 @@
 }
 
 .blog-content pre code {
-    color: #e5e7eb;
+    color: var(--color-gray-200);
     background: transparent;
     padding: 0;
     font-size: 0.9em;
@@ -168,7 +168,7 @@
 /* Blockquotes */
 .blog-content blockquote {
     border-left: 4px solid var(--color-accent-primary);
-    color: #e5e7eb;
+    color: var(--color-gray-200);
     font-style: italic;
     background: var(--color-accent-8);
     padding: 1rem 1.25rem 1rem 1.5rem;
@@ -200,7 +200,7 @@
 /* Horizontal rule */
 .blog-content hr {
     margin: 2rem 0;
-    border-color: #262626;
+    border-color: var(--color-code-border);
 }
 
 /* Table */
@@ -211,15 +211,15 @@
 }
 
 .blog-content th {
-    background: #262626;
-    color: #e5e7eb;
+    background: var(--color-code-border);
+    color: var(--color-gray-200);
     padding: 0.5rem;
-    border: 1px solid #333333;
+    border: 1px solid var(--color-code-border-dark);
     text-align: left;
 }
 
 .blog-content td {
     padding: 0.5rem;
-    border: 1px solid #333333;
-    color: #d1d5db;
+    border: 1px solid var(--color-code-border-dark);
+    color: var(--color-gray-300);
 }

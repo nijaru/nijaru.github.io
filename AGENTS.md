@@ -4,14 +4,17 @@
 **AI Context:** No ai/ directory needed - project guidelines in this file
 
 ## Technology Stack
+
 - **Astro v5** - Static site generation with component islands
 - **Tailwind CSS v4** - Next-gen CSS engine via @tailwindcss/vite
 - **Bun** - Fast JavaScript runtime and package manager
-- **Atkinson Hyperlegible** - Accessibility-focused font (via Fontsource)
+- **Geist Sans** - Modern body text (via Fontsource)
+- **Outfit** - Geometric heading font (via Fontsource)
 - **JetBrains Mono** - Monospace font for code (via Fontsource)
 - **XeLaTeX** - Resume PDF generation
 
 ## Build & Development
+
 ```bash
 bun install          # Install dependencies
 bun run dev          # Development server (localhost:4321)
@@ -21,9 +24,10 @@ bun run preview      # Preview production build
 ```
 
 ## Architecture Decisions
+
 - **Static-first**: All pages pre-rendered for maximum performance
 - **Bun over npm**: Faster installs and builds
-- **Self-hosted fonts**: Atkinson Hyperlegible + JetBrains Mono, no external CDN dependencies
+- **Self-hosted fonts**: Geist Sans, Outfit, JetBrains Mono - no external CDN dependencies
 - **No external CSS**: Removed devicons CDN (~100KB) - add back via `<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">` in Layout.astro if needed for tech icons
 - **Automated resume**: PDF generated from LaTeX source on build
 - **GitHub integration**: Pinned repos fetched via Actions → static JSON
@@ -31,6 +35,7 @@ bun run preview      # Preview production build
 - **Deployment**: Cloudflare Pages with GitHub auto-deploy on push to main
 
 ## File Structure
+
 ```
 src/
 ├── components/     # Astro components
@@ -53,19 +58,22 @@ resume/
 ```
 
 ## Resume Generation
+
 - **Source**: `resume/resume-data.json` → generates `resume.tex` and `RESUME.md`
 - **Build**: `bun run build:resume` generates files and compiles PDF
 - **Output**: Copied to `public/Nicholas_Russo_Resume.pdf`
 - **Requirements**: XeLaTeX (installed via TeX Live)
 
 ## Design System
-- **Philosophy**: Clean, professional design with accessibility focus
-- **Colors**: High contrast text, single blue accent (#4493f8)
-- **Typography**: Atkinson Hyperlegible (18px base) + JetBrains Mono for code
+
+- **Philosophy**: Clean, professional design with deep space observatory theme
+- **Colors**: High contrast text, cyan-teal gradient accent (#22d3ee → #14b8a6)
+- **Typography**: Geist Sans (body), Outfit (headings), JetBrains Mono (code)
 - **Layout**: Responsive grid, mobile-first approach
 - **Performance**: Static-first, self-hosted fonts, minimal JavaScript
 
 ## Deployment
+
 - **Platform**: Cloudflare Pages (GitHub integration)
 - **Build command**: `bun run build`
 - **Build output directory**: `dist/`
@@ -74,6 +82,7 @@ resume/
 - **Domain**: nijaru.com (Cloudflare DNS)
 
 ## Development Guidelines
+
 - **Accessibility**: Semantic HTML, keyboard navigation, high contrast
 - **Performance**: Static pages, optimized fonts, efficient bundles
 - **Code quality**: Clean, maintainable Astro components
@@ -84,11 +93,13 @@ resume/
 **Project Pattern:** Simple static site - no ai/ directory needed
 
 This portfolio site uses a simplified structure:
+
 - **AGENTS.md** (this file): Project overview, tech stack, build commands
 - **CLAUDE.md**: Symlink to AGENTS.md for compatibility
 - **No ai/ directory**: Simple project with stable architecture, no complex development phases
 
 **When to add ai/ structure:**
+
 - If adding complex features requiring multi-session planning
 - If tracking research/design decisions
 - If project grows beyond simple static site

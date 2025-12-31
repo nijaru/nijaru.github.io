@@ -4,7 +4,7 @@
 
 <button
   id="back-to-top"
-  class="fixed bottom-8 right-8 z-50 p-3 text-accent-blue rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+  class="fixed bottom-8 right-8 z-50 p-3 text-accent-primary rounded-full shadow-lg transition-all duration-300 hover:scale-110"
   aria-label="Back to top"
   style="display: none; background-color: var(--color-surface-elevated);"
 >
@@ -30,7 +30,7 @@
   if (button) {
     // Toggle visibility based on scroll position
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         button.style.display = 'block';
       } else {
         button.style.display = 'none';

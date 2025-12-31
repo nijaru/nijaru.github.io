@@ -23,12 +23,12 @@
     
     // Language badge
     const languageBadge = document.createElement('span');
-    languageBadge.className = 'text-accent-blue font-medium';
+    languageBadge.className = 'text-accent-primary font-medium';
     languageBadge.textContent = language.toUpperCase();
     
     // Copy button
     const copyButton = document.createElement('button');
-    copyButton.className = 'copy-btn flex items-center gap-2 px-3 py-1 rounded transition-colors duration-200 text-text-tertiary hover:text-accent-blue';
+    copyButton.className = 'copy-btn flex items-center gap-2 px-3 py-1 rounded transition-colors duration-200 text-text-tertiary hover:text-accent-primary';
     copyButton.style.setProperty('--hover-bg', 'var(--color-surface-elevated)');
     copyButton.innerHTML = `
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
