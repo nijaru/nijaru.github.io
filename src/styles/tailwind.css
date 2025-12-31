@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-/* Accent colors for Tailwind utilities (bg-accent-primary, text-accent-primary, etc.)
-   Note: Same values exist in design-system.css for CSS variable usage */
+/* Accent colors for Tailwind utilities - references design-system.css variables */
 @theme {
-  --color-accent-primary: #22d3ee;
-  --color-accent-secondary: #06b6d4;
-  --color-accent-tertiary: #67e8f9;
-  --color-accent-teal: #14b8a6;
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-secondary: var(--color-accent-secondary);
+  --color-accent-tertiary: var(--color-accent-tertiary);
+  --color-accent-teal: var(--color-accent-teal);
 }
