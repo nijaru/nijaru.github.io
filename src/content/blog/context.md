@@ -4,6 +4,7 @@ pubDate: 2025-10-30T09:00:00
 description: "How I maintain project context across AI conversations."
 author: "Nick Russo"
 tags: ["AI", "Development", "Productivity"]
+draft: true
 ---
 
 I start most sessions with "proceed." Claude reads the project state and picks up where we left off. No catching up, no explaining where we are.
