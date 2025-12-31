@@ -17,7 +17,7 @@ export const projects: Project[] = [
 		name: "omendb",
 		url: "https://github.com/omendb/omendb",
 		description:
-			"Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search (vector + BM25). LangChain and LlamaIndex integrations.",
+			"Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin.",
 		status: "Stable",
 		tech: ["Rust", "Python", "Vector Database", "Open Source"],
 		repo: { owner: "omendb", name: "omendb" },
@@ -27,7 +27,7 @@ export const projects: Project[] = [
 		name: "seerdb",
 		url: "https://github.com/omendb/seerdb",
 		description:
-			"LSM storage engine with ALEX learned indexes and WiscKey key-value separation. Benchmarks show 2.5x faster writes, 2x faster reads, and 5x lower write amplification compared to RocksDB.",
+			"LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.",
 		status: "Stable",
 		tech: ["Rust", "Storage Engine", "Open Source"],
 		repo: { owner: "omendb", name: "seerdb" },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
 		name: "hhg",
 		url: "https://github.com/nijaru/hygrep",
 		description:
-			"Hybrid code search combining semantic embeddings with BM25 keyword matching. Tree-sitter extraction, local indexing, 22 code languages plus Markdown and text files.",
+			"Semantic code search tool. Tree-sitter parsing for 22 languages.",
 		status: "Stable",
 		tech: ["Python", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "hygrep" },
@@ -47,24 +47,16 @@ export const projects: Project[] = [
 		name: "jb",
 		url: "https://github.com/nijaru/jb",
 		description:
-			"Background job manager for AI agents. Spawns tasks that survive session end, run in parallel, and can be monitored from any context. Includes Claude Code skills integration.",
+			"Background job manager. Session-persistent execution for long-running tasks.",
 		status: "In development",
 		tech: ["Rust", "CLI Tool", "Open Source"],
 		repo: { owner: "nijaru", name: "jb" },
 		category: "Recent",
 	},
 	{
-		name: "aircher",
-		description:
-			"Local-first memory framework for AI agents with multi-layer architecture.",
-		status: "In development",
-		tech: ["TypeScript", "Bun", "AI/ML"],
-		category: "Recent",
-	},
-	{
 		name: "pacabot",
 		description:
-			"Algorithmic trading system in Rust. Options pricing model, dynamic position sizing, real-time volatility tracking.",
+			"Algorithmic trading system. Options pricing with real-time position sizing.",
 		status: "Stable",
 		tech: ["Rust", "Finance", "Quantitative"],
 		category: "Recent",

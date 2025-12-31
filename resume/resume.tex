@@ -94,11 +94,11 @@
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, Go, Rust, C, C++, JavaScript} \\[2pt]
+     \textbf{Languages}{: Python, Rust, Go, Mojo, C, C++, JavaScript} \\[2pt]
      \textbf{Backend/APIs}{: FastAPI, Flask, Django, Ruby on Rails, gRPC} \\[2pt]
      \textbf{Infrastructure}{: Docker, Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo), AWS, GCP, DigitalOcean, Cloudflare} \\[2pt]
      \textbf{Databases}{: PostgreSQL, SQLite, MySQL, Redis, ChromaDB, DuckDB} \\[2pt]
-     \textbf{Tools}{: Git, GitHub Actions, Zed, Ghostty, Fish}
+     \textbf{Tools}{: Git, GitHub Actions, PyO3, maturin, ONNX}
     }}
 \end{itemize}
 
@@ -107,33 +107,33 @@
     \resumeSubHeadingListStart
 
       \resumeProjectHeading
-          {\textbf{omendb} $|$ \href{https://github.com/omendb/omendb}{\underline{github.com/omendb/omendb}} $|$ \emph{Rust, Python, Vector Database}}{}
+          {\textbf{omendb} $|$ \href{https://github.com/omendb/omendb}{\underline{github.com/omendb/omendb}} $|$ \emph{Rust, Python, PyO3, Vector Database}}{}
           \resumeItemListStart
-            \resumeItem{Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations}
+            \resumeItem{Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{seerdb} $|$ \href{https://github.com/omendb/seerdb}{\underline{github.com/omendb/seerdb}} $|$ \emph{Rust, Storage Engine, Database Systems}}{}
           \resumeItemListStart
-            \resumeItem{LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB}
+            \resumeItem{LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{hhg} $|$ \href{https://github.com/nijaru/hhg}{\underline{github.com/nijaru/hhg}} $|$ \emph{Mojo, Python, ONNX}}{}
+          \resumeItemListStart
+            \resumeItem{Semantic code search tool. Tree-sitter parsing for 22 languages}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{jb} $|$ \href{https://github.com/nijaru/jb}{\underline{github.com/nijaru/jb}} $|$ \emph{Rust, CLI, Developer Tools}}{}
+          \resumeItemListStart
+            \resumeItem{Background job manager. Session-persistent execution for long-running tasks}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{pacabot} $|$ \emph{Rust, Finance, Quantitative}}{}
           \resumeItemListStart
-            \resumeItem{Rust trading bot with statistical edge detection. Real-time price feeds, fair-value pricing, risk-managed position sizing}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{jb} $|$ \href{https://github.com/nijaru/jb}{\underline{github.com/nijaru/jb}} $|$ \emph{Rust, Developer Tools}}{}
-          \resumeItemListStart
-            \resumeItem{Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{aircher} $|$ \href{https://github.com/nijaru/aircher}{\underline{github.com/nijaru/aircher}} $|$ \emph{TypeScript, Bun, AI/ML}}{}
-          \resumeItemListStart
-            \resumeItem{Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes}
+            \resumeItem{Algorithmic trading system. Options pricing with real-time position sizing}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd
@@ -146,9 +146,9 @@
       {Software Engineer}{January 2021 - May 2023}
       {Omnitier, Inc.}{}
       \resumeItemListStart
-        \resumeItem{Reduced test suite runtime by 90\% (45 min to 5 min) by reducing syscall overhead in filesystem operations}
-        \resumeItem{Built Python backend API and gRPC integrations for distributed services}
-        \resumeItem{Developed regression testing infrastructure in Go and Python}
+        \resumeItem{Reduced test suite runtime by 90\% (45 min to 5 min) by profiling and reducing syscall overhead in filesystem operations}
+        \resumeItem{Built gRPC Python API layer for distributed Go backend services}
+        \resumeItem{Developed regression testing infrastructure across Go and Python codebases}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd

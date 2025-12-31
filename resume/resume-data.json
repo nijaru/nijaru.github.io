@@ -5,7 +5,7 @@
 	"github": "github.com/nijaru",
 	"website": "nijaru.com",
 	"skills": {
-		"languages": ["Python", "Go", "Rust", "C", "C++", "JavaScript"],
+		"languages": ["Python", "Rust", "Go", "Mojo", "C", "C++", "JavaScript"],
 		"backend": ["FastAPI", "Flask", "Django", "Ruby on Rails", "gRPC"],
 		"infrastructure": [
 			"Docker",
@@ -23,38 +23,38 @@
 			"ChromaDB",
 			"DuckDB"
 		],
-		"tools": ["Git", "GitHub Actions", "Zed", "Ghostty", "Fish"]
+		"tools": ["Git", "GitHub Actions", "PyO3", "maturin", "ONNX"]
 	},
 	"projects": [
 		{
 			"name": "omendb",
 			"url": "https://github.com/omendb/omendb",
-			"tech": ["Rust", "Python", "Vector Database"],
-			"description": "Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations"
+			"tech": ["Rust", "Python", "PyO3", "Vector Database"],
+			"description": "Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin"
 		},
 		{
 			"name": "seerdb",
 			"url": "https://github.com/omendb/seerdb",
 			"tech": ["Rust", "Storage Engine", "Database Systems"],
-			"description": "LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB"
+			"description": "LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB"
+		},
+		{
+			"name": "hhg",
+			"url": "https://github.com/nijaru/hhg",
+			"tech": ["Mojo", "Python", "ONNX"],
+			"description": "Semantic code search tool. Tree-sitter parsing for 22 languages"
+		},
+		{
+			"name": "jb",
+			"url": "https://github.com/nijaru/jb",
+			"tech": ["Rust", "CLI", "Developer Tools"],
+			"description": "Background job manager. Session-persistent execution for long-running tasks"
 		},
 		{
 			"name": "pacabot",
 			"url": null,
 			"tech": ["Rust", "Finance", "Quantitative"],
-			"description": "Rust trading bot with statistical edge detection. Real-time price feeds, fair-value pricing, risk-managed position sizing"
-		},
-		{
-			"name": "jb",
-			"url": "https://github.com/nijaru/jb",
-			"tech": ["Rust", "Developer Tools"],
-			"description": "Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows"
-		},
-		{
-			"name": "aircher",
-			"url": "https://github.com/nijaru/aircher",
-			"tech": ["TypeScript", "Bun", "AI/ML"],
-			"description": "Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes"
+			"description": "Algorithmic trading system. Options pricing with real-time position sizing"
 		}
 	],
 	"experience": [
@@ -64,9 +64,9 @@
 			"period": "January 2021 - May 2023",
 			"location": "",
 			"achievements": [
-				"Reduced test suite runtime by 90% (45 min to 5 min) by reducing syscall overhead in filesystem operations",
-				"Built Python backend API and gRPC integrations for distributed services",
-				"Developed regression testing infrastructure in Go and Python"
+				"Reduced test suite runtime by 90% (45 min to 5 min) by profiling and reducing syscall overhead in filesystem operations",
+				"Built gRPC Python API layer for distributed Go backend services",
+				"Developed regression testing infrastructure across Go and Python codebases"
 			]
 		}
 	],

@@ -4,7 +4,7 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 ## Skills
 
-**Languages:** Python, Go, Rust, C, C++, JavaScript
+**Languages:** Python, Rust, Go, Mojo, C, C++, JavaScript
 
 **Backend/APIs:** FastAPI, Flask, Django, Ruby on Rails, gRPC
 
@@ -12,43 +12,43 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 **Databases:** PostgreSQL, SQLite, MySQL, Redis, ChromaDB, DuckDB
 
-**Tools:** Git, GitHub Actions, Zed, Ghostty, Fish
+**Tools:** Git, GitHub Actions, PyO3, maturin, ONNX
 
 ## Projects
 
 ### omendb
-[github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, Vector Database
+[github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, PyO3, Vector Database
 
-Embedded vector database for Python. ACORN-1 filtered search, RaBitQ quantization, hybrid search. LangChain and LlamaIndex integrations.
+Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin.
 
 ### seerdb
 [github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
 
-LSM storage engine with ALEX learned indexes and WiscKey key-value separation. 2.5x faster writes, 2x faster reads, and 5x lower write amplification vs RocksDB.
+LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.
+
+### hhg
+[github.com/nijaru/hhg](https://github.com/nijaru/hhg) | Mojo, Python, ONNX
+
+Semantic code search tool. Tree-sitter parsing for 22 languages.
+
+### jb
+[github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, CLI, Developer Tools
+
+Background job manager. Session-persistent execution for long-running tasks.
 
 ### pacabot
 Rust, Finance, Quantitative
 
-Rust trading bot with statistical edge detection. Real-time price feeds, fair-value pricing, risk-managed position sizing.
-
-### jb
-[github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, Developer Tools
-
-Background job manager for long-running tasks. Parallel execution, session persistence, real-time monitoring. Used for AI agent workflows.
-
-### aircher
-[github.com/nijaru/aircher](https://github.com/nijaru/aircher) | TypeScript, Bun, AI/ML
-
-Local-first memory framework for AI agents. Multi-layer memory (episodic, semantic, contextual, task-based) with pluggable archetypes.
+Algorithmic trading system. Options pricing with real-time position sizing.
 
 ## Experience
 
 ### Software Engineer | Omnitier, Inc.
 *January 2021 - May 2023*
 
-- Reduced test suite runtime by 90% (45 min to 5 min) by reducing syscall overhead in filesystem operations
-- Built Python backend API and gRPC integrations for distributed services
-- Developed regression testing infrastructure in Go and Python
+- Reduced test suite runtime by 90% (45 min to 5 min) by profiling and reducing syscall overhead in filesystem operations
+- Built gRPC Python API layer for distributed Go backend services
+- Developed regression testing infrastructure across Go and Python codebases
 
 ## Awards
 
