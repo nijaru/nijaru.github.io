@@ -9,7 +9,7 @@
 - **Tailwind CSS v4** - Next-gen CSS engine via @tailwindcss/vite
 - **Bun** - Fast JavaScript runtime and package manager
 - **Geist Sans** - Modern body text (via Fontsource)
-- **Outfit** - Geometric heading font (via Fontsource)
+- **Syne** - Distinctive geometric heading font (via Fontsource)
 - **JetBrains Mono** - Monospace font for code (via Fontsource)
 - **XeLaTeX** - Resume PDF generation
 
@@ -27,7 +27,7 @@ bun run preview      # Preview production build
 
 - **Static-first**: All pages pre-rendered for maximum performance
 - **Bun over npm**: Faster installs and builds
-- **Self-hosted fonts**: Geist Sans, Outfit, JetBrains Mono - no external CDN dependencies
+- **Self-hosted fonts**: Geist Sans, Syne, JetBrains Mono - no external CDN dependencies
 - **No external CSS**: Removed devicons CDN (~100KB) - add back via `<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">` in Layout.astro if needed for tech icons
 - **Automated resume**: PDF generated from LaTeX source on build
 - **GitHub integration**: Pinned repos fetched via Actions → static JSON
@@ -68,7 +68,7 @@ resume/
 
 - **Philosophy**: Clean, professional design with deep space observatory theme
 - **Colors**: High contrast text, cyan-teal gradient accent (#22d3ee → #14b8a6)
-- **Typography**: Geist Sans (body), Outfit (headings), JetBrains Mono (code)
+- **Typography**: Geist Sans (body), Syne (headings), JetBrains Mono (code)
 - **Layout**: Responsive grid, mobile-first approach
 - **Performance**: Static-first, self-hosted fonts, minimal JavaScript
 
