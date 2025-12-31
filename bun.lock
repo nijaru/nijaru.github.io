@@ -7,9 +7,9 @@
       "dependencies": {
         "@astrojs/rss": "^4.0.14",
         "@astrojs/sitemap": "^3.6.0",
+        "@fontsource/exo-2": "^5.2.8",
         "@fontsource/geist-sans": "^5.2.5",
         "@fontsource/jetbrains-mono": "^5.2.8",
-        "@fontsource/syne": "^5.2.7",
         "astro": "^5.16.4",
       },
       "devDependencies": {
@@ -98,11 +98,11 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.9", "", { "os": "win32", "cpu": "x64" }, "sha512-PPOl1mi6lpLNQxnGoyAfschAodRFYXJ+9fs6WHXz7CSWKbOqiMZsubC+BQsVKuul+3vKLuwTHsS2c2y9EoKwxQ=="],
 
+    "@fontsource/exo-2": ["@fontsource/exo-2@5.2.8", "", {}, "sha512-cOZuiqW+gKg2SJAjymCicup0A8qto4M/lpyGahal3twMeLCRma8x/okFCdLYlTvYeQesF7d3WLKi+N04iPb40A=="],
+
     "@fontsource/geist-sans": ["@fontsource/geist-sans@5.2.5", "", {}, "sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A=="],
 
     "@fontsource/jetbrains-mono": ["@fontsource/jetbrains-mono@5.2.8", "", {}, "sha512-6w8/SG4kqvIMu7xd7wt6x3idn1Qux3p9N62s6G3rfldOUYHpWcc2FKrqf+Vo44jRvqWj2oAtTHrZXEP23oSKwQ=="],
-
-    "@fontsource/syne": ["@fontsource/syne@5.2.7", "", {}, "sha512-OgWgLPSbieiSfdFXgMs0l/rspIFzVoDZxw8wKj15n39epRqO5+Uv36c0MXNDcw2GuK/TIBgpC9G8VAgs+bVm7A=="],
 
     "@img/sharp-darwin-arm64": ["@img/sharp-darwin-arm64@0.34.3", "", { "optionalDependencies": { "@img/sharp-libvips-darwin-arm64": "1.2.0" }, "os": "darwin", "cpu": "arm64" }, "sha512-ryFMfvxxpQRsgZJqBd4wsttYQbCxsJksrv9Lw/v798JcQ8+w84mBWuXwl+TT0WJ/WrYOLaYpwQXi3sA9nTIaIg=="],
 

@@ -15,9 +15,9 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/exo-2": "^5.2.8",
     "@fontsource/geist-sans": "^5.2.5",
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/syne": "^5.2.7",
     "astro": "^5.16.4"
   },
   "engines": {

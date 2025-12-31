@@ -3,10 +3,10 @@
 @import '@fontsource/geist-sans/500.css';
 @import '@fontsource/geist-sans/700.css';
 
-/* Syne - Headers (quirky geometric, eye-catching) */
-@import '@fontsource/syne/400.css';
-@import '@fontsource/syne/600.css';
-@import '@fontsource/syne/700.css';
+/* Exo 2 - Headers (futuristic geometric, clean) */
+@import '@fontsource/exo-2/400.css';
+@import '@fontsource/exo-2/600.css';
+@import '@fontsource/exo-2/700.css';
 
 /* JetBrains Mono - Monospace for code */
 @import '@fontsource/jetbrains-mono/400.css';
