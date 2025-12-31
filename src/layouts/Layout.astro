@@ -63,13 +63,14 @@ const { showFooter = true } = Astro.props;
         <slot name="head" />
     </head>
     <body class="min-h-screen" style="background-color: var(--color-background); color: var(--color-text-primary);">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <div class="page-wrapper">
             <div transition:persist>
                 <StarField />
             </div>
             <NavBar />
 
-            <main class="pt-24 pb-16 min-h-screen">
+            <main id="main-content" class="pt-24 pb-16 min-h-screen">
                 <slot />
             </main>
 
