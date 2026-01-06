@@ -41,13 +41,13 @@
       "forks_count": 0
     },
     {
-      "name": "zenith",
+      "name": "tk",
       "owner": "nijaru",
-      "description": "Fast, modern Python web framework with zero-config defaults and Rails-like developer experience",
-      "html_url": "https://github.com/nijaru/zenith",
-      "homepage": "https://zenith.nijaru.com",
-      "language": "Python",
-      "stargazers_count": 2,
+      "description": "Task tracker for AI agents",
+      "html_url": "https://github.com/nijaru/tk",
+      "homepage": null,
+      "language": "TypeScript",
+      "stargazers_count": 0,
       "forks_count": 0
     },
     {
