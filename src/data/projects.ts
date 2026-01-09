@@ -54,6 +54,26 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
+		name: "tk",
+		url: "https://github.com/nijaru/tk",
+		description:
+			"Task tracker for AI agents. Git-friendly storage with blocking dependencies and project-scoped IDs.",
+		status: "Stable",
+		tech: ["TypeScript", "CLI Tool", "Open Source"],
+		repo: { owner: "nijaru", name: "tk" },
+		category: "Recent",
+	},
+	{
+		name: "orcx",
+		url: "https://github.com/nijaru/orcx",
+		description:
+			"LLM orchestrator. Route prompts to 100+ providers via litellm with agent presets and cost tracking.",
+		status: "In development",
+		tech: ["Python", "CLI Tool", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "orcx" },
+		category: "Recent",
+	},
+	{
 		name: "pacabot",
 		description:
 			"Algorithmic trading system. Options pricing with real-time position sizing.",
@@ -102,9 +122,9 @@ export const projects: Project[] = [
 		name: "yt-text",
 		url: "https://github.com/nijaru/yt-text",
 		description:
-			"Video transcription with multiple Whisper backends (MLX, whisper.cpp, OpenAI). Automatic fallback between backends with streaming output.",
+			"Video transcription service. Edge API on Cloudflare Workers with serverless GPU inference on Modal. NVIDIA Parakeet ASR is 16x faster than Whisper with 40% lower error rate.",
 		status: "Stable",
-		tech: ["Python", "AI/ML", "Open Source"],
+		tech: ["TypeScript", "Cloudflare Workers", "Modal", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "yt-text" },
 		category: "Other",
 	},
