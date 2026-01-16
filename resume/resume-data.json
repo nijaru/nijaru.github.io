@@ -27,6 +27,12 @@
 	},
 	"projects": [
 		{
+			"name": "agnt",
+			"url": "https://github.com/nijaru/agnt",
+			"tech": ["Rust", "LLM", "TUI"],
+			"description": "TUI coding agent with persistent memory. Budget-aware context assembly using native OmenDB integration"
+		},
+		{
 			"name": "omendb",
 			"url": "https://github.com/omendb/omendb",
 			"tech": ["Rust", "Python", "PyO3", "Vector Database"],
