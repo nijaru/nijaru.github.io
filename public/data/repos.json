@@ -131,16 +131,6 @@
 			"language": "Python",
 			"stargazers_count": 2,
 			"forks_count": 1
-		},
-		"nijaru/agnt": {
-			"name": "agnt",
-			"owner": "nijaru",
-			"description": "TUI coding agent with persistent memory and budget-aware context assembly",
-			"html_url": "https://github.com/nijaru/agnt",
-			"homepage": null,
-			"language": "Rust",
-			"stargazers_count": 0,
-			"forks_count": 0
 		}
 	}
 }

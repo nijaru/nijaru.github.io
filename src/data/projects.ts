@@ -82,6 +82,14 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
+		name: "agnt",
+		description:
+			"TUI coding agent with persistent memory. Budget-aware context assembly using native OmenDB integration.",
+		status: "In development",
+		tech: ["Rust", "AI/ML", "TUI"],
+		category: "Recent",
+	},
+	{
 		name: "zenith",
 		url: "https://github.com/nijaru/zenith",
 		description:
