@@ -31,12 +31,12 @@ LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than R
 
 Semantic code search tool. Tree-sitter parsing for 22 languages.
 
-### jb
-[github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, CLI, Developer Tools
+### ion
+[github.com/nijaru/ion](https://github.com/nijaru/ion) | Rust, AI/ML, TUI
 
-Background job manager. Session-persistent execution for long-running tasks.
+Fast TUI coding agent with multi-provider LLM support.
 
-### pacabot
+### pacabun
 Rust, Finance, Quantitative
 
 Algorithmic trading system. Options pricing with real-time position sizing.

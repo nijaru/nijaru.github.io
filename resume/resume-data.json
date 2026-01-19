@@ -45,13 +45,13 @@
 			"description": "Semantic code search tool. Tree-sitter parsing for 22 languages"
 		},
 		{
-			"name": "jb",
-			"url": "https://github.com/nijaru/jb",
-			"tech": ["Rust", "CLI", "Developer Tools"],
-			"description": "Background job manager. Session-persistent execution for long-running tasks"
+			"name": "ion",
+			"url": "https://github.com/nijaru/ion",
+			"tech": ["Rust", "AI/ML", "TUI"],
+			"description": "Fast TUI coding agent with multi-provider LLM support"
 		},
 		{
-			"name": "pacabot",
+			"name": "pacabun",
 			"url": null,
 			"tech": ["Rust", "Finance", "Quantitative"],
 			"description": "Algorithmic trading system. Options pricing with real-time position sizing"
