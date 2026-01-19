@@ -83,7 +83,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: "ion",
-		description: "Fast TUI coding agent.",
+		description: "Fast TUI coding agent with multi-provider LLM support.",
 		status: "In development",
 		tech: ["Rust", "AI/ML", "TUI"],
 		category: "Recent",
