@@ -74,7 +74,7 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "pacabot",
+		name: "pacabun",
 		description:
 			"Algorithmic trading system. Options pricing with real-time position sizing.",
 		status: "Stable",

@@ -21,7 +21,7 @@
 
 **Strong:**
 
-- Rust (production-level: OmenDB, SeerDB, jb, pacabot)
+- Rust (production-level: OmenDB, SeerDB, jb, pacabun)
 - Systems programming (SIMD, lock-free, performance optimization)
 - Database internals (HNSW, LSM, B-trees, learned indexes)
 - Python (FastAPI, testing, PyO3 bindings)
@@ -71,7 +71,7 @@
 | **OmenDB**  | Rust, SIMD, database internals   | ACORN-1 filtering, RaBitQ quantization, 3x perf vs ChromaDB |
 | **SeerDB**  | Storage engines, learned indexes | ALEX indexes, WiscKey separation, 2.5x vs RocksDB           |
 | **jb**      | Systems tooling, UX              | Built for AI agent workflows                                |
-| **pacabot** | Quantitative, real-time systems  | Statistical edge detection, risk management                 |
+| **pacabun** | Quantitative, real-time systems  | Statistical edge detection, risk management                 |
 
 ---
 
