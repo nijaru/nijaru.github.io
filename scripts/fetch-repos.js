@@ -24,6 +24,7 @@ const projectRepos = [
 	{ owner: "nijaru", name: "jb" },
 	{ owner: "nijaru", name: "sy" },
 	{ owner: "nijaru", name: "yt-text" },
+	{ owner: "nijaru", name: "ion" },
 ];
 
 // Build GraphQL query with aliases for each project repo

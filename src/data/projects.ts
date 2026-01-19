@@ -83,9 +83,11 @@ export const projects: Project[] = [
 	},
 	{
 		name: "ion",
+		url: "https://github.com/nijaru/ion",
 		description: "Fast TUI coding agent with multi-provider LLM support.",
 		status: "In development",
 		tech: ["Rust", "AI/ML", "TUI"],
+		repo: { owner: "nijaru", name: "ion" },
 		category: "Recent",
 	},
 	{
