@@ -131,6 +131,16 @@
       "language": "Python",
       "stargazers_count": 2,
       "forks_count": 1
+    },
+    "nijaru/ion": {
+      "name": "ion",
+      "owner": "nijaru",
+      "description": "Fast, lightweight TUI coding agent",
+      "html_url": "https://github.com/nijaru/ion",
+      "homepage": null,
+      "language": "Rust",
+      "stargazers_count": 1,
+      "forks_count": 0
     }
   }
 }
