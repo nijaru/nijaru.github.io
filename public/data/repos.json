@@ -3,9 +3,9 @@
     {
       "name": "omendb",
       "owner": "omendb",
-      "description": "Fast embedded vector database with HNSW + ACORN-1 filtered search",
+      "description": "Fast embedded vector database",
       "html_url": "https://github.com/omendb/omendb",
-      "homepage": null,
+      "homepage": "",
       "language": "Rust",
       "stargazers_count": 1,
       "forks_count": 0
@@ -58,7 +58,7 @@
       "homepage": null,
       "language": "Rust",
       "stargazers_count": 16,
-      "forks_count": 2
+      "forks_count": 3
     }
   ],
   "projects": {
@@ -75,9 +75,9 @@
     "omendb/omendb": {
       "name": "omendb",
       "owner": "omendb",
-      "description": "Fast embedded vector database with HNSW + ACORN-1 filtered search",
+      "description": "Fast embedded vector database",
       "html_url": "https://github.com/omendb/omendb",
-      "homepage": null,
+      "homepage": "",
       "language": "Rust",
       "stargazers_count": 1,
       "forks_count": 0
@@ -120,7 +120,7 @@
       "homepage": null,
       "language": "Rust",
       "stargazers_count": 16,
-      "forks_count": 2
+      "forks_count": 3
     },
     "nijaru/yt-text": {
       "name": "yt-text",
