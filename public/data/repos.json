@@ -57,7 +57,7 @@
       "html_url": "https://github.com/nijaru/sy",
       "homepage": null,
       "language": "Rust",
-      "stargazers_count": 16,
+      "stargazers_count": 17,
       "forks_count": 3
     }
   ],
@@ -119,7 +119,7 @@
       "html_url": "https://github.com/nijaru/sy",
       "homepage": null,
       "language": "Rust",
-      "stargazers_count": 16,
+      "stargazers_count": 17,
       "forks_count": 3
     },
     "nijaru/yt-text": {
@@ -137,9 +137,9 @@
       "owner": "nijaru",
       "description": "Fast, lightweight TUI coding agent",
       "html_url": "https://github.com/nijaru/ion",
-      "homepage": null,
+      "homepage": "",
       "language": "Rust",
-      "stargazers_count": 1,
+      "stargazers_count": 0,
       "forks_count": 0
     }
   }
