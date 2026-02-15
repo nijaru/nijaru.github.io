@@ -21,10 +21,10 @@
       "forks_count": 0
     },
     {
-      "name": "hygrep",
+      "name": "omengrep",
       "owner": "nijaru",
       "description": "Hybrid grep — semantic + keyword code search",
-      "html_url": "https://github.com/nijaru/hygrep",
+      "html_url": "https://github.com/nijaru/omengrep",
       "homepage": null,
       "language": "Rust",
       "stargazers_count": 2,
@@ -93,10 +93,10 @@
       "forks_count": 0
     },
     "nijaru/hygrep": {
-      "name": "hygrep",
+      "name": "omengrep",
       "owner": "nijaru",
       "description": "Hybrid grep — semantic + keyword code search",
-      "html_url": "https://github.com/nijaru/hygrep",
+      "html_url": "https://github.com/nijaru/omengrep",
       "homepage": null,
       "language": "Rust",
       "stargazers_count": 2,
