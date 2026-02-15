@@ -5,7 +5,7 @@
       "owner": "omendb",
       "description": "Fast embedded vector database",
       "html_url": "https://github.com/omendb/omendb",
-      "homepage": "",
+      "homepage": "https://omendb.io/",
       "language": "Rust",
       "stargazers_count": 1,
       "forks_count": 0
@@ -26,7 +26,7 @@
       "description": "Hybrid grep — semantic + keyword code search",
       "html_url": "https://github.com/nijaru/hygrep",
       "homepage": null,
-      "language": "Python",
+      "language": "Rust",
       "stargazers_count": 2,
       "forks_count": 0
     },
@@ -77,7 +77,7 @@
       "owner": "omendb",
       "description": "Fast embedded vector database",
       "html_url": "https://github.com/omendb/omendb",
-      "homepage": "",
+      "homepage": "https://omendb.io/",
       "language": "Rust",
       "stargazers_count": 1,
       "forks_count": 0
@@ -98,7 +98,7 @@
       "description": "Hybrid grep — semantic + keyword code search",
       "html_url": "https://github.com/nijaru/hygrep",
       "homepage": null,
-      "language": "Python",
+      "language": "Rust",
       "stargazers_count": 2,
       "forks_count": 0
     },
