@@ -23,7 +23,7 @@
     {
       "name": "omengrep",
       "owner": "nijaru",
-      "description": "Hybrid grep — semantic + keyword code search",
+      "description": "Local semantic code search using embeddings and BM25",
       "html_url": "https://github.com/nijaru/omengrep",
       "homepage": null,
       "language": "Rust",
@@ -95,7 +95,7 @@
     "nijaru/hygrep": {
       "name": "omengrep",
       "owner": "nijaru",
-      "description": "Hybrid grep — semantic + keyword code search",
+      "description": "Local semantic code search using embeddings and BM25",
       "html_url": "https://github.com/nijaru/omengrep",
       "homepage": null,
       "language": "Rust",
