@@ -39,8 +39,8 @@
 			"description": "LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB"
 		},
 		{
-			"name": "hhg",
-			"url": "https://github.com/nijaru/hhg",
+			"name": "omengrep",
+			"url": "https://github.com/nijaru/omengrep",
 			"tech": ["Mojo", "Python", "ONNX"],
 			"description": "Semantic code search tool. Tree-sitter parsing for 22 languages"
 		},

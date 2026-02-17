@@ -34,13 +34,13 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "hhg",
-		url: "https://github.com/nijaru/hygrep",
+		name: "omengrep",
+		url: "https://github.com/nijaru/omengrep",
 		description:
 			"Semantic code search tool. Tree-sitter parsing for 22 languages.",
 		status: "Stable",
 		tech: ["Python", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "hygrep" },
+		repo: { owner: "nijaru", name: "omengrep" },
 		category: "Recent",
 	},
 	{

@@ -26,8 +26,8 @@ Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core w
 
 LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.
 
-### hhg
-[github.com/nijaru/hhg](https://github.com/nijaru/hhg) | Mojo, Python, ONNX
+### omengrep
+[github.com/nijaru/omengrep](https://github.com/nijaru/omengrep) | Mojo, Python, ONNX
 
 Semantic code search tool. Tree-sitter parsing for 22 languages.
 

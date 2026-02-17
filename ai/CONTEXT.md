@@ -19,7 +19,7 @@
 **Resume updates:**
 
 - OmenDB: Added PyO3/maturin explicitly
-- Added hhg project (Mojo/Python/ONNX semantic code search)
+- Added omengrep project (Mojo/Python/ONNX semantic code search)
 - Skills: Added Mojo, PyO3, maturin, ONNX
 - Omnitier: Clarified gRPC Python API for Go backend
 
@@ -93,7 +93,7 @@ Companies working on vector databases or similar DB technology may have employme
 **Adequate:** Go, C/C++, Docker, Linux, AWS/GCP basics, gRPC
 **Gaps:** System design interviews, ML fundamentals, distributed systems depth
 
-**Key projects:** OmenDB (vector DB, Rust+PyO3), SeerDB (LSM engine), hhg (semantic grep, Mojo/ONNX), jb (CLI dev tool)
+**Key projects:** OmenDB (vector DB, Rust+PyO3), SeerDB (LSM engine), omengrep (semantic grep, Mojo/ONNX), jb (CLI dev tool)
 **Experience:** 2.5 years at Omnitier (Go backend, Python gRPC API)
 
 ---

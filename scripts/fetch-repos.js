@@ -20,7 +20,7 @@ const projectRepos = [
 	{ owner: "omendb", name: "seerdb" },
 	{ owner: "omendb", name: "omendb" },
 	{ owner: "nijaru", name: "zenith" },
-	{ owner: "nijaru", name: "hygrep" },
+	{ owner: "nijaru", name: "omengrep" },
 	{ owner: "nijaru", name: "jb" },
 	{ owner: "nijaru", name: "sy" },
 	{ owner: "nijaru", name: "yt-text" },
