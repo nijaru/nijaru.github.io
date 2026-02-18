@@ -92,7 +92,7 @@
       "stargazers_count": 2,
       "forks_count": 0
     },
-    "nijaru/hygrep": {
+    "nijaru/omengrep": {
       "name": "omengrep",
       "owner": "nijaru",
       "description": "Local semantic code search using embeddings and BM25",
