@@ -71,14 +71,24 @@ export const projects: Project[] = [
 		status: "In development",
 		tech: ["Python", "CLI Tool", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "orcx" },
+		category: "Other",
+	},
+	{
+		name: "pacabot",
+		description:
+			"Prediction market trading bot. Event-driven order execution with real-time risk management.",
+		status: "Stable",
+		tech: ["Rust", "Finance", "Quantitative"],
 		category: "Recent",
 	},
 	{
-		name: "pacabun",
+		name: "go-clob-client",
+		url: "https://github.com/nijaru/go-clob-client",
 		description:
-			"Algorithmic trading system. Options pricing with real-time position sizing.",
-		status: "Stable",
-		tech: ["Rust", "Finance", "Quantitative"],
+			"Go SDK for the Polymarket CLOB. Read-only queries, auth bootstrap, and order-signing flows are already usable.",
+		status: "In development",
+		tech: ["Go", "SDK", "Trading", "Open Source"],
+		repo: { owner: "nijaru", name: "go-clob-client" },
 		category: "Recent",
 	},
 	{
@@ -98,7 +108,7 @@ export const projects: Project[] = [
 		status: "Stable",
 		tech: ["Python", "Web Framework", "Open Source"],
 		repo: { owner: "nijaru", name: "zenith" },
-		category: "Recent",
+		category: "Other",
 	},
 	{
 		name: "sy",
@@ -108,7 +118,7 @@ export const projects: Project[] = [
 		status: "Stable",
 		tech: ["Rust", "CLI Tool", "Open Source"],
 		repo: { owner: "nijaru", name: "sy" },
-		category: "Recent",
+		category: "Other",
 	},
 	{
 		name: "djscout",

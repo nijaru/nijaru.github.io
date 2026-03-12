@@ -22,6 +22,7 @@ const projectRepos = [
 	{ owner: "nijaru", name: "zenith" },
 	{ owner: "nijaru", name: "omengrep" },
 	{ owner: "nijaru", name: "jb" },
+	{ owner: "nijaru", name: "go-clob-client" },
 	{ owner: "nijaru", name: "sy" },
 	{ owner: "nijaru", name: "yt-text" },
 	{ owner: "nijaru", name: "ion" },

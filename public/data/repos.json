@@ -112,6 +112,16 @@
       "stargazers_count": 0,
       "forks_count": 0
     },
+    "nijaru/go-clob-client": {
+      "name": "go-clob-client",
+      "owner": "nijaru",
+      "description": "Go client for the Polymarket CLOB",
+      "html_url": "https://github.com/nijaru/go-clob-client",
+      "homepage": null,
+      "language": "Go",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
     "nijaru/sy": {
       "name": "sy",
       "owner": "nijaru",
