@@ -11,6 +11,10 @@ const ROOT = join(import.meta.dir, "..");
 const RESUME_DIR = join(ROOT, "resume");
 const data = JSON.parse(readFileSync(join(RESUME_DIR, "resume-data.json"), "utf-8"));
 
+function ensureTerminalPunctuation(text: string): string {
+  return /[.!?]$/.test(text) ? text : `${text}.`;
+}
+
 // Helper to escape LaTeX special characters
 function escapeLatex(text: string): string {
   return text
@@ -222,7 +226,7 @@ function generateMarkdown(): string {
       return `### ${p.name}
 ${urlLine}${p.tech.join(", ")}
 
-${p.description}.`;
+${ensureTerminalPunctuation(p.description)}`;
     })
     .join("\n\n");
 
@@ -241,7 +245,7 @@ ${achievements}`;
       return `### ${award.title}
 *${award.project}*
 
-${award.description}.`;
+${ensureTerminalPunctuation(award.description)}`;
     })
     .join("\n\n");
 

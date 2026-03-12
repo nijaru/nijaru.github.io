@@ -5,7 +5,7 @@
 	"github": "github.com/nijaru",
 	"website": "nijaru.com",
 	"skills": {
-		"languages": ["Python", "Rust", "Go", "Mojo", "C", "C++", "JavaScript"],
+		"languages": ["Python", "Rust", "Go", "TypeScript", "Ruby", "C", "C++"],
 		"backend": ["FastAPI", "Flask", "Django", "Ruby on Rails", "gRPC"],
 		"infrastructure": [
 			"Docker",
@@ -23,38 +23,38 @@
 			"ChromaDB",
 			"DuckDB"
 		],
-		"tools": ["Git", "GitHub Actions", "PyO3", "maturin", "ONNX"]
+		"tools": ["Git", "GitHub Actions", "PyO3", "maturin", "Bun", "ONNX"]
 	},
 	"projects": [
 		{
 			"name": "omendb",
 			"url": "https://github.com/omendb/omendb",
-			"tech": ["Rust", "Python", "PyO3", "Vector Database"],
-			"description": "Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin"
-		},
-		{
-			"name": "seerdb",
-			"url": "https://github.com/omendb/seerdb",
-			"tech": ["Rust", "Storage Engine", "Database Systems"],
-			"description": "LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB"
-		},
-		{
-			"name": "omengrep",
-			"url": "https://github.com/nijaru/omengrep",
-			"tech": ["Mojo", "Python", "ONNX"],
-			"description": "Semantic code search tool. Tree-sitter parsing for 22 languages"
+			"tech": ["Rust", "Python", "TypeScript", "PyO3", "Vector Database"],
+			"description": "Embedded vector database. 4x faster than hnswlib. Rust core with Python (PyO3/maturin) and TypeScript (napi-rs) bindings. Powers a Claude Code memory plugin for persistent agent context"
 		},
 		{
 			"name": "ion",
 			"url": "https://github.com/nijaru/ion",
 			"tech": ["Rust", "AI/ML", "TUI"],
-			"description": "Fast TUI coding agent with multi-provider LLM support"
+			"description": "Multi-model coding agent TUI in Rust. Pluggable LLM backends with tool use and persistent context management across sessions"
 		},
 		{
-			"name": "pacabun",
-			"url": null,
-			"tech": ["Rust", "Finance", "Quantitative"],
-			"description": "Algorithmic trading system. Options pricing with real-time position sizing"
+			"name": "jb",
+			"url": "https://github.com/nijaru/jb",
+			"tech": ["Rust", "CLI"],
+			"description": "Background job manager for long-running agent tasks. Tracks commands, streams logs, and persists state across sessions."
+		},
+		{
+			"name": "tk",
+			"url": "https://github.com/nijaru/tk",
+			"tech": ["TypeScript", "Bun", "CLI"],
+			"description": "CLI task tracker for long-running agent workflows. Persists task state, logs, and progress to disk so multi-step work survives LLM context resets and session boundaries"
+		},
+		{
+			"name": "omengrep",
+			"url": "https://github.com/nijaru/omengrep",
+			"tech": ["Rust", "Python", "ONNX"],
+			"description": "Semantic code search CLI. ONNX embeddings for concept-based retrieval and tree-sitter AST parsing for language-aware indexing across 22 languages"
 		}
 	],
 	"experience": [

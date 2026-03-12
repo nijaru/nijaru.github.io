@@ -94,11 +94,11 @@
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, Rust, Go, Mojo, C, C++, JavaScript} \\[2pt]
+     \textbf{Languages}{: Python, Rust, Go, TypeScript, Ruby, C, C++} \\[2pt]
      \textbf{Backend/APIs}{: FastAPI, Flask, Django, Ruby on Rails, gRPC} \\[2pt]
      \textbf{Infrastructure}{: Docker, Linux (Fedora, Ubuntu, RHEL/CentOS, CoreOS, Gentoo), AWS, GCP, DigitalOcean, Cloudflare} \\[2pt]
      \textbf{Databases}{: PostgreSQL, SQLite, MySQL, Redis, ChromaDB, DuckDB} \\[2pt]
-     \textbf{Tools}{: Git, GitHub Actions, PyO3, maturin, ONNX}
+     \textbf{Tools}{: Git, GitHub Actions, PyO3, maturin, Bun, ONNX}
     }}
 \end{itemize}
 
@@ -107,33 +107,33 @@
     \resumeSubHeadingListStart
 
       \resumeProjectHeading
-          {\textbf{omendb} $|$ \href{https://github.com/omendb/omendb}{\underline{github.com/omendb/omendb}} $|$ \emph{Rust, Python, PyO3, Vector Database}}{}
+          {\textbf{omendb} $|$ \href{https://github.com/omendb/omendb}{\underline{github.com/omendb/omendb}} $|$ \emph{Rust, Python, TypeScript, PyO3, Vector Database}}{}
           \resumeItemListStart
-            \resumeItem{Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{seerdb} $|$ \href{https://github.com/omendb/seerdb}{\underline{github.com/omendb/seerdb}} $|$ \emph{Rust, Storage Engine, Database Systems}}{}
-          \resumeItemListStart
-            \resumeItem{LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{omengrep} $|$ \href{https://github.com/nijaru/omengrep}{\underline{github.com/nijaru/omengrep}} $|$ \emph{Mojo, Python, ONNX}}{}
-          \resumeItemListStart
-            \resumeItem{Semantic code search tool. Tree-sitter parsing for 22 languages}
+            \resumeItem{Embedded vector database. 4x faster than hnswlib. Rust core with Python (PyO3/maturin) and TypeScript (napi-rs) bindings. Powers a Claude Code memory plugin for persistent agent context}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{ion} $|$ \href{https://github.com/nijaru/ion}{\underline{github.com/nijaru/ion}} $|$ \emph{Rust, AI/ML, TUI}}{}
           \resumeItemListStart
-            \resumeItem{Fast TUI coding agent with multi-provider LLM support}
+            \resumeItem{Multi-model coding agent TUI in Rust. Pluggable LLM backends with tool use and persistent context management across sessions}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{pacabun} $|$ \emph{Rust, Finance, Quantitative}}{}
+          {\textbf{jb} $|$ \href{https://github.com/nijaru/jb}{\underline{github.com/nijaru/jb}} $|$ \emph{Rust, CLI}}{}
           \resumeItemListStart
-            \resumeItem{Algorithmic trading system. Options pricing with real-time position sizing}
+            \resumeItem{Background job manager for long-running agent tasks. Tracks commands, streams logs, and persists state across sessions.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{tk} $|$ \href{https://github.com/nijaru/tk}{\underline{github.com/nijaru/tk}} $|$ \emph{TypeScript, Bun, CLI}}{}
+          \resumeItemListStart
+            \resumeItem{CLI task tracker for long-running agent workflows. Persists task state, logs, and progress to disk so multi-step work survives LLM context resets and session boundaries}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{omengrep} $|$ \href{https://github.com/nijaru/omengrep}{\underline{github.com/nijaru/omengrep}} $|$ \emph{Rust, Python, ONNX}}{}
+          \resumeItemListStart
+            \resumeItem{Semantic code search CLI. ONNX embeddings for concept-based retrieval and tree-sitter AST parsing for language-aware indexing across 22 languages}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd

@@ -4,7 +4,7 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 ## Skills
 
-**Languages:** Python, Rust, Go, Mojo, C, C++, JavaScript
+**Languages:** Python, Rust, Go, TypeScript, Ruby, C, C++
 
 **Backend/APIs:** FastAPI, Flask, Django, Ruby on Rails, gRPC
 
@@ -12,34 +12,34 @@ nijaru7@gmail.com | [github.com/nijaru](https://github.com/nijaru) | [nijaru.com
 
 **Databases:** PostgreSQL, SQLite, MySQL, Redis, ChromaDB, DuckDB
 
-**Tools:** Git, GitHub Actions, PyO3, maturin, ONNX
+**Tools:** Git, GitHub Actions, PyO3, maturin, Bun, ONNX
 
 ## Projects
 
 ### omendb
-[github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, PyO3, Vector Database
+[github.com/omendb/omendb](https://github.com/omendb/omendb) | Rust, Python, TypeScript, PyO3, Vector Database
 
-Embedded vector database. 4x faster than hnswlib-based alternatives. Rust core with Python bindings via PyO3/maturin.
-
-### seerdb
-[github.com/omendb/seerdb](https://github.com/omendb/seerdb) | Rust, Storage Engine, Database Systems
-
-LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.
-
-### omengrep
-[github.com/nijaru/omengrep](https://github.com/nijaru/omengrep) | Mojo, Python, ONNX
-
-Semantic code search tool. Tree-sitter parsing for 22 languages.
+Embedded vector database. 4x faster than hnswlib. Rust core with Python (PyO3/maturin) and TypeScript (napi-rs) bindings. Powers a Claude Code memory plugin for persistent agent context.
 
 ### ion
 [github.com/nijaru/ion](https://github.com/nijaru/ion) | Rust, AI/ML, TUI
 
-Fast TUI coding agent with multi-provider LLM support.
+Multi-model coding agent TUI in Rust. Pluggable LLM backends with tool use and persistent context management across sessions.
 
-### pacabun
-Rust, Finance, Quantitative
+### jb
+[github.com/nijaru/jb](https://github.com/nijaru/jb) | Rust, CLI
 
-Algorithmic trading system. Options pricing with real-time position sizing.
+Background job manager for long-running agent tasks. Tracks commands, streams logs, and persists state across sessions.
+
+### tk
+[github.com/nijaru/tk](https://github.com/nijaru/tk) | TypeScript, Bun, CLI
+
+CLI task tracker for long-running agent workflows. Persists task state, logs, and progress to disk so multi-step work survives LLM context resets and session boundaries.
+
+### omengrep
+[github.com/nijaru/omengrep](https://github.com/nijaru/omengrep) | Rust, Python, ONNX
+
+Semantic code search CLI. ONNX embeddings for concept-based retrieval and tree-sitter AST parsing for language-aware indexing across 22 languages.
 
 ## Experience
 
