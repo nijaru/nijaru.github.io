@@ -94,10 +94,31 @@ export const projects: Project[] = [
 	{
 		name: "ion",
 		url: "https://github.com/nijaru/ion",
-		description: "Fast TUI coding agent with multi-provider LLM support.",
+		description:
+			"TUI coding agent with multi-provider LLM support. Go rewrite in progress using canto.",
 		status: "In development",
-		tech: ["Rust", "AI/ML", "TUI"],
+		tech: ["Rust", "Go", "AI/ML", "TUI"],
 		repo: { owner: "nijaru", name: "ion" },
+		category: "Recent",
+	},
+	{
+		name: "aku",
+		url: "https://github.com/nijaru/aku",
+		description:
+			"Go API library with typed handlers and automatic request extraction. net/http-native with OpenAPI generation planned.",
+		status: "In development",
+		tech: ["Go", "Web Framework", "Open Source"],
+		repo: { owner: "nijaru", name: "aku" },
+		category: "Recent",
+	},
+	{
+		name: "canto",
+		url: "https://github.com/nijaru/canto",
+		description:
+			"Go agent framework. Composable layers, append-only event log, and deterministic code-driven orchestration for LLM agents and swarms.",
+		status: "In development",
+		tech: ["Go", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "canto" },
 		category: "Recent",
 	},
 	{

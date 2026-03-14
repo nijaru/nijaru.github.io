@@ -22,10 +22,14 @@ const projectRepos = [
 	{ owner: "nijaru", name: "zenith" },
 	{ owner: "nijaru", name: "omengrep" },
 	{ owner: "nijaru", name: "jb" },
+	{ owner: "nijaru", name: "tk" },
+	{ owner: "nijaru", name: "orcx" },
 	{ owner: "nijaru", name: "go-clob-client" },
 	{ owner: "nijaru", name: "sy" },
 	{ owner: "nijaru", name: "yt-text" },
 	{ owner: "nijaru", name: "ion" },
+	{ owner: "nijaru", name: "aku" },
+	{ owner: "nijaru", name: "canto" },
 ];
 
 // Build GraphQL query with aliases for each project repo
