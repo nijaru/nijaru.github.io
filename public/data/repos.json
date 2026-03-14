@@ -21,26 +21,6 @@
       "forks_count": 0
     },
     {
-      "name": "jb",
-      "owner": "nijaru",
-      "description": "CLI for running background jobs",
-      "html_url": "https://github.com/nijaru/jb",
-      "homepage": null,
-      "language": "Rust",
-      "stargazers_count": 0,
-      "forks_count": 0
-    },
-    {
-      "name": "tk",
-      "owner": "nijaru",
-      "description": "Task tracker for AI agents",
-      "html_url": "https://github.com/nijaru/tk",
-      "homepage": null,
-      "language": "TypeScript",
-      "stargazers_count": 0,
-      "forks_count": 0
-    },
-    {
       "name": "ion",
       "owner": "nijaru",
       "description": "Fast, lightweight TUI coding agent",
@@ -48,6 +28,26 @@
       "homepage": "",
       "language": "Rust",
       "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "canto",
+      "owner": "nijaru",
+      "description": "Composable Go framework for building LLM agents and agent swarms",
+      "html_url": "https://github.com/nijaru/canto",
+      "homepage": "",
+      "language": "Go",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "aku",
+      "owner": "nijaru",
+      "description": "Idiomatic Go library for building JSON APIs",
+      "html_url": "https://github.com/nijaru/aku",
+      "homepage": null,
+      "language": "Go",
+      "stargazers_count": 0,
       "forks_count": 0
     },
     {
@@ -112,6 +112,26 @@
       "stargazers_count": 0,
       "forks_count": 0
     },
+    "nijaru/tk": {
+      "name": "tk",
+      "owner": "nijaru",
+      "description": "Task tracker for AI agents",
+      "html_url": "https://github.com/nijaru/tk",
+      "homepage": null,
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    "nijaru/orcx": {
+      "name": "orcx",
+      "owner": "nijaru",
+      "description": "LLM orchestrator - harness-agnostic agent routing",
+      "html_url": "https://github.com/nijaru/orcx",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
     "nijaru/go-clob-client": {
       "name": "go-clob-client",
       "owner": "nijaru",
@@ -150,6 +170,26 @@
       "homepage": "",
       "language": "Rust",
       "stargazers_count": 1,
+      "forks_count": 0
+    },
+    "nijaru/aku": {
+      "name": "aku",
+      "owner": "nijaru",
+      "description": "Idiomatic Go library for building JSON APIs",
+      "html_url": "https://github.com/nijaru/aku",
+      "homepage": null,
+      "language": "Go",
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    "nijaru/canto": {
+      "name": "canto",
+      "owner": "nijaru",
+      "description": "Composable Go framework for building LLM agents and agent swarms",
+      "html_url": "https://github.com/nijaru/canto",
+      "homepage": "",
+      "language": "Go",
+      "stargazers_count": 0,
       "forks_count": 0
     }
   }
