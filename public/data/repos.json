@@ -11,16 +11,6 @@
       "forks_count": 1
     },
     {
-      "name": "seerdb",
-      "owner": "omendb",
-      "description": "Research-grade storage engine with learned data structures and modern optimizations",
-      "html_url": "https://github.com/omendb/seerdb",
-      "homepage": null,
-      "language": "Rust",
-      "stargazers_count": 4,
-      "forks_count": 0
-    },
-    {
       "name": "omengrep",
       "owner": "nijaru",
       "description": "Local semantic code search using embeddings and BM25",
@@ -51,14 +41,24 @@
       "forks_count": 0
     },
     {
-      "name": "sy",
+      "name": "ion",
       "owner": "nijaru",
-      "description": "Modern file sync tool with delta transfers, 40-79% faster than rsync",
-      "html_url": "https://github.com/nijaru/sy",
-      "homepage": null,
+      "description": "Fast, lightweight TUI coding agent",
+      "html_url": "https://github.com/nijaru/ion",
+      "homepage": "",
       "language": "Rust",
-      "stargazers_count": 19,
-      "forks_count": 3
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "go-clob-client",
+      "owner": "nijaru",
+      "description": "Go client for the Polymarket CLOB",
+      "html_url": "https://github.com/nijaru/go-clob-client",
+      "homepage": null,
+      "language": "Go",
+      "stargazers_count": 0,
+      "forks_count": 0
     }
   ],
   "projects": {
