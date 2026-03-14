@@ -24,16 +24,6 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "seerdb",
-		url: "https://github.com/omendb/seerdb",
-		description:
-			"LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.",
-		status: "Stable",
-		tech: ["Rust", "Storage Engine", "Open Source"],
-		repo: { owner: "omendb", name: "seerdb" },
-		category: "Other",
-	},
-	{
 		name: "omengrep",
 		url: "https://github.com/nijaru/omengrep",
 		description:
@@ -44,51 +34,13 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "jb",
-		url: "https://github.com/nijaru/jb",
+		name: "canto",
+		url: "https://github.com/nijaru/canto",
 		description:
-			"Background job manager. Session-persistent execution for long-running tasks.",
+			"Go agent framework. Composable layers, append-only event log, and deterministic code-driven orchestration for LLM agents and swarms.",
 		status: "In development",
-		tech: ["Rust", "CLI Tool", "Open Source"],
-		repo: { owner: "nijaru", name: "jb" },
-		category: "Recent",
-	},
-	{
-		name: "tk",
-		url: "https://github.com/nijaru/tk",
-		description:
-			"Task tracker for AI agents. Git-friendly storage with blocking dependencies and project-scoped IDs.",
-		status: "Stable",
-		tech: ["TypeScript", "CLI Tool", "Open Source"],
-		repo: { owner: "nijaru", name: "tk" },
-		category: "Recent",
-	},
-	{
-		name: "orcx",
-		url: "https://github.com/nijaru/orcx",
-		description:
-			"LLM orchestrator. Route prompts to 100+ providers via litellm with agent presets and cost tracking.",
-		status: "In development",
-		tech: ["Python", "CLI Tool", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "orcx" },
-		category: "Other",
-	},
-	{
-		name: "pacabot",
-		description:
-			"Prediction market trading bot. Event-driven order execution with real-time risk management.",
-		status: "Stable",
-		tech: ["Rust", "Finance", "Quantitative"],
-		category: "Recent",
-	},
-	{
-		name: "go-clob-client",
-		url: "https://github.com/nijaru/go-clob-client",
-		description:
-			"Go SDK for the Polymarket CLOB. Read-only queries, auth bootstrap, and order-signing flows are already usable.",
-		status: "In development",
-		tech: ["Go", "SDK", "Trading", "Open Source"],
-		repo: { owner: "nijaru", name: "go-clob-client" },
+		tech: ["Go", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "canto" },
 		category: "Recent",
 	},
 	{
@@ -112,13 +64,21 @@ export const projects: Project[] = [
 		category: "Recent",
 	},
 	{
-		name: "canto",
-		url: "https://github.com/nijaru/canto",
+		name: "pacabot",
 		description:
-			"Go agent framework. Composable layers, append-only event log, and deterministic code-driven orchestration for LLM agents and swarms.",
+			"Prediction market trading bot. Event-driven order execution with real-time risk management.",
+		status: "Stable",
+		tech: ["Rust", "Finance", "Quantitative"],
+		category: "Recent",
+	},
+	{
+		name: "go-clob-client",
+		url: "https://github.com/nijaru/go-clob-client",
+		description:
+			"Go SDK for the Polymarket CLOB. Read-only queries, auth bootstrap, and order-signing flows are already usable.",
 		status: "In development",
-		tech: ["Go", "AI/ML", "Open Source"],
-		repo: { owner: "nijaru", name: "canto" },
+		tech: ["Go", "SDK", "Trading", "Open Source"],
+		repo: { owner: "nijaru", name: "go-clob-client" },
 		category: "Recent",
 	},
 	{
@@ -128,6 +88,46 @@ export const projects: Project[] = [
 		status: "In development",
 		tech: ["Go", "CLI Tool"],
 		category: "Recent",
+	},
+	{
+		name: "jb",
+		url: "https://github.com/nijaru/jb",
+		description:
+			"Background job manager. Session-persistent execution for long-running tasks.",
+		status: "In development",
+		tech: ["Rust", "CLI Tool", "Open Source"],
+		repo: { owner: "nijaru", name: "jb" },
+		category: "Recent",
+	},
+	{
+		name: "tk",
+		url: "https://github.com/nijaru/tk",
+		description:
+			"Task tracker for AI agents. Git-friendly storage with blocking dependencies and project-scoped IDs.",
+		status: "Stable",
+		tech: ["TypeScript", "CLI Tool", "Open Source"],
+		repo: { owner: "nijaru", name: "tk" },
+		category: "Recent",
+	},
+	{
+		name: "seerdb",
+		url: "https://github.com/omendb/seerdb",
+		description:
+			"LSM-tree storage engine. 2.5x faster writes, 5x lower write amplification than RocksDB.",
+		status: "Stable",
+		tech: ["Rust", "Storage Engine", "Open Source"],
+		repo: { owner: "omendb", name: "seerdb" },
+		category: "Other",
+	},
+	{
+		name: "orcx",
+		url: "https://github.com/nijaru/orcx",
+		description:
+			"LLM orchestrator. Route prompts to 100+ providers via litellm with agent presets and cost tracking.",
+		status: "In development",
+		tech: ["Python", "CLI Tool", "AI/ML", "Open Source"],
+		repo: { owner: "nijaru", name: "orcx" },
+		category: "Other",
 	},
 	{
 		name: "zenith",
