@@ -31,7 +31,7 @@ export const projects: Project[] = [
 		status: "Stable",
 		tech: ["Rust", "Storage Engine", "Open Source"],
 		repo: { owner: "omendb", name: "seerdb" },
-		category: "Recent",
+		category: "Other",
 	},
 	{
 		name: "omengrep",
@@ -119,6 +119,14 @@ export const projects: Project[] = [
 		status: "In development",
 		tech: ["Go", "AI/ML", "Open Source"],
 		repo: { owner: "nijaru", name: "canto" },
+		category: "Recent",
+	},
+	{
+		name: "gomop",
+		description:
+			"Unified Go formatter combining gofumpt, golines, and goimports in a single AST pass. Sub-10ms formatting for typical files.",
+		status: "In development",
+		tech: ["Go", "CLI Tool"],
 		category: "Recent",
 	},
 	{
