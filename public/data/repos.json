@@ -115,10 +115,10 @@
     "nijaru/tk": {
       "name": "tk",
       "owner": "nijaru",
-      "description": "Task tracker for AI agents",
+      "description": "tk in go",
       "html_url": "https://github.com/nijaru/tk",
       "homepage": null,
-      "language": "TypeScript",
+      "language": "Go",
       "stargazers_count": 0,
       "forks_count": 0
     },
